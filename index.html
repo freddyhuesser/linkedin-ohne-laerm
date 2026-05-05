@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn ohne Lärm – Freddy Hüsser</title>
+  <meta name="description" content="LinkedIn wirksam und effizient nutzen – ohne Lärm. Workshops und Coaching für Fach- und Führungskräfte von Freddy Hüsser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,700;1,900&family=Roboto+Slab:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:    #00222C;
+      --c-primary-2:  #103040;
+      --c-text:       #383838;
+      --c-muted:      #576a76;
+      --c-accent-bg:  #FFF5CA;
+      --c-yellow:     #FFF5CA;
+      --c-yellow-d:   #8a6f00;
+      --c-white:      #FFFFFF;
+      --c-gray:       #f4f4f4;
+      --c-gray-2:     #e2e8eb;
+      --r:            8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--c-text);
+      background: var(--c-white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BUTTONS ─────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .8rem 1.6rem;
+      border-radius: var(--r);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .02em;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      transition: background .2s, color .2s, transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .btn-primary {
+      background: var(--c-yellow);
+      color: var(--c-primary);
+    }
+    .btn-primary:hover {
+      background: #ffe97a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,245,202,.45);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,.4);
+    }
+    .btn-ghost:hover {
+      border-color: var(--c-yellow);
+      color: var(--c-yellow);
+    }
+    .btn-dark {
+      background: var(--c-primary);
+      color: #fff;
+    }
+    .btn-dark:hover {
+      background: var(--c-primary-2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,34,44,.25);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+    .btn-outline:hover {
+      background: var(--c-primary);
+      color: #fff;
+    }
+
+    /* ── NAV ────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .35s, backdrop-filter .35s, box-shadow .35s, padding .35s;
+    }
+    #navbar.scrolled {
+      padding: .9rem 2.5rem;
+      background: rgba(0,26,36,.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 24px rgba(0,0,0,.25);
+    }
+    .nav-logo img { height: 48px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--c-yellow); }
+
+    /* hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--c-primary);
+      z-index: 190;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.75rem;
+      font-weight: 700;
+      transition: color .2s;
+    }
+    .nav-mobile a:hover { color: var(--c-yellow); }
+
+    /* ── HERO ───────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--c-primary);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 80% 40%, rgba(255,216,47,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(21,119,155,.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 5rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--c-yellow);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp .55s ease forwards .15s;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 28px; height: 2px;
+      background: var(--c-yellow);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .hero-title {
+      font-size: clamp(3.2rem, 6.5vw, 6rem);
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
+      line-height: .95;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .6s ease forwards .3s;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--c-yellow);
+      display: block;
+    }
+    .hero-sub {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .6s ease forwards .45s;
+      max-width: 480px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .6s ease forwards .6s;
+    }
+    .hero-visual {
+      position: relative;
+      opacity: 0;
+      transform: translateX(28px);
+      animation: fadeLeft .75s ease forwards .55s;
+    }
+    .hero-photo-frame {
+      position: relative;
+    }
+    .hero-photo-frame img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 32px 80px rgba(0,0,0,.4);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: -1.25rem;
+      left: -1.5rem;
+      background: var(--c-yellow);
+      color: var(--c-primary);
+      padding: 1rem 1.25rem;
+      border-radius: var(--r);
+      box-shadow: 0 8px 28px rgba(255,216,47,.35);
+      font-weight: 900;
+    }
+    .hero-badge strong {
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+    .hero-badge span {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .hero-cap-badge {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--c-primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .hero-cap-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── STATS BAR ──────────────────────────── */
+    .stats-bar {
+      background: var(--c-primary-2);
+      padding: 1.5rem 2.5rem;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--c-yellow);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: .72rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.6);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: .2rem;
+    }
+
+    /* ── SECTION BASE ───────────────────────── */
+    section { padding: 6rem 2.5rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-lbl {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #15779b;
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Roboto Slab', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 500;
+      color: var(--c-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--c-muted);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+    .section-header { margin-bottom: 4rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-lbl,
+    .section-header.center .section-title,
+    .section-header.center .section-desc { margin-left: auto; margin-right: auto; }
+
+    /* dark variants */
+    .on-dark .section-lbl { color: var(--c-yellow); }
+    .on-dark .section-title { color: #fff; }
+    .on-dark .section-desc { color: rgba(255,255,255,.6); }
+
+    /* ── REVEAL ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── LEISTUNGEN ─────────────────────────── */
+    .leistungen { background: var(--c-white); }
+    .leistungen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .card {
+      border: 1.5px solid var(--c-gray-2);
+      border-radius: 14px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .25s, box-shadow .25s, transform .25s;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--c-yellow);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+    .card:hover {
+      border-color: rgba(0,34,44,.2);
+      box-shadow: 0 12px 48px rgba(0,34,44,.08);
+      transform: translateY(-5px);
+    }
+    .card:hover::after { transform: scaleX(1); }
+    .card-icon {
+      width: 52px; height: 52px;
+      background: var(--c-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+    .card-icon svg {
+      width: 24px; height: 24px;
+      stroke: var(--c-yellow);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card-badge {
+      display: inline-block;
+      background: var(--c-accent-bg);
+      color: var(--c-primary);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .3rem .85rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      letter-spacing: .03em;
+    }
+    .card-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--c-primary);
+      margin-bottom: .65rem;
+    }
+    .card-desc {
+      color: var(--c-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      background: var(--c-gray);
+      color: var(--c-primary);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .35rem .85rem;
+      border-radius: 20px;
+    }
+    .card-price {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--c-primary);
+      margin-bottom: 1.5rem;
+    }
+    .card-price small {
+      font-size: .82rem;
+      font-weight: 400;
+      color: #999;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* ── ÜBER MICH ──────────────────────────── */
+    .ueber-mich { background: var(--c-accent-bg); }
+    .ueber-grid {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .ueber-photo-wrap { position: relative; }
+    .ueber-photo-wrap img.main-photo {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 24px 64px rgba(0,34,44,.18);
+    }
+    .ueber-accent-box {
+      position: absolute;
+      bottom: -2rem;
+      right: -2.5rem;
+      width: 120px;
+      height: 120px;
+      background: var(--c-primary);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      box-shadow: 0 8px 32px rgba(0,34,44,.3);
+    }
+    .ueber-accent-box img { width: 100%; display: block; }
+    .ueber-quote {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.2rem;
+      color: var(--c-primary);
+      font-style: italic;
+      line-height: 1.65;
+      border-left: 3px solid var(--c-yellow);
+      padding-left: 1.25rem;
+      margin: 1.75rem 0 2rem;
+    }
+    .ueber-body {
+      color: var(--c-muted);
+      line-height: 1.8;
+      margin-bottom: .85rem;
+      font-size: .975rem;
+    }
+    .ueber-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0 2.25rem;
+    }
+    .ueber-stat {
+      background: var(--c-white);
+      border-radius: var(--r);
+      padding: 1.1rem 1.25rem;
+    }
+    .ueber-stat-num {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--c-primary);
+      line-height: 1;
+    }
+    .ueber-stat-lbl {
+      font-size: .75rem;
+      color: #999;
+      margin-top: .2rem;
+      line-height: 1.4;
+    }
+
+    /* ── PROZESS ────────────────────────────── */
+    .prozess { background: var(--c-white); }
+    .prozess-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      position: relative;
+    }
+    .prozess-grid::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: calc(16.67% + 1rem);
+      right: calc(16.67% + 1rem);
+      height: 1px;
+      background: var(--c-gray-2);
+      z-index: 0;
+    }
+    .prozess-step { text-align: center; position: relative; z-index: 1; }
+    .step-circle {
+      width: 4rem; height: 4rem;
+      background: var(--c-primary);
+      color: var(--c-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin: 0 auto 1.5rem;
+    }
+    .step-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--c-primary);
+      margin-bottom: .65rem;
+    }
+    .step-desc {
+      color: var(--c-muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ───────────────────────── */
+    .testimonials { background: var(--c-gray); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testi-card {
+      background: var(--c-white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,34,44,.04);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .testi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 36px rgba(0,34,44,.09);
+    }
+    .testi-stars {
+      color: #c9a800;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      margin-bottom: 1rem;
+    }
+    .testi-text {
+      font-family: 'Roboto Slab', serif;
+      font-size: .94rem;
+      line-height: 1.75;
+      color: var(--c-text);
+      margin-bottom: 1.5rem;
+    }
+    .testi-author { display: flex; align-items: center; gap: .75rem; }
+    .testi-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--c-primary);
+      color: var(--c-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-weight: 700;
+      color: var(--c-primary);
+      font-size: .88rem;
+    }
+    .testi-role { color: #999; font-size: .78rem; margin-top: .1rem; }
+
+    /* ── CTA SECTION ────────────────────────── */
+    .cta-section {
+      background: var(--c-primary);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .cta-title em { font-style: normal; color: var(--c-yellow); }
+    .cta-desc {
+      color: #fff;
+      font-size: 1.05rem;
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      background: #000d12;
+      padding: 2.75rem 2.5rem;
+      color: rgba(255,255,255,.45);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-logo img { height: 34px; opacity: .6; display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      color: rgba(255,255,255,.45);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--c-yellow); }
+    .footer-copy { }
+
+    /* ── ANIMATIONS ─────────────────────────── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .ueber-grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+      .ueber-accent-box { display: none; }
+    }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 0; }
+      .hero-visual { display: none; }
+      .hero-eyebrow, .hero-ctas { justify-content: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .ueber-grid { grid-template-columns: 1fr; }
+      .ueber-photo-wrap { max-width: 400px; margin: 0 auto; }
+      .prozess-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .prozess-grid::before { display: none; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.5rem; }
+      #navbar { padding: 1rem 1.5rem; }
+      #navbar.scrolled { padding: .75rem 1.5rem; }
+      .stats-bar { padding: 1.25rem 1.5rem; }
+      .stats-inner { gap: 1rem; }
+      .stat-num { font-size: 1.6rem; }
+      .ueber-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="images/logo.png" alt="LinkedIn ohne Lärm">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#prozess">Vorgehen</a></li>
+    <li><a href="#kontakt" class="btn btn-primary" style="padding:.6rem 1.25rem;">Gespräch buchen</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#leistungen" class="nav-mobile-link">Leistungen</a>
+  <a href="#ueber-mich" class="nav-mobile-link">Über mich</a>
+  <a href="#prozess" class="nav-mobile-link">Vorgehen</a>
+  <a href="#kontakt" class="btn btn-primary nav-mobile-link" style="font-size:1.25rem; padding:1rem 2rem;">Gespräch buchen</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">LinkedIn Beratung &amp; Coaching</p>
+      <h1 class="hero-title">
+        LinkedIn,
+        <em>ohne Lärm.</em>
+      </h1>
+      <p class="hero-sub">
+        Ich mag keinen Lärm auf LinkedIn – es funktioniert auch ohne.<br>
+        Ich zeig dir, wie das geht.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://lnkdin.ohnelaerm.ch/kaffeepause-buchung" class="btn btn-primary">Gespräch vereinbaren</a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungen entdecken</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img src="images/freddy-zug.jpg" alt="Freddy Hüsser mit Hund Eny">
+        <div class="hero-badge">
+          <strong>400+</strong>
+          <span>Marketing-Kunden</span>
+        </div>
+        <div class="hero-cap-badge">
+          <img src="images/cap.png" alt="">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">400+</div>
+      <div class="stat-lbl">Kunden</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4–5h</div>
+      <div class="stat-lbl">Workshop</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4 Mt.</div>
+      <div class="stat-lbl">Coaching</div>
+    </div>
+    <div class="stat-item" style="font-size:1.5rem; font-weight:900; color:var(--c-primary);">
+      <div class="stat-num" style="letter-spacing:-.02em;">0 Lärm</div>
+      <div class="stat-lbl">Garantiert</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LEISTUNGEN ══════════════ -->
+<section class="leistungen" id="leistungen">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-lbl">Leistungen</p>
+      <h2 class="section-title">Zwei Wege zum Ziel</h2>
+      <p class="section-desc">Ob intensiver Workshop oder 4-monatiges Coaching – beide Formate sind individuell auf deinen Stand und dein Ziel zugeschnitten.</p>
+    </div>
+
+    <div class="leistungen-grid">
+
+      <!-- Workshop -->
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <span class="card-badge">ca. 4–5 Stunden · Individuell</span>
+        <h3 class="card-title">Workshop</h3>
+        <p class="card-desc">Auf deinen aktuellen Stand zugeschnittene Inhalte – von den LinkedIn-Grundlagen über Content-Strategie bis zu Employer Branding. Für Einzelpersonen bis hin zu grossen Teams.</p>
+        <div class="tag-list">
+          <span class="tag">LinkedIn Basics</span>
+          <span class="tag">Personal Branding</span>
+          <span class="tag">Employer Branding</span>
+          <span class="tag">Employer Advocacy</span>
+        </div>
+        <p class="card-price">ab CHF 1'370 <small>/ Person, inkl. Vor- &amp; Nachbereitung, Handout &amp; Community</small></p>
+        <a href="https://lnkdin.ohnelaerm.ch/linkedin-workshops" class="btn btn-dark">Workshop-Angebot ansehen →</a>
+      </div>
+
+      <!-- Coaching -->
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <span class="card-badge">4 Monate · Begleitung</span>
+        <h3 class="card-title">Coaching</h3>
+        <p class="card-desc">2 initiale Workshops plus wöchentliche 45-Minuten-Calls, eine gemeinsame Contentliste, direktes Feedback und Chat-Support für dringende Fragen. Inklusive KI-Schreibpartner.</p>
+        <div class="tag-list">
+          <span class="tag">Personal Branding</span>
+          <span class="tag">Employer Branding</span>
+        </div>
+        <p class="card-price">CHF 1'948 <small>/ 4 Monate, exkl. MwSt. · Folge-Coaching möglich</small></p>
+        <a href="https://lnkdin.ohnelaerm.ch/linkedin-coaching" class="btn btn-dark">Coaching-Angebot ansehen →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ÜBER MICH ══════════════ -->
+<section class="ueber-mich" id="ueber-mich">
+  <div class="section-inner">
+    <div class="ueber-grid">
+
+      <div class="ueber-photo-wrap reveal">
+        <img src="images/freddy-zug-full.jpg" alt="Freddy Hüsser mit Hund Eny im Zug" class="main-photo">
+        <div class="ueber-accent-box">
+          <img src="images/logo.png" alt="LinkedIn ohne Lärm Logo">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="section-lbl">Über mich</p>
+        <h2 class="section-title">Hallo, ich bin Freddy.</h2>
+        <blockquote class="ueber-quote">
+          «Ich begleite dich zur gewünschten Sichtbarkeit – ohne Lärm.»
+        </blockquote>
+        <p class="ueber-body">
+          LinkedIn kann schnell laut und überwältigend wirken – täglich neue Tipps, widersprüchliche Ratschläge, laute Selbstdarstellung. Ich zeige dir, wie du LinkedIn ruhig, gezielt und effizient nutzt.
+        </p>
+        <p class="ueber-body">
+          Mit über 400 Marketing-Kunden weiss ich: Wirkung entsteht durch Klarheit, nicht durch Lautstärke. Mein Ansatz ist pragmatisch, direkt und auf deine Realität abgestimmt.
+        </p>
+        <div class="ueber-stats">
+          <div class="ueber-stat">
+            <div class="ueber-stat-num">400+</div>
+            <div class="ueber-stat-lbl">Kunden betreut</div>
+          </div>
+          <div class="ueber-stat">
+            <div class="ueber-stat-num">DACH</div>
+            <div class="ueber-stat-lbl">Tätig in der DACH-Region</div>
+          </div>
+          <div class="ueber-stat">
+            <div class="ueber-stat-num">2</div>
+            <div class="ueber-stat-lbl">Formate: Workshop & Coaching</div>
+          </div>
+          <div class="ueber-stat">
+            <div class="ueber-stat-num">0</div>
+            <div class="ueber-stat-lbl">Unnötiger Lärm</div>
+          </div>
+        </div>
+        <a href="https://lnkdin.ohnelaerm.ch/kaffeepause-buchung" class="btn btn-dark">Kaffeepause buchen – kostenlos</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROZESS ══════════════ -->
+<section class="prozess" id="prozess">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <p class="section-lbl">Vorgehen</p>
+      <h2 class="section-title">So einfach funktioniert's</h2>
+      <p class="section-desc">Kein kompliziertes Onboarding. Drei Schritte – und du bist auf dem richtigen Weg.</p>
+    </div>
+    <div class="prozess-grid">
+      <div class="prozess-step reveal">
+        <div class="step-circle">1</div>
+        <h3 class="step-title">Kostenloses Erstgespräch</h3>
+        <p class="step-desc">Wir besprechen, wo du heute stehst, was du erreichen willst und welches Format am besten zu dir passt. 20 Minuten, unverbindlich.</p>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="step-circle">2</div>
+        <h3 class="step-title">Strategie &amp; Massnahmen</h3>
+        <p class="step-desc">Ich entwickle einen individuellen Plan mit Profil-Optimierung, Themenfeldern und Content-Strategie – passend zu deiner Persönlichkeit und deinen Zielen.</p>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="step-circle">3</div>
+        <h3 class="step-title">Umsetzung &amp; Wachstum</h3>
+        <p class="step-desc">Du setzt um, ich begleite dich. Mit direktem Feedback, konkreten Vorschlägen und messbaren Ergebnissen – ohne Lärm, dafür mit Wirkung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section class="testimonials" id="stimmen">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <p class="section-lbl">Stimmen</p>
+      <h2 class="section-title">Was Kunden sagen</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Freddys Workshop hat mir gezeigt, wie ich LinkedIn ohne grossen Aufwand wirkungsvoll nutze. Klarer, praktischer Ansatz – genau das, was ich gesucht habe.»</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SM</div>
+          <div>
+            <div class="testi-name">Sandra M.</div>
+            <div class="testi-role">Head of Marketing, Zürich</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Das Coaching hat mein LinkedIn-Profil komplett transformiert. Innerhalb von 4 Monaten habe ich echte Reichweite und qualifizierte Anfragen aufgebaut.»</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TK</div>
+          <div>
+            <div class="testi-name">Thomas K.</div>
+            <div class="testi-role">Geschäftsführer, Basel</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Endlich jemand, der LinkedIn pragmatisch erklärt. Kein Bullshit, keine leeren Versprechen – nur konkrete Massnahmen, die wirklich funktionieren.»</p>
+        <div class="testi-author">
+          <div class="testi-avatar">LB</div>
+          <div>
+            <div class="testi-name">Laura B.</div>
+            <div class="testi-role">Senior Consultant, Bern</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="cta-section" id="kontakt">
+  <div class="section-inner cta-inner">
+    <div class="reveal">
+      <h2 class="cta-title">Bereit für deinen<br><em>LinkedIn-Auftritt?</em></h2>
+      <p class="cta-desc">Buch eine kostenlose Kaffeepause – 20 Minuten, unverbindlich, direkt mit Freddy.</p>
+      <a href="https://lnkdin.ohnelaerm.ch/kaffeepause-buchung" class="btn btn-primary" style="font-size:1rem; padding:1rem 2.25rem;">Kostenloses Erstgespräch buchen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo"><img src="images/logo.png" alt="LinkedIn ohne Lärm"></a>
+    <ul class="footer-links">
+      <li><a href="https://ohnelaerm.ch/impressum">Impressum</a></li>
+      <li><a href="https://ohnelaerm.ch/datenschutz">Datenschutz</a></li>
+      <li><a href="https://www.linkedin.com/in/freddy-huesser" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Freddy Hüsser · LinkedIn ohne Lärm</p>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Scroll reveal with stagger
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const siblings = [...el.parentElement.querySelectorAll('.reveal:not(.visible)')];
+      const idx = siblings.indexOf(el);
+      setTimeout(() => el.classList.add('visible'), idx * 110);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
