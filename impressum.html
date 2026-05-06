@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – LinkedIn ohne Lärm · Freddy Hüsser</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:   #00222C;
+      --c-primary-2: #103040;
+      --c-text:      #383838;
+      --c-muted:     #3d5260;
+      --c-yellow:    #FFF5CA;
+      --c-yellow-h:  #f5e680;
+      --c-white:     #FFFFFF;
+      --c-gray:      #f6f6f4;
+      --c-gray-2:    #e4e8ea;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--c-text);
+      background: var(--c-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: var(--c-primary);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page-header-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .page-header-back:hover { color: var(--c-yellow); }
+    .page-header-logo {
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      text-decoration: none;
+      opacity: .8;
+    }
+
+    /* ── HERO MINI ── */
+    .page-hero {
+      background: var(--c-primary);
+      padding: 4rem 2.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-lbl {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--c-yellow);
+      margin-bottom: .85rem;
+    }
+    .page-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    /* ── CONTENT ── */
+    .page-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .legal-block { margin-bottom: 3rem; }
+
+    .legal-block h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--c-primary);
+      margin-bottom: 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 2px solid var(--c-gray-2);
+    }
+    .legal-block h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--c-primary);
+      margin-top: 1.5rem;
+      margin-bottom: .6rem;
+    }
+    .legal-block p {
+      font-size: .95rem;
+      color: var(--c-text);
+      line-height: 1.85;
+      margin-bottom: .85rem;
+    }
+    .legal-block a {
+      color: var(--c-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .legal-block a:hover { color: var(--c-primary-2); }
+
+    .contact-block {
+      background: var(--c-gray);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .contact-block p {
+      font-size: .95rem;
+      color: var(--c-text);
+      line-height: 1.85;
+    }
+    .contact-block strong { color: var(--c-primary); }
+    .contact-block a {
+      color: var(--c-primary);
+      text-decoration: none;
+    }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--c-primary);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .footer-copy {
+      color: rgba(255,255,255,.4);
+      font-size: .82rem;
+    }
+    .footer-links { display: flex; gap: 1.75rem; }
+    .footer-links a {
+      color: rgba(255,255,255,.5);
+      font-size: .82rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--c-yellow); }
+
+    @media (max-width: 600px) {
+      .page-header { padding: 1.25rem 1.5rem; }
+      .page-hero { padding: 3rem 1.5rem 4rem; }
+      .page-content { padding: 3rem 1.5rem 4rem; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <a href="/" class="page-header-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Zurück
+  </a>
+  <a href="/" class="page-header-logo">LinkedIn ohne Lärm</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-lbl">Rechtliches</p>
+    <h1 class="page-hero-title">Impressum</h1>
+  </div>
+</div>
+
+<main class="page-content">
+
+  <div class="contact-block">
+    <p><strong>Freddy Hüsser Marketing & Digitalisierung</strong><br>
+    Hönggerstrasse 57, 8037 Zürich<br>
+    <a href="mailto:kontakt@freddyhuesser.ch">kontakt@freddyhuesser.ch</a><br>
+    <a href="tel:+41774987835">+41 77 498 78 35</a><br>
+    Handelsregister-Nr.: CH-020.1.085.959-9</p>
+  </div>
+
+  <div class="legal-block">
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Freddy Hüsser Marketing & Digitalisierung<br>
+    Hönggerstrasse 57, 8037 Zürich</p>
+  </div>
+
+  <div class="legal-block">
+    <h2>Disclaimer</h2>
+
+    <h3>Haftung für Inhalte</h3>
+    <p>Die Inhalte dieser Webseite wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen.</p>
+    <p>Als Dienstleistungsanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Schweizer und EU-Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Verpflichtungen zur Eliminierung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist erst ab dem Zeitpunkt der Kenntnis eines konkreten Rechtsbruchs möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+    <h3>Haftung für Links</h3>
+    <p>Diese Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte kein Einfluss besteht. Für diese Inhalte kann daher keine Gewähr übernommen werden. Für die Inhalte verlinkter Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+    <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverletzungen geprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte eines Rechtsverstosses nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden solche Links umgehend entfernt.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Die auf dieser Webseite erstellten Inhalte und Werke unterliegen dem schweizerischen Urheberrecht. Die Reproduktion, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+    <p>Sollte eine Urheberrechtsverletzung bekannt werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden werden entsprechende Inhalte umgehend entfernt.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 Freddy Hüsser · LinkedIn ohne Lärm</p>
+    <div class="footer-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

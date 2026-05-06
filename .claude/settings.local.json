@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ohnelaerm.ch)",
+      "Bash(curl -s \"https://ohnelaerm.ch/ueber-freddy/\")",
+      "Bash(curl -s \"https://lnkdin.ohnelaerm.ch/linkedin-coaching\")",
+      "Bash(curl -s \"https://ohnelaerm.ch/\")"
+    ]
+  }
+}
