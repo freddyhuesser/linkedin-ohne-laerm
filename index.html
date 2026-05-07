@@ -137,8 +137,9 @@
       height: 2px;
       background: #fff;
       border-radius: 2px;
-      transition: transform .3s ease, opacity .3s ease;
+      transition: transform .3s ease, opacity .3s ease, background .3s ease;
     }
+    .fam--light-bg .fam-toggle .bar { background: var(--c-primary); }
     .fam-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .fam-toggle.open .bar:nth-child(2) { opacity: 0; }
     .fam-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -1298,6 +1299,21 @@
       famToggle.classList.remove('open');
     });
   });
+
+  // FAM colour: switch bars to dark when over light sections
+  const famWrap = document.getElementById('famWrap');
+  const lightSections = document.querySelectorAll('.workshop-section, .coaching-section, .kontakt-section, .ueber-mich');
+  function updateFamColor() {
+    const famY = window.scrollY + famWrap.getBoundingClientRect().top + 24;
+    let isLight = false;
+    lightSections.forEach(s => {
+      const top = window.scrollY + s.getBoundingClientRect().top;
+      if (famY >= top && famY <= top + s.offsetHeight) isLight = true;
+    });
+    famWrap.classList.toggle('fam--light-bg', isLight);
+  }
+  window.addEventListener('scroll', updateFamColor, { passive: true });
+  updateFamColor();
 
   // Scroll reveal with stagger
   const revealEls = document.querySelectorAll('.reveal');
