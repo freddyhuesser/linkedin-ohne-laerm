@@ -31,7 +31,7 @@
       --r:            8px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -538,6 +538,7 @@
       gap: 1rem;
       margin-bottom: 3.5rem;
     }
+    .stats-grid--3 { grid-template-columns: repeat(3, 1fr); }
     .stat-card {
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.1);
@@ -795,7 +796,7 @@
       line-height: 1.15;
       margin-bottom: 1.25rem;
     }
-    .cta-title em { font-style: normal; color: var(--c-yellow); }
+    .cta-title em { font-style: normal; color: #fff; }
     .cta-desc {
       color: rgba(255,255,255,.88);
       font-size: 1.05rem;
@@ -812,6 +813,7 @@
     }
 
     /* ── KONTAKTFORMULAR ───────────────────── */
+    .kontakt-section { padding-top: 3rem; }
     .kontakt-section {
       background-color: var(--c-white);
       background-image: radial-gradient(circle, rgba(0,34,44,.05) 1px, transparent 1px);
@@ -927,6 +929,9 @@
       .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
       .hero-stat-divider { display: none; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid--3 { grid-template-columns: 1fr; }
+      .ueberblick-desc { font-size: 1.1rem; }
+      p, li { font-size: 1.0rem; }
     }
   </style>
 </head>
@@ -1048,7 +1053,7 @@
       <p class="section-lbl">Angebote</p>
       <h2 class="section-title">Zwei Wege. Ein Ziel.</h2>
     </div>
-    <p class="ueberblick-desc reveal">Du wählst, was du brauchst: ein Workshop zu LinkedIn Basics, Content, Interaktion, Netzwerk, Employer Branding oder Positionierung – als Einzelperson oder mit dem Team, genau dort angesetzt, wo ihr gerade steht. Oder du willst nachhaltigen Aufbau: vier Monate, ein konkretes Vorhaben, gemeinsam umgesetzt – bis dein Thought Leadership und deine Sichtbarkeit auf LinkedIn wirklich tragen.</p>
+    <p class="ueberblick-desc reveal">Du wählst, was du brauchst: ein Workshop zu LinkedIn Basics, Content, Interaktion, Netzwerk, Employer Branding oder Positionierung – als Einzelperson oder mit dem Team, genau dort angesetzt, wo ihr gerade steht. Oder du entscheidest dich für eine längerfristige Begleitung: Über vier Monate arbeiten wir gemeinsam an einem konkreten Ziel, mit klarer Positionierung, einer passenden Contentstrategie und einem Auftritt, der auf LinkedIn sichtbar wird und Vertrauen aufbaut. Damit aus einzelnen Aktivitäten eine Präsenz entsteht, die langfristig wirkt.</p>
     <div class="ueberblick-ctas reveal">
       <a href="#workshop" class="btn btn-primary">Workshop entdecken</a>
       <a href="#coaching" class="btn btn-ghost">Coaching entdecken</a>
@@ -1113,7 +1118,7 @@
 <!-- ══════════════ STATS BAR ══════════════ -->
 <section class="ueberblick" style="padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: center;">
   <div class="section-inner">
-    <div class="stats-grid reveal" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 0;">
+    <div class="stats-grid stats-grid--3 reveal" style="margin-bottom: 0;">
       <div class="stat-card">
         <span class="stat-card-num">400+</span>
         <span class="stat-card-label">Kunden in der Schweiz</span>
