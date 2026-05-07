@@ -194,7 +194,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: 5rem 2.5rem;
+      padding: 5rem 2.5rem 8rem;
     }
     .hero-dots {
       position: absolute;
@@ -556,7 +556,7 @@
       margin-bottom: .5rem;
     }
     .stat-card-label {
-      font-size: .88rem;
+      font-size: 1rem;
       color: rgba(255,255,255,.78);
       line-height: 1.4;
     }
@@ -697,16 +697,34 @@
     }
     .ueber-grid {
       display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 6rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
       align-items: center;
     }
     .ueber-photo-col { position: relative; }
-    .ueber-photo-wrap {
+    .ueber-photo-stack {
+      display: flex;
+      align-items: flex-start;
+    }
+    .ueber-photo-wrap-1 {
+      width: 53%;
+      flex-shrink: 0;
       border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 4/5;
-      box-shadow: 0 32px 72px rgba(0,34,44,.12);
+      box-shadow: 0 24px 64px rgba(0,34,44,.15);
+      z-index: 2;
+      position: relative;
+    }
+    .ueber-photo-wrap-2 {
+      width: 53%;
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,34,44,.10);
+      z-index: 1;
+      position: relative;
+      margin-left: -6%;
+      margin-top: 3rem;
     }
     .ueber-photo {
       width: 100%;
@@ -893,7 +911,9 @@
     @media (max-width: 860px) {
       .hero { padding: 7rem 1.5rem 4rem; }
       .ueber-grid { grid-template-columns: 1fr; }
-      .ueber-photo-col { max-width: 380px; margin: 0 auto; }
+      .ueber-photo-col { max-width: 480px; margin: 0 auto; }
+      .ueber-photo-wrap-1, .ueber-photo-wrap-2 { width: 58%; }
+      .ueber-photo-wrap-2 { margin-left: -16%; margin-top: 2rem; }
       .detail-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -947,9 +967,9 @@
     </div>
 
     <div class="hero-pain">
-      <span class="hero-pain-line">Du weisst, dass LinkedIn wichtig wäre – aber du weisst nicht, wo anfangen.</span>
-      <span class="hero-pain-line">Du postest ab und zu, die Reichweite bleibt aus, der Aufwand fühlt sich sinnlos an.</span>
-      <span class="hero-pain-line"><strong>Das muss nicht so sein.</strong> Ich zeige dir, wie LinkedIn ohne Lärm für dich arbeitet.</span>
+      <span class="hero-pain-line">Zu wenige Bewerbungen. Kaum Kundenanfragen. Der LinkedIn-Auftritt existiert, aber wirkt nicht.</span>
+      <span class="hero-pain-line">Employer Branding bleibt Theorie, Mitarbeitende posten nicht und die Reichweite bleibt aus.</span>
+      <span class="hero-pain-line">Ich helfe Marketing- und HR-Teams, LinkedIn strategisch zu nutzen und unterstütze auf Wunsch auch bei der Umsetzung. Für nachhaltige Sichtbarkeit im Markt und einen spürbaren Effekt.</span>
     </div>
 
     <div class="hero-ctas">
@@ -960,28 +980,42 @@
       <a href="#angebote" class="btn-hero btn-hero-ghost">Leistungen entdecken</a>
     </div>
 
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num">400+</span>
-        Kunden
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">4–5h</span>
-        Workshop
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">4 Mt.</span>
-        Coaching
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">0 Lärm</span>
-        <span class="hero-stat-sub">Garantiert</span>
+  </div>
+
+  <div class="logo-bar logo-bar--dark" id="referenzen-1" style="background: transparent; position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; border: none; padding: 1.5rem 0;">
+    <div class="logo-slider">
+      <div class="logo-slider-track">
+        <img src="images/Terra%20Verde.png" alt="Terra Verde">
+        <img src="images/Globus.png" alt="Globus">
+        <img src="images/Breitenmoser%20HR.png" alt="Breitenmoser HR">
+        <img src="images/24%20translate.png" alt="24translate">
+        <img src="images/NSTI.png" alt="NSTI">
+        <img src="images/Compremium.png" alt="Compremium">
+        <img src="images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich">
+        <img src="images/blueworks.png" alt="blue.works">
+        <img src="images/Swiss%20Olympic.png" alt="Swiss Olympic">
+        <img src="images/BFH.png" alt="Berner Fachhochschule">
+        <img src="images/HSO.png" alt="HSO">
+        <img src="images/BZT.png" alt="BZT">
+        <img src="images/GeoWerkstatt.png" alt="GeoWerkstatt">
+        <img src="images/NZZJobs.png" alt="NZZ Jobs">
+        <!-- Duplikat für nahtlose Schleife -->
+        <img src="images/Terra%20Verde.png" alt="Terra Verde">
+        <img src="images/Globus.png" alt="Globus">
+        <img src="images/Breitenmoser%20HR.png" alt="Breitenmoser HR">
+        <img src="images/24%20translate.png" alt="24translate">
+        <img src="images/NSTI.png" alt="NSTI">
+        <img src="images/Compremium.png" alt="Compremium">
+        <img src="images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich">
+        <img src="images/blueworks.png" alt="blue.works">
+        <img src="images/Swiss%20Olympic.png" alt="Swiss Olympic">
+        <img src="images/BFH.png" alt="Berner Fachhochschule">
+        <img src="images/HSO.png" alt="HSO">
+        <img src="images/BZT.png" alt="BZT">
+        <img src="images/GeoWerkstatt.png" alt="GeoWerkstatt">
+        <img src="images/NZZJobs.png" alt="NZZ Jobs">
       </div>
     </div>
-
   </div>
 </section>
 
@@ -993,7 +1027,7 @@
         <p class="section-lbl">LinkedIn Beratung &amp; Coaching</p>
         <h2 class="section-title">LinkedIn wirksam und effizient nutzen</h2>
       </div>
-      <p class="einleitung-text reveal">LinkedIn bietet alles, um in der Branche sichtbar zu werden. Als Einzelperson für die Karriere oder als Unternehmen, um neue Kunden oder Mitarbeiter anzusprechen. Doch viele Firmen und auch Einzelpersonen schöpfen dieses Potenzial nicht aus.</p>
+      <p class="einleitung-text reveal">LinkedIn bietet alles, um als Person oder als Unternehmen in der Branche sichtbar zu werden. Ob Personal Branding für Fach- und Führungspersonen, Employer Branding für Unternehmen oder Employer Advocacy mit ganzen Teams – das Potenzial ist enorm. Doch die meisten schöpfen es kaum aus.</p>
       <p class="einleitung-text reveal">Dabei ist LinkedIn, mit der richtigen Strategie und dem notwendigen Wissen über den Algorithmus, ein extrem wirkungsvolles Vermarktungs-Tool.</p>
       <p class="einleitung-text reveal">Ich schule meine Kunden oder begleite sie als persönlicher Coach in der LinkedIn Vermarktung. Mein Wissen aus über 10 Jahren Digital Marketing Strategie fliesst in jede Zusammenarbeit mit ein.</p>
       <p class="einleitung-text reveal"><strong>Aber immer ohne Lärm.</strong></p>
@@ -1015,24 +1049,6 @@
       <h2 class="section-title">Zwei Wege. Ein Ziel.</h2>
     </div>
     <p class="ueberblick-desc reveal">Ob du in einem kompakten Workshop lernst, wie LinkedIn wirklich funktioniert, oder ob wir vier Monate lang gemeinsam deinen Auftritt aufbauen – der Ansatz ist immer gleich: kein Lärm, keine leeren Versprechen, nur was funktioniert.</p>
-    <div class="stats-grid reveal">
-      <div class="stat-card">
-        <span class="stat-card-num">400+</span>
-        <span class="stat-card-label">Kunden in der Schweiz</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">4–5h</span>
-        <span class="stat-card-label">pro Workshop</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">4 Mt.</span>
-        <span class="stat-card-label">Coaching-Begleitung</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">0 Lärm</span>
-        <span class="stat-card-label">Garantiert</span>
-      </div>
-    </div>
     <div class="ueberblick-ctas reveal">
       <a href="#workshop" class="btn btn-primary">Workshop entdecken</a>
       <a href="#coaching" class="btn btn-ghost">Coaching entdecken</a>
@@ -1045,18 +1061,19 @@
   <div class="section-inner">
     <div class="section-header reveal">
       <p class="section-lbl">LinkedIn Workshop</p>
-      <h2 class="section-title">Lerne LinkedIn effizient und wirkungsvoll zu nutzen</h2>
+      <h2 class="section-title">LinkedIn gezielt nutzen – für dich, dein Team und dein Unternehmen</h2>
     </div>
     <div class="detail-grid">
       <div>
         <p class="detail-lead reveal">In meinen Workshops lernst du alles Nötige zur LinkedIn Vermarktung. Im Fokus steht der Aufbau einer klaren LinkedIn-Präsenz: von den Basics über die Rolle einzelner Personen bis zur Verankerung von Content-Prozessen in Unternehmen.</p>
         <p class="detail-lead reveal">Die Inhalte stelle ich individuell für dich zusammen. Je nach Tiefe können die Themen auf mehrere Workshops verteilt werden. Auf Wunsch vertiefen wir spezifische Themen in Follow-Up-Workshops – zum Beispiel KI-Tools für Content-Erstellung oder den gezielten Netzwerkaufbau.</p>
-        <p class="detail-lead reveal">Die Workshops richten sich an Fach- und Führungspersonen, die LinkedIn gezielt für den Aufbau ihrer Sichtbarkeit nutzen wollen – ob allein, zu zweit oder als Team.</p>
+        <p class="detail-lead reveal">Die Workshops richten sich an Einzelpersonen, Teams und Unternehmen: von der Fachperson, die ihr Personal Branding aufbauen will, bis zum Unternehmen, das Employer Branding und Employer Advocacy systematisch mit seinen Mitarbeitenden etablieren möchte.</p>
         <ul class="feature-list reveal">
           <li>LinkedIn Profil-Optimierung</li>
           <li>Klare Positionierung &amp; Themenfelder</li>
           <li>Content-Strategie &amp; Algorithmus-Wissen</li>
-          <li>Personal Branding &amp; Employer Advocacy</li>
+          <li>Personal Branding &amp; Positionierung</li>
+          <li>Employer Branding &amp; Employer Advocacy</li>
           <li>KI-Tools für Content-Erstellung (optional)</li>
           <li>Vorbereitung, Nachbereitung &amp; digitales Handout inklusive</li>
           <li>Zugang zur WhatsApp Community</li>
@@ -1091,45 +1108,27 @@
   </div>
 </section>
 
-<!-- ══════════════ LOGO BAR 2 ══════════════ -->
-<div class="logo-bar logo-bar--dark" id="referenzen-2">
+
+
+<!-- ══════════════ STATS BAR ══════════════ -->
+<section class="ueberblick" style="padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: center;">
   <div class="section-inner">
-    <p class="logo-bar-label">Einige meiner 400+ Kunden &amp; Hochschulen</p>
-  </div>
-  <div class="logo-slider">
-    <div class="logo-slider-track">
-      <img src="images/Terra%20Verde.png" alt="Terra Verde">
-      <img src="images/Globus.png" alt="Globus">
-      <img src="images/Breitenmoser%20HR.png" alt="Breitenmoser HR">
-      <img src="images/24%20translate.png" alt="24translate">
-      <img src="images/NSTI.png" alt="NSTI">
-      <img src="images/Compremium.png" alt="Compremium">
-      <img src="images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich">
-      <img src="images/blueworks.png" alt="blue.works">
-      <img src="images/Swiss%20Olympic.png" alt="Swiss Olympic">
-      <img src="images/BFH.png" alt="Berner Fachhochschule">
-      <img src="images/HSO.png" alt="HSO">
-      <img src="images/BZT.png" alt="BZT">
-      <img src="images/GeoWerkstatt.png" alt="GeoWerkstatt">
-      <img src="images/NZZJobs.png" alt="NZZ Jobs">
-      <!-- Duplikat für nahtlose Schleife -->
-      <img src="images/Terra%20Verde.png" alt="Terra Verde">
-      <img src="images/Globus.png" alt="Globus">
-      <img src="images/Breitenmoser%20HR.png" alt="Breitenmoser HR">
-      <img src="images/24%20translate.png" alt="24translate">
-      <img src="images/NSTI.png" alt="NSTI">
-      <img src="images/Compremium.png" alt="Compremium">
-      <img src="images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich">
-      <img src="images/blueworks.png" alt="blue.works">
-      <img src="images/Swiss%20Olympic.png" alt="Swiss Olympic">
-      <img src="images/BFH.png" alt="Berner Fachhochschule">
-      <img src="images/HSO.png" alt="HSO">
-      <img src="images/BZT.png" alt="BZT">
-      <img src="images/GeoWerkstatt.png" alt="GeoWerkstatt">
-      <img src="images/NZZJobs.png" alt="NZZ Jobs">
+    <div class="stats-grid reveal" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 0;">
+      <div class="stat-card">
+        <span class="stat-card-num">400+</span>
+        <span class="stat-card-label">Kunden in der Schweiz</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">3 Hochschulen</span>
+        <span class="stat-card-label">Seit 2021</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">0 Lärm</span>
+        <span class="stat-card-label">Seit 1985</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ══════════════ COACHING ══════════════ -->
 <section class="coaching-section" id="coaching">
@@ -1175,42 +1174,23 @@
     <div class="ueber-grid">
 
       <div class="ueber-photo-col reveal">
-        <div class="ueber-photo-wrap">
-          <img src="images/Freddy%20H%C3%BCsser.jpg" alt="Freddy Hüsser" class="ueber-photo">
+        <div class="ueber-photo-stack">
+          <div class="ueber-photo-wrap-1">
+            <img src="images/Freddy%20H%C3%BCsser.jpg" alt="Freddy Hüsser" class="ueber-photo">
+          </div>
+          <div class="ueber-photo-wrap-2">
+            <img src="images/Freddy%20Eny.jpg" alt="Freddy und Eny" class="ueber-photo">
+          </div>
         </div>
       </div>
 
       <div class="ueber-content reveal">
         <p class="section-lbl">Über mich</p>
-        <h2 class="section-title">Hallo, ich bin Freddy.</h2>
+        <h2 class="section-title">Hallo, ich bin Freddy.<br>Und das ist Eny.</h2>
 
         <p class="ueber-lead">Seit bald zehn Jahren unterstütze ich Unternehmen und Personen dabei, sich im Markt klar zu positionieren – für mehr Sichtbarkeit, Wirkung und konkrete Ziele, wie den nächsten Karriereschritt oder den Aufbau einer starken Marke.</p>
         <p class="ueber-lead">Ohne unnötigen Lärm – effizient &amp; sympathisch. Als Berater und Referent entwickle ich Markenauftritte, die zur Persönlichkeit passen. An drei Hochschulen unterrichte ich Marketingstrategie – praxisnah und mit Blick auf das, was draussen zählt.</p>
         <p class="ueber-lead">In meiner Freizeit begleite ich Eny in den Wald, an die Limmat oder auf die Joggingrunde durchs Quartier.</p>
-
-        <div class="ueber-creds">
-          <div class="ueber-cred">
-            <span class="ueber-cred-num">10+</span>
-            <div class="ueber-cred-body">
-              <strong>Jahre Digital Marketing</strong>
-              <p>Fundiertes Praxiswissen – nicht aus Büchern, sondern aus echten Projekten mit Unternehmen aller Grössen.</p>
-            </div>
-          </div>
-          <div class="ueber-cred">
-            <span class="ueber-cred-num">400+</span>
-            <div class="ueber-cred-body">
-              <strong>Kunden in der Schweiz</strong>
-              <p>Fach- und Führungskräfte, die LinkedIn heute wirksam und ohne grossen Aufwand für sich einsetzen.</p>
-            </div>
-          </div>
-          <div class="ueber-cred">
-            <span class="ueber-cred-num">3</span>
-            <div class="ueber-cred-body">
-              <strong>Hochschulen als Dozent</strong>
-              <p>Wo Theorie auf Praxis trifft – ich lehre, was ich täglich selbst anwende und für Kunden umsetze.</p>
-            </div>
-          </div>
-        </div>
 
         <a href="#kontakt" class="btn btn-dark">Kaffeepause buchen – kostenlos</a>
       </div>
