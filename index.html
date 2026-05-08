@@ -23,7 +23,7 @@
       --c-muted:      #3d5260;
       --c-accent-bg:  #FFF5CA;
       --c-yellow:     #FFF5CA;
-      --c-yellow-h:   #f5e680;
+      --c-yellow-h:   #e73643;
       --c-yellow-d:   #8a6f00;
       --c-white:      #FFFFFF;
       --c-gray:       #f6f6f4;
@@ -65,6 +65,7 @@
     }
     .btn-primary:hover {
       background: var(--c-yellow-h);
+      color: #fff;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.1);
     }
@@ -86,8 +87,8 @@
       border-color: var(--c-primary);
     }
     .btn-dark:hover {
-      background: var(--c-primary-2);
-      border-color: var(--c-primary-2);
+      background: #e73643;
+      border-color: #e73643;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.2);
     }
@@ -175,14 +176,16 @@
       box-shadow: 0 4px 20px rgba(0,0,0,.25);
       opacity: 0;
       transform: translateX(12px);
-      transition: opacity .2s ease, transform .2s ease, background .2s;
+      transition: opacity .2s ease, transform .2s ease, background .2s, color .2s;
     }
     .fam-items.open .fam-item { opacity: 1; transform: translateX(0); }
     .fam-items.open .fam-item:nth-child(1) { transition-delay: .03s; }
     .fam-items.open .fam-item:nth-child(2) { transition-delay: .07s; }
     .fam-items.open .fam-item:nth-child(3) { transition-delay: .11s; }
     .fam-items.open .fam-item:nth-child(4) { transition-delay: .15s; }
-    .fam-item:hover { background: rgba(0,34,44,1); }
+    .fam-items.open .fam-item:nth-child(5) { transition-delay: .19s; }
+    .fam-items.open .fam-item:nth-child(6) { transition-delay: .23s; }
+    .fam-item:hover { background: #e73643; color: #fff; }
     .fam-item.cta { background: var(--c-yellow); color: var(--c-primary); border-color: var(--c-yellow); }
     .fam-item.cta:hover { background: var(--c-yellow-h); }
 
@@ -319,6 +322,7 @@
     }
     .btn-hero-primary:hover {
       background: var(--c-yellow-h);
+      color: #fff;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.15);
     }
@@ -572,9 +576,7 @@
 
     /* ── DETAIL SECTIONS (Workshop & Coaching) ── */
     .workshop-section {
-      background-color: var(--c-gray);
-      background-image: radial-gradient(circle, rgba(0,34,44,.07) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-color: var(--c-white);
     }
     .coaching-section {
       background-color: var(--c-white);
@@ -903,6 +905,115 @@
     }
     .footer-bottom-links a:hover { color: rgba(255,255,255,.85); }
 
+    /* ── REVIEWS ─────────────────────────────── */
+    .reviews-section { background: var(--c-gray); }
+    .reviews-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--c-white);
+      border-radius: 50px;
+      padding: .45rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: .88rem;
+      box-shadow: 0 2px 8px rgba(0,34,44,.06);
+    }
+    .reviews-stars { color: #F59E0B; letter-spacing: 1px; }
+    .reviews-rating { font-weight: 700; color: var(--c-primary); }
+    .reviews-count { color: var(--c-muted); }
+
+    .reviews-carousel {
+      position: relative;
+      margin-top: 3rem;
+    }
+    .reviews-track-wrap { overflow: hidden; }
+    .reviews-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform .45s cubic-bezier(.4,0,.2,1);
+    }
+    .review-card {
+      background: var(--c-white);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      flex: 0 0 320px;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      box-shadow: 0 2px 14px rgba(0,34,44,.07);
+    }
+    .review-card-stars { color: #F59E0B; font-size: 1rem; letter-spacing: 2px; }
+    .review-card-text {
+      font-size: .9rem;
+      line-height: 1.8;
+      color: var(--c-text);
+      flex: 1;
+    }
+    .review-card-footer {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      border-top: 1px solid var(--c-gray-2);
+      padding-top: .85rem;
+      margin-top: auto;
+    }
+    .review-card-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--av-color, var(--c-primary));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      letter-spacing: .03em;
+    }
+    .review-card-name { font-size: .84rem; font-weight: 600; color: var(--c-primary); }
+    .review-card-company { font-size: .76rem; color: var(--c-muted); margin-top: .1rem; }
+
+    .reviews-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--c-white);
+      border: 1.5px solid var(--c-gray-2);
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--c-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      box-shadow: 0 2px 10px rgba(0,34,44,.1);
+      transition: background .2s, transform .2s;
+      line-height: 1;
+    }
+    .reviews-arrow:hover { background: var(--c-yellow); transform: translateY(-50%) scale(1.05); }
+    .reviews-arrow--prev { left: -23px; }
+    .reviews-arrow--next { right: -23px; }
+    @media (max-width: 860px) {
+      .reviews-arrow { display: none; }
+      .reviews-track-wrap {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .reviews-track-wrap::-webkit-scrollbar { display: none; }
+      .reviews-track { transition: none; }
+      .review-card { scroll-snap-align: start; flex: 0 0 280px; }
+    }
+    @media (max-width: 600px) {
+      .review-card { flex: 0 0 calc(100vw - 4.5rem); }
+      .reviews-summary { flex-wrap: wrap; justify-content: center; text-align: center; }
+    }
+
     /* ── ANIMATIONS ─────────────────────────── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -948,9 +1059,11 @@
     <span class="bar"></span>
   </button>
   <div class="fam-items" id="famItems">
+    <a href="#einleitung" class="fam-item">Darum geht's</a>
     <a href="#workshop" class="fam-item">Workshop</a>
     <a href="#coaching" class="fam-item">Coaching</a>
-    <a href="#ueber-mich" class="fam-item">Über mich</a>
+    <a href="#ueber-mich" class="fam-item">Freddy &amp; Eny</a>
+    <a href="#kontakt-formular" class="fam-item">Schreib mir</a>
     <a href="#kontakt" class="fam-item cta">Kaffeepause buchen</a>
   </div>
 </div>
@@ -1118,23 +1231,181 @@
 
 
 
-<!-- ══════════════ STATS BAR ══════════════ -->
-<section class="ueberblick" style="padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: center;">
+<!-- ══════════════ REZENSIONEN ══════════════ -->
+<section class="reviews-section">
   <div class="section-inner">
-    <div class="stats-grid stats-grid--3 reveal" style="margin-bottom: 0;">
-      <div class="stat-card">
-        <span class="stat-card-num">400+</span>
-        <span class="stat-card-label">Seit 2016</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">3 Hochschulen</span>
-        <span class="stat-card-label">Seit 2021</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card-num">0 Lärm</span>
-        <span class="stat-card-label">Seit 1985</span>
+    <div class="section-header center reveal">
+      <p class="section-lbl">Google Rezensionen</p>
+      <h2 class="section-title">Was Kunden sagen</h2>
+      <div class="reviews-summary">
+        <span class="reviews-stars">★★★★★</span>
+        <span class="reviews-rating">4.9</span>
+        <span class="reviews-count">· 55 Rezensionen auf Google</span>
       </div>
     </div>
+
+    <div class="reviews-carousel reveal">
+      <button class="reviews-arrow reviews-arrow--prev" aria-label="Zurück">&#8249;</button>
+      <div class="reviews-track-wrap">
+        <div class="reviews-track" id="reviewsTrack">
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">3.5 Stunden LinkedIn und es wurde nie langweilig! Vielen Dank lieber Freddy für den super aufgebauten Kurs und die vielen Tipps, die sofort umgesetzt werden konnten.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#D9534F">KZ</div>
+              <div>
+                <div class="review-card-name">Kathrin Zenhäusern</div>
+                <div class="review-card-company">Selbständig</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Ich konnte viele neue Inputs mitnehmen. Freddy hat den Kurs attraktiv und kurzweilig gestaltet. Er konnte mit seinem Wissen überzeugen – Super Kurs.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#5B7FA6">DS</div>
+              <div>
+                <div class="review-card-name">Dominik Spycher</div>
+                <div class="review-card-company">BZT Frauenfeld</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Drei und eine halbe Stunde bestens investierte Zeit! Nie langweilig, keine Redundanzen, mit klarem roten Faden. Dieser Kurs von Freddy Hüsser generiert Mehrwert und macht Spass. Mach mehr aus Deinem LinkedIn!</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#5B9B6B">RC</div>
+              <div>
+                <div class="review-card-name">Reto Cadalbert</div>
+                <div class="review-card-company">Zürcher Kantonalbank</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Thank you Freddy Hüsser and team! You have done a great job. Competent, reliable and empathetic advice! I am very happy with the result! Gladly again. Sibylle</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#3d5260">SB</div>
+              <div>
+                <div class="review-card-name">Sibylle Burgener-Schmid</div>
+                <div class="review-card-company">Selbständig</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Sehr praxisbezogene und persönliche Beratung, kompakt in 1-tägigem Marketing-Kurs auf den Punkt gebracht.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#3d5260">SK</div>
+              <div>
+                <div class="review-card-name">Stefan Kiener</div>
+                <div class="review-card-company">GeoWerkstatt</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Wissen von was sie sprechen. Klar und verständlich.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#7C5C8B">PF</div>
+              <div>
+                <div class="review-card-name">Philipp Fröhli</div>
+                <div class="review-card-company">Elk Consulting</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Freddy ist großartig, führt einem auch erfahrenen Coach oder Berater mit viel Humor, Charme und Leichtigkeit das vor, was dann doch noch verbessert werden kann. Ein echtes Highlight auf der Veranstaltung. Lieben Dank Freddy!</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#C17B2B">KS</div>
+              <div>
+                <div class="review-card-name">Katja Schaefer Coaching</div>
+                <div class="review-card-company">Leadership Coach</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Freddy ist einfach nur super sympathisch und authentisch. Er weiß was er tut ohne dir großartig was aufzuschwätzen. Er macht alles ruhig und gibt dir die Informationen die du brauchst. Große Empfehlung!</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#3d5260">LS</div>
+              <div>
+                <div class="review-card-name">Lisa Sebera</div>
+                <div class="review-card-company">Selbständig</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Das Referat von Freddy am Social Selling Day in Zürich war einfach genial. Was mit der richtigen Strategie im Onlinemarketing erreicht werden kann ist GENIAL. Freddy und sein Team hilft dir dabei, dass deine Sichtbarkeit abgeht wie eine Rakete.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#1F2937">TM</div>
+              <div>
+                <div class="review-card-name">THE MAN:Switzerland</div>
+                <div class="review-card-company">Haval Schweiz</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Genau was ich gebraucht habe, zielgerichtete lösungsorientierte Herangehensweise zu fairen Konditionen. Dies alles bei einer sehr angenehmen Arbeitsatmosphäre.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#C0392B">RI</div>
+              <div>
+                <div class="review-card-name">Roman Isliker</div>
+                <div class="review-card-company">Selbständig</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">PROFESSIONELL und MENSCHLICH WERTVOLL! Mit Freddy und seinem Team gelingt es mir immer weniger Fragezeichen zu haben. Ich schätze sehr die professionellen Ideen, Konzepte und Umsetzungen. DANKE VIELMALS!</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#2E7D32">EW</div>
+              <div>
+                <div class="review-card-name">Erich Wohlwend</div>
+                <div class="review-card-company">Kairos Partner</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Freddy und sein Team sind für mich die perfekten Wegbereiter auf meinem neuen Abenteuer der Selbständigkeit. Emphatisch, effizient und trotz aller Fokussierung verlieren sie nicht den Humor und die Leichtigkeit. Dankeschön Freddy &amp; Crew.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#1565C0">RM</div>
+              <div>
+                <div class="review-card-name">Remo Meier</div>
+                <div class="review-card-company">Selbständig</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Das digitale Marketing – ein Gräuel! Bis ich Freddy vor drei Jahren gefunden habe. Mit deiner Unterstützung kann ich heute erfolgreiche Kampagnen gestalten und lancieren. Zusätzlich habe ich einen äusserst wertvollen Gesprächspartner für unternehmerische Strategien gewonnen.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#2E7D32">KP</div>
+              <div class="review-card-name">KAIROS Partner AG</div>
+            </div>
+          </div>
+
+        </div><!-- /.reviews-track -->
+      </div><!-- /.reviews-track-wrap -->
+      <button class="reviews-arrow reviews-arrow--next" aria-label="Weiter">&#8250;</button>
+    </div><!-- /.reviews-carousel -->
   </div>
 </section>
 
@@ -1242,10 +1513,30 @@
 <div class="map-embed">
   <iframe
     src="https://maps.google.com/maps?q=Freddy+H%C3%BCsser+LinkedIn+Corporate+%26+Personal+Branding+f%C3%BCr+Unternehmen+%26+F%C3%BChrungskr%C3%A4fte&output=embed&hl=de&z=15"
-    width="100%" height="380" style="border:0; display:block; filter: grayscale(1) contrast(1.1);"
+    width="100%" height="570" style="border:0; display:block;"
     allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
+
+<!-- ══════════════ STATS BAR ══════════════ -->
+<section class="ueberblick" style="padding: 4rem 2.5rem; display: flex; align-items: center; justify-content: center;">
+  <div class="section-inner">
+    <div class="stats-grid stats-grid--3 reveal" style="margin-bottom: 0;">
+      <div class="stat-card">
+        <span class="stat-card-num">400+ Kunden</span>
+        <span class="stat-card-label">Seit 2016</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">3 Hochschulen</span>
+        <span class="stat-card-label">Seit 2021</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num">0 Lärm</span>
+        <span class="stat-card-label">Seit 1985</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════ FOOTER ══════════════ -->
 <footer>
@@ -1312,7 +1603,7 @@
 
   // FAM colour: switch bars to dark when over light sections
   const famWrap = document.getElementById('famWrap');
-  const lightSections = document.querySelectorAll('.workshop-section, .coaching-section, .kontakt-section, .ueber-mich');
+  const lightSections = document.querySelectorAll('.einleitung, .workshop-section, .coaching-section, .kontakt-section, .ueber-mich, .reviews-section');
   function updateFamColor() {
     const famY = window.scrollY + famWrap.getBoundingClientRect().top + 24;
     let isLight = false;
@@ -1339,6 +1630,22 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   revealEls.forEach(el => io.observe(el));
+
+  // Reviews carousel
+  const reviewsTrack = document.getElementById('reviewsTrack');
+  if (reviewsTrack) {
+    const reviewCards = [...reviewsTrack.querySelectorAll('.review-card')];
+    const gap = 24;
+    let curIdx = 0;
+    const visibleCount = () => Math.max(1, Math.floor((reviewsTrack.parentElement.offsetWidth) / (reviewCards[0].offsetWidth + gap)));
+    const maxIdx = () => Math.max(0, reviewCards.length - visibleCount());
+    const moveTo = (n) => {
+      curIdx = Math.max(0, Math.min(n, maxIdx()));
+      reviewsTrack.style.transform = `translateX(-${curIdx * (reviewCards[0].offsetWidth + gap)}px)`;
+    };
+    document.querySelector('.reviews-arrow--prev')?.addEventListener('click', () => moveTo(curIdx - 1));
+    document.querySelector('.reviews-arrow--next')?.addEventListener('click', () => moveTo(curIdx + 1));
+  }
 </script>
 
 </body>
