@@ -105,16 +105,12 @@
       box-shadow: 0 6px 20px rgba(0,34,44,.12);
     }
 
-    /* ── FLOATING ACTION MENU ───────────────────── */
+    /* ── HAMBURGER TOGGLE ───────────────────────── */
     .fam-wrap {
       position: fixed;
       top: 1.75rem;
       right: 2rem;
-      z-index: 300;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: .6rem;
+      z-index: 400;
     }
     .fam-toggle {
       width: 48px;
@@ -129,65 +125,102 @@
       justify-content: center;
       gap: 5px;
       transition: background .2s;
-      flex-shrink: 0;
     }
     .fam-toggle:hover { background: transparent; }
     .fam-toggle .bar {
       display: block;
-      width: 20px;
+      width: 22px;
       height: 2px;
       background: #fff;
       border-radius: 2px;
-      transition: transform .3s ease, opacity .3s ease, background .3s ease;
+      transition: transform .35s ease, opacity .35s ease, background .3s ease;
     }
     .fam--light-bg .fam-toggle .bar { background: var(--c-primary); }
+    .nav-overlay-open .fam-toggle .bar { background: var(--c-primary); }
     .fam-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .fam-toggle.open .bar:nth-child(2) { opacity: 0; }
     .fam-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .fam-items {
+
+    /* ── FULLSCREEN NAV OVERLAY ─────────────────── */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 390;
+      background: #f9f5f0;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: .5rem;
-      pointer-events: none;
+      justify-content: center;
+      padding: 5rem 6rem 4rem;
       opacity: 0;
-      transform: translateY(-8px);
-      transition: opacity .22s ease, transform .22s ease;
+      pointer-events: none;
+      transition: opacity .35s ease;
     }
-    .fam-items.open {
-      pointer-events: auto;
+    .nav-overlay.open {
       opacity: 1;
-      transform: translateY(0);
+      pointer-events: auto;
     }
-    .fam-item {
+    .nav-overlay-logo {
+      position: absolute;
+      top: 1.75rem;
+      left: 2.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      line-height: 1.5;
+      opacity: 0;
+      transition: opacity .3s ease .1s;
+      pointer-events: none;
+    }
+    .nav-overlay.open .nav-overlay-logo { opacity: 1; }
+    .nav-overlay .nav-link {
+      color: var(--c-primary);
+      text-decoration: none;
+      font-family: 'Roca Two', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      padding: .3rem .8rem;
+      border-radius: 6px;
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: background .2s, color .2s, opacity .35s ease, transform .35s ease;
+    }
+    .nav-overlay.open .nav-link { opacity: 1; transform: translateX(0); }
+    .nav-overlay.open .nav-link:nth-child(2) { transition-delay: .06s; }
+    .nav-overlay.open .nav-link:nth-child(3) { transition-delay: .12s; }
+    .nav-overlay.open .nav-link:nth-child(4) { transition-delay: .18s; }
+    .nav-overlay.open .nav-link:nth-child(5) { transition-delay: .24s; }
+    .nav-overlay.open .nav-link:nth-child(6) { transition-delay: .30s; }
+    .nav-overlay.open .nav-link:nth-child(8) { transition-delay: .36s; }
+    .nav-overlay .nav-link:hover { background: #e73643; color: #fff; }
+    .nav-overlay .nav-link.nav-cta { margin-top: .5rem; }
+    .nav-linkedin {
+      position: absolute;
+      bottom: 2rem;
+      right: calc(6rem + .8rem);
       display: flex;
       align-items: center;
-      background: rgba(0,34,44,.88);
-      color: #fff;
+      gap: .55rem;
+      color: var(--c-primary);
       text-decoration: none;
-      font-size: .88rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 600;
-      padding: .6rem 1.1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.1);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      white-space: nowrap;
-      box-shadow: 0 4px 20px rgba(0,0,0,.25);
       opacity: 0;
-      transform: translateX(12px);
-      transition: opacity .2s ease, transform .2s ease, background .2s, color .2s, border-color .2s;
+      transition: opacity .3s ease .4s, color .2s;
     }
-    .fam-items.open .fam-item { opacity: 1; transform: translateX(0); }
-    .fam-items.open .fam-item:nth-child(1) { transition-delay: .03s; }
-    .fam-items.open .fam-item:nth-child(2) { transition-delay: .07s; }
-    .fam-items.open .fam-item:nth-child(3) { transition-delay: .11s; }
-    .fam-items.open .fam-item:nth-child(4) { transition-delay: .15s; }
-    .fam-items.open .fam-item:nth-child(5) { transition-delay: .19s; }
-    .fam-items.open .fam-item:nth-child(6) { transition-delay: .23s; }
-    .fam-item:hover { background: #e73643; color: #fff; }
-    .fam-item.cta { background: var(--c-yellow); color: var(--c-primary); border-color: var(--c-yellow); }
-    .fam-item.cta:hover { background: var(--c-yellow-h); border-color: var(--c-yellow-h); color: #fff; }
+    .nav-overlay.open .nav-linkedin { opacity: 1; }
+    .nav-linkedin:hover { color: #e73643; }
+    @media (max-width: 600px) {
+      .nav-overlay { padding: 5rem 2.5rem 3rem; }
+      .nav-overlay .nav-link { font-size: clamp(2rem, 10vw, 3rem); }
+      .nav-linkedin { right: calc(2.5rem + .8rem); bottom: 1.5rem; }
+    }
 
     /* ── HERO ───────────────────────────────── */
     .hero {
@@ -1051,22 +1084,32 @@
 </head>
 <body>
 
-<!-- ══════════════ FLOATING ACTION MENU ══════════════ -->
+<!-- ══════════════ HAMBURGER + FULLSCREEN NAV ══════════════ -->
 <div class="fam-wrap" id="famWrap">
   <button class="fam-toggle" id="famToggle" aria-label="Menü öffnen">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
   </button>
-  <div class="fam-items" id="famItems">
-    <a href="#einleitung" class="fam-item">Darum geht's</a>
-    <a href="#workshop" class="fam-item">Workshop</a>
-    <a href="#coaching" class="fam-item">Coaching</a>
-    <a href="#ueber-mich" class="fam-item">Freddy &amp; Eny</a>
-    <a href="#kontakt-formular" class="fam-item">Schreib mir</a>
-    <a href="#kontakt" class="fam-item cta">Kaffeepause buchen</a>
-  </div>
 </div>
+
+<nav class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <a href="#einleitung" class="nav-link">Darum geht's</a>
+  <a href="#workshop" class="nav-link">Workshops</a>
+  <a href="#coaching" class="nav-link">Coaching</a>
+  <a href="#ueber-mich" class="nav-link">Freddy &amp; Eny</a>
+  <a href="#kontakt-formular" class="nav-link">Schreib mir</a>
+  <a href="#kontakt" class="nav-link nav-cta">☕ Kaffeepause</a>
+  <a href="https://www.linkedin.com/in/freddyhuesser-marketing/" class="nav-linkedin" target="_blank" rel="noopener">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="26" height="26" rx="6" fill="currentColor"/>
+      <path d="M8.5 10.5H6V20H8.5V10.5Z" fill="#f9f5f0"/>
+      <circle cx="7.25" cy="7.5" r="1.6" fill="#f9f5f0"/>
+      <path d="M20.5 20H18V15C18 13.6 17.1 12.75 16 12.75C14.9 12.75 14 13.6 14 15V20H11.5V10.5H14V11.9C14.6 10.85 15.9 10.25 17.2 10.25C19.1 10.25 20.5 11.65 20.5 14V20Z" fill="#f9f5f0"/>
+    </svg>
+    <span>Schon vernetzt?</span>
+  </a>
+</nav>
 
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero" id="home">
@@ -1581,24 +1624,33 @@
 </footer>
 
 <script>
-  // Floating Action Menu
-  const famToggle = document.getElementById('famToggle');
-  const famItems  = document.getElementById('famItems');
+  // Fullscreen Nav Overlay
+  const famToggle  = document.getElementById('famToggle');
+  const navOverlay = document.getElementById('navOverlay');
+
+  function openNav() {
+    navOverlay.classList.add('open');
+    navOverlay.setAttribute('aria-hidden', 'false');
+    famToggle.classList.add('open');
+    document.body.classList.add('nav-overlay-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    navOverlay.classList.remove('open');
+    navOverlay.setAttribute('aria-hidden', 'true');
+    famToggle.classList.remove('open');
+    document.body.classList.remove('nav-overlay-open');
+    document.body.style.overflow = '';
+  }
+
   famToggle.addEventListener('click', () => {
-    const open = famItems.classList.toggle('open');
-    famToggle.classList.toggle('open', open);
+    navOverlay.classList.contains('open') ? closeNav() : openNav();
   });
-  document.addEventListener('click', (e) => {
-    if (!document.getElementById('famWrap').contains(e.target)) {
-      famItems.classList.remove('open');
-      famToggle.classList.remove('open');
-    }
+  navOverlay.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeNav);
   });
-  famItems.querySelectorAll('.fam-item').forEach(link => {
-    link.addEventListener('click', () => {
-      famItems.classList.remove('open');
-      famToggle.classList.remove('open');
-    });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
   });
 
   // FAM colour: switch bars to dark when over light sections
