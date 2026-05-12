@@ -76,19 +76,20 @@
       border-color: rgba(255,255,255,.35);
     }
     .btn-ghost:hover {
-      background: rgba(255,255,255,.1);
-      border-color: rgba(255,255,255,.55);
+      background: #e73643;
+      border-color: #e73643;
+      color: #fff;
       transform: translateY(-2px);
     }
 
     .btn-dark {
-      background: var(--c-primary);
+      background: #e73643;
       color: #fff;
-      border-color: var(--c-primary);
+      border-color: #e73643;
     }
     .btn-dark:hover {
-      background: #e73643;
-      border-color: #e73643;
+      background: var(--c-primary);
+      border-color: var(--c-primary);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.2);
     }
@@ -221,8 +222,8 @@
       left: 5%;
       top: 50%;
       transform: translateY(-50%);
-      width: 40%;
-      max-width: 500px;
+      width: 46%;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       gap: .85rem;
@@ -277,7 +278,7 @@
     .hero-dots {
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px);
       background-size: 30px 30px;
       pointer-events: none;
     }
@@ -409,6 +410,18 @@
       background: rgba(255,255,255,.12);
       border-color: rgba(255,255,255,.35);
       transform: translateY(-2px);
+    }
+    .btn-hero-red-t {
+      background: #e73643;
+      color: #fff;
+      border-color: transparent;
+    }
+    .btn-hero-red-t:hover {
+      background: var(--c-yellow);
+      color: var(--c-primary);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(231,54,67,.25);
     }
     .hero-stats {
       display: flex;
@@ -586,7 +599,7 @@
     /* ── EINLEITUNG ─────────────────────────── */
     .einleitung {
       background-color: var(--c-white);
-      background-image: radial-gradient(circle, rgba(0,34,44,.05) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
     .einleitung-inner {
@@ -632,7 +645,7 @@
     /* ── ÜBERBLICK ──────────────────────────── */
     .ueberblick {
       background-color: var(--c-primary);
-      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px);
       background-size: 30px 30px;
     }
     .ueberblick-desc {
@@ -682,10 +695,12 @@
     /* ── DETAIL SECTIONS (Workshop & Coaching) ── */
     .workshop-section {
       background-color: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
     .coaching-section {
       background-color: var(--c-white);
-      background-image: radial-gradient(circle, rgba(0,34,44,.05) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
     .detail-grid {
@@ -802,7 +817,7 @@
     /* ── ÜBER MICH ──────────────────────────── */
     .ueber-mich {
       background-color: var(--c-gray);
-      background-image: radial-gradient(circle, rgba(0,34,44,.07) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(0,34,44,.12) 1px, transparent 1px);
       background-size: 28px 28px;
     }
     .ueber-grid {
@@ -892,7 +907,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(255,255,255,.13) 1px, transparent 1px);
       background-size: 30px 30px;
       pointer-events: none;
     }
@@ -926,7 +941,7 @@
     .kontakt-section .section-header { margin-bottom: 1.5rem; }
     .kontakt-section {
       background-color: var(--c-white);
-      background-image: radial-gradient(circle, rgba(0,34,44,.05) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
     .hs-form-frame {
@@ -1195,8 +1210,7 @@
   <div class="hero-center">
 
     <span class="hero-pill">
-      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      LinkedIn Beratung &amp; Coaching
+      LinkedIn Workshops &amp; Coaching
     </span>
 
     <div class="hero-title-wrap">
@@ -1214,12 +1228,12 @@
 
     <div class="hero-ctas">
       <a href="#kontakt" class="btn-hero btn-hero-primary">
-        Gespräch vereinbaren
+        💬 Gespräch vereinbaren
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="#einleitung" class="btn-hero btn-hero-ghost">
-        In Freddy's Worten
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5l6 3.5-6 3.5V8.5z" fill="currentColor"/></svg>
+      <a href="#einleitung" class="btn-hero btn-hero-red-t">
+        🎥 In Freddy's Worten
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
 
@@ -1274,17 +1288,17 @@
       <p class="einleitung-text reveal">Dabei ist LinkedIn, mit der richtigen Strategie und dem notwendigen Wissen über den Algorithmus, ein extrem wirkungsvolles Vermarktungs-Tool.</p>
       <p class="einleitung-text reveal">Ich schule meine Kunden oder begleite sie als persönlicher Coach in der LinkedIn Vermarktung. Mein Wissen aus über 10 Jahren Digital Marketing Strategie fliesst in jede Zusammenarbeit mit ein.</p>
       <p class="einleitung-text reveal"><strong>Aber immer ohne Lärm.</strong></p>
-      <div class="reveal" style="margin-top: 2.5rem;">
-        <a href="#kontakt" class="btn btn-dark">
-          Gespräch vereinbaren
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
     </div>
     <div class="reveal">
       <p class="einleitung-video-title">In Freddy's Worten</p>
       <div class="einleitung-video">
         <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm – In Freddy's Worten" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <a href="#kontakt" class="btn btn-dark">
+          💬 Gespräch vereinbaren
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -1299,8 +1313,8 @@
     </div>
     <p class="ueberblick-desc reveal">Du wählst, was du brauchst: ein Workshop zu LinkedIn Basics, Content, Interaktion, Netzwerk, Employer Branding oder Positionierung – als Einzelperson oder mit dem Team, genau dort angesetzt, wo ihr gerade steht. Oder du entscheidest dich für eine längerfristige Begleitung: Über vier Monate arbeiten wir gemeinsam an einem konkreten Ziel, mit klarer Positionierung, einer passenden Contentstrategie und einem Auftritt, der auf LinkedIn sichtbar wird und Vertrauen aufbaut. Damit aus einzelnen Aktivitäten eine Präsenz entsteht, die langfristig wirkt.</p>
     <div class="ueberblick-ctas reveal">
-      <a href="#workshop" class="btn btn-primary">Workshop entdecken</a>
-      <a href="#coaching" class="btn btn-ghost">Coaching entdecken</a>
+      <a href="#workshop" class="btn btn-primary">🛠️ Workshops entdecken <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#coaching" class="btn btn-ghost">⚽ Coaching entdecken <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </section>
@@ -1309,7 +1323,7 @@
 <section class="workshop-section" id="workshop">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-lbl">LinkedIn Workshop</p>
+      <p class="section-lbl">🛠️ LinkedIn Workshops</p>
       <h2 class="section-title">LinkedIn gezielt nutzen – für dich, dein Team und dein Unternehmen</h2>
     </div>
     <div class="detail-grid">
@@ -1324,32 +1338,20 @@
           <li>Personal Branding &amp; Positionierung</li>
           <li>Employer Branding &amp; Employer Advocacy</li>
           <li>KI-Tools für Content-Erstellung (optional)</li>
-          <li>Vorbereitung, Nachbereitung &amp; digitales Handout inklusive</li>
-          <li>Zugang zur WhatsApp Community</li>
         </ul>
       </div>
       <div class="reveal">
-        <div class="price-rows">
-          <div class="price-row">
-            <span class="price-row-label">1:1</span>
-            <span class="price-row-amount">CHF 1'370 pro Workshop</span>
-          </div>
-          <div class="price-row">
-            <span class="price-row-label">2–3 Pers.</span>
-            <span class="price-row-amount">CHF 2'270 pro Workshop</span>
-          </div>
-          <div class="price-row">
-            <span class="price-row-label">4–5 Pers.</span>
-            <span class="price-row-amount">CHF 2'970 pro Workshop</span>
-          </div>
-          <div class="price-row">
-            <span class="price-row-label">ab 6 Pers.</span>
-            <span class="price-row-amount">CHF 3'570 pro Workshop</span>
-          </div>
+        <div class="coaching-price-block">
+          <p class="coaching-price-lbl">Investition ab</p>
+          <span class="coaching-price-amount">CHF 1'370</span>
+          <span class="coaching-price-period">1:1 · pro Workshop · exkl. MwSt.</span>
+          <p class="coaching-price-note">2–3 Pers.: CHF 2'270 · 4–5 Pers.: CHF 2'970 · ab 6 Pers.: CHF 3'570</p>
+          <p class="coaching-price-note">Dauer: ca. 4–5 Stunden pro Workshop</p>
+          <p class="coaching-price-note">Vorbereitung, Nachbereitung &amp; digitales Handout inklusive · Zugang zur WhatsApp Community</p>
+          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
         </div>
-        <p class="price-note">Dauer: ca. 4–5 Stunden pro Workshop · exkl. MwSt.</p>
         <a href="#kontakt" class="btn btn-dark">
-          Gespräch vereinbaren
+          💬 Gespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
@@ -1541,7 +1543,7 @@
 <section class="coaching-section" id="coaching">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-lbl">LinkedIn Coaching</p>
+      <p class="section-lbl">⚽ LinkedIn Coaching</p>
       <h2 class="section-title">Wir arbeiten 4 Monate zusammen und bauen deine Sichtbarkeit auf</h2>
     </div>
     <div class="detail-grid">
@@ -1567,7 +1569,7 @@
           <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
         </div>
         <a href="#kontakt" class="btn btn-dark">
-          Gespräch vereinbaren
+          💬 Gespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
@@ -1592,14 +1594,13 @@
       </div>
 
       <div class="ueber-content reveal">
-        <p class="section-lbl">Über mich</p>
+        <p class="section-lbl">👋 Freddy &amp; Eny</p>
         <h2 class="section-title">Hallo, ich bin Freddy.<br>Und das ist Eny.</h2>
 
         <p class="ueber-lead">Seit bald zehn Jahren unterstütze ich Unternehmen und Personen dabei, sich im Markt klar zu positionieren – für mehr Sichtbarkeit, Wirkung und konkrete Ziele, wie den nächsten Karriereschritt oder den Aufbau einer starken Marke.</p>
         <p class="ueber-lead">Ohne unnötigen Lärm – effizient &amp; sympathisch. Als Berater und Referent entwickle ich Markenauftritte, die zur Persönlichkeit passen. An drei Hochschulen unterrichte ich Marketingstrategie – praxisnah und mit Blick auf das, was draussen zählt.</p>
         <p class="ueber-lead">In meiner Freizeit begleite ich Eny in den Wald, an die Limmat oder auf die Joggingrunde durchs Quartier.</p>
 
-        <a href="#kontakt" class="btn btn-dark">Kaffeepause buchen – kostenlos</a>
       </div>
 
     </div>
@@ -1610,7 +1611,7 @@
 <section class="cta-section" id="kontakt">
   <div class="section-inner cta-inner">
     <div class="reveal">
-      <h2 class="cta-title">Bereit für deinen<br><em>LinkedIn-Auftritt?</em></h2>
+      <h2 class="cta-title">☕ Lust auf einen virtuellen<br><em>Kaffee oder Tee?</em></h2>
       <p class="cta-desc">Buch eine kostenlose Kaffeepause – 30 Minuten, unverbindlich, direkt mit Freddy.</p>
     </div>
     <div class="reveal">
@@ -1627,7 +1628,7 @@
   <div class="section-inner">
     <div class="section-header center reveal">
       <p class="section-lbl">Kontakt</p>
-      <h2 class="section-title">Lieber schreiben?</h2>
+      <h2 class="section-title">✉️ Lieber schreiben?</h2>
       <p class="section-desc">Füll das Formular aus – ich melde mich in der Regel innerhalb von 24 Stunden.</p>
     </div>
     <div class="reveal">
@@ -1684,7 +1685,7 @@
     <div>
       <p class="footer-col-title">Leistungen</p>
       <ul class="footer-nav">
-        <li><a href="#workshop">LinkedIn Workshop</a></li>
+        <li><a href="#workshop">LinkedIn Workshops</a></li>
         <li><a href="#coaching">LinkedIn Coaching</a></li>
         <li><a href="#kontakt">Kaffeepause buchen</a></li>
       </ul>
@@ -1726,6 +1727,8 @@
     famToggle.classList.remove('open');
     document.body.classList.remove('nav-overlay-open');
     document.body.style.overflow = '';
+    const navIframe = navOverlay.querySelector('iframe');
+    if (navIframe) { const s = navIframe.src; navIframe.src = ''; navIframe.src = s; }
   }
 
   famToggle.addEventListener('click', () => {
