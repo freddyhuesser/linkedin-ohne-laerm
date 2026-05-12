@@ -180,7 +180,7 @@
       color: var(--c-primary);
       text-decoration: none;
       font-family: 'Roca Two', serif;
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
       font-weight: 700;
       line-height: 1.2;
       padding: .3rem .8rem;
@@ -216,10 +216,51 @@
     }
     .nav-overlay.open .nav-linkedin { opacity: 1; }
     .nav-linkedin:hover { color: #e73643; }
+    .nav-video {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      opacity: 0;
+      transition: opacity .5s ease .25s;
+    }
+    .nav-overlay.open .nav-video { opacity: 1; }
+    .nav-video-title {
+      font-family: 'Roca Two', serif;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      color: var(--c-primary);
+    }
+    .nav-video iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0,34,44,.16);
+    }
+    @media (max-width: 900px) { .nav-video { display: none; } }
     @media (max-width: 600px) {
       .nav-overlay { padding: 5rem 2.5rem 3rem; }
-      .nav-overlay .nav-link { font-size: clamp(2rem, 10vw, 3rem); }
+      .nav-overlay .nav-link { font-size: clamp(1.7rem, 8.5vw, 2.5rem); }
       .nav-linkedin { right: calc(2.5rem + .8rem); bottom: 1.5rem; }
+    }
+
+    /* ── HERO PLAY BUTTON ───────────────────── */
+    .btn-hero-red {
+      background: #e73643;
+      color: #fff;
+      border-color: transparent;
+    }
+    .btn-hero-red:hover {
+      background: #c42d39;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(231,54,67,.35);
     }
 
     /* ── HERO ───────────────────────────────── */
@@ -548,7 +589,13 @@
       background-image: radial-gradient(circle, rgba(0,34,44,.05) 1px, transparent 1px);
       background-size: 28px 28px;
     }
-    .einleitung-body { max-width: 680px; }
+    .einleitung-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .einleitung-body { max-width: none; }
     .einleitung-text {
       font-size: 1.05rem;
       color: var(--c-text);
@@ -556,6 +603,31 @@
       margin-bottom: 1.5rem;
     }
     .einleitung-text strong { color: var(--c-primary); font-weight: 600; }
+    .einleitung-video-title {
+      font-family: 'Roca Two', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--c-primary);
+      margin-bottom: .75rem;
+    }
+    .einleitung-video {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(0,34,44,.13);
+    }
+    .einleitung-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    @media (max-width: 820px) {
+      .einleitung-inner { grid-template-columns: 1fr; }
+      .einleitung-video { order: -1; }
+    }
 
     /* ── ÜBERBLICK ──────────────────────────── */
     .ueberblick {
@@ -1094,6 +1166,10 @@
 </div>
 
 <nav class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <div class="nav-video">
+    <p class="nav-video-title">In Freddy's Worten</p>
+    <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
   <a href="#einleitung" class="nav-link">Darum geht's</a>
   <a href="#workshop" class="nav-link">Workshops</a>
   <a href="#coaching" class="nav-link">Coaching</a>
@@ -1141,7 +1217,10 @@
         Gespräch vereinbaren
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="#angebote" class="btn-hero btn-hero-ghost">Leistungen entdecken</a>
+      <a href="#einleitung" class="btn-hero btn-hero-ghost">
+        In Freddy's Worten
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 8.5l6 3.5-6 3.5V8.5z" fill="currentColor"/></svg>
+      </a>
     </div>
 
   </div>
@@ -1185,7 +1264,7 @@
 
 <!-- ══════════════ EINLEITUNG ══════════════ -->
 <section class="einleitung" id="einleitung">
-  <div class="section-inner">
+  <div class="section-inner einleitung-inner">
     <div class="einleitung-body">
       <div class="reveal">
         <p class="section-lbl">LinkedIn Beratung &amp; Coaching</p>
@@ -1200,6 +1279,12 @@
           Gespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="einleitung-video-title">In Freddy's Worten</p>
+      <div class="einleitung-video">
+        <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm – In Freddy's Worten" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
