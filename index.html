@@ -202,10 +202,18 @@
     .nav-overlay.open .nav-link:nth-child(8) { transition-delay: .36s; }
     .nav-overlay .nav-link:hover { background: #e73643; color: #fff; }
     .nav-overlay .nav-link.nav-cta { margin-top: .5rem; }
-    .nav-linkedin {
+    .nav-socials {
       position: absolute;
       bottom: 2rem;
       right: calc(6rem + .8rem);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      opacity: 0;
+      transition: opacity .3s ease .4s;
+    }
+    .nav-overlay.open .nav-socials { opacity: 1; }
+    .nav-linkedin, .nav-whatsapp {
       display: flex;
       align-items: center;
       gap: .55rem;
@@ -214,11 +222,10 @@
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
       font-weight: 600;
-      opacity: 0;
-      transition: opacity .3s ease .4s, color .2s;
+      transition: color .2s;
     }
-    .nav-overlay.open .nav-linkedin { opacity: 1; }
     .nav-linkedin:hover { color: #e73643; }
+    .nav-whatsapp:hover { color: #25D366; }
     .nav-video {
       position: absolute;
       left: 5%;
@@ -251,7 +258,7 @@
     @media (max-width: 600px) {
       .nav-overlay { padding: 5rem 2.5rem 3rem; }
       .nav-overlay .nav-link { font-size: clamp(1.7rem, 8.5vw, 2.5rem); }
-      .nav-linkedin { right: calc(2.5rem + .8rem); bottom: 1.5rem; }
+      .nav-socials { right: calc(2.5rem + .8rem); bottom: 1.5rem; }
     }
 
     /* ── HERO PLAY BUTTON ───────────────────── */
@@ -1196,15 +1203,24 @@
   <a href="#ueber-mich" class="nav-link">👋 Freddy &amp; Eny</a>
   <a href="#kontakt-formular" class="nav-link">✉️ Schreib mir</a>
   <a href="#kontakt" class="nav-link nav-cta">☕ Kaffeepause</a>
-  <a href="https://www.linkedin.com/in/freddyhuesser-marketing/" class="nav-linkedin" target="_blank" rel="noopener">
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="26" height="26" rx="6" fill="currentColor"/>
-      <path d="M8.5 10.5H6V20H8.5V10.5Z" fill="#f9f5f0"/>
-      <circle cx="7.25" cy="7.5" r="1.6" fill="#f9f5f0"/>
-      <path d="M20.5 20H18V15C18 13.6 17.1 12.75 16 12.75C14.9 12.75 14 13.6 14 15V20H11.5V10.5H14V11.9C14.6 10.85 15.9 10.25 17.2 10.25C19.1 10.25 20.5 11.65 20.5 14V20Z" fill="#f9f5f0"/>
-    </svg>
-    <span>Schon vernetzt?</span>
-  </a>
+  <div class="nav-socials">
+    <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%20zu%20deinem%20Angebot." class="nav-whatsapp" target="_blank" rel="noopener">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="26" height="26" rx="6" fill="currentColor"/>
+        <path d="M13 4.5C8.31 4.5 4.5 8.31 4.5 13c0 1.52.41 2.95 1.13 4.18L4.5 21.5l4.44-1.1A8.46 8.46 0 0013 21.5c4.69 0 8.5-3.81 8.5-8.5S17.69 4.5 13 4.5zm4.17 11.63c-.18.5-.88.91-1.45 1.03-.39.08-.9.14-2.6-.56-2.19-.88-3.6-3.11-3.71-3.25-.11-.15-.89-1.18-.89-2.25s.56-1.6.76-1.82c.2-.22.44-.27.58-.27l.42.01c.14 0 .32-.05.5.38.18.44.62 1.51.67 1.62.06.11.1.24.02.38-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.22.23-.1.45.13.22.57.94 1.22 1.52.84.75 1.55.98 1.77 1.09.22.11.35.09.48-.05.13-.14.56-.65.71-.87.15-.22.3-.18.5-.11.21.07 1.31.62 1.53.73.22.11.37.17.43.26.06.1.06.55-.12 1.05z" fill="#f9f5f0"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="https://www.linkedin.com/in/freddyhuesser-marketing/" class="nav-linkedin" target="_blank" rel="noopener">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="26" height="26" rx="6" fill="currentColor"/>
+        <path d="M8.5 10.5H6V20H8.5V10.5Z" fill="#f9f5f0"/>
+        <circle cx="7.25" cy="7.5" r="1.6" fill="#f9f5f0"/>
+        <path d="M20.5 20H18V15C18 13.6 17.1 12.75 16 12.75C14.9 12.75 14 13.6 14 15V20H11.5V10.5H14V11.9C14.6 10.85 15.9 10.25 17.2 10.25C19.1 10.25 20.5 11.65 20.5 14V20Z" fill="#f9f5f0"/>
+      </svg>
+      <span>Schon vernetzt?</span>
+    </a>
+  </div>
 </nav>
 
 <!-- ══════════════ HERO ══════════════ -->
@@ -1632,7 +1648,7 @@
     <div class="section-header center reveal">
       <p class="section-lbl">Kontakt</p>
       <h2 class="section-title">✉️ Lieber schreiben?</h2>
-      <p class="section-desc">Füll das Formular aus – ich melde mich in der Regel innerhalb von 24 Stunden.</p>
+      <p class="section-desc">Füll das Formular aus – ich melde mich in der Regel innerhalb von 24 Stunden.<br>Oder schreib mir direkt auf <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%20zu%20deinem%20Angebot." target="_blank" rel="noopener" style="color:#25D366;font-weight:700;text-decoration:none;">WhatsApp</a>.</p>
     </div>
     <div class="reveal">
       <script src="https://js-eu1.hsforms.net/forms/embed/148420263.js" defer></script>
@@ -1790,6 +1806,21 @@
     document.querySelector('.reviews-arrow--next')?.addEventListener('click', () => moveTo(curIdx + 1));
   }
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.customStyle = { visibility: { desktop: { position: 'br', xOffset: 20, yOffset: 20 }, mobile: { position: 'br', xOffset: 10, yOffset: 10 } } };
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a0acb3ff9c6ac1c30b37de5/1jot2jse5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
 </body>
 </html>
