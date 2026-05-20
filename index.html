@@ -282,9 +282,38 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: clip;
       padding: 5rem 2.5rem 8rem;
     }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      gap: 2rem;
+    }
+    .hero-image-wrap {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      width: auto;
+      height: 90vh;
+    }
+    .hero-cap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 90vh;
+      width: auto;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      pointer-events: none;
+    }
+    .hero-cap.active { opacity: 1; }
     .hero-dots {
       position: absolute;
       inset: 0;
@@ -303,12 +332,11 @@
     .hero-center {
       position: relative;
       z-index: 2;
-      text-align: center;
-      max-width: 860px;
+      text-align: left;
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
     .hero-pill {
       display: inline-flex;
@@ -383,10 +411,19 @@
       display: flex;
       gap: .85rem;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: 3.5rem;
       opacity: 0;
       animation: fadeUp .6s ease forwards .65s;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .logo-bar--hero-animated {
+      animation: slideInRight 1s ease forwards;
+      animation-delay: .8s;
+      opacity: 0;
     }
     .btn-hero {
       display: inline-flex;
@@ -1157,6 +1194,10 @@
     }
     @media (max-width: 860px) {
       .hero { padding: 5rem 1.5rem 0; flex-direction: column; justify-content: center; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .hero-center { text-align: center; align-items: center; }
+      .hero-ctas { justify-content: center; }
       #referenzen-1 { position: relative !important; bottom: auto !important; left: auto !important; right: auto !important; width: 100% !important; background: transparent !important; border: none !important; margin-top: 2rem; align-self: stretch; }
       #referenzen-1 .logo-slider::before, #referenzen-1 .logo-slider::after { display: none; }
       .ueber-grid { grid-template-columns: 1fr; }
@@ -1251,37 +1292,47 @@
   <div class="hero-dots"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-center">
+  <div class="hero-inner">
 
-    <span class="hero-pill">
-      LinkedIn Workshops &amp; Coaching
-    </span>
+    <div class="hero-center">
 
-    <div class="hero-title-wrap">
-      <h1 class="hero-title">
-        LinkedIn –
-        <em>ohne Lärm</em>
-      </h1>
+      <span class="hero-pill">
+        LinkedIn Workshops &amp; Coaching
+      </span>
+
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">
+          LinkedIn –
+          <em>ohne Lärm</em>
+        </h1>
+      </div>
+
+      <div class="hero-pain">
+        <span class="hero-pain-line">Ich unterstütze Unternehmen, Führungskräfte und Teams dabei, LinkedIn strategisch zu nutzen – damit aus Profilen sichtbare Marken werden.</span>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn-hero btn-hero-primary">
+          💬 Gespräch vereinbaren
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#einleitung" class="btn-hero btn-hero-ghost">
+          🎥 In Freddy's Worten
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
     </div>
 
-    <div class="hero-pain">
-      <span class="hero-pain-line">Ich unterstütze Unternehmen, Führungskräfte und Teams dabei, LinkedIn strategisch zu nutzen – damit aus Profilen sichtbare Marken werden.</span>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="#kontakt" class="btn-hero btn-hero-primary">
-        💬 Gespräch vereinbaren
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="#einleitung" class="btn-hero btn-hero-ghost">
-        🎥 In Freddy's Worten
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+    <div class="hero-image-wrap">
+      <img src="images/Cap_1.png" class="hero-cap active" alt="LinkedIn ohne Lärm Cap 1">
+      <img src="images/Cap_2.png" class="hero-cap" alt="LinkedIn ohne Lärm Cap 2">
+      <img src="images/Cap_3.png" class="hero-cap" alt="LinkedIn ohne Lärm Cap 3">
     </div>
 
   </div>
 
-  <div class="logo-bar logo-bar--dark" id="referenzen-1" style="background: transparent; position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; border: none; padding: 1.5rem 0;">
+  <div class="logo-bar logo-bar--dark logo-bar--hero-animated" id="referenzen-1" style="background: transparent; position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; border: none; padding: 1.5rem 0;">
     <div class="logo-slider">
       <div class="logo-slider-track">
         <a href="https://www.terra-verde.ch/" target="_blank" rel="noopener"><img src="images/Terra%20Verde.png" alt="Terra Verde"></a>
@@ -1828,6 +1879,20 @@
     document.querySelector('.reviews-arrow--prev')?.addEventListener('click', () => moveTo(curIdx - 1));
     document.querySelector('.reviews-arrow--next')?.addEventListener('click', () => moveTo(curIdx + 1));
   }
+</script>
+
+<!-- Hero Cap Slideshow -->
+<script>
+  (function() {
+    const caps = document.querySelectorAll('.hero-cap');
+    if (!caps.length) return;
+    let current = 0;
+    setInterval(() => {
+      caps[current].classList.remove('active');
+      current = (current + 1) % caps.length;
+      caps[current].classList.add('active');
+    }, 4000);
+  })();
 </script>
 
 <!-- Floating WhatsApp Button -->
