@@ -176,54 +176,8 @@ async function submitGate() {
 }
 
 function showResult(name) {
-  const stage = state.stage;
-  const score = state.score;
-
-  // Header
-  document.getElementById('result-score').textContent = score % 1 === 0 ? score : score.toFixed(1);
-  document.getElementById('result-stage-badge').textContent = stage.emoji + ' ' + stage.label;
-  document.getElementById('result-stage-badge').style.background = stage.color + '33';
-
-  // Greeting
-  const greeting = name ? 'Danke, ' + name + '!' : 'Dein Ergebnis';
+  const greeting = name ? 'Danke, ' + name + '.' : 'Danke!';
   document.getElementById('result-greeting').textContent = greeting;
-
-  // Stage text
-  document.getElementById('result-text').textContent = stage.text;
-
-  // Weak points
-  const wpContainer = document.getElementById('weak-points');
-  wpContainer.innerHTML = '';
-
-  if (state.weakPoints.length === 0) {
-    wpContainer.innerHTML = '<div class="all-good">✅ Stark auf allen Punkten — beeindruckend!</div>';
-  } else {
-    const title = document.createElement('p');
-    title.className = 'weak-points-title';
-    title.textContent = 'Diese Punkte haben noch Potenzial:';
-    wpContainer.appendChild(title);
-
-    state.weakPoints.forEach((a, i) => {
-      const q    = CONFIG.questions.find(q => q.id === a.id);
-      const step = CONFIG.nextSteps[a.id];
-      const div  = document.createElement('div');
-      div.className = 'weak-point';
-      div.innerHTML = `
-        <div class="weak-point-icon">${i + 1}</div>
-        <div>
-          <div class="weak-point-q">${q.text}</div>
-          <div class="weak-point-step"><strong>Erster Schritt:</strong> ${step}</div>
-        </div>`;
-      wpContainer.appendChild(div);
-    });
-  }
-
-  // CTA
-  document.getElementById('cta-primary').href  = CONFIG.result.ctaPrimary.url;
-  document.getElementById('cta-primary').textContent = CONFIG.result.ctaPrimary.label;
-  document.getElementById('cta-secondary').href = CONFIG.result.ctaSecondary.url;
-  document.getElementById('cta-secondary').textContent = CONFIG.result.ctaSecondary.label;
-
   showScreen('result');
 }
 

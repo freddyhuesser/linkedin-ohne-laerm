@@ -475,6 +475,33 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
 /* ─── RESULT SCREEN ──────────────────────────────────────────────────────── */
 #screen-result { align-items: center; }
 
+.result-thanks-card { text-align: center; max-width: 560px; }
+
+.result-thanks-check {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2E7D32;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.result-thanks-card h2 { margin-bottom: 1.5rem; }
+
+.result-thanks-text {
+  color: var(--c-muted);
+  font-size: .95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.result-thanks-cta-intro { margin-bottom: 1.25rem; }
+
 .result-header {
   width: 100%;
   max-width: 640px;
