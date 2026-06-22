@@ -26,7 +26,9 @@ html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--c-cream);
+  background: var(--c-primary);
+  background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--c-text);
   min-height: 100vh;
   line-height: 1.65;
@@ -207,12 +209,12 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
   display: flex;
   justify-content: space-between;
   font-size: .82rem;
-  color: var(--c-muted);
+  color: rgba(255,255,255,.6);
   margin-bottom: .5rem;
 }
 .progress-bar {
   height: 5px;
-  background: var(--c-border);
+  background: rgba(255,255,255,.15);
   border-radius: 100px;
   overflow: hidden;
 }
@@ -224,7 +226,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
 }
 
 /* ─── QUESTION SCREEN ────────────────────────────────────────────────────── */
-#screen-question { background: var(--c-cream); padding-top: 1rem; }
+#screen-question { padding-top: 1rem; }
 
 .question-number {
   font-size: .8rem;
@@ -315,7 +317,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
 }
 
 /* ─── TEASER SCREEN ──────────────────────────────────────────────────────── */
-#screen-teaser { background: var(--c-cream); }
+#screen-teaser { }
 
 .teaser-card {
   text-align: center;
@@ -402,7 +404,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
 }
 
 /* ─── EMAIL GATE ─────────────────────────────────────────────────────────── */
-#screen-gate { background: var(--c-cream); }
+#screen-gate { }
 
 .gate-headline { margin-bottom: .5rem; }
 .gate-subline { color: var(--c-muted); margin-bottom: 2rem; font-size: .95rem; }
@@ -471,7 +473,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
 }
 
 /* ─── RESULT SCREEN ──────────────────────────────────────────────────────── */
-#screen-result { background: var(--c-cream); align-items: center; }
+#screen-result { align-items: center; }
 
 .result-header {
   width: 100%;
@@ -627,9 +629,9 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
   text-align: center;
   padding: 2rem 1.5rem;
   font-size: .8rem;
-  color: var(--c-muted);
+  color: rgba(255,255,255,.4);
 }
-.app-footer a { color: var(--c-muted); }
+.app-footer a { color: rgba(255,255,255,.4); }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {

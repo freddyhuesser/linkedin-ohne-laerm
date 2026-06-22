@@ -112,9 +112,10 @@ function showGate() {
 }
 
 async function submitGate() {
-  const email   = document.getElementById('input-email').value.trim();
-  const name    = document.getElementById('input-name').value.trim();
-  const company = document.getElementById('input-company').value.trim();
+  const email    = document.getElementById('input-email').value.trim();
+  const name     = document.getElementById('input-name').value.trim();
+  const lastName = document.getElementById('input-lastname').value.trim();
+  const company  = document.getElementById('input-company').value.trim();
   const gdpr    = document.getElementById('gdpr-check').checked;
 
   // Validation
@@ -144,6 +145,7 @@ async function submitGate() {
     const payload = {
       email,
       name,
+      last_name: lastName,
       company,
       score:      state.score,
       stufe:      state.stage.key,
