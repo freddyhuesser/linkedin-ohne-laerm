@@ -1,0 +1,139 @@
+<!--
+  MailerLite E-Mail Vorlage — LinkedIn-Check Ergebnis
+  ─────────────────────────────────────────────────────
+  Diese Vorlage im MailerLite Automation Builder als erste E-Mail einfügen.
+  Merge Tags (MailerLite):
+    {$name}            → Vorname des Subscribers
+    {$eb_result_url}   → Link zur personalisierten Ergebnis-Landingpage
+
+  6-Tage-Challenge Link: bitte unten ersetzen (LINK_ZUR_6_TAGE_CHALLENGE)
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dein LinkedIn-Check Ergebnis</title>
+</head>
+<body style="margin:0;padding:0;background:#f6f6f4;font-family:'Inter',Arial,sans-serif;color:#1a2e38;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f6f6f4;padding:40px 20px;">
+    <tr>
+      <td align="center">
+
+        <!-- Header -->
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#00222C;border-radius:16px 16px 0 0;overflow:hidden;">
+          <tr>
+            <td style="padding:32px 40px;text-align:center;">
+              <p style="margin:0;font-size:13px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;">LinkedIn ohne Lärm</p>
+              <h1 style="margin:12px 0 0;font-size:24px;font-weight:900;color:#ffffff;line-height:1.2;">Dein LinkedIn-Check Ergebnis</h1>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Body -->
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;padding:0;">
+          <tr>
+            <td style="padding:40px 40px 32px;">
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#1a2e38;">
+                Hallo {$name}
+              </p>
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#5a7080;">
+                schön, dass du dich mit dem Thema LinkedIn für euer Unternehmen beschäftigst.
+              </p>
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Du hast den Fragebogen abgeschlossen und bereits ein Gefühl dafür erhalten, wie euer Unternehmen aktuell aufgestellt ist.
+              </p>
+
+              <p style="margin:0 0 8px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Dein persönliches Ergebnis findest du hier:
+              </p>
+
+              <!-- CTA Button -->
+              <table cellpadding="0" cellspacing="0" style="margin:24px 0;">
+                <tr>
+                  <td style="background:#FFF5CA;border-radius:100px;padding:0;">
+                    <a href="{$eb_result_url}" style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:700;color:#00222C;text-decoration:none;border-radius:100px;">
+                      → Vollständiges Ergebnis ansehen
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Darin siehst du, wo ihr heute steht, welche Stärken bereits vorhanden sind und an welchen Stellen ihr mit überschaubarem Aufwand noch deutlich mehr erreichen könnt.
+              </p>
+
+              <p style="margin:0 0 20px;font-size:15px;line-height:1.7;color:#5a7080;padding:16px 20px;background:#f9f5f0;border-left:4px solid #00222C;border-radius:0 8px 8px 0;">
+                <strong style="color:#00222C;">Mein Tipp:</strong> Schau dir die Auswertung in Ruhe an und überlege, welche der Empfehlungen ihr kurzfristig umsetzen könnt. Oft sind es nicht die grossen Projekte, sondern einige wenige gezielte Anpassungen, die den Unterschied machen.
+              </p>
+
+              <!-- Divider -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0;">
+                <tr><td style="height:1px;background:#dde4e8;"></td></tr>
+              </table>
+
+              <p style="margin:0 0 12px;font-size:16px;line-height:1.7;color:#1a2e38;font-weight:600;">
+                Wenn du das Thema vertiefen möchtest, habe ich noch etwas für dich:
+              </p>
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Nimm an der 6-Tage-Challenge teil. Dort erhältst du jeden Tag einen konkreten Impuls, wie ihr eure Sichtbarkeit als Unternehmen Schritt für Schritt ausbauen könnt — von Führungskräften über Mitarbeitende bis hin zu Themenplanung und KI.
+              </p>
+
+              <!-- Secondary CTA -->
+              <table cellpadding="0" cellspacing="0" style="margin:0 0 32px;">
+                <tr>
+                  <td style="border:2px solid #00222C;border-radius:100px;padding:0;">
+                    <a href="LINK_ZUR_6_TAGE_CHALLENGE" style="display:inline-block;padding:12px 28px;font-size:15px;font-weight:600;color:#00222C;text-decoration:none;border-radius:100px;">
+                      📧 Zur 6-Tage-Challenge
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0;">
+                <tr><td style="height:1px;background:#dde4e8;"></td></tr>
+              </table>
+
+              <p style="margin:0 0 8px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Ich wünsche dir viel Freude beim Durcharbeiten und viele spannende Erkenntnisse.
+              </p>
+
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.7;color:#5a7080;">
+                Falls Fragen auftauchen, melde dich jederzeit.
+              </p>
+
+              <p style="margin:0;font-size:16px;line-height:1.7;color:#1a2e38;">
+                Herzlich<br>
+                <strong>Freddy Hüsser</strong>
+              </p>
+
+            </td>
+          </tr>
+        </table>
+
+        <!-- Footer -->
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#f6f6f4;border-radius:0 0 16px 16px;padding:0;">
+          <tr>
+            <td style="padding:24px 40px;text-align:center;">
+              <p style="margin:0;font-size:12px;color:#9aafb8;line-height:1.6;">
+                LinkedIn ohne Lärm · Freddy Hüsser<br>
+                <a href="https://ohnelaerm.ch" style="color:#9aafb8;">ohnelaerm.ch</a> ·
+                <a href="https://ohnelaerm.ch/datenschutz.html" style="color:#9aafb8;">Datenschutz</a> ·
+                <a href="{$unsubscribe}" style="color:#9aafb8;">Abmelden</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

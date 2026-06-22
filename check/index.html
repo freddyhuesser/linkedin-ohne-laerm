@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn-Check: Ist euer Unternehmen wirklich sichtbar? – Freddy Hüsser</title>
+  <meta name="description" content="Beantworte 10 Fragen und erfahre, wo euer Employer Branding auf LinkedIn steht. Kostenloser Self-Assessment von Freddy Hüsser.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/jpeg" href="../images/Favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <a href="../" class="logo-text">LinkedIn <span>ohne Lärm</span></a>
+</header>
+
+<div class="app-wrap">
+
+  <!-- ══ INTRO ══════════════════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-intro">
+    <div class="card">
+      <p class="intro-label" id="intro-label"></p>
+      <h1 class="intro-headline" id="intro-headline"></h1>
+      <p class="intro-subline" id="intro-subline"></p>
+      <button class="btn btn-primary btn-full" id="btn-start"></button>
+    </div>
+  </section>
+
+  <!-- ══ QUESTION ═══════════════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-question">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Frage <span id="progress-current">1</span> von <span id="progress-total">10</span></span>
+        <span id="progress-pct"></span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="question-number" id="q-number"></p>
+      <h2 class="question-text" id="q-text"></h2>
+      <p class="question-hint" id="q-hint"></p>
+
+      <div class="answer-options" id="answer-options"></div>
+
+      <div class="question-nav">
+        <button class="btn btn-outline btn-sm" id="btn-back">← Zurück</button>
+        <p style="font-size:.8rem;color:var(--c-muted)">Klick direkt auf eine Antwort</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TEASER ═════════════════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-teaser">
+    <div class="card teaser-card">
+      <div class="score-circle-wrap">
+        <div class="score-circle">
+          <span class="score-num" id="teaser-score">0</span>
+          <span class="score-of">von 10</span>
+        </div>
+      </div>
+
+      <div id="teaser-stage-badge" class="teaser-stage-label" style="margin:0 auto 1.25rem;"></div>
+
+      <h2 style="margin-bottom:.75rem;">Dein Ergebnis ist bereit.</h2>
+      <p style="color:var(--c-muted);font-size:.95rem;margin-bottom:1.5rem;">
+        Die vollständige Auswertung mit deinen Schwachpunkten und konkreten nächsten Schritten wartet — trag einfach deine E-Mail ein.
+      </p>
+
+      <div class="blur-overlay">
+        <div class="blur-content">
+          Lorem ipsum dolor sit amet consectetur. Eure Führungskräfte posten selten. Kein Themenplan vorhanden. Employer Branding läuft über die Firmenseite. Mitarbeitende teilen kaum. Erster Schritt: Startet mit einer Führungskraft.
+        </div>
+        <div class="blur-overlay-cta">
+          <p>🔒 E-Mail eingeben → vollständiges Ergebnis sehen</p>
+        </div>
+      </div>
+
+      <button class="btn btn-red btn-full" id="btn-show-result" style="margin-top:.5rem;">
+        Vollständiges Ergebnis anzeigen →
+      </button>
+
+      <p style="font-size:.78rem;color:var(--c-muted);margin-top:.75rem;text-align:center;">
+        Kein Spam. Abmeldung jederzeit.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ GATE ═══════════════════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-gate">
+    <div class="card">
+      <h2 class="gate-headline" id="gate-headline"></h2>
+      <p class="gate-subline" id="gate-subline"></p>
+
+      <form id="gate-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="input-email">E-Mail-Adresse *</label>
+          <input class="form-input" type="email" id="input-email" placeholder="name@unternehmen.ch" autocomplete="email" required>
+          <p class="form-error" id="error-email"></p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-name">Vorname <span class="opt">(optional)</span></label>
+          <input class="form-input" type="text" id="input-name" placeholder="Dein Vorname" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-company">Unternehmen <span class="opt">(optional)</span></label>
+          <input class="form-input" type="text" id="input-company" placeholder="Dein Unternehmen" autocomplete="organization">
+        </div>
+
+        <div class="gdpr-wrap">
+          <input type="checkbox" id="gdpr-check">
+          <p class="gdpr-text" id="gdpr-text"></p>
+        </div>
+        <p class="form-error" id="error-gdpr"></p>
+
+        <button class="btn btn-red btn-full" type="button" id="btn-submit"></button>
+        <p class="submit-error" id="submit-error"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ RESULT ═════════════════════════════════════════════════════════════ -->
+  <section class="screen" id="screen-result">
+    <div class="result-header">
+      <div id="result-stage-badge" class="result-stage-badge" style="margin-bottom:.75rem;"></div>
+      <h2 id="result-greeting">Dein Ergebnis</h2>
+      <div class="result-score-row">
+        <div>
+          <div class="result-score-big" id="result-score">0</div>
+          <div class="result-score-label">von 10 Punkten</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-body">
+      <p class="result-text" id="result-text"></p>
+      <div id="weak-points"></div>
+    </div>
+
+    <div class="cta-box">
+      <h3 id="cta-headline"></h3>
+      <p id="cta-text"></p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary" id="cta-primary"></a>
+        <a href="#" class="btn btn-ghost btn-sm" id="cta-secondary"></a>
+      </div>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--c-muted);text-align:center;margin-bottom:2rem;">
+      Du erhältst dein Ergebnis auch per E-Mail — inkl. Tipps für eure nächsten Schritte.
+    </p>
+  </section>
+
+</div><!-- /.app-wrap -->
+
+<footer class="app-footer">
+  <a href="../">LinkedIn ohne Lärm</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../impressum.html">Impressum</a>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+  // Populate static text from config
+  document.addEventListener('DOMContentLoaded', () => {
+    document.title = CONFIG.meta.title;
+    document.getElementById('intro-label').textContent    = CONFIG.intro.label;
+    document.getElementById('intro-headline').textContent = CONFIG.intro.headline;
+    document.getElementById('intro-subline').textContent  = CONFIG.intro.subline;
+    document.getElementById('btn-start').textContent      = CONFIG.intro.cta;
+    document.getElementById('gate-headline').textContent  = CONFIG.gate.headline;
+    document.getElementById('gate-subline').textContent   = CONFIG.gate.subline;
+    document.getElementById('gdpr-text').innerHTML        = CONFIG.gate.gdpr + ' <a href="' + CONFIG.gate.privacyUrl + '" target="_blank">Datenschutz</a>';
+    document.getElementById('btn-submit').textContent     = CONFIG.gate.submitLabel;
+    document.getElementById('cta-headline').textContent   = CONFIG.result.ctaHeadline;
+    document.getElementById('cta-text').textContent       = CONFIG.result.ctaText;
+  });
+</script>
+
+</body>
+</html>

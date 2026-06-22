@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dein Ergebnis: Grosses Potenzial – LinkedIn ohne Lärm</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/jpeg" href="../images/Favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Roca Two: self-hosted, linked from root -->
+  <!-- <link rel="stylesheet" href="../roca-two.css"> -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    h1, h2, h3, h4, h5, h6 { font-family: 'Roca Two', serif; }
+    .section-title, .hero-title, .cta-title { font-family: 'Roca Two', serif; }
+
+    :root {
+      --c-primary:    #00222C;
+      --c-primary-2:  #103040;
+      --c-text:       #383838;
+      --c-muted:      #3d5260;
+      --c-accent-bg:  #FFF5CA;
+      --c-yellow:     #FFF5CA;
+      --c-yellow-h:   #e73643;
+      --c-yellow-d:   #8a6f00;
+      --c-white:      #FFFFFF;
+      --c-gray:       #f6f6f4;
+      --c-gray-2:     #e4e8ea;
+      --r:            8px;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--c-text);
+      background: var(--c-white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
+
+    /* ── BUTTONS (exact from homepage) ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 1.6rem; border-radius: var(--r);
+      font-weight: 600; font-size: .9rem; letter-spacing: .02em;
+      text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: background .2s, color .2s, transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { background: #e73643; color: #fff; border-color: #e73643; }
+    .btn-dark:hover { background: var(--c-primary); border-color: var(--c-primary); transform: translateY(-2px); }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--c-primary);
+      padding: 1.1rem 2rem;
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky; top: 0; z-index: 200;
+    }
+    .logo-text { color: #fff; font-family: 'Roca Two', serif; font-size: 1.05rem; font-weight: 700; }
+    .logo-text span { color: var(--c-yellow); }
+
+    /* ── HERO (1:1 from homepage) ── */
+    .hero {
+      background: var(--c-primary);
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: clip;
+      padding: 5rem 2.5rem 8rem;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      gap: 2rem;
+    }
+    .hero-image-wrap {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      width: auto;
+      height: 90vh;
+    }
+    .hero-cap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 90vh;
+      width: auto;
+      max-width: none;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      pointer-events: none;
+    }
+    .hero-cap.active { opacity: 1; }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 50% at 50% 0%, rgba(255,216,47,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(21,119,155,.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-center {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.7);
+      padding: .45rem 1.1rem;
+      border-radius: 100px;
+      font-size: .82rem;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp .5s ease forwards .1s;
+    }
+    .hero-title-wrap {
+      position: relative;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .25s;
+    }
+    .hero-title {
+      font-family: 'Roca Two', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title em { font-style: normal; color: #fff; display: block; }
+    .hero-pain {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .4s;
+    }
+    .hero-pain-line { font-size: 1.05rem; color: rgba(255,255,255,.88); line-height: 1.6; }
+    .hero-ctas {
+      display: flex;
+      gap: .85rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .65s;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .logo-bar--hero-animated {
+      animation: slideInRight 1s ease forwards;
+      animation-delay: .8s;
+      opacity: 0;
+    }
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+    .btn-hero svg { flex-shrink: 0; }
+    .btn-hero-primary { background: var(--c-yellow); color: var(--c-primary); }
+    .btn-hero-primary:hover {
+      background: var(--c-yellow-h);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,34,44,.15);
+    }
+    .btn-hero-ghost { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.18); }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.35); transform: translateY(-2px); }
+
+    /* ── LOGO BAR (exact from homepage) ── */
+    .logo-bar--hero {
+      background: transparent;
+      position: absolute; bottom: 0; left: 0; right: 0;
+      z-index: 1; border: none; padding: 1.5rem 0;
+      animation: slideInRight 1s ease forwards;
+      animation-delay: .8s; opacity: 0;
+    }
+    .logo-slider {
+      overflow: hidden; position: relative; padding: .25rem 0;
+    }
+    .logo-slider::before, .logo-slider::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
+    }
+    .logo-slider::before { left: 0; background: linear-gradient(to right, var(--c-primary), transparent); }
+    .logo-slider::after  { right: 0; background: linear-gradient(to left,  var(--c-primary), transparent); }
+    .logo-slider-track {
+      display: flex; gap: 4rem; align-items: center;
+      width: max-content;
+      animation: logoSlide 40s linear infinite;
+    }
+    .logo-slider-track:hover { animation-play-state: paused; }
+    .logo-slider-track a { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .logo-slider-track img {
+      height: 120px; object-fit: contain; flex-shrink: 0;
+      opacity: .75; transition: opacity .25s;
+    }
+    .logo-slider-track img:hover { opacity: 1; }
+
+    @keyframes logoSlide {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS BASE (exact from homepage) ── */
+    section { padding: 7rem 2.5rem; }
+    .section-inner { max-width: 1140px; margin: 0 auto; }
+    .section-lbl {
+      font-size: .72rem; font-weight: 600; letter-spacing: .13em;
+      text-transform: uppercase; color: var(--c-muted); margin-bottom: .85rem;
+    }
+    .section-title {
+      font-family: 'Roca Two', serif;
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 700; color: var(--c-primary);
+      line-height: 1.18; margin-bottom: 1.1rem;
+    }
+    .section-header { margin-bottom: 4.5rem; }
+    .on-dark .section-lbl { color: var(--c-yellow); }
+    .on-dark .section-title { color: #fff; }
+
+    /* ── RESULT SECTION ── */
+    .result-section {
+      background: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .result-tag {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      padding: .4rem 1.1rem; border-radius: 100px;
+      font-size: .82rem; font-weight: 600; font-family: 'Inter', sans-serif;
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: 1.25rem; display: inline-flex;
+    }
+    .result-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900; color: #fff; margin-bottom: .75rem;
+    }
+    .score-display {
+      display: inline-flex; align-items: center; gap: 1rem;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px; padding: .65rem 1.75rem; margin-bottom: 3rem;
+    }
+    .score-num { font-family: 'Roca Two', serif; font-size: 2.2rem; font-weight: 900; color: var(--c-yellow); line-height: 1; }
+    .score-of { font-size: .85rem; color: rgba(255,255,255,.55); }
+
+    .result-card {
+      background: #fff; border-radius: 16px;
+      padding: 2.5rem; margin-bottom: 1.5rem;
+      color: var(--c-primary);
+    }
+    .result-card h3 { font-size: 1.2rem; color: var(--c-primary); margin-bottom: 1rem; }
+    .result-card p { color: var(--c-muted); line-height: 1.75; margin-bottom: 1rem; font-size: .97rem; }
+    .result-card p:last-child { margin-bottom: 0; }
+    .result-divider { height: 1px; background: var(--c-gray-2); margin: 1.5rem 0; }
+
+    .reassurance {
+      background: #e8f5e9; border-radius: var(--r);
+      padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+      border-left: 4px solid #2E7D32;
+    }
+    .reassurance p { color: #2E7D32; margin: 0; font-size: .95rem; font-weight: 500; }
+
+    .consequence-list { list-style: none; padding: 0; }
+    .consequence-list li {
+      display: flex; gap: .75rem; align-items: flex-start;
+      padding: .6rem .75rem; border-radius: 8px;
+      background: #fff5f5; margin-bottom: .5rem;
+      font-size: .95rem; color: var(--c-text); line-height: 1.5;
+    }
+    .consequence-list li::before { content: '→'; color: #e73643; font-weight: 700; flex-shrink: 0; }
+
+    .start-list { list-style: none; padding: 0; }
+    .start-list li {
+      display: flex; gap: .75rem; align-items: flex-start;
+      padding: .7rem 0; border-bottom: 1px solid var(--c-gray-2);
+      font-size: .95rem; color: var(--c-muted); line-height: 1.5;
+    }
+    .start-list li:last-child { border-bottom: none; }
+    .start-list li::before { content: '✓'; color: #2E7D32; font-weight: 800; flex-shrink: 0; }
+
+    .recommendation {
+      background: var(--c-yellow); border-radius: var(--r);
+      padding: 1.25rem 1.5rem; margin-top: 1.25rem;
+    }
+    .recommendation strong { display: block; color: var(--c-primary); margin-bottom: .35rem; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
+    .recommendation p { color: var(--c-primary); margin: 0; font-size: .95rem; }
+
+    /* ── WORKSHOP SECTION (exact from homepage) ── */
+    .workshop-section {
+      background-color: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .detail-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .detail-lead {
+      font-size: 1rem; color: var(--c-muted);
+      line-height: 1.85; margin-bottom: 1.5rem;
+    }
+    .feature-list {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: .7rem;
+      margin-bottom: 2.5rem;
+    }
+    .feature-list li {
+      display: flex; align-items: center; gap: .8rem;
+      font-size: .92rem; color: var(--c-text);
+    }
+    .feature-list li::before {
+      content: '';
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid var(--c-primary); flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300222C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 10px; background-repeat: no-repeat; background-position: center;
+    }
+    .coaching-price-block {
+      background: var(--c-white); border: 1.5px solid var(--c-gray-2);
+      border-radius: 12px; padding: 1.75rem 1.5rem; margin-bottom: 2rem;
+    }
+    .coaching-price-lbl {
+      font-size: .7rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--c-muted); margin-bottom: .5rem;
+    }
+    .coaching-price-amount {
+      display: block; font-size: 2.4rem; font-weight: 700;
+      color: var(--c-primary); line-height: 1.1;
+    }
+    .coaching-price-period {
+      display: block; font-size: .85rem; color: var(--c-muted); margin-top: .3rem;
+    }
+    .coaching-price-note {
+      font-size: .88rem; color: var(--c-muted); line-height: 1.65;
+      margin-top: 1.25rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--c-gray-2);
+    }
+
+    /* ── CTA / CALENDAR SECTION (exact from homepage) ── */
+    .cta-section {
+      background: var(--c-primary);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.13) 1px, transparent 1px);
+      background-size: 30px 30px; pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      font-style: italic; color: #fff; line-height: 1.15; margin-bottom: 1.25rem;
+    }
+    .cta-title em { font-style: normal; color: #fff; }
+    .cta-desc {
+      color: rgba(255,255,255,.88); font-size: 1.05rem;
+      max-width: 460px; margin: 0 auto; line-height: 1.75;
+    }
+    .meetings-iframe-container {
+      max-width: 800px; margin: 2.5rem auto 0;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.3);
+    }
+
+    /* ── FOOTER (exact from homepage) ── */
+    footer {
+      background: var(--c-primary);
+      padding: 5rem 2.5rem 2.5rem;
+      color: rgba(255,255,255,.7); font-size: .88rem;
+    }
+    .footer-grid {
+      max-width: 1140px; margin: 0 auto 4rem;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .footer-brand-logo { height: 180px; display: block; margin-top: -3.5rem; margin-bottom: .5rem; }
+    .footer-brand-tagline {
+      color: rgba(255,255,255,.65); font-size: .9rem;
+      line-height: 1.75; max-width: 260px; margin-bottom: 1.75rem;
+    }
+    .footer-contact-item {
+      display: flex; align-items: center; gap: .6rem;
+      color: rgba(255,255,255,.75); font-size: .88rem;
+      text-decoration: none; margin-bottom: .6rem; transition: color .2s;
+    }
+    .footer-contact-item:hover { color: var(--c-yellow); }
+    .footer-col-title {
+      font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 1.25rem;
+    }
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+    .footer-nav a { color: rgba(255,255,255,.75); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .footer-nav a:hover { color: var(--c-yellow); }
+    .footer-bottom {
+      max-width: 1140px; margin: 0 auto;
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom-copy { color: #ffffff; font-size: .82rem; }
+    .footer-bottom-links { display: flex; gap: 1.75rem; }
+    .footer-bottom-links a { color: #ffffff; font-size: .82rem; text-decoration: none; transition: color .2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.85); }
+
+    /* ── WHATSAPP ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+      width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,.45); transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 32px; height: 32px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .hero-center { align-items: center; text-align: center; }
+      .detail-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 4rem 1.5rem 8rem; }
+      footer { padding: 4rem 1.5rem 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .result-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-inner">
+    <div class="hero-center">
+      <span class="hero-pill">LinkedIn Workshops &amp; Coaching</span>
+
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">
+          LinkedIn –
+          <em>ohne Lärm</em>
+        </h1>
+      </div>
+
+      <div class="hero-pain">
+        <span class="hero-pain-line">Du hast den LinkedIn-Check abgeschlossen. Dein persönliches Ergebnis zeigt dir, wo ihr steht – und was sich mit wenig Aufwand verändern lässt.</span>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#ergebnis" class="btn-hero btn-hero-primary">
+          📊 Dein Ergebnis
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#termin" class="btn-hero btn-hero-ghost">
+          💬 Gespräch vereinbaren
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img src="../images/Cap_1.png" class="hero-cap active" alt="LinkedIn ohne Lärm Cap 1">
+      <img src="../images/Cap_2.png" class="hero-cap" alt="LinkedIn ohne Lärm Cap 2">
+      <img src="../images/Cap_3.png" class="hero-cap" alt="LinkedIn ohne Lärm Cap 3">
+    </div>
+  </div>
+
+  <div class="logo-bar logo-bar--dark logo-bar--hero-animated" style="background: transparent; position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; border: none; padding: 1.5rem 0;">
+    <div class="logo-slider">
+      <div class="logo-slider-track">
+        <a href="https://www.terra-verde.ch/" target="_blank" rel="noopener"><img src="../images/Terra%20Verde.png" alt="Terra Verde"></a>
+        <a href="https://www.globus.ch/" target="_blank" rel="noopener"><img src="../images/Globus.png" alt="Globus"></a>
+        <a href="https://breitenmoser-hr.ch/" target="_blank" rel="noopener"><img src="../images/Breitenmoser%20HR.png" alt="Breitenmoser HR"></a>
+        <a href="https://24translate.de/" target="_blank" rel="noopener"><img src="../images/24%20translate.png" alt="24translate"></a>
+        <a href="https://institut-traumaintegration.ch/" target="_blank" rel="noopener"><img src="../images/NSTI.png" alt="NSTI"></a>
+        <a href="https://www.compremium.ch/" target="_blank" rel="noopener"><img src="../images/Compremium.png" alt="Compremium"></a>
+        <a href="https://www.stadt-zuerich.ch/" target="_blank" rel="noopener"><img src="../images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich"></a>
+        <a href="https://www.blue.works/" target="_blank" rel="noopener"><img src="../images/blueworks.png" alt="blue.works"></a>
+        <a href="https://www.swissolympic.ch/" target="_blank" rel="noopener"><img src="../images/Swiss%20Olympic.png" alt="Swiss Olympic"></a>
+        <a href="https://www.bfh.ch/" target="_blank" rel="noopener"><img src="../images/BFH.png" alt="Berner Fachhochschule"></a>
+        <a href="https://hso.ch/" target="_blank" rel="noopener"><img src="../images/HSO.png" alt="HSO"></a>
+        <a href="https://www.bztf.ch/" target="_blank" rel="noopener"><img src="../images/BZT.png" alt="BZT"></a>
+        <a href="https://geowerkstatt.ch/" target="_blank" rel="noopener"><img src="../images/GeoWerkstatt.png" alt="GeoWerkstatt"></a>
+        <a href="https://jobs.nzz.ch/" target="_blank" rel="noopener"><img src="../images/NZZJobs.png" alt="NZZ Jobs"></a>
+        <!-- Duplikat für nahtlose Schleife -->
+        <a href="https://www.terra-verde.ch/" target="_blank" rel="noopener"><img src="../images/Terra%20Verde.png" alt="Terra Verde"></a>
+        <a href="https://www.globus.ch/" target="_blank" rel="noopener"><img src="../images/Globus.png" alt="Globus"></a>
+        <a href="https://breitenmoser-hr.ch/" target="_blank" rel="noopener"><img src="../images/Breitenmoser%20HR.png" alt="Breitenmoser HR"></a>
+        <a href="https://24translate.de/" target="_blank" rel="noopener"><img src="../images/24%20translate.png" alt="24translate"></a>
+        <a href="https://institut-traumaintegration.ch/" target="_blank" rel="noopener"><img src="../images/NSTI.png" alt="NSTI"></a>
+        <a href="https://www.compremium.ch/" target="_blank" rel="noopener"><img src="../images/Compremium.png" alt="Compremium"></a>
+        <a href="https://www.stadt-zuerich.ch/" target="_blank" rel="noopener"><img src="../images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich"></a>
+        <a href="https://www.blue.works/" target="_blank" rel="noopener"><img src="../images/blueworks.png" alt="blue.works"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ERGEBNIS ═══════════════════════════════════════════════════════════════ -->
+<section class="result-section" id="ergebnis">
+  <div class="section-inner">
+    <span class="result-tag">🚀 Dein Ergebnis</span>
+    <h2 class="result-title">Eure Sichtbarkeit bleibt weitgehend ungenutzt</h2>
+    <div class="score-display">
+      <span class="score-num">0–3</span>
+      <span class="score-of">von 10 Punkten · Grosses Potenzial</span>
+    </div>
+
+    <div class="result-card" style="max-width: 760px;">
+      <div class="reassurance">
+        <p>Das bedeutet nicht, dass euer Unternehmen schlechte Arbeit leistet — oft ist sogar das Gegenteil der Fall.</p>
+      </div>
+      <p>Viele Unternehmen in dieser Kategorie verfügen über hervorragende Produkte, Dienstleistungen und Mitarbeitende. Nur bekommen potenzielle Kunden, Bewerbende und Partner davon kaum etwas mit.</p>
+
+      <div class="result-divider"></div>
+      <h3>Die Folge:</h3>
+      <ul class="consequence-list">
+        <li>Die Konkurrenz wirkt bekannter.</li>
+        <li>Fachkräfte orientieren sich an anderen Arbeitgebern.</li>
+        <li>Empfehlungen entstehen seltener.</li>
+        <li>Gute Geschichten bleiben innerhalb des Unternehmens.</li>
+      </ul>
+
+      <div class="result-divider"></div>
+      <h3>Womit ihr anfangen könnt — heute noch:</h3>
+      <ul class="start-list">
+        <li>Eine Führungskraft, die bereit ist, sichtbar zu werden</li>
+        <li>Zwei bis drei motivierte Mitarbeitende</li>
+        <li>Fünf bis zehn Themen aus eurem Alltag</li>
+      </ul>
+
+      <div class="recommendation">
+        <strong>Empfehlung</strong>
+        <p>Startet nicht mit einem grossen Programm. Die meisten erfolgreichen Initiativen starten nicht mit hundert Personen, sondern mit wenigen Menschen, die regelmässig präsent sind. Mehr braucht es am Anfang oft nicht.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WORKSHOP ═══════════════════════════════════════════════════════════════ -->
+<section class="workshop-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="section-lbl">🛠️ LinkedIn Workshops</p>
+      <h2 class="section-title">Darauf gezielt aufbauen</h2>
+    </div>
+    <div class="detail-grid">
+      <div>
+        <p class="detail-lead">In meinen Workshops lernst du alles Nötige zur LinkedIn Vermarktung. Im Fokus steht der Aufbau einer klaren LinkedIn-Präsenz: von den Basics über die Rolle einzelner Personen bis zur Verankerung von Content-Prozessen in Unternehmen.</p>
+        <p class="detail-lead">Die Inhalte stelle ich individuell für dich zusammen. Je nach Tiefe können die Themen auf mehrere Workshops verteilt werden. Auf Wunsch vertiefen wir spezifische Themen in Follow-Up-Workshops – zum Beispiel KI-Tools für Content-Erstellung oder den gezielten Netzwerkaufbau.</p>
+        <p class="detail-lead">Die Workshops richten sich an Einzelpersonen, Teams und Unternehmen: von der Fachperson, die ihr Personal Branding aufbauen will, bis zum Unternehmen, das Employer Branding und Employer Advocacy systematisch mit seinen Mitarbeitenden etablieren möchte.</p>
+        <ul class="feature-list">
+          <li>LinkedIn Profil-Optimierung</li>
+          <li>Klare Positionierung &amp; Themenfelder</li>
+          <li>Content-Strategie &amp; Algorithmus-Wissen</li>
+          <li>Personal Branding &amp; Positionierung</li>
+          <li>Employer Branding &amp; Employer Advocacy</li>
+          <li>KI-Tools für Content-Erstellung (optional)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="coaching-price-block">
+          <p class="coaching-price-lbl">Investition ab</p>
+          <span class="coaching-price-amount">CHF 1'370</span>
+          <span class="coaching-price-period">1:1 · pro Workshop · exkl. MwSt.</span>
+          <p class="coaching-price-note">2–3 Pers.: CHF 2'270 · 4–5 Pers.: CHF 2'970 · ab 6 Pers.: CHF 3'570</p>
+          <p class="coaching-price-note">Dauer: ca. 4–5 Stunden pro Workshop</p>
+          <p class="coaching-price-note">Vorbereitung, Nachbereitung &amp; digitales Handout inklusive · Zugang zur WhatsApp Community</p>
+          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
+        </div>
+        <a href="#termin" class="btn btn-dark">
+          💬 Gespräch vereinbaren
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KALENDER ═══════════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="termin">
+  <div class="section-inner cta-inner">
+    <h2 class="cta-title">☕ Lust auf einen virtuellen<br><em>Kaffee oder Tee?</em></h2>
+    <p class="cta-desc">Buch eine kostenlose Kaffeepause – 30 Minuten, unverbindlich, direkt mit Freddy.</p>
+    <!-- Start of Meetings Embed Script -->
+    <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/freddy-huesser?embed=true"></div>
+    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+    <!-- End of Meetings Embed Script -->
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img src="../images/logo-white.png" alt="LinkedIn ohne Lärm" class="footer-brand-logo">
+      <p class="footer-brand-tagline">LinkedIn wirksam nutzen – ohne grossen Aufwand, ohne leere Versprechen. Effizient &amp; ohne Lärm.</p>
+      <a href="mailto:kontakt@freddyhuesser.ch" class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        kontakt@freddyhuesser.ch
+      </a>
+      <a href="tel:+41774987835" class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.4 2 2 0 0 1 3.54 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 5.61 5.61l1.54-1.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.78 15z"/></svg>
+        +41 77 498 78 35
+      </a>
+    </div>
+    <div>
+      <p class="footer-col-title">Leistungen</p>
+      <ul class="footer-nav">
+        <li><a href="https://ohnelaerm.ch/#workshop">LinkedIn Workshops</a></li>
+        <li><a href="https://ohnelaerm.ch/#coaching">LinkedIn Coaching</a></li>
+        <li><a href="#termin">Termin buchen</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Links</p>
+      <ul class="footer-nav">
+        <li><a href="https://ohnelaerm.ch">ohnelaerm.ch</a></li>
+        <li><a href="https://www.linkedin.com/in/freddyhuesser-marketing/" target="_blank" rel="noopener">LinkedIn Profil</a></li>
+        <li><a href="https://ohnelaerm.ch/impressum.html">Impressum</a></li>
+        <li><a href="https://ohnelaerm.ch/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-copy">© 2026 Freddy Hüsser · LinkedIn ohne Lärm</p>
+    <div class="footer-bottom-links">
+      <a href="https://ohnelaerm.ch/impressum.html">Impressum</a>
+      <a href="https://ohnelaerm.ch/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.417.632 4.683 1.737 6.651L2 30l7.573-1.71A13.942 13.942 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#fff"/>
+    <path d="M23.1 19.3c-.3-.15-1.8-.89-2.08-.99-.28-.1-.48-.15-.68.15-.2.3-.78.99-.96 1.19-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="#25D366"/>
+  </svg>
+</a>
+
+<script>
+  // Cap image crossfade
+  const caps = document.querySelectorAll('.hero-cap');
+  let current = 0;
+  setInterval(() => {
+    caps[current].classList.remove('active');
+    current = (current + 1) % caps.length;
+    caps[current].classList.add('active');
+  }, 4000);
+</script>
+
+</body>
+</html>
