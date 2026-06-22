@@ -1079,42 +1079,114 @@
       background: var(--c-primary);
       background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
       background-size: 28px 28px;
-      padding: 5rem 2.5rem;
-      text-align: center;
+      padding: 6rem 2.5rem;
     }
-    .check-cta-inner { max-width: 640px; margin: 0 auto; }
+    .check-cta-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
     .check-cta-label {
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .12em;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-      margin-bottom: .75rem;
+      color: var(--c-primary);
+      background: var(--c-yellow);
+      padding: .35rem .85rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
     }
     .check-cta-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
       color: #fff;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       line-height: 1.2;
     }
     .check-cta-text {
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.6);
       font-size: 1.05rem;
-      margin-bottom: 2rem;
-      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
     }
     .btn-check-cta {
       display: inline-block;
       background: var(--c-yellow);
       color: var(--c-primary);
       font-weight: 700;
-      padding: .85rem 2.25rem;
+      padding: 1rem 2.25rem;
       border-radius: 6px;
       text-decoration: none;
       font-size: 1rem;
-      transition: opacity .2s;
+      box-shadow: 0 4px 24px rgba(255,245,202,.18);
+      transition: transform .2s, box-shadow .2s;
     }
-    .btn-check-cta:hover { opacity: .85; }
+    .btn-check-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,245,202,.28); }
+    .check-cards-stack {
+      position: relative;
+      height: 340px;
+    }
+    .check-card-q {
+      position: absolute;
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 22px;
+      width: 210px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.38);
+      text-decoration: none;
+      color: #1a1a2e;
+      display: block;
+      transition: transform .25s ease, box-shadow .25s ease, z-index 0s;
+    }
+    .check-card-q:hover {
+      box-shadow: 0 20px 55px rgba(0,0,0,.55);
+      z-index: 10 !important;
+    }
+    .check-card-q--1 {
+      top: 50px; left: 0;
+      transform: rotate(-5deg);
+      z-index: 1;
+    }
+    .check-card-q--1:hover { transform: rotate(-5deg) translateY(-10px) scale(1.04); }
+    .check-card-q--2 {
+      top: 20px; left: 50%; margin-left: -105px;
+      transform: rotate(-1deg);
+      z-index: 3;
+    }
+    .check-card-q--2:hover { transform: rotate(-1deg) translateY(-10px) scale(1.04); }
+    .check-card-q--3 {
+      top: 50px; right: 0;
+      transform: rotate(4deg);
+      z-index: 2;
+    }
+    .check-card-q--3:hover { transform: rotate(4deg) translateY(-10px) scale(1.04); }
+    .cc-num {
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: #9ca3af; margin-bottom: 8px;
+    }
+    .cc-q {
+      font-size: .84rem; font-weight: 700; color: #00222C;
+      line-height: 1.4; margin-bottom: 14px;
+    }
+    .cc-answers { display: flex; flex-direction: column; gap: 6px; }
+    .cc-ans {
+      padding: 7px 11px;
+      border: 1.5px solid #e5e7eb; border-radius: 7px;
+      font-size: .75rem; font-weight: 500; color: #374151;
+    }
+    .cc-ja  { border-color: #16a34a; background: #f0fdf4; color: #15803d; }
+    .cc-tw  { border-color: #d97706; background: #fffbeb; color: #b45309; }
+    .cc-no  { border-color: #dc2626; background: #fef2f2; color: #b91c1c; }
+    @media (max-width: 768px) {
+      .check-cta-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .check-cards-stack { display: none; }
+    }
 
     /* ── REVIEWS ─────────────────────────────── */
     .reviews-section { background: var(--c-gray); }
@@ -1773,11 +1845,49 @@
 
 <!-- ══════════════ CHECK / LEAD MAGNET ══════════════ -->
 <section class="check-cta-section">
-  <div class="check-cta-inner">
-    <p class="check-cta-label">🔍 LinkedIn-Check</p>
-    <h2 class="check-cta-title">Wo steht euer Unternehmen auf LinkedIn?</h2>
-    <p class="check-cta-text">10 kurze Fragen. 3 Minuten. Eure vollständige Auswertung mit konkreten nächsten Schritten kommt direkt per E-Mail.</p>
-    <a href="/check/" class="btn-check-cta">Check starten →</a>
+  <div class="check-cta-grid">
+
+    <div class="check-cta-copy">
+      <p class="check-cta-label">🔍 &nbsp;LinkedIn-Check</p>
+      <h2 class="check-cta-title">Wo steht euer Unternehmen auf LinkedIn?</h2>
+      <p class="check-cta-text">10 kurze Fragen. 3 Minuten. Eure vollständige Auswertung mit konkreten nächsten Schritten kommt direkt per E-Mail.</p>
+      <a href="/check/" class="btn-check-cta">Check starten →</a>
+    </div>
+
+    <div class="check-cards-stack">
+
+      <a href="/check/" class="check-card-q check-card-q--1">
+        <p class="cc-num">Frage 1 von 10</p>
+        <p class="cc-q">Eure Führungskräfte posten regelmässig über ihr eigenes Profil — nicht nur die Firmenseite.</p>
+        <div class="cc-answers">
+          <div class="cc-ans cc-ja">✓ Ja</div>
+          <div class="cc-ans">~ Teilweise</div>
+          <div class="cc-ans">✗ Nein</div>
+        </div>
+      </a>
+
+      <a href="/check/" class="check-card-q check-card-q--2">
+        <p class="cc-num">Frage 4 von 10</p>
+        <p class="cc-q">Es gibt einen einfachen Content-Plan, sodass niemand jede Woche bei null anfängt.</p>
+        <div class="cc-answers">
+          <div class="cc-ans">✓ Ja</div>
+          <div class="cc-ans cc-tw">~ Teilweise</div>
+          <div class="cc-ans">✗ Nein</div>
+        </div>
+      </a>
+
+      <a href="/check/" class="check-card-q check-card-q--3">
+        <p class="cc-num">Frage 7 von 10</p>
+        <p class="cc-q">Ihr nutzt KI, um Content effizient zu erstellen — ohne dass er nach Maschine klingt.</p>
+        <div class="cc-answers">
+          <div class="cc-ans">✓ Ja</div>
+          <div class="cc-ans">~ Teilweise</div>
+          <div class="cc-ans cc-no">✗ Nein</div>
+        </div>
+      </a>
+
+    </div>
+
   </div>
 </section>
 
