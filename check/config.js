@@ -8,8 +8,8 @@ const CONFIG = {
   },
 
   intro: {
-    label: 'Selbst-Assessment · 2 Minuten · 10 Fragen',
-    headline: 'Ist euer Unternehmen auf LinkedIn wirklich sichtbar?',
+    label: 'Selbst-Assessment · 3 Minuten · 10 Fragen',
+    headline: 'Erfahrt in 3 Minuten, wo ihr steht und erhaltet eure Auswertung mit Tipps direkt per E-Mail',
     subline: 'Viele Unternehmen nutzen LinkedIn «nebenbei» und hoffen so auf Ergebnisse. Leider funktioniert diese Strategie nur selten. Dieser kurze Check zeigt euch, wo ihr aktuell steht und was als nächstes zu tun ist, um erste Ziele mit LinkedIn zu erreichen.',
     cta: 'Check starten',
   },
