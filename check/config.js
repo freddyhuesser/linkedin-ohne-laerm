@@ -62,7 +62,7 @@ const CONFIG = {
     },
     {
       id: 10,
-      text: 'Neue Leute werden befähigt (Schulung, Begleitung) — statt allein gelassen.',
+      text: 'Neue Mitarbeitende werden befähigt (Schulung, Begleitung) — statt allein gelassen.',
       hint: 'LinkedIn-Marketing ist lernbar. Wer Mitarbeitende einfach «machen lässt», ohne Unterstützung, ist zwar aktiv, aber oft auch wirkungslos und am Ende frustriert.',
     },
   ],
