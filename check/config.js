@@ -113,6 +113,22 @@ const CONFIG = {
     10: 'Plant einen 2-stündigen Workshop, um das Team abzuholen — danach wissen alle, wo sie stehen und was zu tun ist.',
   },
 
+  // Schwachpunkt (Frage) → passende Mail in der Serie.
+  // day = Mail-Nummer / Versandtag (Tag 1 = Begrüssung ohne Content, Content ab Tag 2).
+  // topic = Kurztitel, der in der personalisierten Auswertung angezeigt wird.
+  lessonMap: {
+    1:  { day: 4, topic: 'Führungskräfte sichtbar machen' },
+    2:  { day: 4, topic: 'Verbindliche Strategie & Fahrplan' },
+    3:  { day: 5, topic: 'Klare Verantwortung (Ownership)' },
+    4:  { day: 6, topic: 'Einfacher Content-Plan' },
+    5:  { day: 3, topic: 'Die richtigen Personen aktivieren' },
+    6:  { day: 6, topic: 'Schnell reagieren & interagieren' },
+    7:  { day: 7, topic: 'KI sinnvoll einsetzen' },
+    8:  { day: 2, topic: 'Nicht nur die Firmenseite' },
+    9:  { day: 4, topic: 'Klare, messbare Ziele' },
+    10: { day: 5, topic: 'Neue Mitarbeitende befähigen' },
+  },
+
   gate: {
     headline: 'Dein Ergebnis ist bereit.',
     subline: 'Trag deine E-Mail-Adresse ein — wir senden dir die vollständige Auswertung und zeigen, welche nächsten Schritte für euch sinnvoll sind.',
