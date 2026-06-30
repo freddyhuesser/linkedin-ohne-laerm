@@ -116,6 +116,7 @@ async function submitGate() {
   const name     = document.getElementById('input-name').value.trim();
   const lastName = document.getElementById('input-lastname').value.trim();
   const company  = document.getElementById('input-company').value.trim();
+  const linkedin = document.getElementById('input-linkedin').value.trim();
   const gdpr    = document.getElementById('gdpr-check').checked;
 
   // Validation
@@ -147,6 +148,7 @@ async function submitGate() {
       name,
       last_name: lastName,
       company,
+      linkedin_url: linkedin,
       score:      state.score,
       stufe:      state.stage.key,
       stufeName:  state.stage.label,
