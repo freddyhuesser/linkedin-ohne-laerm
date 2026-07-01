@@ -52,8 +52,9 @@ const CONFIG = {
     },
     {
       id: 8,
-      text: 'Ihr verlasst euch für Reichweite nicht allein auf die Firmenseite.',
+      text: 'Ihr verlasst euch für Reichweite grösstenteils auf die Firmenseite.',
       hint: 'Unternehmensseiten auf LinkedIn haben organisch kaum Reichweite. Wer nur dort postet, spricht meist nur ins Leere.',
+      invert: true,
     },
     {
       id: 9,
@@ -88,7 +89,7 @@ const CONFIG = {
       emoji: '🔧',
       label: 'Solide Basis, Potenzial brach',
       color: '#C17B2B',
-      text: 'Das Fundament steht — aber viel Wirkung bleibt liegen. Einzelne Bausteine fehlen noch oder laufen nicht konsequent. Genau hier liegt euer grösster Hebel für mehr Sichtbarkeit.',
+      text: 'Das Fundament steht — aber viel Wirkung bleibt liegen. Einzelne Bausteine fehlen noch oder laufen nicht konsequent. Genau hier seht ihr am schnellsten Wirkung.',
     },
     {
       min: 0, max: 3.5,

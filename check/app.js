@@ -70,7 +70,10 @@ function renderQuestion(index) {
 }
 
 function selectAnswer(index, opt) {
-  state.answers[index] = { id: CONFIG.questions[index].id, value: opt.value, key: opt.key };
+  const q = CONFIG.questions[index];
+  const value = q.invert ? (1 - opt.value) : opt.value;
+  const scoreKey = q.invert && opt.key !== 'teilweise' ? (opt.key === 'ja' ? 'nein' : 'ja') : opt.key;
+  state.answers[index] = { id: q.id, value, key: opt.key, scoreKey };
 
   // Highlight selection briefly, then advance
   document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
@@ -152,7 +155,7 @@ async function submitGate() {
       score:      state.score,
       stufe:      state.stage.key,
       stufeName:  state.stage.label,
-      answers:    state.answers.map((a, i) => ({ q: CONFIG.questions[i].id, v: a.key })),
+      answers:    state.answers.map((a, i) => ({ q: CONFIG.questions[i].id, v: a.scoreKey || a.key })),
     };
 
     const res = await fetch('subscribe.php', {
