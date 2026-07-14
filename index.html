@@ -2145,9 +2145,9 @@
   var shown = false;
 
   function showPopup() {
-    if (shown || sessionStorage.getItem(POPUP_KEY)) return;
+    if (shown || localStorage.getItem(POPUP_KEY)) return;
     shown = true;
-    sessionStorage.setItem(POPUP_KEY, '1');
+    localStorage.setItem(POPUP_KEY, '1');
     overlay.classList.add('active');
   }
 
