@@ -1492,31 +1492,24 @@
     .vm-sep { width: 1px; height: 2.5rem; background: var(--c-gray-2); flex-shrink: 0; }
     @media (max-width: 640px) { .vm-sep { display: none; } .vm-item { padding: .75rem 1.25rem; } }
 
-    /* ── ANGEBOT PREISBOXEN ── */
-    .angebot-price-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
-    .angebot-price-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
-      box-shadow: 0 4px 24px rgba(0,34,44,.08);
-      position: relative;
-      overflow: hidden;
+    /* ── ANGEBOT PREISBOXEN – PROSPEKT ── */
+    .pros-wrap { border-top: 2px solid var(--c-yellow-d); padding-top: 2rem; margin-top: 2rem; }
+    .pros-cols { display: grid; grid-template-columns: 1fr 1fr; }
+    .pros-col { padding: 0 2rem 2rem 0; }
+    .pros-col + .pros-col { padding: 0 0 2rem 2rem; border-left: 1px solid var(--c-gray-2); }
+    .pros-plan { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.5rem; }
+    .pros-price { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1; font-weight: 400; color: var(--c-primary); font-variant-numeric: tabular-nums; letter-spacing: -.03em; margin-bottom: .3rem; }
+    .pros-cadence { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 2rem; }
+    .pros-rule { border: none; border-top: 1px solid var(--c-gray-2); margin-bottom: 1.25rem; }
+    .pros-row { display: flex; justify-content: space-between; align-items: baseline; font-size: .8rem; color: var(--c-muted); padding: .45rem 0; border-bottom: 1px solid var(--c-gray-2); gap: 1rem; }
+    .pros-row-label { font-size: .67rem; letter-spacing: .08em; text-transform: uppercase; flex-shrink: 0; }
+    .pros-row-val { text-align: right; font-variant-numeric: tabular-nums; }
+    .pros-total { margin-top: 1.5rem; font-size: .67rem; letter-spacing: .07em; color: var(--c-muted); text-transform: uppercase; font-variant-numeric: tabular-nums; opacity: .7; }
+    @media (max-width: 580px) {
+      .pros-cols { grid-template-columns: 1fr; }
+      .pros-col { padding: 0 0 2rem; }
+      .pros-col + .pros-col { border-left: none; border-top: 1px solid var(--c-gray-2); padding: 2rem 0 0; }
     }
-    .angebot-price-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: var(--c-gray-2);
-    }
-    .apb-featured::before { background: var(--c-yellow); }
-    .apb-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-primary); margin-bottom: 1.25rem; }
-    .apb-main-price { display: flex; align-items: baseline; gap: .4rem; margin-bottom: .5rem; }
-    .apb-main-num { font-family: 'Roca Two', serif; font-size: 1.75rem; color: var(--c-primary); font-weight: 700; line-height: 1; }
-    .apb-main-period { font-size: .88rem; color: var(--c-muted); }
-    .apb-setup { font-size: .85rem; color: var(--c-muted); margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--c-gray-2); line-height: 1.5; }
-    .apb-total { font-size: .78rem; color: var(--c-muted); }
-    @media (max-width: 580px) { .angebot-price-boxes { grid-template-columns: 1fr; } }
 
     /* ── SCHNELLTEST POPUP ── */
     .popup-overlay {
@@ -1715,7 +1708,7 @@
 <section class="methode-section" id="methode">
   <div class="section-inner">
     <div class="section-header center on-dark reveal">
-      <h2 class="section-title">«LinkedIn – ohne Lärm»: Die Methode</h2>
+      <h2 class="section-title" style="text-align: center;">«LinkedIn – ohne Lärm»:<br>Die Methode</h2>
       <p class="methode-intro reveal">Damit Präsenz nicht vom Zufall abhängt, arbeiten wir in drei ruhigen Schritten.</p>
     </div>
     <div class="methode-cards">
@@ -1806,24 +1799,38 @@
         </div>
       </div>
       <div class="reveal">
-        <div class="angebot-price-boxes">
-          <div class="angebot-price-box">
-            <p class="apb-label">Sparring</p>
-            <div class="apb-main-price">
-              <span class="apb-main-num">CHF 2'400</span>
-              <span class="apb-main-period">/Monat</span>
+        <div class="pros-wrap">
+          <div class="pros-cols">
+            <div class="pros-col">
+              <p class="pros-plan">Sparring</p>
+              <p class="pros-price">2'400</p>
+              <p class="pros-cadence">CHF / Monat</p>
+              <hr class="pros-rule">
+              <div class="pros-row">
+                <span class="pros-row-label">Setup</span>
+                <span class="pros-row-val">CHF 7'900 einmalig</span>
+              </div>
+              <div class="pros-row">
+                <span class="pros-row-label">Laufzeit</span>
+                <span class="pros-row-val">6 Monate</span>
+              </div>
+              <p class="pros-total">Gesamt CHF 19'900 · exkl. MwSt.</p>
             </div>
-            <p class="apb-setup">+ CHF 7'900 Fundament-Monat (einmalig)</p>
-            <p class="apb-total">Gesamt 6 Monate: CHF 19'900 · exkl. MwSt.</p>
-          </div>
-          <div class="angebot-price-box apb-featured">
-            <p class="apb-label">Vollmandat</p>
-            <div class="apb-main-price">
-              <span class="apb-main-num">CHF 4'200</span>
-              <span class="apb-main-period">/Monat</span>
+            <div class="pros-col">
+              <p class="pros-plan">Vollmandat</p>
+              <p class="pros-price">4'200</p>
+              <p class="pros-cadence">CHF / Monat</p>
+              <hr class="pros-rule">
+              <div class="pros-row">
+                <span class="pros-row-label">Setup</span>
+                <span class="pros-row-val">CHF 7'900 einmalig</span>
+              </div>
+              <div class="pros-row">
+                <span class="pros-row-label">Laufzeit</span>
+                <span class="pros-row-val">6 Monate</span>
+              </div>
+              <p class="pros-total">Gesamt CHF 28'900 · exkl. MwSt.</p>
             </div>
-            <p class="apb-setup">+ CHF 7'900 Fundament-Monat (einmalig)</p>
-            <p class="apb-total">Gesamt 6 Monate: CHF 28'900 · exkl. MwSt.</p>
           </div>
         </div>
         <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
@@ -1849,23 +1856,38 @@
         </div>
       </div>
       <div class="reveal">
-        <div class="angebot-price-boxes">
-          <div class="angebot-price-box">
-            <p class="apb-label">1:1</p>
-            <div class="apb-main-price">
-              <span class="apb-main-num">CHF 1'900</span>
-              <span class="apb-main-period">/Modul</span>
+        <div class="pros-wrap">
+          <div class="pros-cols">
+            <div class="pros-col">
+              <p class="pros-plan">1:1 für Führungskräfte</p>
+              <p class="pros-price">1'900</p>
+              <p class="pros-cadence">CHF / Modul</p>
+              <hr class="pros-rule">
+              <div class="pros-row">
+                <span class="pros-row-label">Module</span>
+                <span class="pros-row-val">4 × 2–3 Stunden</span>
+              </div>
+              <div class="pros-row">
+                <span class="pros-row-label">Format</span>
+                <span class="pros-row-val">Kalenderfreundlich</span>
+              </div>
+              <p class="pros-total">4er-Paket CHF 6'800 · exkl. MwSt.</p>
             </div>
-            <p class="apb-setup">4 Module à 2–3h · kalenderfreundlich</p>
-            <p class="apb-total">4er-Paket CHF 6'800 · exkl. MwSt.</p>
-          </div>
-          <div class="angebot-price-box apb-featured">
-            <p class="apb-label">Teams</p>
-            <div class="apb-main-price">
-              <span class="apb-main-num">ab CHF 7'500</span>
+            <div class="pros-col">
+              <p class="pros-plan">Team-Strategie-Workshop</p>
+              <p class="pros-price" style="font-size: clamp(1.8rem, 2.8vw, 2.8rem);">ab 7'500</p>
+              <p class="pros-cadence">CHF</p>
+              <hr class="pros-rule">
+              <div class="pros-row">
+                <span class="pros-row-label">Umfang</span>
+                <span class="pros-row-val">Ganztages-Workshop</span>
+              </div>
+              <div class="pros-row">
+                <span class="pros-row-label">Personen</span>
+                <span class="pros-row-val">Bis 8 Personen</span>
+              </div>
+              <p class="pros-total">Preis je nach Umfang · exkl. MwSt.</p>
             </div>
-            <p class="apb-setup">Ganztages-Workshop · bis 8 Personen</p>
-            <p class="apb-total">Preis je nach Umfang · exkl. MwSt.</p>
           </div>
         </div>
         <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
@@ -1884,7 +1906,11 @@
     <div class="vertrauen-inner reveal">
       <p class="section-lbl">Vertrauen</p>
       <p class="vertrauen-quote-big">Hier kannst du laut denken.</p>
-      <p class="vertrauen-text">Mit mir besprichst du, was noch nicht spruchreif ist. Ideen, die noch Form annehmen. Überlegungen, die du testen willst, bevor sie rausgehen. Was wir besprechen, bleibt bei mir — ohne Kundenliste, ohne Referenznennung, ohne Ausnahmen.</p>
+      <p class="vertrauen-text">Nicht jede Idee ist sofort bereit für die Öffentlichkeit. Manche Gedanken müssen zuerst geprüft, geschärft oder auch wieder verworfen werden.</p>
+      <p class="vertrauen-text">Mit mir besprichst du, was noch nicht spruchreif ist. Ideen, die erst Form annehmen. Themen, bei denen du unsicher bist. Formulierungen, die Wirkung entfalten sollen. Oder Fragen, bei denen es keine offensichtliche Antwort gibt.</p>
+      <p class="vertrauen-text">Ich höre empathisch zu, denke mit, ordne ein und widerspreche auch, wenn es nötig ist. Nicht, um schneller zu kommunizieren, sondern damit du mit Überzeugung kommunizieren kannst.</p>
+      <p class="vertrauen-text">Was wir besprechen, bleibt zwischen uns. Ohne Kundenliste. Ohne Referenznennung. Ohne Ausnahmen.</p>
+      <p class="vertrauen-text">Denn Vertrauen ist keine Leistung, die ich verspreche. Es ist die Grundlage jeder Zusammenarbeit.</p>
       <span class="vertrauen-freddy">— Freddy</span>
     </div>
     <div class="vertrauen-metrics reveal">
