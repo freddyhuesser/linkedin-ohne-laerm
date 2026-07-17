@@ -24,7 +24,7 @@
       --c-muted:      #3d5260;
       --c-accent-bg:  #FFF5CA;
       --c-yellow:     #FFF5CA;
-      --c-yellow-h:   #e73643;
+      --c-yellow-h:   #F0E4A6;
       --c-yellow-d:   #8a6f00;
       --c-white:      #FFFFFF;
       --c-gray:       #f6f6f4;
@@ -66,7 +66,7 @@
     }
     .btn-primary:hover {
       background: var(--c-yellow-h);
-      color: #fff;
+      color: var(--c-primary);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.1);
     }
@@ -77,16 +77,16 @@
       border-color: rgba(255,255,255,.35);
     }
     .btn-ghost:hover {
-      background: #e73643;
-      border-color: #e73643;
+      background: rgba(255,255,255,.15);
+      border-color: rgba(255,255,255,.5);
       color: #fff;
       transform: translateY(-2px);
     }
 
     .btn-dark {
-      background: #e73643;
+      background: var(--c-primary);
       color: #fff;
-      border-color: #e73643;
+      border-color: var(--c-primary);
     }
     .btn-dark:hover {
       background: var(--c-primary);
@@ -202,7 +202,7 @@
     .nav-overlay.open .nav-link:nth-child(6) { transition-delay: .30s; }
     .nav-overlay.open .nav-link:nth-child(7) { transition-delay: .30s; }
     .nav-overlay.open .nav-link:nth-child(8) { transition-delay: .36s; }
-    .nav-overlay .nav-link:hover { background: #e73643; color: #fff; }
+    .nav-overlay .nav-link:hover { background: var(--c-yellow); color: var(--c-primary); }
     .nav-overlay .nav-link.nav-cta { margin-top: .5rem; }
     .nav-socials {
       position: absolute;
@@ -261,7 +261,7 @@
     @media (max-width: 600px) {
       .nav-overlay { padding: 5rem 2.5rem 3rem; }
       .nav-overlay .nav-link { font-size: clamp(1.7rem, 8.5vw, 2.5rem); }
-      .nav-socials { right: calc(2.5rem + .8rem); bottom: 1.5rem; }
+      .nav-socials { bottom: 1.5rem; }
     }
 
     /* ── HERO PLAY BUTTON ───────────────────── */
@@ -447,7 +447,7 @@
     }
     .btn-hero-primary:hover {
       background: var(--c-yellow-h);
-      color: #fff;
+      color: var(--c-primary);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.15);
     }
@@ -705,7 +705,7 @@
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
       margin-bottom: 3.5rem;
     }
@@ -1764,6 +1764,11 @@
         <span class="stat-card-label">Eine Führungsperson erreicht gleich viel wie der ganze Firmenkanal, mit einem Bruchteil der Reichweite.</span>
         <span class="stat-card-source">DSMN8 2023</span>
       </div>
+      <div class="stat-card stat-card--light">
+        <span class="stat-card-num">~12%</span>
+        <span class="stat-card-label">Nur rund jeder achte Mittelstands-CEO in der Schweiz ist auf LinkedIn aktiv. Fast die Hälfte der SMI-Chefs ist gar nicht präsent.</span>
+        <span class="stat-card-source">In-A-Nutshell / LMU · CEO-Barometer DACH</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1924,6 +1929,39 @@
 
           <div class="review-card">
             <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Drei und eine halbe Stunde bestens investierte Zeit! Nie langweilig, keine Redundanzen, mit klarem roten Faden. Dieser Kurs von Freddy Hüsser generiert Mehrwert und macht Spass. Mach mehr aus Deinem LinkedIn!</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#5B9B6B">RC</div>
+              <div>
+                <div class="review-card-name">Reto Cadalbert</div>
+                <div class="review-card-company">Zürcher Kantonalbank</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Das digitale Marketing – ein Gräuel! Bis ich Freddy vor drei Jahren gefunden habe. Mit deiner Unterstützung kann ich heute erfolgreiche Kampagnen gestalten und lancieren. Zusätzlich habe ich einen äusserst wertvollen Gesprächspartner für unternehmerische Strategien gewonnen.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#2E7D32">KP</div>
+              <div class="review-card-name">KAIROS Partner AG</div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
+            <p class="review-card-text">Das Referat von Freddy am Social Selling Day in Zürich war einfach genial. Was mit der richtigen Strategie im Onlinemarketing erreicht werden kann ist GENIAL. Freddy und sein Team hilft dir dabei, dass deine Sichtbarkeit abgeht wie eine Rakete.</p>
+            <div class="review-card-footer">
+              <div class="review-card-avatar" style="--av-color:#1F2937">TM</div>
+              <div>
+                <div class="review-card-name">THE MAN:Switzerland</div>
+                <div class="review-card-company">Haval Schweiz</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-stars">★★★★★</div>
             <p class="review-card-text">3.5 Stunden LinkedIn und es wurde nie langweilig! Vielen Dank lieber Freddy für den super aufgebauten Kurs und die vielen Tipps, die sofort umgesetzt werden konnten.</p>
             <div class="review-card-footer">
               <div class="review-card-avatar" style="--av-color:#D9534F">KZ</div>
@@ -1942,18 +1980,6 @@
               <div>
                 <div class="review-card-name">Dominik Spycher</div>
                 <div class="review-card-company">BZT Frauenfeld</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card-stars">★★★★★</div>
-            <p class="review-card-text">Drei und eine halbe Stunde bestens investierte Zeit! Nie langweilig, keine Redundanzen, mit klarem roten Faden. Dieser Kurs von Freddy Hüsser generiert Mehrwert und macht Spass. Mach mehr aus Deinem LinkedIn!</p>
-            <div class="review-card-footer">
-              <div class="review-card-avatar" style="--av-color:#5B9B6B">RC</div>
-              <div>
-                <div class="review-card-name">Reto Cadalbert</div>
-                <div class="review-card-company">Zürcher Kantonalbank</div>
               </div>
             </div>
           </div>
@@ -2020,18 +2046,6 @@
 
           <div class="review-card">
             <div class="review-card-stars">★★★★★</div>
-            <p class="review-card-text">Das Referat von Freddy am Social Selling Day in Zürich war einfach genial. Was mit der richtigen Strategie im Onlinemarketing erreicht werden kann ist GENIAL. Freddy und sein Team hilft dir dabei, dass deine Sichtbarkeit abgeht wie eine Rakete.</p>
-            <div class="review-card-footer">
-              <div class="review-card-avatar" style="--av-color:#1F2937">TM</div>
-              <div>
-                <div class="review-card-name">THE MAN:Switzerland</div>
-                <div class="review-card-company">Haval Schweiz</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card-stars">★★★★★</div>
             <p class="review-card-text">Genau was ich gebraucht habe, zielgerichtete lösungsorientierte Herangehensweise zu fairen Konditionen. Dies alles bei einer sehr angenehmen Arbeitsatmosphäre.</p>
             <div class="review-card-footer">
               <div class="review-card-avatar" style="--av-color:#C0392B">RI</div>
@@ -2063,15 +2077,6 @@
                 <div class="review-card-name">Remo Meier</div>
                 <div class="review-card-company">Selbständig</div>
               </div>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-card-stars">★★★★★</div>
-            <p class="review-card-text">Das digitale Marketing – ein Gräuel! Bis ich Freddy vor drei Jahren gefunden habe. Mit deiner Unterstützung kann ich heute erfolgreiche Kampagnen gestalten und lancieren. Zusätzlich habe ich einen äusserst wertvollen Gesprächspartner für unternehmerische Strategien gewonnen.</p>
-            <div class="review-card-footer">
-              <div class="review-card-avatar" style="--av-color:#2E7D32">KP</div>
-              <div class="review-card-name">KAIROS Partner AG</div>
             </div>
           </div>
 
@@ -2150,8 +2155,8 @@
         <p class="section-lbl">👋 Freddy &amp; Eny</p>
         <h2 class="section-title">Hallo, ich bin Freddy.<br>Und das ist Eny.</h2>
 
-        <p class="ueber-lead">Seit bald zehn Jahren unterstütze ich Unternehmen und Personen dabei, sich im Markt klar zu positionieren – für mehr Sichtbarkeit, Wirkung und konkrete Ziele, wie den nächsten Karriereschritt oder den Aufbau einer starken Marke.</p>
-        <p class="ueber-lead">Ohne unnötigen Lärm – effizient &amp; sympathisch. Als Berater und Referent entwickle ich Markenauftritte, die zur Persönlichkeit passen. An drei Hochschulen unterrichte ich Marketingstrategie – praxisnah und mit Blick auf das, was draussen zählt.</p>
+        <p class="ueber-lead">Seit bald zehn Jahren arbeite ich mit Marketingstrategie, heute mit einem klaren Fokus: Ich mache exponierte Führungskräfte souverän präsent auf LinkedIn. Menschen, bei denen jeder Beitrag Gewicht hat und die genau deshalb zögern. Ruhig, glaubwürdig, mit der eigenen Stimme.</p>
+        <p class="ueber-lead">An drei Hochschulen unterrichte ich Marketingstrategie, praxisnah und mit Blick auf das, was draussen zählt. Was ich Führungskräften rate, mache ich selbst vor.</p>
         <p class="ueber-lead">In meiner Freizeit begleite ich Eny in den Wald, an die Limmat oder auf die Joggingrunde durchs Quartier.</p>
 
       </div>
@@ -2182,7 +2187,8 @@
     <div class="section-header center reveal">
       <p class="section-lbl">Kontakt</p>
       <h2 class="section-title">✉️ Lieber schreiben?</h2>
-      <p class="section-desc">Füll das Formular aus – ich melde mich in der Regel innerhalb von 24 Stunden.<br>Oder schreib mir direkt auf <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" target="_blank" rel="noopener" style="color:#25D366;font-weight:700;text-decoration:none;">WhatsApp</a>.</p>
+      <p class="section-desc">Füll das Formular aus, ich melde mich in der Regel innerhalb von 24 Stunden.<br>Oder schreib mir direkt auf <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" target="_blank" rel="noopener" style="color:#25D366;font-weight:700;text-decoration:none;">WhatsApp</a>.</p>
+      <p class="section-desc" style="margin-top: 1.5rem; font-size: .9rem; color: var(--c-muted);">Du bist im Kommunikations- oder Marketingteam und möchtest deine Geschäftsleitung präsenter machen? Schreib mir.</p>
     </div>
     <div class="reveal">
       <script src="https://js-eu1.hsforms.net/forms/embed/148420263.js" defer></script>
@@ -2225,7 +2231,7 @@
   <div class="footer-grid">
     <div>
       <img src="images/logo-white.png" alt="LinkedIn ohne Lärm" class="footer-brand-logo">
-      <p class="footer-brand-tagline">LinkedIn wirksam nutzen – ohne grossen Aufwand, ohne leere Versprechen. Effizient &amp; ohne Lärm.</p>
+      <p class="footer-brand-tagline">Souverän präsent auf LinkedIn. Für Führungskräfte, die viel zu sagen hätten. Ohne Lärm.</p>
       <a href="mailto:kontakt@freddyhuesser.ch" class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
         kontakt@freddyhuesser.ch
