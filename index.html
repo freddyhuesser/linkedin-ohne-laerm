@@ -153,9 +153,9 @@
       background-size: 28px 28px;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      padding: 5rem 6rem 4rem;
+      padding: 5rem 2rem 4rem;
       opacity: 0;
       pointer-events: none;
       transition: opacity .35s ease;
@@ -207,7 +207,8 @@
     .nav-socials {
       position: absolute;
       bottom: 2rem;
-      right: calc(6rem + .8rem);
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -1433,87 +1434,80 @@
 
     /* ── VERTRAUEN ─────────────────────────── */
     .vertrauen-section {
-      background: var(--c-gray);
-      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.06) 1px, transparent 1px);
       background-size: 28px 28px;
-      padding: 4rem 2.5rem;
+      padding: 5.5rem 2rem;
+      text-align: center;
     }
-    .vertrauen-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-      max-width: 1140px; margin: 0 auto;
-    }
-    .diskretion-block { padding: 2rem; background: var(--c-primary); border-radius: 14px; }
-    .diskretion-text { font-size: 1.05rem; color: rgba(255,255,255,.82); line-height: 1.75; margin-top: .75rem; }
-    .autoritaet-block { padding: 2rem; }
-    .autoritaet-badges { display: flex; flex-direction: column; gap: .65rem; margin-top: .75rem; }
-    .autoritaet-badge {
-      display: inline-flex; background: var(--c-white); border: 1px solid var(--c-gray-2);
-      border-radius: 8px; padding: .65rem 1rem; font-size: .9rem; color: var(--c-text); line-height: 1.4;
-    }
-    @media (max-width: 860px) { .vertrauen-grid { grid-template-columns: 1fr; } }
-
-    /* ── ANGEBOT PREISBOXEN ── */
-    .angebot-price-boxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .angebot-price-box {
-      background: var(--c-gray);
-      border: 1px solid var(--c-gray-2);
-      border-radius: 14px;
-      padding: 1.75rem;
-    }
-    .apb-label {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .vertrauen-inner { max-width: 620px; margin: 0 auto 3rem; }
+    .vertrauen-quote-big {
+      font-family: 'Roca Two', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       color: var(--c-primary);
+      line-height: 1.15;
+      margin: .75rem 0 1.1rem;
+    }
+    .vertrauen-text {
+      font-size: 1.02rem;
+      color: var(--c-muted);
+      line-height: 1.85;
       margin-bottom: 1.25rem;
     }
-    .apb-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: .75rem;
-      padding: .75rem 0;
-      border-bottom: 1px solid var(--c-gray-2);
-    }
-    .apb-line:first-of-type { padding-top: 0; }
-    .apb-line:last-of-type { border-bottom: none; padding-bottom: 0; }
-    .apb-phase { font-size: .85rem; color: var(--c-muted); }
-    .apb-amount {
+    .vertrauen-freddy {
       font-family: 'Roca Two', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.1rem;
       color: var(--c-primary);
-      white-space: nowrap;
     }
-    .apb-amount small {
-      font-family: 'Inter', sans-serif;
-      font-size: .78rem;
-      font-weight: 500;
-      color: var(--c-muted);
-    }
-    .apb-total {
-      font-size: .82rem;
-      color: var(--c-muted);
-      margin-top: 1.1rem;
-      padding-top: 1rem;
+    .vertrauen-metrics {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
       border-top: 1px solid var(--c-gray-2);
+      border-bottom: 1px solid var(--c-gray-2);
+      padding: 2rem 0;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    @media (max-width: 580px) { .angebot-price-boxes { grid-template-columns: 1fr; } }
-
-    /* ── DISKRETION ── */
-    .diskretion-headline {
+    .vm-item { padding: .5rem 2.5rem; text-align: center; }
+    .vm-num {
+      display: block;
       font-family: 'Roca Two', serif;
-      font-size: 1.45rem;
-      color: #fff;
-      margin: .75rem 0 .85rem;
-      line-height: 1.2;
+      font-size: 1.6rem;
+      color: var(--c-primary);
+      line-height: 1;
+      margin-bottom: .3rem;
     }
+    .vm-lbl { display: block; font-size: .82rem; color: var(--c-muted); line-height: 1.4; }
+    .vm-sep { width: 1px; height: 2.5rem; background: var(--c-gray-2); flex-shrink: 0; }
+    @media (max-width: 640px) { .vm-sep { display: none; } .vm-item { padding: .75rem 1.25rem; } }
+
+    /* ── ANGEBOT PREISBOXEN ── */
+    .angebot-price-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+    .angebot-price-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 4px 24px rgba(0,34,44,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .angebot-price-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--c-gray-2);
+    }
+    .apb-featured::before { background: var(--c-yellow); }
+    .apb-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-primary); margin-bottom: 1.25rem; }
+    .apb-main-price { display: flex; align-items: baseline; gap: .4rem; margin-bottom: .5rem; }
+    .apb-main-num { font-family: 'Roca Two', serif; font-size: 1.75rem; color: var(--c-primary); font-weight: 700; line-height: 1; }
+    .apb-main-period { font-size: .88rem; color: var(--c-muted); }
+    .apb-setup { font-size: .85rem; color: var(--c-muted); margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--c-gray-2); line-height: 1.5; }
+    .apb-total { font-size: .78rem; color: var(--c-muted); }
+    @media (max-width: 580px) { .angebot-price-boxes { grid-template-columns: 1fr; } }
 
     /* ── SCHNELLTEST POPUP ── */
     .popup-overlay {
@@ -1810,27 +1804,21 @@
         <div class="angebot-price-boxes">
           <div class="angebot-price-box">
             <p class="apb-label">Sparring</p>
-            <div class="apb-line">
-              <span class="apb-phase">Monat 1 · Fundament</span>
-              <span class="apb-amount">CHF 7'900</span>
+            <div class="apb-main-price">
+              <span class="apb-main-num">CHF 2'400</span>
+              <span class="apb-main-period">/Monat</span>
             </div>
-            <div class="apb-line">
-              <span class="apb-phase">Monate 2–6</span>
-              <span class="apb-amount">CHF 2'400<small>/Mt.</small></span>
-            </div>
-            <p class="apb-total">Gesamtinvestition CHF 19'900 · exkl. MwSt.</p>
+            <p class="apb-setup">+ CHF 7'900 Fundament-Monat (einmalig)</p>
+            <p class="apb-total">Gesamt 6 Monate: CHF 19'900 · exkl. MwSt.</p>
           </div>
-          <div class="angebot-price-box">
+          <div class="angebot-price-box apb-featured">
             <p class="apb-label">Vollmandat</p>
-            <div class="apb-line">
-              <span class="apb-phase">Monat 1 · Fundament</span>
-              <span class="apb-amount">CHF 7'900</span>
+            <div class="apb-main-price">
+              <span class="apb-main-num">CHF 4'200</span>
+              <span class="apb-main-period">/Monat</span>
             </div>
-            <div class="apb-line">
-              <span class="apb-phase">Monate 2–6</span>
-              <span class="apb-amount">CHF 4'200<small>/Mt.</small></span>
-            </div>
-            <p class="apb-total">Gesamtinvestition CHF 28'900 · exkl. MwSt.</p>
+            <p class="apb-setup">+ CHF 7'900 Fundament-Monat (einmalig)</p>
+            <p class="apb-total">Gesamt 6 Monate: CHF 28'900 · exkl. MwSt.</p>
           </div>
         </div>
         <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
@@ -1859,19 +1847,20 @@
         <div class="angebot-price-boxes">
           <div class="angebot-price-box">
             <p class="apb-label">1:1</p>
-            <div class="apb-line">
-              <span class="apb-phase">Pro Modul</span>
-              <span class="apb-amount">CHF 1'900</span>
+            <div class="apb-main-price">
+              <span class="apb-main-num">CHF 1'900</span>
+              <span class="apb-main-period">/Modul</span>
             </div>
+            <p class="apb-setup">4 Module à 2–3h · kalenderfreundlich</p>
             <p class="apb-total">4er-Paket CHF 6'800 · exkl. MwSt.</p>
           </div>
-          <div class="angebot-price-box">
+          <div class="angebot-price-box apb-featured">
             <p class="apb-label">Teams</p>
-            <div class="apb-line">
-              <span class="apb-phase">Ganztages-Workshop</span>
-              <span class="apb-amount">ab CHF 7'500</span>
+            <div class="apb-main-price">
+              <span class="apb-main-num">ab CHF 7'500</span>
             </div>
-            <p class="apb-total">Bis 8 Personen · exkl. MwSt.</p>
+            <p class="apb-setup">Ganztages-Workshop · bis 8 Personen</p>
+            <p class="apb-total">Preis je nach Umfang · exkl. MwSt.</p>
           </div>
         </div>
         <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
@@ -1887,20 +1876,31 @@
 <!-- ══════════════ VERTRAUEN ══════════════ -->
 <section class="vertrauen-section">
   <div class="section-inner">
-    <div class="vertrauen-grid reveal">
-      <div class="diskretion-block">
-        <p class="section-lbl" style="color: rgba(255,255,255,.5);">Diskretion</p>
-        <p class="diskretion-headline">Ich nenne keine Namen.</p>
-        <p class="diskretion-text">Exponierte Führungskräfte zeigen mir, was noch nicht fertig ist. Was noch nicht kommunizierbar ist. Was hinter dem Rücken anderer bleibt. Das verlangt echte Diskretion — nicht als Selbstverständlichkeit, sondern als fester Teil meiner Arbeit.</p>
-        <p class="diskretion-text" style="margin-top: .85rem;">Wer nicht als Referenz genannt werden möchte, wird es nicht. Wer nicht in einer Kundenliste erscheinen soll, erscheint nicht. Das ist übrigens auch der Grund, warum es hier kein einziges Video-Testimonial einer Führungskraft gibt — und das ist genau richtig so.</p>
+    <div class="vertrauen-inner reveal">
+      <p class="section-lbl">Vertrauen</p>
+      <p class="vertrauen-quote-big">Hier kannst du laut denken.</p>
+      <p class="vertrauen-text">Mit mir besprichst du, was noch nicht spruchreif ist. Ideen, die noch Form annehmen. Überlegungen, die du testen willst, bevor sie rausgehen. Was wir besprechen, bleibt bei mir — ohne Kundenliste, ohne Referenznennung, ohne Ausnahmen.</p>
+      <span class="vertrauen-freddy">— Freddy</span>
+    </div>
+    <div class="vertrauen-metrics reveal">
+      <div class="vm-item">
+        <span class="vm-num">400+</span>
+        <span class="vm-lbl">Kunden seit 2016</span>
       </div>
-      <div class="autoritaet-block">
-        <p class="section-lbl">Erfahrung</p>
-        <div class="autoritaet-badges">
-          <span class="autoritaet-badge">Dozent an drei Hochschulen (BFH, HSO, BZT)</span>
-          <span class="autoritaet-badge">Autor des LinkedIn-Ratgebers für NZZ Jobs</span>
-          <span class="autoritaet-badge">Fast 10 Jahre Marketingstrategie</span>
-        </div>
+      <div class="vm-sep"></div>
+      <div class="vm-item">
+        <span class="vm-num">4,9 ★</span>
+        <span class="vm-lbl">Google · 55 Rezensionen</span>
+      </div>
+      <div class="vm-sep"></div>
+      <div class="vm-item">
+        <span class="vm-num">3</span>
+        <span class="vm-lbl">Hochschulen als Dozent</span>
+      </div>
+      <div class="vm-sep"></div>
+      <div class="vm-item">
+        <span class="vm-num">NZZ</span>
+        <span class="vm-lbl">LinkedIn-Ratgeber</span>
       </div>
     </div>
   </div>
