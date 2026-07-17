@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LinkedIn ohne Lärm – Freddy Hüsser</title>
+  <title>Souverän präsent auf LinkedIn – Freddy Hüsser</title>
   <link rel="icon" type="image/jpeg" href="images/Favicon.jpg">
-  <meta name="description" content="LinkedIn wirksam und effizient nutzen – ohne Lärm. Workshops und Coaching für Fach- und Führungskräfte von Freddy Hüsser.">
+  <meta name="description" content="Ich begleite exponierte Führungskräfte dabei, souverän und glaubwürdig präsent zu werden auf LinkedIn. Ruhig, ohne Lärm. Freddy Hüsser.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1358,6 +1358,103 @@
     }
     .wa-float svg { width: 32px; height: 32px; }
 
+    /* ── METHODE ──────────────────────────── */
+    .methode-section {
+      background: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .methode-intro {
+      font-size: 1.05rem; color: rgba(255,255,255,.75);
+      max-width: 500px; margin: 1rem auto 0; line-height: 1.75; text-align: center;
+    }
+    .methode-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .methode-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; padding: 2.25rem 2rem; transition: background .2s;
+    }
+    .methode-card:hover { background: rgba(255,255,255,.11); }
+    .methode-num {
+      display: block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--c-yellow); margin-bottom: 1rem;
+    }
+    .methode-card h3 { font-family: 'Roca Two', serif; font-size: 1.4rem; color: #fff; margin-bottom: .85rem; }
+    .methode-card p { font-size: .97rem; color: rgba(255,255,255,.75); line-height: 1.75; }
+    @media (max-width: 860px) { .methode-cards { grid-template-columns: 1fr; } }
+
+    /* ── WARUM JETZT ──────────────────────── */
+    .warum-section {
+      background: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .stat-card--light {
+      background: var(--c-gray); border: 1px solid var(--c-gray-2);
+      border-radius: 16px; padding: 2rem 1.75rem; text-align: left;
+    }
+    .stat-card--light:hover { background: #eeede9; }
+    .stat-card--light .stat-card-num { color: var(--c-primary); font-size: 1.65rem; line-height: 1.2; }
+    .stat-card--light .stat-card-label { color: var(--c-muted); font-size: .92rem; line-height: 1.6; margin-top: .65rem; display: block; }
+    .stat-card-source { display: block; font-size: .7rem; color: var(--c-muted); margin-top: .75rem; opacity: .65; }
+
+    /* ── ANGEBOT ──────────────────────────── */
+    .angebot-section {
+      background: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .angebot-block { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--c-gray-2); }
+    .angebot-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .angebot-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--c-yellow); color: var(--c-primary);
+      border-radius: 100px; padding: .3rem 1rem;
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .angebot-block-title {
+      font-family: 'Roca Two', serif; font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+      color: var(--c-primary); font-weight: 700; margin-bottom: 1.25rem; line-height: 1.2;
+    }
+    .sparring-rows { display: flex; flex-direction: column; gap: .65rem; margin: 1.5rem 0; }
+    .sparring-row {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--c-gray); border-radius: 10px; padding: 1.1rem 1.4rem;
+    }
+    .sparring-row-title { font-weight: 700; color: var(--c-primary); font-size: .95rem; min-width: 130px; flex-shrink: 0; }
+    .sparring-row-desc { font-size: .93rem; color: var(--c-muted); line-height: 1.55; }
+    .angebot-verknappung {
+      background: #fff8e6; border: 1px solid #e8d565;
+      border-radius: 10px; padding: 1rem 1.4rem;
+      font-size: .93rem; color: var(--c-primary); margin: 1.25rem 0;
+    }
+    @media (max-width: 860px) { .sparring-row { flex-direction: column; gap: .4rem; } .sparring-row-title { min-width: auto; } }
+
+    /* ── VERTRAUEN ─────────────────────────── */
+    .vertrauen-section {
+      background: var(--c-gray);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+      padding: 4rem 2.5rem;
+    }
+    .vertrauen-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      max-width: 1140px; margin: 0 auto;
+    }
+    .diskretion-block { padding: 2rem; background: var(--c-primary); border-radius: 14px; }
+    .diskretion-text { font-size: 1.05rem; color: rgba(255,255,255,.82); line-height: 1.75; margin-top: .75rem; }
+    .autoritaet-block { padding: 2rem; }
+    .autoritaet-badges { display: flex; flex-direction: column; gap: .65rem; margin-top: .75rem; }
+    .autoritaet-badge {
+      display: inline-flex; background: var(--c-white); border: 1px solid var(--c-gray-2);
+      border-radius: 8px; padding: .65rem 1rem; font-size: .9rem; color: var(--c-text); line-height: 1.4;
+    }
+    @media (max-width: 860px) { .vertrauen-grid { grid-template-columns: 1fr; } }
+
     /* ── SCHNELLTEST POPUP ── */
     .popup-overlay {
       position: fixed; inset: 0; z-index: 1000;
@@ -1433,8 +1530,8 @@
     <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
   <a href="#einleitung" class="nav-link">🎥 Darum geht's</a>
-  <a href="#workshop" class="nav-link">🛠️ Workshops</a>
-  <a href="#coaching" class="nav-link">⚽ Coaching</a>
+  <a href="#methode" class="nav-link">🎯 Die Methode</a>
+  <a href="#angebot" class="nav-link">💼 Angebot</a>
   <a href="#ueber-mich" class="nav-link">👋 Freddy &amp; Eny</a>
   <a href="#kontakt-formular" class="nav-link">✉️ Schreib mir</a>
   <a href="#kontakt" class="nav-link nav-cta">☕ Kaffeepause</a>
@@ -1469,18 +1566,18 @@
     <div class="hero-center">
 
       <span class="hero-pill">
-        LinkedIn Workshops &amp; Coaching
+        LinkedIn für Führungskräfte
       </span>
 
       <div class="hero-title-wrap">
         <h1 class="hero-title">
-          LinkedIn –
-          <em>ohne Lärm</em>
+          Souverän präsent
+          <em>auf LinkedIn</em>
         </h1>
       </div>
 
       <div class="hero-pain">
-        <span class="hero-pain-line">Ich unterstütze Unternehmen, Führungskräfte und Teams dabei, LinkedIn strategisch zu nutzen – damit aus Profilen sichtbare Marken werden.</span>
+        <span class="hero-pain-line">Viele Führungskräfte hätten viel zu sagen, zögern aber. Zu exponiert, zu heikel, zu wenig Zeit. Ich begleite dich dabei, sicher und souverän präsent zu werden. Ruhig, glaubwürdig, ohne Lärm.</span>
       </div>
 
       <div class="hero-ctas">
@@ -1488,11 +1585,12 @@
           💬 Gespräch vereinbaren
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#einleitung" class="btn-hero btn-hero-ghost">
-          🎥 In Freddy's Worten
+        <a href="#methode" class="btn-hero btn-hero-ghost">
+          🎯 Die Methode
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
+      <a href="#einleitung" style="color: rgba(255,255,255,.5); font-size: .85rem; margin-top: .75rem; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; transition: color .2s;" onmouseover="this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">🎥 In Freddy's Worten</a>
 
     </div>
 
@@ -1546,12 +1644,11 @@
   <div class="section-inner einleitung-inner">
     <div class="einleitung-body">
       <div class="reveal">
-        <p class="section-lbl">LinkedIn Beratung &amp; Coaching</p>
-        <h2 class="section-title">LinkedIn wirksam und effizient nutzen</h2>
+        <p class="section-lbl">LinkedIn für exponierte Führung</p>
+        <h2 class="section-title">Du bist sichtbar. Präsent noch nicht.</h2>
       </div>
-      <p class="einleitung-text reveal">LinkedIn bietet alles, um als Person oder als Unternehmen in der Branche sichtbar zu werden. Ob Personal Branding für Fach- und Führungspersonen, Employer Branding für Unternehmen oder Employer Advocacy mit ganzen Teams – das Potenzial ist enorm. Doch die meisten schöpfen es kaum aus.</p>
-      <p class="einleitung-text reveal">Dabei ist LinkedIn, mit der richtigen Strategie und dem notwendigen Wissen über den Algorithmus, ein extrem wirkungsvolles Vermarktungs-Tool.</p>
-      <p class="einleitung-text reveal">Ich schule meine Kunden oder begleite sie als persönlicher Coach in der LinkedIn Vermarktung. Mein Wissen aus über 10 Jahren Digital Marketing Strategie fliesst in jede Zusammenarbeit mit ein.</p>
+      <p class="einleitung-text reveal">Du hast ein Profil, eine Position und einen Namen, den man kennt. Trotzdem bleibt es meistens still. Nicht weil dir etwas fehlt, sondern weil die Fragen offen sind: worüber spreche ich, wie mache ich das im Alltag und wann ist der richtige Moment.</p>
+      <p class="einleitung-text reveal">Genau hier arbeite ich mit dir. Mit deiner eigenen Stimme und dem Blick fürs Ganze aus fast zehn Jahren Marketingstrategie.</p>
       <p class="einleitung-text reveal"><strong>Aber immer ohne Lärm.</strong></p>
     </div>
     <div class="reveal">
@@ -1569,62 +1666,165 @@
   </div>
 </section>
 
-<!-- ══════════════ ÜBERBLICK ══════════════ -->
-<section class="ueberblick" id="angebote">
+<!-- ══════════════ METHODE ══════════════ -->
+<section class="methode-section" id="methode">
   <div class="section-inner">
     <div class="section-header center on-dark reveal">
-      <p class="section-lbl">Angebote</p>
-      <h2 class="section-title">Zwei Wege. Ein Ziel.</h2>
+      <p class="section-lbl">Die Methode</p>
+      <h2 class="section-title">Präsenz, die nicht vom Zufall abhängt</h2>
+      <p class="methode-intro reveal">Damit Präsenz nicht vom Zufall abhängt, arbeiten wir in drei ruhigen Schritten.</p>
     </div>
-    <p class="ueberblick-desc reveal">Du wählst, was du brauchst: ein Workshop zu LinkedIn Basics, Content, Interaktion, Netzwerk, Employer Branding oder Positionierung – als Einzelperson oder mit dem Team, genau dort angesetzt, wo ihr gerade steht. Oder du entscheidest dich für eine längerfristige Begleitung: Über vier Monate arbeiten wir gemeinsam an einem konkreten Ziel, mit klarer Positionierung, einer passenden Contentstrategie und einem Auftritt, der auf LinkedIn sichtbar wird und Vertrauen aufbaut. Damit aus einzelnen Aktivitäten eine Präsenz entsteht, die langfristig wirkt.</p>
-    <div class="ueberblick-ctas reveal">
-      <a href="#workshop" class="btn btn-primary">🛠️ Workshops entdecken <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#coaching" class="btn btn-ghost">⚽ Coaching entdecken <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <div class="methode-cards">
+      <div class="methode-card reveal">
+        <span class="methode-num">01</span>
+        <h3>Substanz</h3>
+        <p>Zuerst klären wir, wofür du stehst. Deine Positionierung, deine Themen, deine Haltung. Wer das weiss, dem gehen die Themen nie aus.</p>
+      </div>
+      <div class="methode-card reveal">
+        <span class="methode-num">02</span>
+        <h3>Plan</h3>
+        <p>Dann bringen wir Präsenz in deinen Alltag. Einen Rhythmus, der passt, klare Abläufe und Sicherheit auch für die unbequemen Momente.</p>
+      </div>
+      <div class="methode-card reveal">
+        <span class="methode-num">03</span>
+        <h3>Dranbleiben</h3>
+        <p>Und dann bleibe ich an deiner Seite. Ich erinnere, gebe Feedback, schätze ein und schaue auf die Zahlen. So wird aus einem guten Start echte Präsenz.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════ WORKSHOP ══════════════ -->
-<section class="workshop-section" id="workshop">
+<!-- ══════════════ WARUM JETZT ══════════════ -->
+<section class="warum-section" id="warum">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-lbl">🛠️ LinkedIn Workshops</p>
-      <h2 class="section-title">LinkedIn gezielt nutzen – für dich, dein Team und dein Unternehmen</h2>
+      <p class="section-lbl">Warum jetzt</p>
+      <h2 class="section-title">Präsenz ist Führungsaufgabe, keine Marketingsache</h2>
+      <p class="detail-lead reveal" style="margin-top: 1rem;">Die Wirkung sichtbarer Führung ist gut belegt, und in vielen Führungsetagen wird sie unterschätzt.</p>
     </div>
-    <div class="detail-grid">
-      <div>
-        <p class="detail-lead reveal">In meinen Workshops lernst du alles Nötige zur LinkedIn Vermarktung. Im Fokus steht der Aufbau einer klaren LinkedIn-Präsenz: von den Basics über die Rolle einzelner Personen bis zur Verankerung von Content-Prozessen in Unternehmen.</p>
-        <p class="detail-lead reveal">Die Inhalte stelle ich individuell für dich zusammen. Je nach Tiefe können die Themen auf mehrere Workshops verteilt werden. Auf Wunsch vertiefen wir spezifische Themen in Follow-Up-Workshops – zum Beispiel KI-Tools für Content-Erstellung oder den gezielten Netzwerkaufbau.</p>
-        <p class="detail-lead reveal">Die Workshops richten sich an Einzelpersonen, Teams und Unternehmen: von der Fachperson, die ihr Personal Branding aufbauen will, bis zum Unternehmen, das Employer Branding und Employer Advocacy systematisch mit seinen Mitarbeitenden etablieren möchte.</p>
-        <ul class="feature-list reveal">
-          <li>LinkedIn Profil-Optimierung</li>
-          <li>Klare Positionierung &amp; Themenfelder</li>
-          <li>Content-Strategie &amp; Algorithmus-Wissen</li>
-          <li>Personal Branding &amp; Positionierung</li>
-          <li>Employer Branding &amp; Employer Advocacy</li>
-          <li>KI-Tools für Content-Erstellung (optional)</li>
-        </ul>
+    <div class="stats-grid reveal">
+      <div class="stat-card stat-card--light">
+        <span class="stat-card-num">92 % sichtbar,<br>38 % aktiv</span>
+        <span class="stat-card-label">Fast alle grossen CEOs haben ein Profil. Wirklich präsent ist kaum jemand.</span>
+        <span class="stat-card-source">Weber Shandwick</span>
+      </div>
+      <div class="stat-card stat-card--light">
+        <span class="stat-card-num">≈ 45 %</span>
+        <span class="stat-card-label">der Unternehmensreputation hängen an der Reputation der Führung.</span>
+        <span class="stat-card-source">Weber Shandwick</span>
+      </div>
+      <div class="stat-card stat-card--light">
+        <span class="stat-card-num">82 %</span>
+        <span class="stat-card-label">schauen sich die Führung online an, bevor sie sich bewerben.</span>
+        <span class="stat-card-source">Brunswick 2022</span>
+      </div>
+      <div class="stat-card stat-card--light">
+        <span class="stat-card-num">1 Person,<br>1 Kanal</span>
+        <span class="stat-card-label">Eine Führungsperson erreicht gleich viel wie der ganze Firmenkanal, mit einem Bruchteil der Reichweite.</span>
+        <span class="stat-card-source">DSMN8 2023</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══════════════ ANGEBOT ══════════════ -->
+<section class="angebot-section" id="angebot">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-lbl">Angebot</p>
+      <h2 class="section-title">So arbeiten wir zusammen</h2>
+      <p class="detail-lead reveal" style="margin-top: 1rem; max-width: 600px;">Alles baut auf derselben Methode auf. Du wählst, wie intensiv wir zusammenarbeiten.</p>
+    </div>
+
+    <div class="angebot-block detail-grid">
+      <div class="reveal">
+        <span class="angebot-label">Exklusiv · höchstens 5 Personen</span>
+        <h3 class="angebot-block-title">Die Ohne-Lärm-Begleitung</h3>
+        <p class="detail-lead">Wir arbeiten sechs Monate zusammen. Im ersten Monat legen wir das Fundament: deine Positionierung, einen Plan und die ersten Beiträge. Danach bin ich dein Coach im Hintergrund und halte dich dran. Ich gebe Feedback, schätze ein und schaue auf die Zahlen. So wirst du Monat für Monat sicherer und wirksamer.</p>
+        <div class="sparring-rows">
+          <div class="sparring-row">
+            <span class="sparring-row-title">Sparring</span>
+            <span class="sparring-row-desc">Du schreibst selbst, ich steuere und begleite.</span>
+          </div>
+          <div class="sparring-row">
+            <span class="sparring-row-title">Vollmandat</span>
+            <span class="sparring-row-desc">Ich schreibe mit, in deiner Stimme.</span>
+          </div>
+        </div>
+        <div class="angebot-verknappung">
+          Ich begleite höchstens fünf Personen gleichzeitig. Aktuell sind noch <strong>2 Plätze</strong> frei.
+        </div>
       </div>
       <div class="reveal">
         <div class="coaching-price-block">
-          <p class="coaching-price-lbl">Investition ab</p>
-          <span class="coaching-price-amount">CHF 1'370</span>
-          <span class="coaching-price-period">1:1 · pro Workshop · exkl. MwSt.</span>
-          <p class="coaching-price-note">2–3 Pers.: CHF 2'270 · 4–5 Pers.: CHF 2'970 · ab 6 Pers.: CHF 3'570</p>
-          <p class="coaching-price-note">Dauer: ca. 4–5 Stunden pro Workshop</p>
-          <p class="coaching-price-note">Vorbereitung, Nachbereitung &amp; digitales Handout inklusive · Zugang zur WhatsApp Community</p>
-          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
+          <p class="coaching-price-lbl">Investition Sparring</p>
+          <span class="coaching-price-amount">CHF 19'900</span>
+          <span class="coaching-price-period">für 6 Monate · exkl. MwSt.</span>
+          <p class="coaching-price-note">Vollmandat: CHF 28'900 für 6 Monate · exkl. MwSt.</p>
+          <p class="coaching-price-note">Jede Begleitung beginnt mit einem kostenlosen Erstgespräch.</p>
         </div>
         <a href="#kontakt" class="btn btn-dark">
-          💬 Gespräch vereinbaren
+          💬 Erstgespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
     </div>
+
+    <div class="angebot-block detail-grid">
+      <div class="reveal">
+        <h3 class="angebot-block-title">Die Executive-Workshops</h3>
+        <p class="detail-lead">Für einzelne Führungskräfte oder ganze Teams. Vier Module entlang der Methode. In beiden Formaten erhältst du Zugriff auf mein Wissen und ein Follow-up von sechzig Minuten acht Wochen später.</p>
+        <div class="sparring-rows">
+          <div class="sparring-row">
+            <span class="sparring-row-title">1:1 für Führungskräfte</span>
+            <span class="sparring-row-desc">Vier Module, je zwei bis drei Stunden, kalenderfreundlich über acht Wochen verteilt.</span>
+          </div>
+          <div class="sparring-row">
+            <span class="sparring-row-title">Team-Strategie-Workshop</span>
+            <span class="sparring-row-desc">Bis acht Personen, ein ganzer Tag. Für Führungsteams oder Kommunikations- und HR-Teams, die gemeinsam präsenter werden wollen.</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="coaching-price-block">
+          <p class="coaching-price-lbl">Investition 1:1</p>
+          <span class="coaching-price-amount">CHF 1'900</span>
+          <span class="coaching-price-period">pro Modul · exkl. MwSt.</span>
+          <p class="coaching-price-note">Alle vier Module zusammen: CHF 6'800 · exkl. MwSt.</p>
+          <p class="coaching-price-note">Team-Strategie-Workshop: ab CHF 7'500 · exkl. MwSt.</p>
+          <p class="coaching-price-note">Dauer: ca. 2–3 Stunden pro Modul · inkl. Follow-up nach 8 Wochen.</p>
+        </div>
+        <a href="#kontakt-formular" class="btn btn-dark">
+          📩 Workshop anfragen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-
+<!-- ══════════════ VERTRAUEN ══════════════ -->
+<section class="vertrauen-section">
+  <div class="section-inner">
+    <div class="vertrauen-grid reveal">
+      <div class="diskretion-block">
+        <p class="section-lbl" style="color: rgba(255,255,255,.5);">Diskretion</p>
+        <p class="diskretion-text">Ich rede nicht über meine Kunden. Gerade wenn viel auf dem Spiel steht, ist das der wichtigste Teil meiner Arbeit.</p>
+      </div>
+      <div class="autoritaet-block">
+        <p class="section-lbl">Erfahrung</p>
+        <div class="autoritaet-badges">
+          <span class="autoritaet-badge">Dozent an drei Hochschulen (BFH, HSO, BZT)</span>
+          <span class="autoritaet-badge">Autor des LinkedIn-Ratgebers für NZZ Jobs</span>
+          <span class="autoritaet-badge">Fast 10 Jahre Marketingstrategie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════ REZENSIONEN ══════════════ -->
 <section class="reviews-section">
@@ -1804,52 +2004,14 @@
   </div>
 </section>
 
-<!-- ══════════════ COACHING ══════════════ -->
-<section class="coaching-section" id="coaching">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <p class="section-lbl">⚽ LinkedIn Coaching</p>
-      <h2 class="section-title">Wir arbeiten 4 Monate zusammen und bauen deine Sichtbarkeit auf</h2>
-    </div>
-    <div class="detail-grid">
-      <div>
-        <p class="detail-lead reveal">Markenaufbau auf LinkedIn braucht mehr als ein paar sporadische Beiträge. Sichtbarkeit als Person oder als Unternehmen braucht einen Plan, einen sauberen Aufbau und dann eine konsistente Umsetzung.</p>
-        <p class="detail-lead reveal">Ich begleite dich und/oder dein Team auf Schritt und Tritt über vier Monate. Das ist die Zeit, die es erfahrungsgemäss braucht, um alle Prozesse zu etablieren. Wir erstellen einen Plan, optimieren den bisherigen Auftritt und bauen danach Step-by-Step durch regelmässige Beiträge und Interaktionen eine Marke auf, die wirklich funktioniert.</p>
-        <ul class="feature-list reveal">
-          <li>Strategie, Contentplanung &amp; Netzwerkaufbau</li>
-          <li>Profil-Optimierung zu Beginn</li>
-          <li>Wöchentliche 1:1-Calls (45 Min.)</li>
-          <li>Gemeinsame Content-Liste &amp; Themenfelder</li>
-          <li>Direktes Feedback &amp; Chat-Support</li>
-          <li>Persönlicher KI-Schreibpartner inklusive</li>
-          <li>Folge-Coaching möglich</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <div class="coaching-price-block">
-          <p class="coaching-price-lbl">Investition</p>
-          <span class="coaching-price-amount">CHF 1'948</span>
-          <span class="coaching-price-period">pro Monat · ab 4 Monaten · exkl. MwSt.</span>
-          <p class="coaching-price-note">Gesamtinvestition für 4 Monate: CHF 7'792 exkl. MwSt.</p>
-          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
-        </div>
-        <a href="#kontakt" class="btn btn-dark">
-          💬 Gespräch vereinbaren
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════════ CHECK / LEAD MAGNET ══════════════ -->
 <section class="check-cta-section">
   <div class="check-cta-grid">
 
     <div class="check-cta-copy">
       <p class="check-cta-label">LinkedIn-Check</p>
-      <h2 class="check-cta-title">Wo steht euer Unternehmen auf LinkedIn?</h2>
-      <p class="check-cta-text">10 kurze Fragen. 3 Minuten. Eure vollständige Auswertung mit konkreten nächsten Schritten kommt direkt per E-Mail.</p>
+      <h2 class="check-cta-title">Wie präsent ist deine Führung auf LinkedIn?</h2>
+      <p class="check-cta-text">10 kurze Fragen. 3 Minuten. Deine vollständige Auswertung mit konkreten nächsten Schritten kommt direkt per E-Mail.</p>
       <a href="/check/" class="btn-check-cta">Check starten →</a>
     </div>
 
@@ -1998,8 +2160,8 @@
     <div>
       <p class="footer-col-title">Leistungen</p>
       <ul class="footer-nav">
-        <li><a href="#workshop">LinkedIn Workshops</a></li>
-        <li><a href="#coaching">LinkedIn Coaching</a></li>
+        <li><a href="#methode">Die Methode</a></li>
+        <li><a href="#angebot">Angebot</a></li>
         <li><a href="#kontakt">Kaffeepause buchen</a></li>
       </ul>
     </div>
@@ -2128,8 +2290,8 @@
   <div class="popup-box">
     <button class="popup-close" id="popupClose" aria-label="Schliessen">✕</button>
     <span class="popup-tag">🔍 Kostenloser Schnelltest</span>
-    <h2 class="popup-title">Wie gut nutzt dein Unternehmen LinkedIn?</h2>
-    <p class="popup-desc">10 Fragen, 3 Minuten – und du weisst sofort, wo ihr steht und was den grössten Unterschied machen würde.</p>
+    <h2 class="popup-title">Wie präsent bist du als Führungsperson auf LinkedIn?</h2>
+    <p class="popup-desc">10 Fragen, 3 Minuten – und du weisst sofort, wo du stehst und was den grössten Unterschied machen würde.</p>
     <a href="/check/" class="popup-cta">
       Jetzt testen
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
