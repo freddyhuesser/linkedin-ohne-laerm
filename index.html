@@ -302,15 +302,19 @@
       right: 0;
       bottom: 0;
       z-index: 5;
-      width: auto;
+      width: 45%;
+      max-width: 560px;
       height: 90vh;
+      overflow: hidden;
     }
     .hero-cap {
       position: absolute;
       bottom: 0;
       right: 0;
-      height: 90vh;
-      width: auto;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center top;
       opacity: 0;
       transition: opacity 1.5s ease;
       pointer-events: none;
