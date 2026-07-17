@@ -652,10 +652,7 @@
       background-size: 28px 28px;
     }
     .einleitung-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      max-width: 700px;
     }
     .einleitung-body { max-width: none; }
     .einleitung-text {
@@ -1455,6 +1452,69 @@
     }
     @media (max-width: 860px) { .vertrauen-grid { grid-template-columns: 1fr; } }
 
+    /* ── ANGEBOT PREISBOXEN ── */
+    .angebot-price-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .angebot-price-box {
+      background: var(--c-gray);
+      border: 1px solid var(--c-gray-2);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .apb-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      margin-bottom: 1.25rem;
+    }
+    .apb-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: .75rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--c-gray-2);
+    }
+    .apb-line:first-of-type { padding-top: 0; }
+    .apb-line:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .apb-phase { font-size: .85rem; color: var(--c-muted); }
+    .apb-amount {
+      font-family: 'Roca Two', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--c-primary);
+      white-space: nowrap;
+    }
+    .apb-amount small {
+      font-family: 'Inter', sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--c-muted);
+    }
+    .apb-total {
+      font-size: .82rem;
+      color: var(--c-muted);
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--c-gray-2);
+    }
+    @media (max-width: 580px) { .angebot-price-boxes { grid-template-columns: 1fr; } }
+
+    /* ── DISKRETION ── */
+    .diskretion-headline {
+      font-family: 'Roca Two', serif;
+      font-size: 1.45rem;
+      color: #fff;
+      margin: .75rem 0 .85rem;
+      line-height: 1.2;
+    }
+
     /* ── SCHNELLTEST POPUP ── */
     .popup-overlay {
       position: fixed; inset: 0; z-index: 1000;
@@ -1525,11 +1585,7 @@
 </div>
 
 <nav class="nav-overlay" id="navOverlay" aria-hidden="true">
-  <div class="nav-video">
-    <p class="nav-video-title">In Freddy's Worten</p>
-    <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-  </div>
-  <a href="#einleitung" class="nav-link">🎥 Darum geht's</a>
+  <a href="#einleitung" class="nav-link">Darum geht's</a>
   <a href="#methode" class="nav-link">🎯 Die Methode</a>
   <a href="#angebot" class="nav-link">💼 Angebot</a>
   <a href="#ueber-mich" class="nav-link">👋 Freddy &amp; Eny</a>
@@ -1590,7 +1646,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-      <a href="#einleitung" style="color: rgba(255,255,255,.5); font-size: .85rem; margin-top: .75rem; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; transition: color .2s;" onmouseover="this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">🎥 In Freddy's Worten</a>
 
     </div>
 
@@ -1650,13 +1705,7 @@
       <p class="einleitung-text reveal">Du hast ein Profil, eine Position und einen Namen, den man kennt. Trotzdem bleibt es meistens still. Nicht weil dir etwas fehlt, sondern weil die Fragen offen sind: worüber spreche ich, wie mache ich das im Alltag und wann ist der richtige Moment.</p>
       <p class="einleitung-text reveal">Genau hier arbeite ich mit dir. Mit deiner eigenen Stimme und dem Blick fürs Ganze aus fast zehn Jahren Marketingstrategie.</p>
       <p class="einleitung-text reveal"><strong>Aber immer ohne Lärm.</strong></p>
-    </div>
-    <div class="reveal">
-      <p class="einleitung-video-title">In Freddy's Worten</p>
-      <div class="einleitung-video">
-        <iframe src="https://www.youtube.com/embed/IEKdV6CSFgc?rel=0" title="LinkedIn ohne Lärm – In Freddy's Worten" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div style="margin-top: 1.5rem;">
+      <div class="reveal" style="margin-top: 2rem;">
         <a href="#kontakt" class="btn btn-dark">
           💬 Gespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1700,21 +1749,21 @@
     <div class="section-header reveal">
       <p class="section-lbl">Warum jetzt</p>
       <h2 class="section-title">Präsenz ist Führungsaufgabe, keine Marketingsache</h2>
-      <p class="detail-lead reveal" style="margin-top: 1rem;">Die Wirkung sichtbarer Führung ist gut belegt, und in vielen Führungsetagen wird sie unterschätzt.</p>
+      <p class="detail-lead reveal" style="margin-top: 1rem;">Die Wirkung sichtbarer Führung ist gut belegt und doch wird sie in vielen Führungsetagen nach wie vor unterschätzt. Vor allem in der Schweiz.</p>
     </div>
     <div class="stats-grid reveal">
       <div class="stat-card stat-card--light">
-        <span class="stat-card-num">92 % sichtbar,<br>38 % aktiv</span>
+        <span class="stat-card-num">92% sichtbar,<br>38% aktiv</span>
         <span class="stat-card-label">Fast alle grossen CEOs haben ein Profil. Wirklich präsent ist kaum jemand.</span>
         <span class="stat-card-source">Weber Shandwick</span>
       </div>
       <div class="stat-card stat-card--light">
-        <span class="stat-card-num">≈ 45 %</span>
+        <span class="stat-card-num">≈45%</span>
         <span class="stat-card-label">der Unternehmensreputation hängen an der Reputation der Führung.</span>
         <span class="stat-card-source">Weber Shandwick</span>
       </div>
       <div class="stat-card stat-card--light">
-        <span class="stat-card-num">82 %</span>
+        <span class="stat-card-num">82%</span>
         <span class="stat-card-label">schauen sich die Führung online an, bevor sie sich bewerben.</span>
         <span class="stat-card-source">Brunswick 2022</span>
       </div>
@@ -1758,14 +1807,33 @@
         </div>
       </div>
       <div class="reveal">
-        <div class="coaching-price-block">
-          <p class="coaching-price-lbl">Investition Sparring</p>
-          <span class="coaching-price-amount">CHF 19'900</span>
-          <span class="coaching-price-period">für 6 Monate · exkl. MwSt.</span>
-          <p class="coaching-price-note">Vollmandat: CHF 28'900 für 6 Monate · exkl. MwSt.</p>
-          <p class="coaching-price-note">Jede Begleitung beginnt mit einem kostenlosen Erstgespräch.</p>
+        <div class="angebot-price-boxes">
+          <div class="angebot-price-box">
+            <p class="apb-label">Sparring</p>
+            <div class="apb-line">
+              <span class="apb-phase">Monat 1 · Fundament</span>
+              <span class="apb-amount">CHF 7'900</span>
+            </div>
+            <div class="apb-line">
+              <span class="apb-phase">Monate 2–6</span>
+              <span class="apb-amount">CHF 2'400<small>/Mt.</small></span>
+            </div>
+            <p class="apb-total">Gesamtinvestition CHF 19'900 · exkl. MwSt.</p>
+          </div>
+          <div class="angebot-price-box">
+            <p class="apb-label">Vollmandat</p>
+            <div class="apb-line">
+              <span class="apb-phase">Monat 1 · Fundament</span>
+              <span class="apb-amount">CHF 7'900</span>
+            </div>
+            <div class="apb-line">
+              <span class="apb-phase">Monate 2–6</span>
+              <span class="apb-amount">CHF 4'200<small>/Mt.</small></span>
+            </div>
+            <p class="apb-total">Gesamtinvestition CHF 28'900 · exkl. MwSt.</p>
+          </div>
         </div>
-        <a href="#kontakt" class="btn btn-dark">
+        <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
           💬 Erstgespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -1788,15 +1856,25 @@
         </div>
       </div>
       <div class="reveal">
-        <div class="coaching-price-block">
-          <p class="coaching-price-lbl">Investition 1:1</p>
-          <span class="coaching-price-amount">CHF 1'900</span>
-          <span class="coaching-price-period">pro Modul · exkl. MwSt.</span>
-          <p class="coaching-price-note">Alle vier Module zusammen: CHF 6'800 · exkl. MwSt.</p>
-          <p class="coaching-price-note">Team-Strategie-Workshop: ab CHF 7'500 · exkl. MwSt.</p>
-          <p class="coaching-price-note">Dauer: ca. 2–3 Stunden pro Modul · inkl. Follow-up nach 8 Wochen.</p>
+        <div class="angebot-price-boxes">
+          <div class="angebot-price-box">
+            <p class="apb-label">1:1</p>
+            <div class="apb-line">
+              <span class="apb-phase">Pro Modul</span>
+              <span class="apb-amount">CHF 1'900</span>
+            </div>
+            <p class="apb-total">4er-Paket CHF 6'800 · exkl. MwSt.</p>
+          </div>
+          <div class="angebot-price-box">
+            <p class="apb-label">Teams</p>
+            <div class="apb-line">
+              <span class="apb-phase">Ganztages-Workshop</span>
+              <span class="apb-amount">ab CHF 7'500</span>
+            </div>
+            <p class="apb-total">Bis 8 Personen · exkl. MwSt.</p>
+          </div>
         </div>
-        <a href="#kontakt-formular" class="btn btn-dark">
+        <a href="#kontakt-formular" class="btn btn-dark" style="margin-top: 1.5rem;">
           📩 Workshop anfragen
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -1812,7 +1890,9 @@
     <div class="vertrauen-grid reveal">
       <div class="diskretion-block">
         <p class="section-lbl" style="color: rgba(255,255,255,.5);">Diskretion</p>
-        <p class="diskretion-text">Ich rede nicht über meine Kunden. Gerade wenn viel auf dem Spiel steht, ist das der wichtigste Teil meiner Arbeit.</p>
+        <p class="diskretion-headline">Ich nenne keine Namen.</p>
+        <p class="diskretion-text">Exponierte Führungskräfte zeigen mir, was noch nicht fertig ist. Was noch nicht kommunizierbar ist. Was hinter dem Rücken anderer bleibt. Das verlangt echte Diskretion — nicht als Selbstverständlichkeit, sondern als fester Teil meiner Arbeit.</p>
+        <p class="diskretion-text" style="margin-top: .85rem;">Wer nicht als Referenz genannt werden möchte, wird es nicht. Wer nicht in einer Kundenliste erscheinen soll, erscheint nicht. Das ist übrigens auch der Grund, warum es hier kein einziges Video-Testimonial einer Führungskraft gibt — und das ist genau richtig so.</p>
       </div>
       <div class="autoritaet-block">
         <p class="section-lbl">Erfahrung</p>
