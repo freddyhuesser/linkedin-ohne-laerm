@@ -1375,23 +1375,28 @@
       font-size: 1.05rem; color: rgba(255,255,255,.75);
       max-width: 500px; margin: 1rem auto 0; line-height: 1.75; text-align: center;
     }
-    .methode-cards {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; margin-top: 3.5rem;
+    .methode-linie {
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(255,255,255,.15);
+      margin-top: 3.5rem;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .methode-card {
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px; padding: 2.25rem 2rem; transition: background .2s;
+    .methode-step { position: relative; padding: 0 0 3rem 2.5rem; }
+    .methode-step:last-child { padding-bottom: 0; }
+    .methode-step-dot {
+      position: absolute; left: -5px; top: .6rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--c-yellow); flex-shrink: 0;
     }
-    .methode-card:hover { background: rgba(255,255,255,.11); }
-    .methode-num {
-      display: block; font-size: .72rem; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--c-yellow); margin-bottom: 1rem;
+    .methode-step-num {
+      display: block; font-size: .6rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,245,202,.3); margin-bottom: .75rem;
     }
-    .methode-card h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.4rem; color: #fff; margin-bottom: .85rem; }
-    .methode-card p { font-size: .97rem; color: rgba(255,255,255,.75); line-height: 1.75; }
-    @media (max-width: 860px) { .methode-cards { grid-template-columns: 1fr; } }
+    .methode-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.3rem; color: #fff; margin-bottom: .7rem; line-height: 1.2; }
+    .methode-step p { font-size: .84rem; color: rgba(255,245,202,.55); line-height: 1.75; }
 
     /* ── WARUM JETZT ──────────────────────── */
     .warum-section {
@@ -1711,21 +1716,24 @@
       <h2 class="section-title" style="text-align: center;">«LinkedIn – ohne Lärm»:<br>Die Methode</h2>
       <p class="methode-intro reveal">Damit Präsenz nicht vom Zufall abhängt, arbeiten wir in drei ruhigen Schritten.</p>
     </div>
-    <div class="methode-cards">
-      <div class="methode-card reveal">
-        <span class="methode-num">01</span>
+    <div class="methode-linie">
+      <div class="methode-step reveal">
+        <div class="methode-step-dot"></div>
+        <span class="methode-step-num">01</span>
         <h3>Substanz</h3>
         <p>Zuerst klären wir, wofür du stehst. Deine Positionierung, deine Themen, deine Haltung. Wer das weiss, dem gehen die Themen nie aus.</p>
       </div>
-      <div class="methode-card reveal">
-        <span class="methode-num">02</span>
+      <div class="methode-step reveal">
+        <div class="methode-step-dot"></div>
+        <span class="methode-step-num">02</span>
         <h3>Plan</h3>
         <p>Dann bringen wir Präsenz in deinen Alltag. Einen Rhythmus, der passt, klare Abläufe und Sicherheit auch für die unbequemen Momente.</p>
       </div>
-      <div class="methode-card reveal">
-        <span class="methode-num">03</span>
+      <div class="methode-step reveal">
+        <div class="methode-step-dot"></div>
+        <span class="methode-step-num">03</span>
         <h3>Konsistenz</h3>
-        <p>Dann heisst es konsistent dranbleiben. Über Monate hinweg, mit einem Rhythmus der hält, klaren Abläufen und der Sicherheit, auch wenn ein Thema unbequem wird. So wird aus einem guten Start echte Präsenz.</p>
+        <p>Dann heisst es dranbleiben. Mit einem Rhythmus der hält und der Sicherheit, auch wenn ein Thema unbequem wird. So wird aus einem guten Start echte Präsenz.</p>
       </div>
     </div>
   </div>
