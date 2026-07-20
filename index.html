@@ -1720,7 +1720,7 @@
   <a href="#ueber-mich" class="nav-link">👋 Freddy &amp; Eny</a>
   <a href="#kontakt-formular" class="nav-link">✉️ Schreib mir</a>
   <a href="#kontakt" class="nav-link nav-cta">☕ Kaffeepause</a>
-  <a href="/check/" class="nav-link nav-cta">🔍 LinkedIn-Check</a>
+  <!-- CHECK HIDDEN: <a href="/check/" class="nav-link nav-cta">🔍 LinkedIn-Check</a> -->
   <div class="nav-socials">
     <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" class="nav-whatsapp" target="_blank" rel="noopener">
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2261,8 +2261,8 @@
   </div>
 </section>
 
-<!-- ══════════════ CHECK / LEAD MAGNET ══════════════ -->
-<section class="check-cta-section">
+<!-- ══════════════ CHECK / LEAD MAGNET (HIDDEN) ══════════════ -->
+<section class="check-cta-section" style="display:none">
   <div class="check-cta-grid">
 
     <div class="check-cta-copy">
@@ -2534,8 +2534,8 @@
   </svg>
 </a>
 
-<!-- ══ SCHNELLTEST POPUP ══════════════════════════════════════════════════════ -->
-<div class="popup-overlay" id="schnelltestPopup" role="dialog" aria-modal="true" aria-label="LinkedIn-Schnelltest">
+<!-- ══ SCHNELLTEST POPUP (HIDDEN) ══════════════════════════════════════════════════════ -->
+<div class="popup-overlay" id="schnelltestPopup" role="dialog" aria-modal="true" aria-label="LinkedIn-Schnelltest" style="display:none">
   <div class="popup-box">
     <button class="popup-close" id="popupClose" aria-label="Schliessen">✕</button>
     <span class="popup-tag">🔍 Kostenloser Schnelltest</span>
@@ -2548,6 +2548,7 @@
   </div>
 </div>
 
+<!-- POPUP SCRIPT HIDDEN
 <script>
 (function() {
   var POPUP_KEY = 'schnelltest_shown';
@@ -2581,6 +2582,7 @@
 
 })();
 </script>
+-->
 
 </body>
 </html>
