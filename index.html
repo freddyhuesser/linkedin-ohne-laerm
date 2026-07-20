@@ -28,10 +28,11 @@
       --c-primary-2:  #103040;
       --c-text:       #383838;
       --c-muted:      #383838;
-      --c-accent-bg:  #FFF5CA;
+      --c-accent-bg:  #C5E8EC;
+      --c-accent-bg-h:#B0D9DE;
       --c-yellow:     #FFF5CA;
       --c-yellow-h:   #F0E4A6;
-      --c-yellow-d:   #8a6f00;
+      --c-yellow-d:   #1A6E78;
       --c-white:      #FFFFFF;
       --c-gray:       #f6f6f4;
       --c-gray-2:     #e4e8ea;
@@ -67,11 +68,11 @@
     .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: var(--c-yellow);
+      background: var(--c-accent-bg);
       color: var(--c-primary);
     }
     .btn-primary:hover {
-      background: var(--c-yellow-h);
+      background: var(--c-accent-bg-h);
       color: var(--c-primary);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,34,44,.1);
@@ -208,7 +209,7 @@
     .nav-overlay.open .nav-link:nth-child(6) { transition-delay: .30s; }
     .nav-overlay.open .nav-link:nth-child(7) { transition-delay: .30s; }
     .nav-overlay.open .nav-link:nth-child(8) { transition-delay: .36s; }
-    .nav-overlay .nav-link:hover { background: var(--c-yellow); color: var(--c-primary); }
+    .nav-overlay .nav-link:hover { background: var(--c-accent-bg); color: var(--c-primary); }
     .nav-overlay .nav-link.nav-cta { margin-top: .5rem; }
     .nav-socials {
       position: absolute;
@@ -1283,7 +1284,7 @@
       transition: background .2s, transform .2s;
       line-height: 1;
     }
-    .reviews-arrow:hover { background: var(--c-yellow); transform: translateY(-50%) scale(1.05); }
+    .reviews-arrow:hover { background: var(--c-accent-bg); transform: translateY(-50%) scale(1.05); }
     .reviews-arrow--prev { left: -23px; }
     .reviews-arrow--next { right: -23px; }
     @media (max-width: 860px) {
@@ -1423,7 +1424,7 @@
     .angebot-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .angebot-label {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--c-yellow); color: var(--c-primary);
+      background: var(--c-accent-bg); color: var(--c-primary);
       border-radius: 100px; padding: .3rem 1rem;
       font-size: .72rem; font-weight: 700; letter-spacing: .08em;
       text-transform: uppercase; margin-bottom: 1rem;
