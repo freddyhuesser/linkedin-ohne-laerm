@@ -1574,6 +1574,27 @@
     }
     .popup-cta:hover { background: #e73643; color: #fff; transform: translateY(-2px); }
 
+    /* ── VERGLEICH TABLE ────────────────────── */
+    .vergleich-wrap { margin-top: 2rem; }
+    .vergleich-title {
+      font-size: .62rem; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--c-muted); opacity: .6;
+      margin-bottom: .75rem;
+    }
+    .vergleich-table { width: 100%; border-top: 1px solid var(--c-gray-2); }
+    .vergleich-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding: .6rem 0; border-bottom: 1px solid var(--c-gray-2);
+    }
+    .vergleich-header span {
+      font-size: .78rem; font-weight: 700; color: var(--c-primary);
+    }
+    .vergleich-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding: .7rem 0; border-bottom: 1px solid var(--c-gray-2);
+    }
+    .vergleich-row span { font-size: .82rem; color: var(--c-muted); }
+
     /* ── IRF-STUDIE BOX ─────────────────────── */
     .studie-box {
       background: var(--c-gray);
@@ -1869,11 +1890,41 @@
         <div class="sparring-rows">
           <div class="sparring-row">
             <span class="sparring-row-title">Sparring</span>
-            <span class="sparring-row-desc">Du kommunizierst selbst. Ich begleite dich als Sparring-Partner. Gemeinsam entwickeln wir Themen, schärfen Botschaften, hinterfragen Aussagen und geben deiner Kommunikation Sicherheit und Richtung.</span>
+            <span class="sparring-row-desc">Für Führungskräfte, die selbst kommunizieren möchten.<br><br>Ich begleite dich als strategischer Sparring-Partner. Gemeinsam entwickeln wir Themen, diskutieren Ideen, schärfen Botschaften und schaffen die Sicherheit, regelmässig und glaubwürdig zu kommunizieren.</span>
           </div>
           <div class="sparring-row">
-            <span class="sparring-row-title">Vollmandat</span>
-            <span class="sparring-row-desc">Du gibst die Richtung vor. Ich übernehme die Umsetzung. Gemeinsam entwickeln wir deine Inhalte, ich schreibe in deiner Stimme und begleite den gesamten Kommunikationsprozess. Veröffentlicht wird nur, was du freigibst.</span>
+            <span class="sparring-row-title">Managed Communication</span>
+            <span class="sparring-row-desc">Für Führungskräfte, die ihre Kommunikation in erfahrene Hände legen möchten.<br><br>Du gibst die Richtung vor. Gemeinsam entwickeln wir Themen und Botschaften, ich schreibe in deiner Stimme und begleite deine Kommunikation von der Idee bis zur Veröffentlichung. Veröffentlicht wird nur, was du freigibst.</span>
+          </div>
+        </div>
+
+        <div class="vergleich-wrap reveal">
+          <p class="vergleich-title">Vergleich</p>
+          <div class="vergleich-table">
+            <div class="vergleich-header">
+              <span>Sparring</span>
+              <span>Managed Communication</span>
+            </div>
+            <div class="vergleich-row">
+              <span>Du kommunizierst selbst</span>
+              <span>Ich kommuniziere in deiner Stimme</span>
+            </div>
+            <div class="vergleich-row">
+              <span>Strategisches Sparring</span>
+              <span>Strategie und operative Kommunikation</span>
+            </div>
+            <div class="vergleich-row">
+              <span>Ideen, Feedback und Sicherheit</span>
+              <span>Fertige Beiträge zur Freigabe</span>
+            </div>
+            <div class="vergleich-row">
+              <span>Du investierst Zeit</span>
+              <span>Du gewinnst Zeit</span>
+            </div>
+            <div class="vergleich-row">
+              <span>Maximale Eigenständigkeit</span>
+              <span>Maximale Entlastung</span>
+            </div>
           </div>
         </div>
         <div class="angebot-verknappung">
@@ -1899,7 +1950,7 @@
               <p class="pros-total">Gesamt CHF 19'900 · exkl. MwSt.</p>
             </div>
             <div class="pros-col">
-              <p class="pros-plan">Vollmandat</p>
+              <p class="pros-plan">Managed Communication</p>
               <p class="pros-price">4'200</p>
               <p class="pros-cadence">CHF / Monat</p>
               <hr class="pros-rule">
