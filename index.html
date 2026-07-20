@@ -1447,35 +1447,37 @@
       background-size: 28px 28px;
     }
     /* Texte auf dunklem Hintergrund */
-    .angebot-section .section-lbl { color: rgba(255,255,255,.5); }
+    .angebot-section .section-lbl { color: rgba(255,255,255,.6); }
     .angebot-section .section-title { color: #fff; }
-    .angebot-section .detail-lead { color: rgba(255,255,255,.65); }
+    .angebot-section .detail-lead { color: rgba(255,255,255,.85); }
     .angebot-section .angebot-block-title { color: #fff; }
-    .angebot-section .angebot-label { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
+    .angebot-section .angebot-label { background: rgba(255,255,255,.12); color: #fff; }
     /* Karten: dunkel statt weiss */
-    .angebot-section .angebot-cards { border-color: rgba(255,255,255,.12); }
+    .angebot-section .angebot-cards { border-color: rgba(255,255,255,.15); }
     .angebot-section .angebot-card { background: var(--c-primary-2); }
-    .angebot-section .angebot-card + .angebot-card { border-left-color: rgba(255,255,255,.12); }
-    .angebot-section .angebot-card-name { color: rgba(255,255,255,.5); }
-    .angebot-section .angebot-card-target { color: rgba(255,255,255,.55); }
-    .angebot-section .angebot-card-desc { color: rgba(255,255,255,.8); }
-    .angebot-section .angebot-card-price { border-top-color: rgba(255,255,255,.2); }
+    .angebot-section .angebot-card + .angebot-card { border-left-color: rgba(255,255,255,.15); }
+    .angebot-section .angebot-card-name { color: rgba(255,255,255,.6); }
+    .angebot-section .angebot-card-target { color: #fff; }
+    .angebot-section .angebot-card-desc { color: rgba(255,255,255,.85); }
+    .angebot-section .angebot-card-price { border-top-color: rgba(255,255,255,.25); }
     /* Preiszeilen */
     .angebot-section .pros-price { color: #fff; }
-    .angebot-section .pros-cadence { color: rgba(255,255,255,.5); }
-    .angebot-section .pros-row { border-bottom-color: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
-    .angebot-section .pros-total { color: rgba(255,255,255,.4); }
+    .angebot-section .pros-plan { color: rgba(255,255,255,.6); }
+    .angebot-section .pros-cadence { color: rgba(255,255,255,.7); }
+    .angebot-section .pros-row { border-bottom-color: rgba(255,255,255,.15); color: #fff; }
+    .angebot-section .pros-row-label { color: rgba(255,255,255,.6); }
+    .angebot-section .pros-total { color: rgba(255,255,255,.6); opacity: 1; }
     /* Verknappung & Vergleich */
-    .angebot-section .angebot-verknappung { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); }
+    .angebot-section .angebot-verknappung { background: rgba(255,255,255,.08); color: #fff; }
     .angebot-section .angebot-verknappung strong { color: #fff; }
-    .angebot-section .angebot-compare-trigger { background: rgba(255,255,255,.06); color: rgba(255,255,255,.6); }
-    .angebot-section .angebot-compare-trigger:hover { background: rgba(255,255,255,.1); }
-    .angebot-section .angebot-compare-body { background: var(--c-primary-2); border-top-color: rgba(255,255,255,.1); }
-    .angebot-section .vergleich-table { border-top-color: rgba(255,255,255,.1); }
-    .angebot-section .vergleich-header { border-bottom-color: rgba(255,255,255,.1); }
+    .angebot-section .angebot-compare-trigger { background: rgba(255,255,255,.07); color: rgba(255,255,255,.75); }
+    .angebot-section .angebot-compare-trigger:hover { background: rgba(255,255,255,.12); }
+    .angebot-section .angebot-compare-body { background: var(--c-primary-2); border-top-color: rgba(255,255,255,.12); }
+    .angebot-section .vergleich-table { border-top-color: rgba(255,255,255,.12); }
+    .angebot-section .vergleich-header { border-bottom-color: rgba(255,255,255,.12); }
     .angebot-section .vergleich-header span { color: #fff; }
-    .angebot-section .vergleich-row { border-bottom-color: rgba(255,255,255,.08); }
-    .angebot-section .vergleich-row span { color: rgba(255,255,255,.65); }
+    .angebot-section .vergleich-row { border-bottom-color: rgba(255,255,255,.1); }
+    .angebot-section .vergleich-row span { color: rgba(255,255,255,.8); }
     /* CTA-Button: invertiert (weiss auf dunkel) */
     .angebot-section .btn-dark { background: #fff; color: var(--c-primary); border-color: #fff; }
     .angebot-section .btn-dark:hover { background: rgba(255,255,255,.88); border-color: rgba(255,255,255,.88); }
@@ -1562,14 +1564,14 @@
     .pros-cols { display: grid; grid-template-columns: 1fr 1fr; }
     .pros-col { padding: 0 2rem 2rem 0; }
     .pros-col + .pros-col { padding: 0 0 2rem 2rem; border-left: 1px solid var(--c-gray-2); }
-    .pros-plan { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.5rem; }
+    .pros-plan { font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.25rem; }
     .pros-price { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1; font-weight: 400; color: var(--c-primary); font-variant-numeric: tabular-nums; letter-spacing: -.03em; margin-bottom: .3rem; }
-    .pros-cadence { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 2rem; }
+    .pros-cadence { font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.5rem; }
     .pros-rule { border: none; border-top: 1px solid var(--c-gray-2); margin-bottom: 1.25rem; }
-    .pros-row { display: flex; justify-content: space-between; align-items: baseline; font-size: .8rem; color: var(--c-muted); padding: .45rem 0; border-bottom: 1px solid var(--c-gray-2); gap: 1rem; }
-    .pros-row-label { font-size: .67rem; letter-spacing: .08em; text-transform: uppercase; flex-shrink: 0; }
+    .pros-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 1rem; color: var(--c-muted); padding: .5rem 0; border-bottom: 1px solid var(--c-gray-2); gap: 1rem; }
+    .pros-row-label { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; flex-shrink: 0; }
     .pros-row-val { text-align: right; font-variant-numeric: tabular-nums; }
-    .pros-total { margin-top: 1.5rem; font-size: .67rem; letter-spacing: .07em; color: var(--c-muted); text-transform: uppercase; font-variant-numeric: tabular-nums; opacity: .7; }
+    .pros-total { margin-top: 1.25rem; font-size: .85rem; letter-spacing: .05em; color: var(--c-muted); text-transform: uppercase; font-variant-numeric: tabular-nums; opacity: .7; }
     @media (max-width: 580px) {
       .pros-cols { grid-template-columns: 1fr; }
       .pros-col { padding: 0 0 2rem; }
@@ -1645,11 +1647,11 @@
     }
     .angebot-card + .angebot-card { border-left: 1px solid var(--c-gray-2); }
     .angebot-card-name {
-      font-size: .6rem; font-weight: 700; letter-spacing: .16em;
+      font-size: .78rem; font-weight: 700; letter-spacing: .14em;
       text-transform: uppercase; color: var(--c-yellow-d);
     }
-    .angebot-card-target { font-size: .8rem; color: var(--c-muted); line-height: 1.5; }
-    .angebot-card-desc { font-size: .88rem; color: var(--c-text); line-height: 1.75; flex: 1; }
+    .angebot-card-target { font-size: 1rem; color: var(--c-muted); line-height: 1.55; }
+    .angebot-card-desc { font-size: 1rem; color: var(--c-text); line-height: 1.75; flex: 1; }
     .angebot-card-price { border-top: 2px solid var(--c-yellow-d); padding-top: 1rem; margin-top: .5rem; }
     @media (max-width: 640px) {
       .angebot-cards { grid-template-columns: 1fr; }
