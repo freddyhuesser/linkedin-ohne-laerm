@@ -1442,11 +1442,23 @@
 
     /* ── ANGEBOT ──────────────────────────── */
     .angebot-section {
-      background: var(--c-white);
-      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
-    .angebot-block { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--c-gray-2); }
+    .angebot-section .section-lbl { color: var(--c-yellow); }
+    .angebot-section .section-title { color: #fff; }
+    .angebot-section .detail-lead { color: rgba(255,245,202,.65); }
+    .angebot-section .angebot-block-title { color: #fff; }
+    .angebot-section .angebot-label { background: var(--c-yellow); color: var(--c-primary); }
+    .angebot-section .angebot-verknappung { background: rgba(255,245,202,.12); color: rgba(255,245,202,.85); }
+    .angebot-section .angebot-verknappung strong { color: var(--c-yellow); }
+    .angebot-section .btn-dark {
+      background: var(--c-yellow); color: var(--c-primary);
+      border-color: var(--c-yellow);
+    }
+    .angebot-section .btn-dark:hover { background: var(--c-yellow-h); border-color: var(--c-yellow-h); }
+    .angebot-block { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,.12); }
     .angebot-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .angebot-label {
       display: inline-flex; align-items: center; gap: .5rem;
