@@ -1573,6 +1573,46 @@
       transition: background .2s, transform .2s;
     }
     .popup-cta:hover { background: #e73643; color: #fff; transform: translateY(-2px); }
+
+    /* ── IRF-STUDIE BOX ─────────────────────── */
+    .studie-box {
+      background: var(--c-gray);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .studie-box-label {
+      font-size: .58rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--c-muted); opacity: .65;
+      display: block; margin-bottom: 1.25rem;
+    }
+    .studie-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .85rem;
+    }
+    .studie-card {
+      background: var(--c-white);
+      border-radius: 8px;
+      padding: 1rem 1.1rem 1.1rem;
+    }
+    .studie-num {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.55rem; font-weight: 400; line-height: 1.1;
+      color: var(--c-primary); display: block; margin-bottom: .45rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .studie-desc {
+      font-size: .78rem; color: var(--c-muted);
+      line-height: 1.55; display: block;
+    }
+    .studie-source {
+      font-size: .62rem; color: var(--c-muted); opacity: .55;
+      margin-top: 1rem; display: block;
+    }
+    .studie-source a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 860px) { .studie-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .studie-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -1700,6 +1740,38 @@
       <p class="einleitung-text reveal">Mitarbeitende, Kundinnen und Kunden, Investorinnen und Investoren, Medien oder potenzielle Bewerbende bilden sich laufend ein Bild von dir und deinem Unternehmen. Die Frage ist nicht, ob du sichtbar bist, sondern wie du diese Aufmerksamkeit nutzt.</p>
       <p class="einleitung-text reveal">Viele Führungskräfte kommunizieren deshalb zurückhaltend. Aus Sorge, missverstanden zu werden, anzuecken oder der eigenen Position zu schaden. Doch wer dauerhaft schweigt, verzichtet auf die Chance, Vertrauen aufzubauen, Orientierung zu geben und die eigene Reputation aktiv mitzugestalten.</p>
       <p class="einleitung-text reveal">Genau dabei begleite ich dich. Gemeinsam entwickeln wir eine Kommunikation, die zu dir und deiner Rolle passt. Wir diskutieren Ideen, hinterfragen Aussagen, schärfen Botschaften und schaffen die Sicherheit, auch persönliche Erfahrungen oder anspruchsvolle Themen souverän zu kommunizieren. So entsteht Schritt für Schritt eine glaubwürdige Positionierung – für dich als Führungspersönlichkeit und für dein Unternehmen.</p>
+
+      <div class="studie-box reveal">
+        <span class="studie-box-label">IRF-Studie: CEO-Positionierung auf LinkedIn (Schweiz)</span>
+        <div class="studie-grid">
+          <div class="studie-card">
+            <span class="studie-num">66 %</span>
+            <span class="studie-desc">der CEOs sind auf LinkedIn aktiv. 34 % haben kein oder nur ein inaktives Profil.</span>
+          </div>
+          <div class="studie-card">
+            <span class="studie-num">1'700+</span>
+            <span class="studie-desc">Beiträge der letzten zwölf Monate ausgewertet und zehn Themenkategorien zugeordnet.</span>
+          </div>
+          <div class="studie-card">
+            <span class="studie-num">70 %</span>
+            <span class="studie-desc">aller Beiträge stammen von den aktivsten 25 CEOs – eine kleine Gruppe dominiert das Feld.</span>
+          </div>
+          <div class="studie-card">
+            <span class="studie-num">&gt; 2 %</span>
+            <span class="studie-desc">Engagement-Rate bei Top-Performern – weit über dem Schnitt von Unternehmensprofilen.</span>
+          </div>
+          <div class="studie-card">
+            <span class="studie-num">4 Themen</span>
+            <span class="studie-desc">dominieren: Strategie & Meilensteine, Produkte & Innovation, Thought Leadership, Employer Branding.</span>
+          </div>
+          <div class="studie-card">
+            <span class="studie-num">Fokus</span>
+            <span class="studie-desc">CEOs mit klarer Themenpositionierung erzielen deutlich höhere Interaktionen als jene mit breiter Themenvielfalt.</span>
+          </div>
+        </div>
+        <span class="studie-source"><a href="https://www.irf-reputation.ch/news/irf-studie-ceo-positionierung-linkedin" target="_blank" rel="noopener">Quelle: IRF Reputation – IRF-Studie CEO-Positionierung LinkedIn ↗</a></span>
+      </div>
+
       <div class="reveal" style="margin-top: 2rem;">
         <a href="#kontakt" class="btn btn-dark">
           💬 Gespräch vereinbaren
