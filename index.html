@@ -387,6 +387,16 @@
       position: relative;
       z-index: 1;
     }
+    .hero-title-sub {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.1rem, 1.85vw, 1.55rem);
+      font-weight: 400;
+      color: rgba(255,255,255,.6);
+      line-height: 1.35;
+      margin-top: .6rem;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .35s;
+    }
     .hero-title em {
       font-style: normal;
       color: #fff;
@@ -1574,6 +1584,47 @@
     }
     .popup-cta:hover { background: #e73643; color: #fff; transform: translateY(-2px); }
 
+    /* ── ANGEBOT KARTEN (Variante C) ────────── */
+    .angebot-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--c-gray-2); border-radius: 10px;
+      overflow: hidden; margin-top: 1.5rem;
+    }
+    .angebot-card {
+      background: var(--c-white); padding: 1.75rem;
+      display: flex; flex-direction: column; gap: .9rem;
+    }
+    .angebot-card + .angebot-card { border-left: 1px solid var(--c-gray-2); }
+    .angebot-card-name {
+      font-size: .6rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--c-yellow-d);
+    }
+    .angebot-card-target { font-size: .8rem; color: var(--c-muted); line-height: 1.5; }
+    .angebot-card-desc { font-size: .88rem; color: var(--c-text); line-height: 1.75; flex: 1; }
+    .angebot-card-price { border-top: 2px solid var(--c-yellow-d); padding-top: 1rem; margin-top: .5rem; }
+    @media (max-width: 640px) {
+      .angebot-cards { grid-template-columns: 1fr; }
+      .angebot-card + .angebot-card { border-left: none; border-top: 1px solid var(--c-gray-2); }
+    }
+    .angebot-compare-wrap {
+      border: 1px solid var(--c-gray-2); border-top: none;
+      border-radius: 0 0 10px 10px; overflow: hidden; margin-bottom: 1.5rem;
+    }
+    .angebot-compare-trigger {
+      width: 100%; background: var(--c-gray); border: none; cursor: pointer;
+      padding: .8rem 1.75rem; font-family: 'Inter', sans-serif;
+      font-size: .75rem; color: var(--c-yellow-d); font-weight: 600;
+      display: flex; align-items: center; gap: .4rem; transition: background .15s;
+    }
+    .angebot-compare-trigger:hover { background: var(--c-gray-2); }
+    .angebot-compare-chevron { transition: transform .25s ease; }
+    .angebot-compare-trigger.open .angebot-compare-chevron { transform: rotate(180deg); }
+    .angebot-compare-body {
+      display: none; padding: 1.25rem 1.75rem 1.5rem;
+      border-top: 1px solid var(--c-gray-2); background: var(--c-white);
+    }
+    .angebot-compare-body.open { display: block; }
+
     /* ── VERGLEICH TABLE ────────────────────── */
     .vergleich-wrap { margin-top: 2rem; }
     .vergleich-title {
@@ -1689,9 +1740,8 @@
       </span>
 
       <div class="hero-title-wrap">
-        <h1 class="hero-title">
-          Du hast kein Sichtbarkeitsproblem. Dir fehlen die Strategie und das Sparring, um deine Sichtbarkeit gezielt zu nutzen.
-        </h1>
+        <h1 class="hero-title">Du hast kein Sichtbarkeitsproblem.</h1>
+        <p class="hero-title-sub">Dir fehlen die Strategie und das Sparring, um deine Sichtbarkeit gezielt zu nutzen.</p>
       </div>
 
       <div class="hero-pain">
@@ -1861,95 +1911,76 @@
       <p class="detail-lead reveal" style="margin-top: 1rem; max-width: 600px;">Alles baut auf derselben Methode auf. Du wählst, wie intensiv wir zusammenarbeiten.</p>
     </div>
 
-    <div class="angebot-block detail-grid">
-      <div class="reveal">
-        <h3 class="angebot-block-title">Meine Methode gemeinsam implementieren</h3>
-        <p class="angebot-label" style="margin-bottom: 1rem;">6 Monate begleitet ohne Lärm</p>
-        <p class="detail-lead">Wir arbeiten sechs Monate zusammen. Im ersten Monat legen wir das Fundament: deine Positionierung, deine Themen und eine klare Haltung. Danach bin ich dein Sparring-Partner im Hintergrund und sorge dafür, dass du so effizient wie möglich dran bleibst. Ich gebe Feedback, schätze ein und schaue auf die Zahlen. So bauen wir Monat für Monat deine Reputation und Präsenz im Markt auf.</p>
-        <div class="sparring-rows">
-          <div class="sparring-row">
-            <span class="sparring-row-title">Sparring</span>
-            <span class="sparring-row-desc">Für Führungskräfte, die selbst kommunizieren möchten.<br><br>Ich begleite dich als strategischer Sparring-Partner. Gemeinsam entwickeln wir Themen, diskutieren Ideen, schärfen Botschaften und schaffen die Sicherheit, regelmässig und glaubwürdig zu kommunizieren.</span>
-          </div>
-          <div class="sparring-row">
-            <span class="sparring-row-title">Managed Communication</span>
-            <span class="sparring-row-desc">Für Führungskräfte, die ihre Kommunikation in erfahrene Hände legen möchten.<br><br>Du gibst die Richtung vor. Gemeinsam entwickeln wir Themen und Botschaften, ich schreibe in deiner Stimme und begleite deine Kommunikation von der Idee bis zur Veröffentlichung. Veröffentlicht wird nur, was du freigibst.</span>
+    <div class="angebot-block reveal">
+      <h3 class="angebot-block-title">Meine Methode gemeinsam implementieren</h3>
+      <p class="angebot-label" style="margin-bottom: 1rem;">6 Monate begleitet ohne Lärm</p>
+      <p class="detail-lead">Wir arbeiten sechs Monate zusammen. Im ersten Monat legen wir das Fundament: deine Positionierung, deine Themen und eine klare Haltung. Danach bin ich dein Sparring-Partner im Hintergrund und sorge dafür, dass du so effizient wie möglich dran bleibst. Ich gebe Feedback, schätze ein und schaue auf die Zahlen. So bauen wir Monat für Monat deine Reputation und Präsenz im Markt auf.</p>
+
+      <div class="angebot-cards">
+        <div class="angebot-card">
+          <p class="angebot-card-name">Sparring</p>
+          <p class="angebot-card-target">Für Führungskräfte, die selbst kommunizieren möchten.</p>
+          <p class="angebot-card-desc">Ich begleite dich als strategischer Sparring-Partner. Gemeinsam entwickeln wir Themen, diskutieren Ideen, schärfen Botschaften und schaffen die Sicherheit, regelmässig und glaubwürdig zu kommunizieren.</p>
+          <div class="angebot-card-price">
+            <p class="pros-price">2'400</p>
+            <p class="pros-cadence">CHF / Monat</p>
+            <div class="pros-row" style="margin-top:.75rem;">
+              <span class="pros-row-label">Analyse & Strategie</span>
+              <span class="pros-row-val">CHF 7'900 einmalig</span>
+            </div>
+            <div class="pros-row">
+              <span class="pros-row-label">Laufzeit</span>
+              <span class="pros-row-val">6 Monate</span>
+            </div>
+            <p class="pros-total">Gesamt CHF 22'300 · exkl. MwSt.</p>
           </div>
         </div>
+        <div class="angebot-card">
+          <p class="angebot-card-name">Managed Communication</p>
+          <p class="angebot-card-target">Für Führungskräfte, die ihre Kommunikation in erfahrene Hände legen möchten.</p>
+          <p class="angebot-card-desc">Du gibst die Richtung vor. Gemeinsam entwickeln wir Themen und Botschaften, ich schreibe in deiner Stimme und begleite deine Kommunikation von der Idee bis zur Veröffentlichung. Veröffentlicht wird nur, was du freigibst.</p>
+          <div class="angebot-card-price">
+            <p class="pros-price">4'200</p>
+            <p class="pros-cadence">CHF / Monat</p>
+            <div class="pros-row" style="margin-top:.75rem;">
+              <span class="pros-row-label">Analyse & Strategie</span>
+              <span class="pros-row-val">CHF 7'900 einmalig</span>
+            </div>
+            <div class="pros-row">
+              <span class="pros-row-label">Laufzeit</span>
+              <span class="pros-row-val">6 Monate</span>
+            </div>
+            <p class="pros-total">Gesamt CHF 33'100 · exkl. MwSt.</p>
+          </div>
+        </div>
+      </div>
 
-        <div class="vergleich-wrap reveal">
-          <p class="vergleich-title">Vergleich</p>
+      <div class="angebot-compare-wrap">
+        <button class="angebot-compare-trigger" id="compareBtn" onclick="toggleAngebotCompare()">
+          <svg class="angebot-compare-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          Sparring vs. Managed Communication vergleichen
+        </button>
+        <div class="angebot-compare-body" id="angebotCompare">
           <div class="vergleich-table">
             <div class="vergleich-header">
-              <span>Sparring</span>
-              <span>Managed Communication</span>
+              <span>Sparring</span><span>Managed Communication</span>
             </div>
-            <div class="vergleich-row">
-              <span>Du kommunizierst selbst</span>
-              <span>Ich kommuniziere in deiner Stimme</span>
-            </div>
-            <div class="vergleich-row">
-              <span>Strategisches Sparring</span>
-              <span>Strategie und operative Kommunikation</span>
-            </div>
-            <div class="vergleich-row">
-              <span>Ideen, Feedback und Sicherheit</span>
-              <span>Fertige Beiträge zur Freigabe</span>
-            </div>
-            <div class="vergleich-row">
-              <span>Du investierst Zeit</span>
-              <span>Du gewinnst Zeit</span>
-            </div>
-            <div class="vergleich-row">
-              <span>Maximale Eigenständigkeit</span>
-              <span>Maximale Entlastung</span>
-            </div>
+            <div class="vergleich-row"><span>Du kommunizierst selbst</span><span>Ich kommuniziere in deiner Stimme</span></div>
+            <div class="vergleich-row"><span>Strategisches Sparring</span><span>Strategie und operative Kommunikation</span></div>
+            <div class="vergleich-row"><span>Ideen, Feedback und Sicherheit</span><span>Fertige Beiträge zur Freigabe</span></div>
+            <div class="vergleich-row"><span>Du investierst Zeit</span><span>Du gewinnst Zeit</span></div>
+            <div class="vergleich-row"><span>Maximale Eigenständigkeit</span><span>Maximale Entlastung</span></div>
           </div>
         </div>
-        <div class="angebot-verknappung">
-          Ich begleite höchstens fünf Personen gleichzeitig. <strong>Im September wird ein Platz frei.</strong>
-        </div>
       </div>
-      <div class="reveal">
-        <div class="pros-wrap">
-          <div class="pros-cols">
-            <div class="pros-col">
-              <p class="pros-plan">Sparring</p>
-              <p class="pros-price">2'400</p>
-              <p class="pros-cadence">CHF / Monat</p>
-              <hr class="pros-rule">
-              <div class="pros-row">
-                <span class="pros-row-label">Analyse & Strategie</span>
-                <span class="pros-row-val">CHF 7'900 einmalig</span>
-              </div>
-              <div class="pros-row">
-                <span class="pros-row-label">Laufzeit</span>
-                <span class="pros-row-val">6 Monate</span>
-              </div>
-              <p class="pros-total">Gesamt CHF 22'300 · exkl. MwSt.</p>
-            </div>
-            <div class="pros-col">
-              <p class="pros-plan">Managed Communication</p>
-              <p class="pros-price">4'200</p>
-              <p class="pros-cadence">CHF / Monat</p>
-              <hr class="pros-rule">
-              <div class="pros-row">
-                <span class="pros-row-label">Analyse & Strategie</span>
-                <span class="pros-row-val">CHF 7'900 einmalig</span>
-              </div>
-              <div class="pros-row">
-                <span class="pros-row-label">Laufzeit</span>
-                <span class="pros-row-val">6 Monate</span>
-              </div>
-              <p class="pros-total">Gesamt CHF 33'100 · exkl. MwSt.</p>
-            </div>
-          </div>
-        </div>
-        <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.5rem;">
-          💬 Gespräch vereinbaren
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+
+      <div class="angebot-verknappung">
+        Ich begleite höchstens fünf Personen gleichzeitig. <strong>Im September wird ein Platz frei.</strong>
       </div>
+      <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.25rem;">
+        💬 Gespräch vereinbaren
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
 
     <div class="angebot-block detail-grid">
@@ -2390,6 +2421,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+  function toggleAngebotCompare() {
+    const btn = document.getElementById('compareBtn');
+    const body = document.getElementById('angebotCompare');
+    btn.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+</script>
 
 <script>
   // Fullscreen Nav Overlay
