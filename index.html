@@ -1446,18 +1446,39 @@
       background-image: radial-gradient(circle, rgba(255,255,255,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
-    .angebot-section .section-lbl { color: var(--c-yellow); }
+    /* Texte auf dunklem Hintergrund */
+    .angebot-section .section-lbl { color: rgba(255,255,255,.5); }
     .angebot-section .section-title { color: #fff; }
-    .angebot-section .detail-lead { color: rgba(255,245,202,.65); }
+    .angebot-section .detail-lead { color: rgba(255,255,255,.65); }
     .angebot-section .angebot-block-title { color: #fff; }
-    .angebot-section .angebot-label { background: var(--c-yellow); color: var(--c-primary); }
-    .angebot-section .angebot-verknappung { background: rgba(255,245,202,.12); color: rgba(255,245,202,.85); }
-    .angebot-section .angebot-verknappung strong { color: var(--c-yellow); }
-    .angebot-section .btn-dark {
-      background: var(--c-yellow); color: var(--c-primary);
-      border-color: var(--c-yellow);
-    }
-    .angebot-section .btn-dark:hover { background: var(--c-yellow-h); border-color: var(--c-yellow-h); }
+    .angebot-section .angebot-label { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
+    /* Karten: dunkel statt weiss */
+    .angebot-section .angebot-cards { border-color: rgba(255,255,255,.12); }
+    .angebot-section .angebot-card { background: var(--c-primary-2); }
+    .angebot-section .angebot-card + .angebot-card { border-left-color: rgba(255,255,255,.12); }
+    .angebot-section .angebot-card-name { color: rgba(255,255,255,.5); }
+    .angebot-section .angebot-card-target { color: rgba(255,255,255,.55); }
+    .angebot-section .angebot-card-desc { color: rgba(255,255,255,.8); }
+    .angebot-section .angebot-card-price { border-top-color: rgba(255,255,255,.2); }
+    /* Preiszeilen */
+    .angebot-section .pros-price { color: #fff; }
+    .angebot-section .pros-cadence { color: rgba(255,255,255,.5); }
+    .angebot-section .pros-row { border-bottom-color: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+    .angebot-section .pros-total { color: rgba(255,255,255,.4); }
+    /* Verknappung & Vergleich */
+    .angebot-section .angebot-verknappung { background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); }
+    .angebot-section .angebot-verknappung strong { color: #fff; }
+    .angebot-section .angebot-compare-trigger { background: rgba(255,255,255,.06); color: rgba(255,255,255,.6); }
+    .angebot-section .angebot-compare-trigger:hover { background: rgba(255,255,255,.1); }
+    .angebot-section .angebot-compare-body { background: var(--c-primary-2); border-top-color: rgba(255,255,255,.1); }
+    .angebot-section .vergleich-table { border-top-color: rgba(255,255,255,.1); }
+    .angebot-section .vergleich-header { border-bottom-color: rgba(255,255,255,.1); }
+    .angebot-section .vergleich-header span { color: #fff; }
+    .angebot-section .vergleich-row { border-bottom-color: rgba(255,255,255,.08); }
+    .angebot-section .vergleich-row span { color: rgba(255,255,255,.65); }
+    /* CTA-Button: invertiert (weiss auf dunkel) */
+    .angebot-section .btn-dark { background: #fff; color: var(--c-primary); border-color: #fff; }
+    .angebot-section .btn-dark:hover { background: rgba(255,255,255,.88); border-color: rgba(255,255,255,.88); }
     .angebot-block { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,.12); }
     .angebot-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .angebot-label {
