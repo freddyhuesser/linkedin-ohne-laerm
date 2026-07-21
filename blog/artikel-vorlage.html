@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO: TITEL + DESCRIPTION ANPASSEN ═══ -->
+  <title>[ARTIKEL-TITEL] | Freddy Hüsser – ohne Lärm</title>
+  <meta name="description" content="[META-DESCRIPTION: 130-155 Zeichen, enthält Hauptkeyword und Mehrwert]">
+  <link rel="canonical" href="https://ohnelaerm.ch/blog/[SLUG]/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ohnelaerm.ch/blog/[SLUG]/">
+  <meta property="og:title" content="[ARTIKEL-TITEL] | Freddy Hüsser">
+  <meta property="og:description" content="[META-DESCRIPTION]">
+  <meta property="og:image" content="https://ohnelaerm.ch/blog/[SLUG]/og-image.jpg">
+  <meta property="og:locale" content="de_CH">
+  <meta property="og:site_name" content="ohne Lärm">
+  <meta property="article:author" content="Freddy Hüsser">
+  <meta property="article:published_time" content="[DATUM ISO: 2025-09-01]">
+  <meta property="article:section" content="[KATEGORIE]">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[ARTIKEL-TITEL] | Freddy Hüsser">
+  <meta name="twitter:description" content="[META-DESCRIPTION]">
+
+  <!-- ═══ STRUCTURED DATA: ANPASSEN ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://ohnelaerm.ch/blog/[SLUG]/#article",
+        "url": "https://ohnelaerm.ch/blog/[SLUG]/",
+        "headline": "[ARTIKEL-TITEL]",
+        "description": "[META-DESCRIPTION]",
+        "inLanguage": "de-CH",
+        "datePublished": "[DATUM ISO: 2025-09-01]",
+        "dateModified": "[DATUM ISO: 2025-09-01]",
+        "author": {
+          "@type": "Person",
+          "@id": "https://ohnelaerm.ch/#freddy",
+          "name": "Freddy Hüsser",
+          "url": "https://ohnelaerm.ch/",
+          "jobTitle": "Executive Communication Coach",
+          "sameAs": ["https://www.linkedin.com/in/freddyhuesser-marketing/"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "ohne Lärm",
+          "url": "https://ohnelaerm.ch/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ohnelaerm.ch/images/Logo%20Ohne%20L%C3%A4rm.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://ohnelaerm.ch/blog/[SLUG]/"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://ohnelaerm.ch/blog/[SLUG]/og-image.jpg",
+          "width": 1200,
+          "height": 630
+        },
+        "keywords": "[KEYWORDS KOMMASEPARIERT]",
+        "articleSection": "[KATEGORIE]",
+        "isPartOf": { "@id": "https://ohnelaerm.ch/blog/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ohnelaerm.ch/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ohnelaerm.ch/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "[ARTIKEL-TITEL]", "item": "https://ohnelaerm.ch/blog/[SLUG]/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "[FRAGE 1]",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "[ANTWORT 1 – min. 2 Sätze, vollständig und eigenständig verständlich]"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "[FRAGE 2]",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "[ANTWORT 2]"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/jpeg" href="/images/Favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:   #00222C;
+      --c-primary-2: #103040;
+      --c-text:      #383838;
+      --c-muted:     #6b7280;
+      --c-accent-bg: #C5E8EC;
+      --c-yellow:    #FFF5CA;
+      --c-white:     #FFFFFF;
+      --c-gray:      #f6f6f4;
+      --c-gray-2:    #e4e8ea;
+      --r:           8px;
+      --body-width:  720px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--c-text);
+      background: var(--c-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .blog-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--c-gray-2);
+      background: var(--c-white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .blog-nav-logo {
+      font-family: Georgia, serif;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      text-decoration: none;
+    }
+    .blog-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--c-primary);
+      text-decoration: none;
+      padding: .4rem .8rem;
+      border-radius: var(--r);
+      transition: background .2s;
+    }
+    .blog-nav-back:hover { background: var(--c-accent-bg); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: var(--body-width);
+      margin: 1.5rem auto 0;
+      padding: 0 2rem;
+      font-size: .78rem;
+      color: var(--c-muted);
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--c-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--c-primary); }
+    .breadcrumb-sep { opacity: .4; }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      max-width: var(--body-width);
+      margin: 2rem auto 0;
+      padding: 0 2rem 2.5rem;
+      border-bottom: 1px solid var(--c-gray-2);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-cat {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-primary);
+      background: var(--c-accent-bg);
+      padding: .2rem .7rem;
+      border-radius: 100px;
+    }
+    .article-date {
+      font-size: .8rem;
+      color: var(--c-muted);
+    }
+    .article-read-time {
+      font-size: .8rem;
+      color: var(--c-muted);
+    }
+    .article-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--c-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+    .article-subtitle {
+      font-size: 1.1rem;
+      color: var(--c-muted);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--c-gray-2);
+    }
+    .article-author-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--c-gray);
+      object-fit: cover;
+    }
+    .article-author-name {
+      font-weight: 600;
+      font-size: .88rem;
+      color: var(--c-primary);
+    }
+    .article-author-role {
+      font-size: .78rem;
+      color: var(--c-muted);
+    }
+
+    /* ── HERO IMAGE ── */
+    .article-hero-img {
+      width: 100%;
+      max-width: 860px;
+      margin: 2.5rem auto;
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .article-hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-hero-img-placeholder {
+      width: 100%;
+      max-width: 860px;
+      margin: 2.5rem auto;
+      aspect-ratio: 16/7;
+      background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-2) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .article-hero-img-placeholder span {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      max-width: var(--body-width);
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* Prose styles */
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--c-text);
+    }
+    .article-body h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 400;
+      color: var(--c-primary);
+      margin: 3rem 0 1rem;
+      line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--c-primary);
+      margin: 2rem 0 .75rem;
+    }
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+    .article-body li {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: .4rem;
+    }
+    .article-body strong { font-weight: 600; color: var(--c-primary); }
+    .article-body a { color: var(--c-primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    .article-body a:hover { color: var(--c-primary-2); }
+
+    /* Pullquote */
+    .pullquote {
+      border-left: 3px solid var(--c-accent-bg);
+      background: var(--c-gray);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 var(--r) var(--r) 0;
+    }
+    .pullquote p {
+      font-family: Georgia, serif;
+      font-size: 1.15rem !important;
+      font-style: italic;
+      color: var(--c-primary) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--c-accent-bg);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .highlight-box p { margin-bottom: 0 !important; }
+
+    /* ── FAQ SECTION ── */
+    .article-faq {
+      background: var(--c-gray);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+    .article-faq-title {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--c-primary);
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      border-top: 1px solid var(--c-gray-2);
+      padding: 1.25rem 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--c-gray-2); }
+    .faq-question {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--c-primary);
+      margin-bottom: .6rem;
+    }
+    .faq-answer {
+      font-size: .92rem;
+      color: var(--c-text);
+      line-height: 1.7;
+    }
+
+    /* ── AUTHOR BOX ── */
+    .article-author-box {
+      border: 1px solid var(--c-gray-2);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      align-items: flex-start;
+    }
+    .author-box-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--c-gray);
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .author-box-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--c-primary);
+      margin-bottom: .25rem;
+    }
+    .author-box-role {
+      font-size: .8rem;
+      color: var(--c-muted);
+      margin-bottom: .75rem;
+    }
+    .author-box-bio {
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--c-text);
+    }
+
+    /* ── RELATED ARTICLES ── */
+    .article-related {
+      border-top: 1px solid var(--c-gray-2);
+      padding-top: 2.5rem;
+      margin-top: 3rem;
+    }
+    .article-related-title {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--c-primary);
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 560px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card {
+      border: 1px solid var(--c-gray-2);
+      border-radius: var(--r);
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: background .2s;
+    }
+    .related-card:hover { background: var(--c-gray); }
+    .related-card-cat {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-bottom: .5rem;
+    }
+    .related-card-title {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--c-primary);
+      line-height: 1.35;
+    }
+
+    /* ── CTA ── */
+    .article-cta {
+      background: var(--c-primary);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .article-cta-title {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--c-white);
+      margin-bottom: .75rem;
+    }
+    .article-cta-desc {
+      font-size: .9rem;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .btn-yellow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--c-yellow);
+      color: var(--c-primary);
+      padding: .85rem 1.8rem;
+      border-radius: var(--r);
+      font-weight: 700;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-yellow:hover { background: #F0E4A6; }
+
+    /* ── FOOTER ── */
+    .blog-footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .8rem;
+      color: var(--c-muted);
+      border-top: 1px solid var(--c-gray-2);
+    }
+    .blog-footer a { color: var(--c-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="blog-nav" aria-label="Blog-Navigation">
+    <a href="/" class="blog-nav-logo">ohne Lärm</a>
+    <a href="/blog/" class="blog-nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Alle Artikel
+    </a>
+  </nav>
+
+  <!-- BREADCRUMB (für Screenreader + SEO) -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Startseite</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/blog/">Blog</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>[ARTIKEL-TITEL KURZ]</span>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-cat">[KATEGORIE]</span>
+      <time class="article-date" datetime="[DATUM ISO]">[DATUM LESBAR]</time>
+      <span class="article-read-time">· [X] Min. Lesezeit</span>
+    </div>
+    <h1 class="article-title">[ARTIKEL-TITEL]</h1>
+    <p class="article-subtitle">[UNTERTITEL / LEAD: 1-2 Sätze, Mehrwert des Artikels]</p>
+    <div class="article-author">
+      <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser" class="article-author-img">
+      <div>
+        <div class="article-author-name">Freddy Hüsser</div>
+        <div class="article-author-role">Executive Communication Coach · Schweiz</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO IMAGE (Bild oder Platzhalter) -->
+  <div class="article-hero-img-placeholder">
+    <span>Artikelbild 1200 × 525 px</span>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <!-- EINLEITUNG -->
+    <p>[Einleitungsabsatz: Problem oder Frage aufwerfen, die der Leser kennt. Warum ist das Thema relevant? Kontext geben. Ca. 3–4 Sätze.]</p>
+
+    <p>[Zweiter Absatz: Was der Artikel liefert. Konkret, nicht vage. «In diesem Artikel zeige ich, wie...»]</p>
+
+    <!-- HAUPTTEIL -->
+    <h2>[Abschnitt 1: Hauptthema]</h2>
+
+    <p>[Inhalt...]</p>
+
+    <div class="pullquote">
+      <p>«[Kernaussage als Zitat formatiert — prägnant, merkwürdig, gerne provokativ.]»</p>
+    </div>
+
+    <h2>[Abschnitt 2]</h2>
+
+    <p>[Inhalt...]</p>
+
+    <ul>
+      <li>[Punkt 1]</li>
+      <li>[Punkt 2]</li>
+      <li>[Punkt 3]</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Wichtig:</strong> [Highlight-Aussage — Kernprinzip oder Warnung, die der Leser mitnehmen soll.]</p>
+    </div>
+
+    <h2>[Abschnitt 3]</h2>
+
+    <p>[Inhalt...]</p>
+
+    <!-- FAQ (für KI-Search & Featured Snippets) -->
+    <section class="article-faq" aria-labelledby="faq-heading">
+      <h2 class="article-faq-title" id="faq-heading">Häufige Fragen</h2>
+
+      <div class="faq-item">
+        <p class="faq-question">[Frage 1: typische Frage von Führungskräften zum Thema]</p>
+        <p class="faq-answer">[Antwort: vollständig, direkt, 2–4 Sätze. KI-Suchmaschinen extrahieren diese Antworten direkt.]</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">[Frage 2]</p>
+        <p class="faq-answer">[Antwort]</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">[Frage 3]</p>
+        <p class="faq-answer">[Antwort]</p>
+      </div>
+    </section>
+
+    <!-- FAZIT -->
+    <h2>Fazit</h2>
+
+    <p>[Zusammenfassung der Kernaussagen. Was soll der Leser jetzt tun? Klarer Handlungsaufruf.]</p>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <h2 class="article-cta-title">Bereit für LinkedIn ohne Lärm?</h2>
+      <p class="article-cta-desc">Freddy begleitet Führungskräfte dabei, souverän und authentisch präsent zu sein – in einem kostenlosen Erstgespräch.</p>
+      <a href="/#kontakt" class="btn-yellow">Kaffeepause vereinbaren →</a>
+    </div>
+
+    <!-- AUTHOR BOX -->
+    <div class="article-author-box">
+      <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser" class="author-box-img">
+      <div>
+        <p class="author-box-name">Freddy Hüsser</p>
+        <p class="author-box-role">Executive Communication Coach · Schweiz</p>
+        <p class="author-box-bio">Freddy begleitet exponierte Führungskräfte dabei, souverän und glaubwürdig präsent zu sein – auf LinkedIn und in der öffentlichen Kommunikation. Ruhig, substanziell, ohne Lärm. Seit über zehn Jahren in der Kommunikation aktiv, davon sechs Jahre fokussiert auf LinkedIn für Executives in der Schweiz.</p>
+      </div>
+    </div>
+
+    <!-- RELATED ARTICLES -->
+    <aside class="article-related">
+      <h2 class="article-related-title">Weitere Artikel</h2>
+      <div class="related-grid">
+        <a href="/blog/[SLUG-2]/" class="related-card">
+          <p class="related-card-cat">[Kategorie]</p>
+          <p class="related-card-title">[Verwandter Artikel 1]</p>
+        </a>
+        <a href="/blog/[SLUG-3]/" class="related-card">
+          <p class="related-card-cat">[Kategorie]</p>
+          <p class="related-card-title">[Verwandter Artikel 2]</p>
+        </a>
+      </div>
+    </aside>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="blog-footer">
+    <p>© 2025 <a href="/">ohne Lärm</a> · Freddy Hüsser · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+</body>
+</html>

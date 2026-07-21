@@ -247,14 +247,31 @@
       transition: opacity .3s ease .1s;
     }
     .nav-overlay.open .nav-overlay-logo { opacity: 1; }
-    .nav-overlay-logo img {
-      height: 180px;
-      width: auto;
-      display: block;
-      margin: 0 auto;
-      filter: brightness(0);
+    .nav-overlay-logo-link {
+      display: inline-block;
+      border-radius: 10px;
+      padding: .4rem .6rem;
+      transition: background .2s;
+      pointer-events: auto;
+      cursor: pointer;
     }
-    @media (max-width: 860px) { .nav-overlay-logo img { height: 120px; } }
+    .nav-overlay-logo-link:hover { background: var(--c-accent-bg); }
+    .nav-overlay-logo-mark {
+      display: block;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+      background-color: var(--c-primary);
+      -webkit-mask-image: url('images/Logo%20Ohne%20L%C3%A4rm.png');
+      mask-image: url('images/Logo%20Ohne%20L%C3%A4rm.png');
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+    @media (max-width: 860px) { .nav-overlay-logo-mark { width: 120px; height: 120px; } }
     .nav-linkedin, .nav-whatsapp {
       display: flex;
       align-items: center;
@@ -1867,7 +1884,9 @@
 
 <nav class="nav-overlay" id="navOverlay" aria-hidden="true">
   <div class="nav-overlay-logo">
-    <img src="images/Logo%20Ohne%20L%C3%A4rm.png" alt="ohne Lärm">
+    <a href="/" onclick="closeNav()" class="nav-overlay-logo-link" aria-label="Startseite">
+      <span class="nav-overlay-logo-mark"></span>
+    </a>
   </div>
   <a href="#warum" class="nav-link">Warum jetzt</a>
   <a href="#methode" class="nav-link">Meine Methode</a>

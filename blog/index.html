@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – Executive Communication | Freddy Hüsser · ohne Lärm</title>
+  <meta name="description" content="Executive Communication und Methode für Führungskräfte: Das zentrale Wissen, deine Sichtbarkeit für dich und dein Unternehmen aktiv einzusetzen. Freddy Hüsser, Schweiz.">
+  <link rel="canonical" href="https://ohnelaerm.ch/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ohnelaerm.ch/blog/">
+  <meta property="og:title" content="Blog – Executive Communication | Freddy Hüsser">
+  <meta property="og:description" content="Executive Communication und Methode für Führungskräfte. Das zentrale Wissen, deine Sichtbarkeit aktiv einzusetzen.">
+  <meta property="og:locale" content="de_CH">
+  <meta property="og:site_name" content="ohne Lärm">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://ohnelaerm.ch/blog/",
+        "url": "https://ohnelaerm.ch/blog/",
+        "name": "Blog – Executive Communication ohne Lärm",
+        "description": "Executive Communication und Methode für Führungskräfte in der Schweiz.",
+        "inLanguage": "de-CH",
+        "author": { "@id": "https://ohnelaerm.ch/#freddy" },
+        "isPartOf": { "@id": "https://ohnelaerm.ch/" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ohnelaerm.ch/#freddy",
+        "name": "Freddy Hüsser",
+        "url": "https://ohnelaerm.ch/",
+        "jobTitle": "Executive Communication Coach",
+        "address": { "@type": "PostalAddress", "addressCountry": "CH" },
+        "sameAs": ["https://www.linkedin.com/in/freddyhuesser-marketing/"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ohnelaerm.ch/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ohnelaerm.ch/blog/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/jpeg" href="/images/Favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary:   #00222C;
+      --c-primary-2: #103040;
+      --c-text:      #383838;
+      --c-muted:     #6b7280;
+      --c-accent-bg: #C5E8EC;
+      --c-yellow:    #FFF5CA;
+      --c-white:     #FFFFFF;
+      --c-gray:      #f6f6f4;
+      --c-gray-2:    #e4e8ea;
+      --r:           8px;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--c-text);
+      background: var(--c-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HAMBURGER (identisch mit Hauptseite) ── */
+    .fam-wrap {
+      position: fixed;
+      top: 1.75rem;
+      right: 2rem;
+      z-index: 400;
+      display: flex;
+      align-items: center;
+      gap: .1rem;
+    }
+    .fam-linkedin {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 10px;
+      color: #fff; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .fam-linkedin:hover { opacity: .7; }
+    .fam--light-bg .fam-linkedin { color: var(--c-primary); }
+    .nav-overlay-open .fam-linkedin { color: var(--c-primary); }
+    .fam-toggle {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: transparent; border: none; cursor: pointer;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 5px; transition: background .2s;
+    }
+    .fam-toggle .bar {
+      display: block; width: 22px; height: 2px;
+      background: #fff; border-radius: 2px;
+      transition: transform .35s ease, opacity .35s ease, background .3s ease;
+    }
+    .fam--light-bg .fam-toggle .bar { background: var(--c-primary); }
+    .nav-overlay-open .fam-toggle .bar { background: var(--c-primary); }
+    .fam-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .fam-toggle.open .bar:nth-child(2) { opacity: 0; }
+    .fam-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── NAV OVERLAY ── */
+    .nav-overlay {
+      position: fixed; inset: 0; z-index: 390;
+      background-color: #f9f5f0;
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 5rem 2rem 4rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s ease;
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: auto; }
+    .nav-overlay-logo {
+      position: static; top: auto; left: auto; width: 100%;
+      text-align: center; pointer-events: none;
+      margin-bottom: 2.5rem; opacity: 0;
+      transition: opacity .3s ease .1s;
+    }
+    .nav-overlay.open .nav-overlay-logo { opacity: 1; }
+    .nav-overlay-logo-link {
+      display: inline-block; border-radius: 10px;
+      padding: .4rem .6rem; transition: background .2s;
+      pointer-events: auto;
+    }
+    .nav-overlay-logo-link:hover { background: var(--c-accent-bg); }
+    .nav-overlay-logo-mark {
+      display: block; width: 180px; height: 180px;
+      margin: 0 auto;
+      background-color: var(--c-primary);
+      -webkit-mask-image: url('/images/Logo%20Ohne%20L%C3%A4rm.png');
+      mask-image: url('/images/Logo%20Ohne%20L%C3%A4rm.png');
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: center; mask-position: center;
+    }
+    @media (max-width: 860px) { .nav-overlay-logo-mark { width: 120px; height: 120px; } }
+    .nav-overlay .nav-link {
+      color: var(--c-primary); text-decoration: none;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      font-weight: 700; line-height: 1.2;
+      padding: .3rem .8rem; border-radius: 6px;
+      display: inline-block; opacity: 0;
+      transform: translateX(30px);
+      transition: background .2s, color .2s, opacity .35s ease, transform .35s ease;
+    }
+    .nav-overlay.open .nav-link { opacity: 1; transform: translateX(0); }
+    .nav-overlay.open .nav-link:nth-child(2) { transition-delay: .06s; }
+    .nav-overlay.open .nav-link:nth-child(3) { transition-delay: .12s; }
+    .nav-overlay.open .nav-link:nth-child(4) { transition-delay: .18s; }
+    .nav-overlay.open .nav-link:nth-child(5) { transition-delay: .24s; }
+    .nav-overlay.open .nav-link:nth-child(6) { transition-delay: .30s; }
+    .nav-overlay .nav-link:hover { background: var(--c-accent-bg); }
+    .nav-overlay .nav-link.nav-cta { margin-top: .5rem; }
+    .nav-socials {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.5rem; margin-top: .5rem; padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+      opacity: 0; transition: opacity .3s ease .4s;
+    }
+    .nav-overlay.open .nav-socials { opacity: 1; }
+    .nav-whatsapp {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 10px;
+      background: #25D366; color: #fff; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .nav-whatsapp:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .blog-hero {
+      background-color: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      padding: 7rem 2rem 5.5rem;
+      text-align: center;
+    }
+    .blog-hero-eyebrow {
+      font-size: .62rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--c-yellow); margin-bottom: 1.5rem;
+    }
+    .blog-hero-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-weight: 400; color: var(--c-white);
+      line-height: 1.22; max-width: 700px;
+      margin: 0 auto 1.25rem;
+    }
+    .blog-hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,.72);
+      max-width: 560px; margin: 0 auto .9rem; line-height: 1.7;
+    }
+    .blog-hero-body {
+      font-size: .92rem; color: rgba(255,255,255,.5);
+      max-width: 500px; margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ── LOGO BAR ── */
+    .logo-bar {
+      background: var(--c-white);
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid var(--c-gray-2);
+    }
+    .logo-bar-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--c-muted);
+      text-align: center; margin-bottom: 1.25rem;
+    }
+    .logo-slider { overflow: hidden; position: relative; }
+    .logo-slider::before,
+    .logo-slider::after {
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: 100px; z-index: 2; pointer-events: none;
+    }
+    .logo-slider::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+    .logo-slider::after  { right: 0; background: linear-gradient(to left, #fff, transparent); }
+    .logo-slider-track {
+      display: flex; align-items: center; gap: 3.5rem;
+      width: max-content;
+      animation: logoSlide 40s linear infinite;
+    }
+    .logo-slider-track:hover { animation-play-state: paused; }
+    .logo-slider-track a { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .logo-slider-track img {
+      height: 60px; object-fit: contain; flex-shrink: 0;
+      opacity: .35; filter: grayscale(100%);
+      transition: opacity .25s;
+    }
+    .logo-slider-track img:hover { opacity: .65; }
+    @keyframes logoSlide {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── FILTER ── */
+    .blog-filter {
+      display: flex; gap: .45rem; flex-wrap: wrap;
+      justify-content: center; padding: 2rem 2rem 1rem;
+    }
+    .blog-filter-btn {
+      font-size: .68rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; padding: .32rem .9rem;
+      border-radius: 100px; border: 1.5px solid var(--c-gray-2);
+      background: transparent; color: var(--c-muted);
+      cursor: pointer; font-family: 'Inter', sans-serif; transition: all .2s;
+    }
+    .blog-filter-btn:hover,
+    .blog-filter-btn.active {
+      background: var(--c-primary); color: var(--c-white); border-color: var(--c-primary);
+    }
+
+    /* ── GRID ── */
+    .blog-main { max-width: 1100px; margin: 0 auto; padding: .75rem 2rem 5rem; }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    @media (max-width: 860px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+
+    /* ── CARDS ── */
+    .blog-card {
+      background: var(--c-white); border: 1px solid var(--c-gray-2);
+      border-radius: 12px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .blog-card:hover {
+      box-shadow: 0 8px 32px rgba(0,34,44,.1); transform: translateY(-3px);
+    }
+    .blog-card-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-2) 100%);
+      flex-shrink: 0;
+    }
+    .blog-card-thumb span {
+      font-size: .55rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.2);
+    }
+    .blog-card-body {
+      padding: 1.35rem; flex: 1;
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+    .blog-card-meta { display: flex; align-items: center; gap: .6rem; }
+    .blog-card-cat {
+      font-size: .58rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--c-primary);
+      background: var(--c-accent-bg); padding: .18rem .55rem; border-radius: 100px;
+    }
+    .blog-card-date { font-size: .72rem; color: var(--c-muted); }
+    .blog-card-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.08rem; font-weight: 400;
+      color: var(--c-primary); line-height: 1.35;
+    }
+    .blog-card-excerpt { font-size: .82rem; color: var(--c-muted); line-height: 1.65; flex: 1; }
+    .blog-card-read { font-size: .75rem; font-weight: 600; color: var(--c-primary); }
+
+    /* FEATURED */
+    .blog-card--featured { grid-column: span 2; flex-direction: row; }
+    @media (max-width: 860px) { .blog-card--featured { grid-column: span 2; flex-direction: column; } }
+    @media (max-width: 560px) { .blog-card--featured { grid-column: span 1; } }
+    .blog-card--featured .blog-card-thumb {
+      width: 45%; aspect-ratio: auto; min-height: 240px; border-radius: 0;
+    }
+    @media (max-width: 860px) {
+      .blog-card--featured .blog-card-thumb { width: 100%; min-height: 0; aspect-ratio: 16/9; }
+    }
+    .blog-card--featured .blog-card-title { font-size: 1.35rem; }
+    .blog-card--featured .blog-card-body { padding: 1.75rem; }
+
+    /* ── CTA ── */
+    .blog-cta {
+      background: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      border-radius: 16px; padding: 3.5rem 2rem;
+      text-align: center; margin-top: 2rem;
+    }
+    .blog-cta-title {
+      font-family: Georgia, serif; font-size: 1.7rem;
+      font-weight: 400; color: var(--c-white); margin-bottom: .75rem;
+    }
+    .blog-cta-desc { color: rgba(255,255,255,.7); font-size: .9rem; margin-bottom: 1.5rem; }
+    .btn-yellow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--c-yellow); color: var(--c-primary);
+      padding: .85rem 1.8rem; border-radius: var(--r);
+      font-weight: 700; font-size: .9rem; text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-yellow:hover { background: #F0E4A6; }
+
+    /* ── FOOTER ── */
+    .blog-footer {
+      text-align: center; padding: 2rem;
+      font-size: .8rem; color: var(--c-muted);
+      border-top: 1px solid var(--c-gray-2);
+    }
+    .blog-footer a { color: var(--c-primary); text-decoration: none; }
+
+    /* ── CARD FILTER JS ── */
+    .blog-card[data-cat].hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- HAMBURGER + FULLSCREEN NAV (identisch mit Hauptseite) -->
+<div class="fam-wrap" id="famWrap">
+  <a href="https://www.linkedin.com/in/freddyhuesser-marketing/" class="fam-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn-Profil">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <button class="fam-toggle" id="famToggle" aria-label="Menü öffnen">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</div>
+
+<nav class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <div class="nav-overlay-logo">
+    <a href="/" onclick="closeNav()" class="nav-overlay-logo-link" aria-label="Startseite">
+      <span class="nav-overlay-logo-mark"></span>
+    </a>
+  </div>
+  <a href="/#warum" class="nav-link">Warum jetzt</a>
+  <a href="/#methode" class="nav-link">Meine Methode</a>
+  <a href="/#angebot" class="nav-link">Angebot</a>
+  <a href="/#ueber-mich" class="nav-link">Freddy Hüsser</a>
+  <a href="/#kontakt" class="nav-link nav-cta">Erstgespräch</a>
+  <a href="/#kontakt-formular" class="nav-link">Schreib mir</a>
+  <div class="nav-socials">
+    <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="26" height="26" rx="6" fill="currentColor"/>
+        <path d="M13 4.5C8.31 4.5 4.5 8.31 4.5 13c0 1.52.41 2.95 1.13 4.18L4.5 21.5l4.44-1.1A8.46 8.46 0 0013 21.5c4.69 0 8.5-3.81 8.5-8.5S17.69 4.5 13 4.5zm4.17 11.63c-.18.5-.88.91-1.45 1.03-.39.08-.9.14-2.6-.56-2.19-.88-3.6-3.11-3.71-3.25-.11-.15-.89-1.18-.89-2.25s.56-1.6.76-1.82c.2-.22.44-.27.58-.27l.42.01c.14 0 .32-.05.5.38.18.44.62 1.51.67 1.62.06.11.1.24.02.38-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.22.23-.1.45.13.22.57.94 1.22 1.52.84.75 1.55.98 1.77 1.09.22.11.35.09.48-.05.13-.14.56-.65.71-.87.15-.22.3-.18.5-.11.21.07 1.31.62 1.53.73.22.11.37.17.43.26.06.1.06.55-.12 1.05z" fill="#f9f5f0"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="blog-hero">
+  <p class="blog-hero-eyebrow">Executive Communication · Blog</p>
+  <h1 class="blog-hero-title">Führungskräfte sind durch ihre Rolle bereits sichtbar.</h1>
+  <p class="blog-hero-sub">Doch die wenigsten trauen sich, ihre Sichtbarkeit aktiv zu nutzen.</p>
+  <p class="blog-hero-body">Hier erfährst du das zentrale Wissen, deine Sichtbarkeit für dich und dein Unternehmen aktiv einzusetzen.</p>
+</header>
+
+<!-- LOGO BAR -->
+<div class="logo-bar">
+  <p class="logo-bar-label">Führungskräfte aus diesen Unternehmen vertrauen Freddy Hüsser</p>
+  <div class="logo-slider">
+    <div class="logo-slider-track">
+      <a href="https://www.terra-verde.ch/" target="_blank" rel="noopener"><img src="../images/Terra%20Verde.png" alt="Terra Verde"></a>
+      <a href="https://www.globus.ch/" target="_blank" rel="noopener"><img src="../images/Globus.png" alt="Globus"></a>
+      <a href="https://breitenmoser-hr.ch/" target="_blank" rel="noopener"><img src="../images/Breitenmoser%20HR.png" alt="Breitenmoser HR"></a>
+      <a href="https://24translate.de/" target="_blank" rel="noopener"><img src="../images/24%20translate.png" alt="24translate"></a>
+      <a href="https://institut-traumaintegration.ch/" target="_blank" rel="noopener"><img src="../images/NSTI.png" alt="NSTI"></a>
+      <a href="https://www.compremium.ch/" target="_blank" rel="noopener"><img src="../images/Compremium.png" alt="Compremium"></a>
+      <a href="https://www.stadt-zuerich.ch/" target="_blank" rel="noopener"><img src="../images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich"></a>
+      <a href="https://www.blue.works/" target="_blank" rel="noopener"><img src="../images/blueworks.png" alt="blue.works"></a>
+      <a href="https://www.swissolympic.ch/" target="_blank" rel="noopener"><img src="../images/Swiss%20Olympic.png" alt="Swiss Olympic"></a>
+      <a href="https://www.bfh.ch/" target="_blank" rel="noopener"><img src="../images/BFH.png" alt="Berner Fachhochschule"></a>
+      <a href="https://hso.ch/" target="_blank" rel="noopener"><img src="../images/HSO.png" alt="HSO"></a>
+      <a href="https://www.bztf.ch/" target="_blank" rel="noopener"><img src="../images/BZT.png" alt="BZT"></a>
+      <a href="https://geowerkstatt.ch/" target="_blank" rel="noopener"><img src="../images/GeoWerkstatt.png" alt="GeoWerkstatt"></a>
+      <a href="https://jobs.nzz.ch/" target="_blank" rel="noopener"><img src="../images/NZZJobs.png" alt="NZZ Jobs"></a>
+      <!-- Duplikat für nahtlose Schleife -->
+      <a href="https://www.terra-verde.ch/" target="_blank" rel="noopener"><img src="../images/Terra%20Verde.png" alt="Terra Verde"></a>
+      <a href="https://www.globus.ch/" target="_blank" rel="noopener"><img src="../images/Globus.png" alt="Globus"></a>
+      <a href="https://breitenmoser-hr.ch/" target="_blank" rel="noopener"><img src="../images/Breitenmoser%20HR.png" alt="Breitenmoser HR"></a>
+      <a href="https://24translate.de/" target="_blank" rel="noopener"><img src="../images/24%20translate.png" alt="24translate"></a>
+      <a href="https://institut-traumaintegration.ch/" target="_blank" rel="noopener"><img src="../images/NSTI.png" alt="NSTI"></a>
+      <a href="https://www.compremium.ch/" target="_blank" rel="noopener"><img src="../images/Compremium.png" alt="Compremium"></a>
+      <a href="https://www.stadt-zuerich.ch/" target="_blank" rel="noopener"><img src="../images/Stadt%20Z%C3%BCrich.png" alt="Stadt Zürich"></a>
+      <a href="https://www.blue.works/" target="_blank" rel="noopener"><img src="../images/blueworks.png" alt="blue.works"></a>
+      <a href="https://www.swissolympic.ch/" target="_blank" rel="noopener"><img src="../images/Swiss%20Olympic.png" alt="Swiss Olympic"></a>
+      <a href="https://www.bfh.ch/" target="_blank" rel="noopener"><img src="../images/BFH.png" alt="Berner Fachhochschule"></a>
+      <a href="https://hso.ch/" target="_blank" rel="noopener"><img src="../images/HSO.png" alt="HSO"></a>
+      <a href="https://www.bztf.ch/" target="_blank" rel="noopener"><img src="../images/BZT.png" alt="BZT"></a>
+      <a href="https://geowerkstatt.ch/" target="_blank" rel="noopener"><img src="../images/GeoWerkstatt.png" alt="GeoWerkstatt"></a>
+      <a href="https://jobs.nzz.ch/" target="_blank" rel="noopener"><img src="../images/NZZJobs.png" alt="NZZ Jobs"></a>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER -->
+<nav class="blog-filter" aria-label="Kategorien">
+  <button class="blog-filter-btn active" data-filter="all">Alle</button>
+  <button class="blog-filter-btn" data-filter="executive-communication">Executive Communication</button>
+  <button class="blog-filter-btn" data-filter="methode">Methode</button>
+</nav>
+
+<!-- ARTIKEL GRID -->
+<main class="blog-main" id="artikel">
+  <section class="blog-grid">
+
+    <a href="/blog/fuehrungskraefte-linkedin-schweiz/" class="blog-card blog-card--featured" data-cat="executive-communication">
+      <div class="blog-card-thumb"><span>Foto · 16:9</span></div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">Executive Communication</span>
+          <time class="blog-card-date" datetime="2025-09-01">1. Sept. 2025</time>
+        </div>
+        <h2 class="blog-card-title">Warum Führungskräfte in der Schweiz LinkedIn falsch nutzen – und wie es besser geht</h2>
+        <p class="blog-card-excerpt">Die meisten CEOs und Geschäftsleitungsmitglieder posten entweder zu viel Selbstdarstellung oder gar nichts. Beides kostet Vertrauen. Eine Analyse aus der Praxis.</p>
+        <span class="blog-card-read">Lesen →</span>
+      </div>
+    </a>
+
+    <a href="/blog/substanz-plan-kontinuitaet/" class="blog-card" data-cat="methode">
+      <div class="blog-card-thumb"><span>Foto · 16:9</span></div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">Methode</span>
+          <time class="blog-card-date" datetime="2025-09-15">15. Sept. 2025</time>
+        </div>
+        <h2 class="blog-card-title">Die 3 Prinzipien: Substanz, Plan, Kontinuität</h2>
+        <p class="blog-card-excerpt">Substanz vor Sichtbarkeit. Warum Führungskräfte erst dann kommunizieren sollten, wenn sie wissen, wofür sie stehen.</p>
+        <span class="blog-card-read">Lesen →</span>
+      </div>
+    </a>
+
+    <a href="/blog/linkedin-post-fuehrungskraefte/" class="blog-card" data-cat="executive-communication">
+      <div class="blog-card-thumb"><span>Foto · 16:9</span></div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">Executive Communication</span>
+          <time class="blog-card-date" datetime="2025-10-01">1. Okt. 2025</time>
+        </div>
+        <h2 class="blog-card-title">Wie ein LinkedIn-Post einer Führungskraft klingen muss</h2>
+        <p class="blog-card-excerpt">Nicht wie eine Medienmitteilung, nicht wie ein Motivationsposter. Was Executive Voice wirklich bedeutet – mit konkreten Beispielen.</p>
+        <span class="blog-card-read">Lesen →</span>
+      </div>
+    </a>
+
+    <a href="/blog/sparring-vs-ghostwriting/" class="blog-card" data-cat="methode">
+      <div class="blog-card-thumb"><span>Foto · 16:9</span></div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">Methode</span>
+          <time class="blog-card-date" datetime="2025-11-01">1. Nov. 2025</time>
+        </div>
+        <h2 class="blog-card-title">Sparring oder Ghostwriting? Was Führungskräfte wirklich brauchen</h2>
+        <p class="blog-card-excerpt">Der Unterschied zwischen fremden Worten und der eigenen Stimme – die endlich gefunden wurde.</p>
+        <span class="blog-card-read">Lesen →</span>
+      </div>
+    </a>
+
+    <a href="/blog/ceo-linkedin-profil/" class="blog-card" data-cat="executive-communication">
+      <div class="blog-card-thumb"><span>Foto · 16:9</span></div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="blog-card-cat">Executive Communication</span>
+          <time class="blog-card-date" datetime="2025-11-15">15. Nov. 2025</time>
+        </div>
+        <h2 class="blog-card-title">LinkedIn-Profil als CEO: Was wirklich zählt</h2>
+        <p class="blog-card-excerpt">About-Sektion, Header, Featured-Bereich: Worauf Entscheidungsträger achten sollten – und was ablenkende Optik kostet.</p>
+        <span class="blog-card-read">Lesen →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <h2 class="blog-cta-title">Bereit für Executive Communication ohne Lärm?</h2>
+    <p class="blog-cta-desc">Freddy begleitet Führungskräfte dabei, souverän und authentisch präsent zu sein.</p>
+    <a href="/#kontakt" class="btn-yellow">Erstgespräch vereinbaren →</a>
+  </div>
+</main>
+
+<footer class="blog-footer">
+  <p>© 2026 <a href="/">ohne Lärm</a> · Freddy Hüsser · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script>
+  // Hamburger nav
+  const famToggle  = document.getElementById('famToggle');
+  const navOverlay = document.getElementById('navOverlay');
+  const famWrap    = document.getElementById('famWrap');
+
+  function openNav() {
+    navOverlay.classList.add('open');
+    navOverlay.setAttribute('aria-hidden', 'false');
+    famToggle.classList.add('open');
+    document.body.classList.add('nav-overlay-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    navOverlay.classList.remove('open');
+    navOverlay.setAttribute('aria-hidden', 'true');
+    famToggle.classList.remove('open');
+    document.body.classList.remove('nav-overlay-open');
+    document.body.style.overflow = '';
+  }
+  famToggle.addEventListener('click', () => {
+    navOverlay.classList.contains('open') ? closeNav() : openNav();
+  });
+  navOverlay.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeNav));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+  // FAM-Farbe: weiss auf Hero, dunkel auf weissem Bereich
+  function updateFamColor() {
+    const heroH = document.querySelector('.blog-hero').offsetHeight;
+    famWrap.classList.toggle('fam--light-bg', window.scrollY > heroH - 80);
+  }
+  window.addEventListener('scroll', updateFamColor, { passive: true });
+  updateFamColor();
+
+  // Kategorie-Filter
+  document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.blog-card').forEach(card => {
+        if (filter === 'all' || card.dataset.cat === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
