@@ -907,28 +907,32 @@
     }
     .ueber-photo-col { position: relative; }
     .ueber-photo-stack {
-      display: flex;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: .75rem;
+      height: 560px;
     }
     .ueber-photo-wrap-1 {
-      width: 53%;
-      flex-shrink: 0;
-      border-radius: 20px;
+      grid-column: 1;
+      grid-row: 1 / 3;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,34,44,.15);
-      z-index: 2;
-      position: relative;
+      box-shadow: 0 20px 56px rgba(0,34,44,.15);
     }
     .ueber-photo-wrap-2 {
-      width: 53%;
-      flex-shrink: 0;
-      border-radius: 20px;
+      grid-column: 2;
+      grid-row: 1;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,34,44,.10);
-      z-index: 1;
-      position: relative;
-      margin-left: -6%;
-      margin-top: 3rem;
+      box-shadow: 0 12px 36px rgba(0,34,44,.12);
+    }
+    .ueber-photo-wrap-3 {
+      grid-column: 2;
+      grid-row: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0,34,44,.12);
     }
     .ueber-photo {
       width: 100%;
@@ -1350,8 +1354,7 @@
       #referenzen-1 .logo-slider::before, #referenzen-1 .logo-slider::after { display: none; }
       .ueber-grid { grid-template-columns: 1fr; }
       .ueber-photo-col { max-width: 480px; margin: 0 auto; }
-      .ueber-photo-wrap-1, .ueber-photo-wrap-2 { width: 58%; }
-      .ueber-photo-wrap-2 { margin-left: -16%; margin-top: 2rem; }
+      .ueber-photo-stack { height: 400px; }
       .detail-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1447,40 +1450,47 @@
       background-size: 28px 28px;
     }
     /* Texte auf dunklem Hintergrund */
-    .angebot-section .section-lbl { color: rgba(255,255,255,.6); }
+    .angebot-section .section-lbl { color: rgba(255,255,255,.75); }
     .angebot-section .section-title { color: #fff; }
-    .angebot-section .detail-lead { color: rgba(255,255,255,.85); }
+    .angebot-section .detail-lead { color: #fff; font-size: 1.1rem; }
     .angebot-section .angebot-block-title { color: #fff; }
-    .angebot-section .angebot-label { background: rgba(255,255,255,.12); color: #fff; }
+    .angebot-section .angebot-label { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.25); }
     /* Karten: dunkel statt weiss */
-    .angebot-section .angebot-cards { border-color: rgba(255,255,255,.15); }
+    .angebot-section .angebot-cards { border-color: rgba(255,255,255,.2); }
     .angebot-section .angebot-card { background: var(--c-primary-2); }
-    .angebot-section .angebot-card + .angebot-card { border-left-color: rgba(255,255,255,.15); }
-    .angebot-section .angebot-card-name { color: rgba(255,255,255,.6); }
+    .angebot-section .angebot-card + .angebot-card { border-left-color: rgba(255,255,255,.2); }
+    .angebot-section .angebot-card-name { color: rgba(255,255,255,.75); }
     .angebot-section .angebot-card-target { color: #fff; }
-    .angebot-section .angebot-card-desc { color: rgba(255,255,255,.85); }
-    .angebot-section .angebot-card-price { border-top-color: rgba(255,255,255,.25); }
+    .angebot-section .angebot-card-desc { color: #fff; }
+    .angebot-section .angebot-card-price { border-top-color: rgba(255,255,255,.3); }
     /* Preiszeilen */
     .angebot-section .pros-price { color: #fff; }
-    .angebot-section .pros-plan { color: rgba(255,255,255,.6); }
-    .angebot-section .pros-cadence { color: rgba(255,255,255,.7); }
-    .angebot-section .pros-row { border-bottom-color: rgba(255,255,255,.15); color: #fff; }
-    .angebot-section .pros-row-label { color: rgba(255,255,255,.6); }
-    .angebot-section .pros-total { color: rgba(255,255,255,.6); opacity: 1; }
+    .angebot-section .pros-plan { color: rgba(255,255,255,.75); }
+    .angebot-section .pros-cadence { color: rgba(255,255,255,.85); }
+    .angebot-section .pros-row { border-bottom-color: rgba(255,255,255,.2); color: #fff; }
+    .angebot-section .pros-row-label { color: rgba(255,255,255,.75); }
+    .angebot-section .pros-total { color: rgba(255,255,255,.75); opacity: 1; }
     /* Verknappung & Vergleich */
     .angebot-section .angebot-verknappung { background: rgba(255,255,255,.08); color: #fff; }
     .angebot-section .angebot-verknappung strong { color: #fff; }
-    .angebot-section .angebot-compare-trigger { background: rgba(255,255,255,.07); color: rgba(255,255,255,.75); }
-    .angebot-section .angebot-compare-trigger:hover { background: rgba(255,255,255,.12); }
-    .angebot-section .angebot-compare-body { background: var(--c-primary-2); border-top-color: rgba(255,255,255,.12); }
-    .angebot-section .vergleich-table { border-top-color: rgba(255,255,255,.12); }
-    .angebot-section .vergleich-header { border-bottom-color: rgba(255,255,255,.12); }
+    .angebot-section .angebot-compare-trigger { background: rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+    .angebot-section .angebot-compare-trigger:hover { background: rgba(255,255,255,.14); }
+    .angebot-section .angebot-compare-body { background: var(--c-primary-2); border-top-color: rgba(255,255,255,.15); }
+    .angebot-section .vergleich-table { border-top-color: rgba(255,255,255,.15); }
+    .angebot-section .vergleich-header { border-bottom-color: rgba(255,255,255,.15); }
     .angebot-section .vergleich-header span { color: #fff; }
-    .angebot-section .vergleich-row { border-bottom-color: rgba(255,255,255,.1); }
-    .angebot-section .vergleich-row span { color: rgba(255,255,255,.8); }
-    /* CTA-Button: invertiert (weiss auf dunkel) */
-    .angebot-section .btn-dark { background: #fff; color: var(--c-primary); border-color: #fff; }
-    .angebot-section .btn-dark:hover { background: rgba(255,255,255,.88); border-color: rgba(255,255,255,.88); }
+    .angebot-section .vergleich-row { border-bottom-color: rgba(255,255,255,.12); }
+    .angebot-section .vergleich-row span { color: rgba(255,255,255,.9); }
+    /* CTA-Button: gelb wie im Hero */
+    .angebot-section .btn-dark { background: var(--c-yellow); color: var(--c-primary); border-color: var(--c-yellow); }
+    .angebot-section .btn-dark:hover { background: var(--c-yellow-h); border-color: var(--c-yellow-h); }
+    /* Vergleichs-Trigger: auffälliger, kein Rahmen */
+    .angebot-section .angebot-compare-wrap { border: none; border-radius: 12px; overflow: hidden; }
+    .angebot-section .angebot-compare-trigger {
+      background: var(--c-accent-bg); color: var(--c-primary);
+      font-size: 1rem; padding: 1rem 1.75rem; font-weight: 700;
+    }
+    .angebot-section .angebot-compare-trigger:hover { background: var(--c-accent-bg-h); }
     .angebot-block { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid rgba(255,255,255,.12); }
     .angebot-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .angebot-label {
@@ -1564,14 +1574,14 @@
     .pros-cols { display: grid; grid-template-columns: 1fr 1fr; }
     .pros-col { padding: 0 2rem 2rem 0; }
     .pros-col + .pros-col { padding: 0 0 2rem 2rem; border-left: 1px solid var(--c-gray-2); }
-    .pros-plan { font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.25rem; }
+    .pros-plan { font-size: .9rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.25rem; }
     .pros-price { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1; font-weight: 400; color: var(--c-primary); font-variant-numeric: tabular-nums; letter-spacing: -.03em; margin-bottom: .3rem; }
-    .pros-cadence { font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.5rem; }
+    .pros-cadence { font-size: 1rem; letter-spacing: .07em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 1.5rem; }
     .pros-rule { border: none; border-top: 1px solid var(--c-gray-2); margin-bottom: 1.25rem; }
-    .pros-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 1rem; color: var(--c-muted); padding: .5rem 0; border-bottom: 1px solid var(--c-gray-2); gap: 1rem; }
-    .pros-row-label { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; flex-shrink: 0; }
+    .pros-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.05rem; color: var(--c-muted); padding: .55rem 0; border-bottom: 1px solid var(--c-gray-2); gap: 1rem; }
+    .pros-row-label { font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; flex-shrink: 0; }
     .pros-row-val { text-align: right; font-variant-numeric: tabular-nums; }
-    .pros-total { margin-top: 1.25rem; font-size: .85rem; letter-spacing: .05em; color: var(--c-muted); text-transform: uppercase; font-variant-numeric: tabular-nums; opacity: .7; }
+    .pros-total { margin-top: 1.25rem; font-size: .9rem; letter-spacing: .04em; color: var(--c-muted); text-transform: uppercase; font-variant-numeric: tabular-nums; opacity: .7; }
     @media (max-width: 580px) {
       .pros-cols { grid-template-columns: 1fr; }
       .pros-col { padding: 0 0 2rem; }
@@ -1647,19 +1657,18 @@
     }
     .angebot-card + .angebot-card { border-left: 1px solid var(--c-gray-2); }
     .angebot-card-name {
-      font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+      font-size: .88rem; font-weight: 700; letter-spacing: .12em;
       text-transform: uppercase; color: var(--c-yellow-d);
     }
-    .angebot-card-target { font-size: 1rem; color: var(--c-muted); line-height: 1.55; }
-    .angebot-card-desc { font-size: 1rem; color: var(--c-text); line-height: 1.75; flex: 1; }
+    .angebot-card-target { font-size: 1.1rem; color: var(--c-muted); line-height: 1.55; }
+    .angebot-card-desc { font-size: 1.05rem; color: var(--c-text); line-height: 1.8; flex: 1; }
     .angebot-card-price { border-top: 2px solid var(--c-yellow-d); padding-top: 1rem; margin-top: .5rem; }
     @media (max-width: 640px) {
       .angebot-cards { grid-template-columns: 1fr; }
       .angebot-card + .angebot-card { border-left: none; border-top: 1px solid var(--c-gray-2); }
     }
     .angebot-compare-wrap {
-      border: 1px solid var(--c-gray-2); border-top: none;
-      border-radius: 0 0 10px 10px; overflow: hidden; margin-bottom: 1.5rem;
+      border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;
     }
     .angebot-compare-trigger {
       width: 100%; background: var(--c-gray); border: none; cursor: pointer;
@@ -2361,14 +2370,17 @@
             <img src="images/Freddy%20H%C3%BCsser.jpg" alt="Freddy Hüsser" class="ueber-photo">
           </div>
           <div class="ueber-photo-wrap-2">
+            <img src="images/Freddy_IFJ_ztdg_farbe%20Kopie.png" alt="Freddy Hüsser Bühne" class="ueber-photo" style="object-position: center 15%; filter: contrast(1.12) saturate(1.15) brightness(1.04);">
+          </div>
+          <div class="ueber-photo-wrap-3">
             <img src="images/Freddy%20Eny.jpg" alt="Freddy und Eny" class="ueber-photo">
           </div>
         </div>
       </div>
 
       <div class="ueber-content reveal">
-        <p class="section-lbl">👋 Freddy &amp; Eny</p>
-        <h2 class="section-title">Hallo, ich bin Freddy.<br>Und das ist Eny.</h2>
+        <p class="section-lbl">Freddy Hüsser</p>
+        <h2 class="section-title">Hallo, ich bin Freddy Hüsser.</h2>
 
         <p class="ueber-lead">Seit bald zehn Jahren arbeite ich in der Marketingstrategie. Heute liegt mein Fokus auf LinkedIn – und auf den Menschen dahinter.</p>
         <p class="ueber-lead">Mich faszinieren Führungspersönlichkeiten mit Erfahrung, klaren Meinungen und Geschichten, die andere weiterbringen. Viele unterschätzen, wie wertvoll ihr Wissen für Mitarbeitende, Kundinnen, Kunden und den Markt ist. Ich unterstütze sie dabei, diese Gedanken in eine Kommunikation zu übersetzen, die authentisch ist und zu ihrer Rolle passt.</p>
