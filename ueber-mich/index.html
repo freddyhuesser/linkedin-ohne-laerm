@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Über Freddy Hüsser – LinkedIn-Marketing-Experte | ohne Lärm</title>
-  <meta name="description" content="Freddy Hüsser ist LinkedIn-Marketing-Experte und begleitet Führungspersönlichkeiten in der Schweiz dabei, ihre Kommunikation bewusst zu gestalten – ruhig, glaubwürdig und ohne Lärm.">
+  <meta name="description" content="Freddy Hüsser ist LinkedIn-Marketing-Experte, Dozent an BFH, HSO und BZT, Autor des NZZ-Jobs-Ratgebers und begleitet seit 2016 über 400 Führungskräfte in der Schweiz.">
   <link rel="canonical" href="https://ohnelaerm.ch/ueber-mich/">
 
   <meta property="og:type" content="profile">
@@ -38,7 +38,7 @@
         "givenName": "Freddy",
         "familyName": "Hüsser",
         "jobTitle": "LinkedIn-Marketing-Experte",
-        "description": "Freddy Hüsser begleitet Führungspersönlichkeiten dabei, ihre Kommunikation bewusst zu gestalten – ruhig, glaubwürdig und ohne Lärm.",
+        "description": "Freddy Hüsser begleitet Führungspersönlichkeiten dabei, ihre Kommunikation bewusst zu gestalten – ruhig, glaubwürdig und ohne Lärm. Dozent an BFH, HSO und BZT. Autor des LinkedIn-Ratgebers für NZZ Jobs. Seit 2016 über 400 Kunden in der Schweiz.",
         "url": "https://ohnelaerm.ch/",
         "image": {
           "@type": "ImageObject",
@@ -49,15 +49,23 @@
           "name": "FHDM – Freddy Hüsser Digital Marketing",
           "url": "https://ohnelaerm.ch/"
         },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "LinkedIn-Marketing-Berater"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Dozent für Marketingstrategie und LinkedIn-Marketing"
+          }
+        ],
         "knowsAbout": [
           "Executive Communication",
           "LinkedIn für Führungskräfte",
           "Personal Branding CEO",
           "Führungskommunikation",
-          "Digitale Sichtbarkeit"
-        ],
-        "alumniOf": [
-          { "@type": "Organization", "name": "BFH – Berner Fachhochschule" }
+          "Digitale Sichtbarkeit",
+          "Marketingstrategie"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -203,15 +211,15 @@
       background-color: var(--c-primary);
       background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
       background-size: 28px 28px;
-      padding: 7rem 2rem 4rem;
+      padding: 7rem 2rem 5rem;
     }
     .about-hero-inner {
-      max-width: 860px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end;
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 220px; gap: 3.5rem; align-items: end;
     }
-    @media (max-width: 640px) {
-      .about-hero-inner { grid-template-columns: 1fr; }
-      .about-hero-photo { width: 120px; height: 120px; }
+    @media (max-width: 660px) {
+      .about-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-hero-photo-wrap { order: -1; }
     }
     .about-breadcrumb {
       display: flex; align-items: center; gap: .5rem;
@@ -221,86 +229,171 @@
       color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s;
     }
     .about-breadcrumb a:hover { color: rgba(255,255,255,.9); }
-    .about-role {
-      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+    .about-role-badge {
+      display: inline-block;
+      font-size: .62rem; font-weight: 700; letter-spacing: .12em;
       text-transform: uppercase; color: var(--c-primary);
       background: var(--c-accent-bg);
-      display: inline-block; padding: .22rem .75rem; border-radius: 100px;
-      margin-bottom: 1.25rem;
+      padding: .22rem .75rem; border-radius: 100px; margin-bottom: 1.25rem;
     }
     .about-name {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 400; color: #fff;
-      line-height: 1.1; margin-bottom: 1rem;
+      line-height: 1.1; margin-bottom: 1.25rem;
     }
     .about-lead {
       font-family: Georgia, serif;
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      color: rgba(255,255,255,.75); line-height: 1.6; max-width: 600px;
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      color: rgba(255,255,255,.75); line-height: 1.65; max-width: 580px;
+    }
+    .about-hero-photo-wrap {
+      display: flex; justify-content: center; align-items: flex-end;
     }
     .about-hero-photo {
-      width: 180px; height: 180px; border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255,255,255,.15);
-      flex-shrink: 0;
+      width: 220px; height: 270px;
+      border-radius: 12px; object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(255,255,255,.12);
+    }
+    @media (max-width: 660px) {
+      .about-hero-photo { width: 140px; height: 170px; }
+    }
+
+    /* ── STATS ── */
+    .about-stats {
+      background: var(--c-accent-bg); padding: 2.5rem 2rem;
+    }
+    .about-stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .about-stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--c-primary); font-weight: 400; display: block; line-height: 1.1;
+    }
+    .stat-lbl {
+      font-size: .75rem; color: var(--c-primary); opacity: .7;
+      margin-top: .35rem; line-height: 1.45; display: block;
     }
 
     /* ── BODY ── */
     .about-wrap {
-      max-width: 760px; margin: 0 auto; padding: 4rem 2rem 5rem;
+      max-width: 900px; margin: 0 auto; padding: 4rem 2rem 2rem;
+    }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start;
+    }
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
     .about-wrap h2 {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      font-size: clamp(1.3rem, 2vw, 1.55rem);
       font-weight: 400; color: var(--c-primary);
-      margin: 3rem 0 1rem; line-height: 1.3;
+      margin: 2.5rem 0 .9rem; line-height: 1.3;
     }
+    .about-wrap h2:first-child { margin-top: 0; }
     .about-wrap p {
-      font-size: 1.06rem; line-height: 1.85; margin-bottom: 1.5rem; color: var(--c-text);
+      font-size: 1.04rem; line-height: 1.85; margin-bottom: 1.35rem; color: var(--c-text);
     }
     .about-wrap a { color: var(--c-primary); text-underline-offset: 2px; }
     .about-wrap a:hover { opacity: .75; }
 
+    /* ── MEILENSTEINE ── */
     .milestone-list {
       list-style: none; margin: 0 0 2rem 0;
-      border-left: 2px solid var(--c-accent-bg);
-      padding-left: 1.5rem;
+      border-left: 2px solid var(--c-accent-bg); padding-left: 1.5rem;
     }
     .milestone-list li {
-      position: relative; padding: .5rem 0;
-      font-size: 1rem; line-height: 1.6; color: var(--c-text);
+      position: relative; padding: .6rem 0;
+      font-size: .97rem; line-height: 1.6; color: var(--c-text);
     }
     .milestone-list li::before {
       content: '';
-      position: absolute; left: -1.65rem; top: .85rem;
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--c-accent-bg);
+      position: absolute; left: -1.7rem; top: .9rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--c-accent-bg); border: 2px solid var(--c-primary);
     }
     .milestone-year {
-      font-size: .72rem; font-weight: 700; color: var(--c-muted);
-      letter-spacing: .06em; display: block; margin-bottom: .15rem;
+      font-size: .68rem; font-weight: 700; color: var(--c-muted);
+      letter-spacing: .07em; display: block; margin-bottom: .15rem;
+      text-transform: uppercase;
     }
 
-    .profiles-grid {
-      display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0 2.5rem;
+    /* ── PROFIL-LINKS (Sidebar) ── */
+    .about-sidebar { position: sticky; top: 2rem; }
+    .sidebar-block {
+      background: var(--c-gray); border-radius: 12px;
+      padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .sidebar-block-title {
+      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--c-muted); margin-bottom: 1rem;
     }
     .profile-link {
-      display: inline-flex; align-items: center; gap: .55rem;
-      padding: .6rem 1.1rem; border-radius: 8px;
-      border: 1px solid var(--c-gray-2); background: var(--c-gray);
-      font-size: .88rem; font-weight: 500; color: var(--c-primary);
+      display: flex; align-items: center; gap: .6rem;
+      padding: .6rem .75rem; border-radius: 8px;
+      border: 1px solid var(--c-gray-2); background: var(--c-white);
+      font-size: .86rem; font-weight: 500; color: var(--c-primary);
       text-decoration: none; transition: border-color .2s, background .2s;
+      margin-bottom: .5rem;
     }
+    .profile-link:last-child { margin-bottom: 0; }
     .profile-link:hover { border-color: var(--c-accent-bg); background: #edf8f9; }
+    .profile-link svg { flex-shrink: 0; opacity: .6; }
+
+    /* ── REVIEWS ── */
+    .about-reviews {
+      background: var(--c-primary);
+      background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      padding: 4rem 2rem;
+    }
+    .about-reviews-inner { max-width: 900px; margin: 0 auto; }
+    .about-reviews-lbl {
+      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .5rem;
+    }
+    .about-reviews-title {
+      font-family: Georgia, serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      font-weight: 400; color: #fff; margin-bottom: .5rem;
+    }
+    .about-reviews-summary {
+      font-size: .85rem; color: rgba(255,255,255,.5); margin-bottom: 2.5rem;
+    }
+    .about-reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .about-reviews-grid { grid-template-columns: 1fr; }
+    }
+    .review-card {
+      background: rgba(255,255,255,.06); border-radius: 12px;
+      padding: 1.5rem; display: flex; flex-direction: column; gap: .75rem;
+    }
+    .review-stars { color: var(--c-accent-bg); font-size: .9rem; }
+    .review-text {
+      font-size: .9rem; color: rgba(255,255,255,.8); line-height: 1.65;
+      font-style: italic; flex: 1;
+    }
+    .review-name { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.5); }
 
     /* ── CTA ── */
+    .about-cta-section { padding: 4rem 2rem 5rem; }
+    .about-cta-inner {
+      max-width: 900px; margin: 0 auto;
+    }
     .about-cta {
       background-color: var(--c-primary);
       background-image: radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
       background-size: 28px 28px;
       border-radius: 18px; padding: 3rem;
-      margin: 3rem 0; position: relative; overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .about-cta::before {
       content: '';
@@ -309,11 +402,11 @@
       background: radial-gradient(circle, rgba(197,232,236,.18) 0%, transparent 70%);
       pointer-events: none;
     }
-    .about-cta p { color: #fff; line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.06rem; }
     .about-cta-title {
-      font-family: Georgia, serif; font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-      font-weight: 400; color: #fff; margin-bottom: .75rem; line-height: 1.25;
+      font-family: Georgia, serif; font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 400; color: #fff; margin-bottom: .75rem; line-height: 1.3;
     }
+    .about-cta p { color: rgba(255,255,255,.75); line-height: 1.7; margin-bottom: 1.75rem; font-size: 1rem; }
     .btn-yellow {
       display: inline-flex; align-items: center; gap: .5rem;
       background: #FFF5CA; color: #00222C;
@@ -330,15 +423,17 @@
       background-size: 28px 28px;
       text-align: center; padding: 2.5rem 2rem;
       font-size: .8rem; color: rgba(255,255,255,.35);
+      border-top: 1px solid rgba(255,255,255,.06);
     }
     .site-footer a { color: rgba(255,255,255,.6); text-decoration: none; }
     .site-footer a:hover { color: rgba(255,255,255,.9); }
 
     @media (max-width: 600px) {
-      .about-hero { padding: 5rem 1.5rem 3rem; }
-      .about-name { font-size: 1.8rem; }
-      .about-wrap { padding: 2.5rem 1.5rem 4rem; }
-      .about-cta { padding: 2rem 1.75rem; }
+      .about-hero { padding: 5.5rem 1.5rem 3.5rem; }
+      .about-wrap { padding: 2.5rem 1.5rem 1.5rem; }
+      .about-cta-section { padding: 2rem 1.5rem 3rem; }
+      .about-cta { padding: 2rem 1.5rem; }
+      .about-reviews { padding: 3rem 1.5rem; }
     }
   </style>
 </head>
@@ -378,82 +473,192 @@
 <!-- ═══ HERO ═══ -->
 <header class="about-hero" id="aboutHero">
   <div class="about-hero-inner">
+
     <div>
       <nav class="about-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">← Startseite</a>
+        <a href="/">← ohne Lärm</a>
       </nav>
-      <span class="about-role">LinkedIn-Marketing-Experte · Zürich, Schweiz</span>
+      <span class="about-role-badge">LinkedIn-Marketing-Experte · Zürich, Schweiz</span>
       <h1 class="about-name">Freddy Hüsser</h1>
-      <p class="about-lead">Ich begleite Führungspersönlichkeiten dabei, ihre Kommunikation bewusst zu gestalten – ruhig, glaubwürdig und ohne Lärm.</p>
+      <p class="about-lead">Seit bald zehn Jahren arbeite ich in der Marketingstrategie. Heute liegt mein Fokus auf LinkedIn – und auf den Menschen dahinter.</p>
     </div>
-    <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser – LinkedIn-Marketing-Experte" class="about-hero-photo">
+
+    <div class="about-hero-photo-wrap">
+      <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser – LinkedIn-Marketing-Experte, Zürich" class="about-hero-photo">
+    </div>
+
   </div>
 </header>
 
+<!-- ═══ STATS ═══ -->
+<div class="about-stats">
+  <div class="about-stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">400+</span>
+      <span class="stat-lbl">Kunden seit 2016</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4,9 ★</span>
+      <span class="stat-lbl">Google · 55 Rezensionen</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <span class="stat-lbl">Hochschulen als Dozent</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">NZZ</span>
+      <span class="stat-lbl">LinkedIn-Ratgeber · 11 Artikel</span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ INHALT ═══ -->
 <main class="about-wrap">
+  <div class="about-grid">
 
-  <h2>Wer ich bin</h2>
+    <!-- LINKE SPALTE: BIO + MEILENSTEINE -->
+    <div>
 
-  <p>Seit 2016 begleite ich Führungskräfte, Selbstständige und Unternehmen in der Schweiz dabei, ihre Kommunikation auf LinkedIn strategisch zu gestalten. Nicht laut, nicht austauschbar, sondern so, dass die Menschen, auf die es ankommt, verstehen, wofür jemand steht.</p>
+      <h2>Wer ich bin</h2>
 
-  <p>Ich bin Berater, Dozent und Autor – und ich arbeite direkt, ohne Agenturstruktur im Hintergrund. Wenn wir zusammenarbeiten, sprechen wir von Anfang an miteinander.</p>
+      <p>Mich faszinieren Führungspersönlichkeiten mit Erfahrung, klaren Meinungen und Geschichten, die andere weiterbringen. Viele unterschätzen, wie wertvoll ihr Wissen für Mitarbeitende, Kundinnen, Kunden und den Markt ist. Ich unterstütze sie dabei, diese Gedanken in eine Kommunikation zu übersetzen, die authentisch ist und zu ihrer Rolle passt.</p>
 
-  <h2>Was mich antreibt</h2>
+      <p>Neben meiner Arbeit unterrichte ich Marketingstrategie und LinkedIn-Marketing an drei Hochschulen. Der Austausch mit Studierenden hält meinen Blick frisch, während die Zusammenarbeit mit Führungskräften meine Lehre nah an der Praxis hält.</p>
 
-  <p>Ich glaube, dass Führungskräfte in der Schweiz zu oft unter ihrem Wert kommunizieren – nicht weil sie nichts zu sagen hätten, sondern weil die Kultur des «Tue Gutes und rede nicht darüber» tief sitzt. Das ist eine Chance für alle, die bereit sind, das zu ändern.</p>
+      <p>Wenn ich nicht arbeite, bin ich meistens mit Eny unterwegs – im Wald, an der Limmat oder auf einer Joggingrunde durchs Quartier. Dort entstehen oft die besten Ideen.</p>
 
-  <p>Sichtbarkeit bedeutet nicht Selbstdarstellung. Es bedeutet, dass die richtigen Menschen verstehen, wie jemand denkt und wofür er steht – bevor das erste Gespräch stattfindet.</p>
+      <h2>Mein Ansatz</h2>
 
-  <h2>Stationen</h2>
+      <p>Ich glaube, dass Führungskräfte in der Schweiz zu oft unter ihrem Wert kommunizieren – nicht weil sie nichts zu sagen hätten, sondern weil die Kultur des «Tue Gutes und rede nicht darüber» tief sitzt. Sichtbarkeit bedeutet nicht Selbstdarstellung. Es bedeutet, dass die richtigen Menschen verstehen, wie jemand denkt und wofür er steht – bevor das erste Gespräch stattfindet.</p>
 
-  <ul class="milestone-list">
-    <li>
-      <span class="milestone-year">Seit 2016</span>
-      Selbstständige Beratung für LinkedIn, Personal Branding und Executive Communication – über 400 Kundinnen und Kunden in der Schweiz
-    </li>
-    <li>
-      <span class="milestone-year">Dozent</span>
-      BFH – Berner Fachhochschule, HSO Höhere Schule, BZT Bildungszentrum Thun
-    </li>
-    <li>
-      <span class="milestone-year">Autor</span>
-      LinkedIn-Ratgeber für NZZ Jobs – Serienartikel zu Executive Communication für Führungskräfte
-    </li>
-    <li>
-      <span class="milestone-year">Marke</span>
-      «ohne Lärm» – Beratung, die nicht darauf ausgelegt ist, aufzufallen, sondern zu wirken
-    </li>
-  </ul>
+      <p>Ich arbeite direkt, ohne Agenturstruktur im Hintergrund. Wenn wir zusammenarbeiten, sprechen wir von Anfang an miteinander – ruhig, substanziell und ohne Lärm.</p>
 
-  <h2>Profile & Publikationen</h2>
+      <h2>Stationen & Meilensteine</h2>
 
-  <div class="profiles-grid">
-    <a href="https://ch.linkedin.com/in/freddyhuesser-marketing" target="_blank" rel="noopener me" class="profile-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn Profil
-    </a>
-    <a href="https://ch.linkedin.com/company/freddyhuesser" target="_blank" rel="noopener me" class="profile-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn Unternehmensseite
-    </a>
-    <a href="https://marketing.ch/author/freddyhuesser/" target="_blank" rel="noopener me" class="profile-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      marketing.ch Autor
-    </a>
-    <a href="/blog/" class="profile-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      Blog – Executive Communication
-    </a>
+      <ul class="milestone-list">
+        <li>
+          <span class="milestone-year">Seit 2016</span>
+          Selbstständige Beratung für LinkedIn-Marketing, Personal Branding und Executive Communication – über 400 Kundinnen und Kunden in der Schweiz
+        </li>
+        <li>
+          <span class="milestone-year">Dozent</span>
+          Marketingstrategie und LinkedIn-Marketing an BFH (Berner Fachhochschule), HSO (Höhere Schule) und BZT (Bildungszentrum Thun)
+        </li>
+        <li>
+          <span class="milestone-year">Autor · NZZ Jobs</span>
+          LinkedIn-Ratgeber für NZZ Jobs: 11 Artikel zu Executive Communication, Führungskommunikation und digitaler Sichtbarkeit
+        </li>
+        <li>
+          <span class="milestone-year">Autor · marketing.ch</span>
+          Fachbeiträge zu LinkedIn-Marketing und digitaler Positionierung
+        </li>
+        <li>
+          <span class="milestone-year">Vorträge</span>
+          Social Selling Day Zürich und weitere Events zu LinkedIn-Strategie für Führungskräfte und Unternehmen
+        </li>
+        <li>
+          <span class="milestone-year">Workshops</span>
+          Executive Workshops (1:1 und Führungsteams) sowie Unternehmens-Workshops mit Kunden wie Globus, Terra Verde, Stadt Zürich, Swiss Olympic, ZKB
+        </li>
+        <li>
+          <span class="milestone-year">Marke</span>
+          «ohne Lärm» – Beratung, die nicht darauf ausgelegt ist, aufzufallen, sondern zu wirken
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- RECHTE SPALTE: PROFIL-LINKS + KONTAKT -->
+    <aside class="about-sidebar">
+
+      <div class="sidebar-block">
+        <p class="sidebar-block-title">Profile</p>
+        <a href="https://ch.linkedin.com/in/freddyhuesser-marketing" target="_blank" rel="noopener me" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Profil
+        </a>
+        <a href="https://ch.linkedin.com/company/freddyhuesser" target="_blank" rel="noopener me" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Unternehmensseite
+        </a>
+        <a href="https://marketing.ch/author/freddyhuesser/" target="_blank" rel="noopener me" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          marketing.ch Autor
+        </a>
+        <a href="/blog/" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          NZZ Jobs Ratgeber (Blog)
+        </a>
+      </div>
+
+      <div class="sidebar-block">
+        <p class="sidebar-block-title">Lehrtätigkeit</p>
+        <a href="https://www.bfh.ch/" target="_blank" rel="noopener" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          BFH – Berner Fachhochschule
+        </a>
+        <a href="https://hso.ch/" target="_blank" rel="noopener" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          HSO Höhere Schule
+        </a>
+        <a href="https://www.bztf.ch/" target="_blank" rel="noopener" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          BZT Bildungszentrum Thun
+        </a>
+      </div>
+
+      <div class="sidebar-block">
+        <p class="sidebar-block-title">Kontakt</p>
+        <a href="mailto:freddy@ohnelaerm.ch" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          freddy@ohnelaerm.ch
+        </a>
+        <a href="tel:+41774987835" class="profile-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.4 2 2 0 0 1 3.54 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 5.61 5.61l1.54-1.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.78 15z"/></svg>
+          +41 77 498 78 35
+        </a>
+      </div>
+
+    </aside>
   </div>
-
-  <div class="about-cta">
-    <p class="about-cta-title">Lass uns unverbindlich sprechen.</p>
-    <p>Kostenlos, direkt mit mir – keine Übergabe an den Vertrieb.</p>
-    <a href="/#kontakt" class="btn-yellow">Erstgespräch vereinbaren →</a>
-  </div>
-
 </main>
+
+<!-- ═══ REZENSIONEN ═══ -->
+<section class="about-reviews">
+  <div class="about-reviews-inner">
+    <p class="about-reviews-lbl">Was Kunden sagen</p>
+    <h2 class="about-reviews-title">★★★★★ 4,9 aus 55 Google-Rezensionen</h2>
+    <p class="about-reviews-summary">Auswahl aus echten Rezensionen auf Google</p>
+    <div class="about-reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Drei und eine halbe Stunde bestens investierte Zeit! Nie langweilig, keine Redundanzen, mit klarem roten Faden. Dieser Kurs von Freddy Hüsser generiert Mehrwert und macht Spass.»</p>
+        <p class="review-name">Reto Cadalbert · Zürcher Kantonalbank</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Freddy ist grossartig, führt einem auch erfahrenen Coach oder Berater mit viel Humor, Charme und Leichtigkeit das vor, was dann doch noch verbessert werden kann. Ein echtes Highlight auf der Veranstaltung.»</p>
+        <p class="review-name">Katja Schaefer Coaching · Leadership Coach</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Freddy ist einfach nur super sympathisch und authentisch. Er weiss was er tut ohne dir grossartig was aufzuschwätzen. Er macht alles ruhig und gibt dir die Informationen die du brauchst.»</p>
+        <p class="review-name">Lisa Sebera · Selbständig</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="about-cta-section">
+  <div class="about-cta-inner">
+    <div class="about-cta">
+      <h2 class="about-cta-title">Lass uns unverbindlich sprechen.</h2>
+      <p>Kostenlos, direkt mit mir – keine Übergabe an den Vertrieb. Im September wird ein Platz frei.</p>
+      <a href="/#kontakt" class="btn-yellow">Erstgespräch vereinbaren →</a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
