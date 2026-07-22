@@ -651,6 +651,7 @@
     }
     .section-header { margin-bottom: 4.5rem; }
     .section-header.center { text-align: center; }
+    .section-title--center { text-align: center; }
     .section-header.center .section-lbl,
     .section-header.center .section-title,
     .section-header.center .section-desc { margin-left: auto; margin-right: auto; }
@@ -1416,7 +1417,7 @@
     }
     @media (max-width: 600px) {
       .review-card { flex: 0 0 calc(100vw - 4.5rem); }
-      .reviews-summary { flex-wrap: wrap; justify-content: center; text-align: center; }
+      .reviews-summary { flex-wrap: wrap; justify-content: flex-start; text-align: left; }
     }
 
     .reviews-dots { display: none; justify-content: center; gap: .45rem; margin-top: 1.25rem; }
@@ -1435,12 +1436,12 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     }
     @media (max-width: 860px) {
-      .hero { padding: 5rem 1.5rem 0; flex-direction: column; justify-content: center; }
+      .hero { padding: 5rem 1.5rem 0; flex-direction: column; justify-content: flex-start; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-image-wrap { display: none; }
       .hero-reviews { display: none; }
-      .hero-center { text-align: center; align-items: center; }
-      .hero-ctas { justify-content: center; }
+      .hero-center { text-align: left; align-items: flex-start; }
+      .hero-ctas { justify-content: flex-start; }
       #referenzen-1 { position: relative !important; bottom: auto !important; left: auto !important; right: auto !important; width: 100% !important; background: transparent !important; border: none !important; margin-top: 2rem; align-self: stretch; }
       #referenzen-1 .logo-slider::before, #referenzen-1 .logo-slider::after { display: none; }
       .ueber-grid { grid-template-columns: 1fr; }
@@ -1452,23 +1453,30 @@
       .logo-bar-grid { gap: 2rem; }
       .logo-bar--wide .logo-bar-grid { gap: 1.5rem; }
 
-      /* ── Mobile centering ── */
-      .section-header { text-align: center; }
-      .section-header .detail-lead { margin-left: auto; margin-right: auto; }
-      .einleitung-body { text-align: center; }
-      .einleitung-text { text-align: center; }
-      .stat-card--light { text-align: center; }
-      .angebot-block { text-align: center; }
+      /* ── Mobile: alles linksbündig ── */
+      .section-header { text-align: left; }
+      .section-header.center { text-align: left; }
+      .section-header .detail-lead { margin-left: 0; margin-right: 0; }
+      .section-title--center { text-align: left; }
+      .einleitung-body { text-align: left; }
+      .einleitung-text { text-align: left; }
+      .ueberblick-desc { text-align: left; margin: 0 0 4rem; }
+      .stat-card--light { text-align: left; }
+      .angebot-block { text-align: left; }
       .angebot-card { text-align: left; }
-      .angebot-block-title { text-align: center; }
-      .angebot-label { display: block; text-align: center; }
-      .ueber-content { text-align: center; }
-      .ueber-lead { text-align: center; max-width: none; }
-      .ueber-creds { text-align: center; }
-      .ueber-cred { flex-direction: column; align-items: center; gap: .75rem; }
-      .vertrauen-inner { text-align: center; }
-      .vertrauen-text { text-align: center; }
-      .detail-lead { text-align: center; }
+      .angebot-block-title { text-align: left; }
+      .angebot-label { display: block; text-align: left; }
+      .ueber-content { text-align: left; }
+      .ueber-lead { text-align: left; max-width: none; }
+      .ueber-creds { text-align: left; }
+      .ueber-cred { flex-direction: column; align-items: flex-start; gap: .75rem; }
+      .vertrauen-inner { text-align: left; }
+      .vertrauen-text { text-align: left; }
+      .detail-lead { text-align: left; }
+      .methode-intro { text-align: left !important; margin: 1rem 0 0 !important; }
+      .logo-bar-label { text-align: left; }
+      .cta-section { text-align: left; }
+      .section-title { font-size: 1.45rem; }
     }
     @media (max-width: 600px) {
       section { padding: 5rem 1.5rem; }
@@ -2035,7 +2043,7 @@
 <section class="methode-section" id="methode">
   <div class="section-inner">
     <div class="section-header center on-dark reveal">
-      <h2 class="section-title" style="text-align: center;">«Executive Communication – ohne Lärm»:<br>Meine Methode</h2>
+      <h2 class="section-title section-title--center">«Executive Communication<br>– ohne Lärm»: Meine Methode</h2>
       <p class="methode-intro reveal">Seit fast zehn Jahren entwickle ich Strategien und Positionierungen für Menschen und Unternehmen. Dabei hat mich vor allem eine Frage beschäftigt: Warum bauen manche Menschen Vertrauen auf, während andere trotz grosser Sichtbarkeit kaum Wirkung entfalten? Meine Methode fasst diese Learnings in drei Schritten zusammen:</p>
     </div>
     <div class="methode-linie">

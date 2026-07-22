@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>[ARTIKEL-TITEL] | Freddy Hüsser – ohne Lärm</title>
-  <meta name="description" content="[META-DESCRIPTION: 130–155 Zeichen, enthält Hauptkeyword und Mehrwert]">
+  <meta name="description" content="[META-DESCRIPTION: 130–155 Zeichen, enthält Hauptkeyword und konkreten Mehrwert]">
   <link rel="canonical" href="https://ohnelaerm.ch/blog/[SLUG]/">
 
   <meta property="og:type" content="article">
@@ -19,9 +19,20 @@
   <meta property="article:published_time" content="[DATUM ISO: 2025-09-01]">
   <meta property="article:section" content="[KATEGORIE]">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="[ARTIKEL-TITEL] | Freddy Hüsser">
-  <meta name="twitter:description" content="[META-DESCRIPTION]">
 
+  <!--
+  ═══════════════════════════════════════════════════════
+  KI-SEARCH STRUCTURED DATA
+  Zweck: Perplexity, ChatGPT Search, Google AI Overviews,
+         Claude Web-Search können diesen Artikel direkt
+         verstehen, zitieren und als Quelle benennen.
+
+  Was anpassen:
+  - Alle [PLATZHALTER] ersetzen
+  - FAQPage: 4–6 echte Fragen aus dem Artikel
+  - HowTo: nur wenn Artikel Schritt-für-Schritt-Anleitung
+  ═══════════════════════════════════════════════════════
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,7 +52,13 @@
           "name": "Freddy Hüsser",
           "url": "https://ohnelaerm.ch/",
           "jobTitle": "Executive Communication Coach",
-          "sameAs": ["https://www.linkedin.com/in/freddyhuesser-marketing/"]
+          "description": "Freddy Hüsser ist Executive Communication Coach in der Schweiz und begleitet Führungskräfte dabei, ihre Sichtbarkeit strategisch zu nutzen – auf LinkedIn, in Medien und intern.",
+          "knowsAbout": ["Executive Communication", "LinkedIn für Führungskräfte", "Personal Branding", "Kommunikation für CEOs", "Executive Visibility"],
+          "address": { "@type": "PostalAddress", "addressCountry": "CH", "addressRegion": "Zürich" },
+          "sameAs": [
+            "https://www.linkedin.com/in/freddyhuesser-marketing/",
+            "https://ohnelaerm.ch/"
+          ]
         },
         "publisher": {
           "@type": "Organization",
@@ -53,7 +70,11 @@
         "image": { "@type": "ImageObject", "url": "https://ohnelaerm.ch/blog/[SLUG]/og-image.jpg", "width": 1200, "height": 630 },
         "keywords": "[KEYWORDS KOMMASEPARIERT]",
         "articleSection": "[KATEGORIE]",
-        "isPartOf": { "@id": "https://ohnelaerm.ch/blog/" }
+        "isPartOf": { "@id": "https://ohnelaerm.ch/blog/" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".article-lead", ".summary-box", ".faq-answer"]
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -68,13 +89,23 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "[FRAGE 1]",
-            "acceptedAnswer": { "@type": "Answer", "text": "[ANTWORT 1 – min. 2 Sätze]" }
+            "name": "[FRAGE 1 – echte Frage die Menschen googeln]",
+            "acceptedAnswer": { "@type": "Answer", "text": "[ANTWORT 1 – vollständig, min. 2 Sätze, ohne den Kontext des Artikels zu benötigen]" }
           },
           {
             "@type": "Question",
             "name": "[FRAGE 2]",
             "acceptedAnswer": { "@type": "Answer", "text": "[ANTWORT 2]" }
+          },
+          {
+            "@type": "Question",
+            "name": "[FRAGE 3]",
+            "acceptedAnswer": { "@type": "Answer", "text": "[ANTWORT 3]" }
+          },
+          {
+            "@type": "Question",
+            "name": "[FRAGE 4]",
+            "acceptedAnswer": { "@type": "Answer", "text": "[ANTWORT 4]" }
           }
         ]
       }
@@ -105,12 +136,18 @@
     }
 
     html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; color: var(--c-text); background: var(--c-white); -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', sans-serif; color: var(--c-text);
+      background-color: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      -webkit-font-smoothing: antialiased;
+    }
 
     /* ── HAMBURGER ── */
     .fam-wrap {
       position: fixed; top: 1.75rem; right: 2rem; z-index: 400;
-      display: flex; align-items: center; gap: .1rem;
+      display: flex; align-items: center;
     }
     .fam-toggle {
       width: 48px; height: 48px; border-radius: 12px;
@@ -194,24 +231,22 @@
     }
     .nav-whatsapp:hover { opacity: .85; }
 
-    /* ── ARTICLE HERO (dunkel) ── */
+    /* ── ARTIKEL HERO (dunkel) ── */
     .article-hero {
       background-color: var(--c-primary);
       background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
       background-size: 28px 28px;
-      padding: 6rem 2rem 4rem;
+      padding: 6rem 2rem 3rem;
     }
     .article-hero-inner {
       max-width: 860px; margin: 0 auto;
     }
     .article-breadcrumb {
       display: flex; align-items: center; gap: .5rem;
-      font-size: .8rem; color: rgba(255,255,255,.5);
-      margin-bottom: 2rem;
+      font-size: .8rem; color: rgba(255,255,255,.45); margin-bottom: 2rem;
     }
     .article-breadcrumb a {
-      color: rgba(255,255,255,.5); text-decoration: none;
-      transition: color .2s;
+      color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s;
     }
     .article-breadcrumb a:hover { color: rgba(255,255,255,.9); }
     .article-cat-badge {
@@ -219,26 +254,24 @@
       font-size: .62rem; font-weight: 700; letter-spacing: .12em;
       text-transform: uppercase; color: var(--c-primary);
       background: var(--c-accent-bg);
-      padding: .22rem .75rem; border-radius: 100px;
-      margin-bottom: 1.25rem;
+      padding: .22rem .75rem; border-radius: 100px; margin-bottom: 1.25rem;
     }
     .article-title {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(1.9rem, 3.5vw, 3rem);
       font-weight: 400; color: #fff;
-      line-height: 1.15; margin-bottom: 1.25rem;
-      text-wrap: balance;
+      line-height: 1.15; margin: 2rem 0 1.25rem; text-wrap: balance;
     }
     .article-lead {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-      color: rgba(255,255,255,.8); line-height: 1.55;
-      margin-bottom: 2rem; max-width: 660px;
+      color: rgba(255,255,255,.8); line-height: 1.6;
+      margin-bottom: 2rem; max-width: 680px;
     }
     .article-byline {
       display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 2.5rem;
     }
     .article-byline-photo {
       width: 40px; height: 40px; border-radius: 50%;
@@ -246,34 +279,44 @@
     }
     .article-byline-name { font-size: .88rem; font-weight: 600; color: #fff; }
     .article-byline-sep { color: rgba(255,255,255,.3); }
-    .article-byline-meta { font-size: .82rem; color: rgba(255,255,255,.55); }
+    .article-byline-meta { font-size: .82rem; color: rgba(255,255,255,.5); }
 
-    /* ── HERO IMAGE ── */
-    .article-img-wrap {
-      max-width: 1000px; margin: 0 auto;
-      padding: 0 2rem;
-      transform: translateY(-2rem);
+    /* ── HERO BILD (innerhalb des dunklen Heros) ── */
+    .article-hero-img {
+      width: 100%; border-radius: 12px;
+      display: block; height: auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
     }
-    .article-img-wrap img {
-      width: 100%; height: auto; display: block;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0,34,44,.25);
-    }
-    .article-img-placeholder {
+    .article-hero-img-placeholder {
       width: 100%; aspect-ratio: 16/7;
-      background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-2) 100%);
+      background: linear-gradient(135deg, var(--c-primary-2) 0%, #1a4a5c 100%);
       border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 20px 60px rgba(0,34,44,.25);
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
     }
-    .article-img-placeholder span {
+    .article-hero-img-placeholder span {
       font-size: .65rem; font-weight: 700; letter-spacing: .18em;
-      text-transform: uppercase; color: rgba(255,255,255,.25);
+      text-transform: uppercase; color: rgba(255,255,255,.2);
     }
 
-    /* ── ARTICLE BODY ── */
+    /* ── ARTIKEL BODY ── */
     .article-wrap {
-      max-width: var(--body-w); margin: 0 auto; padding: 1rem 2rem 5rem;
+      max-width: var(--body-w); margin: 0 auto; padding: 3.5rem 2rem 5rem;
+    }
+
+    /* Zusammenfassung für KI-Suchen */
+    .summary-box {
+      background: var(--c-gray); border-left: 3px solid var(--c-accent-bg);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 1.5rem 1.75rem; margin-bottom: 2.5rem;
+    }
+    .summary-box-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--c-muted); margin-bottom: .75rem;
+    }
+    .summary-box ul { margin: 0 0 0 1.25rem; }
+    .summary-box li {
+      font-size: .95rem; line-height: 1.7; margin-bottom: .3rem; color: var(--c-text);
     }
 
     .article-wrap p {
@@ -290,12 +333,8 @@
       font-size: 1.15rem; font-weight: 400;
       color: var(--c-primary); margin: 2.25rem 0 .75rem;
     }
-    .article-wrap ul, .article-wrap ol {
-      margin: 0 0 1.5rem 1.5rem;
-    }
-    .article-wrap li {
-      font-size: 1.06rem; line-height: 1.8; margin-bottom: .45rem;
-    }
+    .article-wrap ul, .article-wrap ol { margin: 0 0 1.5rem 1.5rem; }
+    .article-wrap li { font-size: 1.06rem; line-height: 1.8; margin-bottom: .45rem; }
     .article-wrap strong { font-weight: 600; color: var(--c-primary); }
     .article-wrap a { color: var(--c-primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .article-wrap a:hover { opacity: .75; }
@@ -304,8 +343,8 @@
     .pullquote {
       border-left: 3px solid var(--c-accent-bg);
       background: var(--c-gray);
-      padding: 1.5rem 1.75rem;
-      margin: 2.5rem 0; border-radius: 0 var(--r) var(--r) 0;
+      padding: 1.5rem 1.75rem; margin: 2.5rem 0;
+      border-radius: 0 var(--r) var(--r) 0;
     }
     .pullquote p {
       font-family: Georgia, serif;
@@ -321,7 +360,7 @@
     }
     .highlight-box p { margin-bottom: 0 !important; }
 
-    /* ── FAQ ── */
+    /* ── FAQ (KI-optimiert) ── */
     .article-faq {
       background: var(--c-gray); border-radius: 12px;
       padding: 2rem 2.5rem; margin: 3rem 0;
@@ -335,7 +374,7 @@
     .faq-question { font-weight: 600; font-size: .95rem; color: var(--c-primary); margin-bottom: .5rem; }
     .faq-answer { font-size: .92rem; color: var(--c-text); line-height: 1.7; }
 
-    /* ── AUTHOR BOX ── */
+    /* ── AUTOR-BOX ── */
     .author-box {
       border: 1px solid var(--c-gray-2); border-radius: 12px;
       padding: 1.75rem; display: flex; gap: 1.5rem;
@@ -343,7 +382,7 @@
     }
     .author-box-photo {
       width: 72px; height: 72px; border-radius: 50%;
-      flex-shrink: 0; object-fit: cover; background: var(--c-gray);
+      flex-shrink: 0; object-fit: cover;
     }
     .author-box-name { font-weight: 700; font-size: 1rem; color: var(--c-primary); margin-bottom: .2rem; }
     .author-box-role { font-size: .8rem; color: var(--c-muted); margin-bottom: .75rem; }
@@ -375,24 +414,41 @@
 
     /* ── CTA ── */
     .article-cta {
-      background-color: var(--c-primary);
-      background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-color: #00222C;
+      background-image: radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
       background-size: 28px 28px;
-      border-radius: 16px; padding: 3rem 2rem;
-      text-align: center; margin: 3rem 0;
+      border-radius: 18px; padding: 3rem;
+      margin: 3rem 0; position: relative; overflow: hidden;
     }
-    .article-cta-title {
-      font-family: Georgia, serif; font-size: 1.55rem; font-weight: 400;
-      color: var(--c-white); margin-bottom: .75rem;
+    .article-cta::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(197,232,236,.18) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .article-cta-desc { font-size: .9rem; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; line-height: 1.6; }
+    .article-cta .article-cta-reviews {
+      font-size: 1.06rem; color: #ffffff;
+      line-height: 1.5; margin-bottom: 1.25rem;
+    }
+    .article-cta .article-cta-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      font-weight: 400; color: #ffffff;
+      line-height: 1.2; margin-bottom: .75rem; text-wrap: balance;
+    }
+    .article-cta .article-cta-desc {
+      font-size: 1.06rem; color: #ffffff;
+      line-height: 1.7; margin-bottom: 2rem; max-width: 480px;
+    }
     .btn-yellow {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--c-yellow); color: var(--c-primary);
-      padding: .85rem 1.8rem; border-radius: var(--r);
-      font-weight: 700; font-size: .9rem; text-decoration: none; transition: background .2s;
+      background: #FFF5CA; color: #00222C;
+      padding: .9rem 2rem; border-radius: 10px;
+      font-weight: 700; font-size: .92rem; text-decoration: none;
+      transition: background .2s; letter-spacing: .01em;
     }
-    .btn-yellow:hover { background: #F0E4A6; }
+    .btn-yellow:hover { background: #f0e4a0; }
 
     /* ── FOOTER ── */
     .site-footer {
@@ -404,6 +460,19 @@
     }
     .site-footer a { color: rgba(255,255,255,.6); text-decoration: none; }
     .site-footer a:hover { color: rgba(255,255,255,.9); }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 5rem 1.5rem 2.5rem; }
+      .article-title { font-size: 1.5rem; }
+      .article-lead { font-size: 1rem; }
+      .article-wrap { padding: 2.5rem 1.5rem 4rem; }
+      .article-wrap h2 { font-size: 1.15rem; margin: 2rem 0 .7rem; }
+      .article-wrap h3 { font-size: 1rem; }
+      .article-cta { padding: 2rem 1.75rem; }
+      .article-cta .article-cta-title { font-size: 1.2rem; }
+      .article-faq { padding: 1.5rem; }
+      .author-box { padding: 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -439,7 +508,7 @@
   </div>
 </nav>
 
-<!-- ARTIKEL HERO -->
+<!-- ═══ ARTIKEL HERO ═══ -->
 <header class="article-hero" id="articleHero">
   <div class="article-hero-inner">
 
@@ -451,9 +520,18 @@
 
     <span class="article-cat-badge">[KATEGORIE]</span>
 
+    <!-- HERO-BILD — nach Kategorie, vor Titel -->
+    <!-- Option A: echtes Bild -->
+    <!-- <img src="[BILD-PFAD]" alt="[BILDBESCHREIBUNG]" class="article-hero-img"> -->
+    <!-- Option B: Platzhalter (ersetzen wenn Bild vorhanden) -->
+    <div class="article-hero-img-placeholder">
+      <span>Artikelbild · 1200 × 525 px</span>
+    </div>
+
     <h1 class="article-title">[ARTIKEL-TITEL]</h1>
 
-    <p class="article-lead">[LEAD: 1–2 Sätze. Worum geht es, was nimmt die Leserin mit?]</p>
+    <!-- Lead = wird von KI-Suchen als Zusammenfassung extrahiert → präzise, eigenständig lesbar -->
+    <p class="article-lead">[LEAD: 1–2 Sätze. Was nimmt die Leserin mit? Kein «In diesem Artikel…» – direkt zur Aussage.]</p>
 
     <div class="article-byline">
       <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser" class="article-byline-photo">
@@ -467,34 +545,45 @@
   </div>
 </header>
 
-<!-- HERO BILD -->
-<div class="article-img-wrap">
-  <!-- Option A: echtes Bild -->
-  <!-- <img src="[BILD-PFAD]" alt="[BILDBESCHREIBUNG]"> -->
-  <!-- Option B: Platzhalter (löschen wenn Bild vorhanden) -->
-  <div class="article-img-placeholder">
-    <span>Artikelbild · 1200 × 525 px</span>
-  </div>
-</div>
-
-<!-- ARTIKEL INHALT -->
+<!-- ═══ ARTIKEL INHALT ═══ -->
 <article class="article-wrap">
 
-  <!-- EINLEITUNG -->
-  <p>[Einleitungsabsatz: Problem oder Frage aufwerfen, die die Leserin kennt. Warum ist das Thema relevant? Ca. 3–4 Sätze.]</p>
+  <!--
+  ──────────────────────────────────────────────────────
+  KI-SEARCH TIPPS FÜR DEN INHALT (diese Kommentare löschen nach dem Befüllen):
 
-  <p>[Zweiter Absatz: Was dieser Artikel liefert. Konkret, nicht vage – z. B. «In diesem Artikel zeige ich, wie…»]</p>
+  1. ZUSAMMENFASSUNG zuerst — KI-Suchen lesen den Anfang des Artikels.
+  2. H2 ALS FRAGEN — «Warum kommunizieren Führungskräfte zu wenig?» statt «Das Problem»
+  3. DIREKTE ANTWORTEN — erste Satz nach dem H2 beantwortet die Frage sofort.
+  4. FAQ AM SCHLUSS — 4–6 echte Fragen, vollständige Antworten (ohne Artikelkontext).
+  5. SPEAKABLE — Lead, Summary-Box und FAQ-Antworten sind im JSON-LD als speakable markiert.
+  ──────────────────────────────────────────────────────
+  -->
 
-  <!-- HAUPTTEIL -->
-  <h2>[Abschnitt 1: Hauptthema]</h2>
-
-  <p>[Inhalt…]</p>
-
-  <div class="pullquote">
-    <p>«[Kernaussage als Zitat – prägnant, gerne leicht provokativ.]»</p>
+  <!-- ZUSAMMENFASSUNG (für KI-Suchen + Überfliegeleser) -->
+  <div class="summary-box">
+    <p class="summary-box-label">Das Wichtigste in Kürze</p>
+    <ul>
+      <li>[Kernaussage 1 – ein vollständiger Satz]</li>
+      <li>[Kernaussage 2]</li>
+      <li>[Kernaussage 3]</li>
+      <li>[Kernaussage 4 – optional]</li>
+    </ul>
   </div>
 
-  <h2>[Abschnitt 2]</h2>
+  <!-- EINLEITUNG -->
+  <p>[Einleitungsabsatz: Problem aufwerfen, das die Leserin kennt. Warum ist das jetzt relevant? 3–4 Sätze.]</p>
+
+  <!-- H2 ALS FRAGE = KI-optimiert -->
+  <h2>[Warum / Wie / Was — als echte Frage formulieren?]</h2>
+
+  <p>[Erste Antwort direkt im ersten Satz. Dann ausführen. Kein Aufbau, direkt zur Aussage.]</p>
+
+  <div class="pullquote">
+    <p>«[Kernaussage als Zitat — prägnant, aus dem Artikel destilliert.]»</p>
+  </div>
+
+  <h2>[Zweite Frage als H2]</h2>
 
   <p>[Inhalt…]</p>
 
@@ -505,10 +594,10 @@
   </ul>
 
   <div class="highlight-box">
-    <p><strong>[Merksatz oder Kernpunkt]:</strong> [Kurze Erklärung in 1–2 Sätzen.]</p>
+    <p><strong>[Merksatz]:</strong> [1–2 Sätze Erklärung. Dieser Block wird von KI-Suchen als «key takeaway» erkannt.]</p>
   </div>
 
-  <h2>[Abschnitt 3]</h2>
+  <h2>[Dritte Frage als H2]</h2>
 
   <p>[Inhalt…]</p>
 
@@ -519,30 +608,44 @@
   <!-- FAZIT -->
   <h2>Fazit</h2>
 
-  <p>[Zusammenfassung in 2–3 Sätzen. Was ist die wichtigste Erkenntnis?]</p>
+  <p>[Zusammenfassung in 2–3 Sätzen. Die wichtigste Erkenntnis — eigenständig verständlich, ohne den restlichen Artikel gelesen zu haben.]</p>
 
-  <!-- FAQ FÜR KI-SUCHMASCHINEN -->
+  <!-- ═══ FAQ (KI-SEARCH-OPTIMIERT) ═══
+       Zweck: Perplexity, ChatGPT, Google AI Overviews extrahieren diese
+              Fragen-Antwort-Paare direkt. Jede Antwort muss OHNE den
+              Kontext des Artikels vollständig verständlich sein.
+       Format: Fragen so formulieren wie Menschen googeln.
+  -->
   <div class="article-faq">
     <p class="article-faq-title">Häufige Fragen</p>
+
     <div class="faq-item">
-      <p class="faq-question">[FRAGE 1]</p>
-      <p class="faq-answer">[ANTWORT 1 – vollständig und eigenständig verständlich, min. 2 Sätze.]</p>
+      <p class="faq-question">[FRAGE 1 – so wie Menschen es googeln würden]</p>
+      <p class="faq-answer">[ANTWORT 1 — vollständig, min. 2–3 Sätze, kein «Wie oben erwähnt».]</p>
     </div>
+
     <div class="faq-item">
       <p class="faq-question">[FRAGE 2]</p>
       <p class="faq-answer">[ANTWORT 2]</p>
     </div>
+
     <div class="faq-item">
       <p class="faq-question">[FRAGE 3]</p>
       <p class="faq-answer">[ANTWORT 3]</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">[FRAGE 4]</p>
+      <p class="faq-answer">[ANTWORT 4]</p>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="article-cta">
-    <p class="article-cta-title">Bereit, deine Sichtbarkeit strategisch zu nutzen?</p>
-    <p class="article-cta-desc">Freddy Hüsser begleitet Führungskräfte in der Schweiz dabei, souverän und authentisch präsent zu sein – ohne Lärm.</p>
-    <a href="/#kontakt" class="btn-yellow">💬 Erstgespräch vereinbaren →</a>
+    <p class="article-cta-reviews">★★★★★ &nbsp;4,9 aus 55 Google-Rezensionen</p>
+    <p class="article-cta-title">Du möchtest eine konkrete Einschätzung zu deinen Möglichkeiten?</p>
+    <p class="article-cta-desc">Dann lass uns unverbindlich sprechen.</p>
+    <a href="/#kontakt" class="btn-yellow">Erstgespräch vereinbaren →</a>
   </div>
 
   <!-- AUTOR -->
@@ -550,8 +653,8 @@
     <img src="/images/2023-09-06_Shooting-Limmatelier-13.jpg" alt="Freddy Hüsser" class="author-box-photo">
     <div>
       <p class="author-box-name">Freddy Hüsser</p>
-      <p class="author-box-role">Executive Communication Coach · Schweiz</p>
-      <p class="author-box-bio">Freddy Hüsser begleitet Führungskräfte dabei, ihre Kommunikation zu schärfen – auf LinkedIn, in Interviews, vor Gruppen und intern. Substanz vor Sichtbarkeit. Ohne Lärm.</p>
+      <p class="author-box-role">Executive Communication Coach · Zürich, Schweiz</p>
+      <p class="author-box-bio">Freddy Hüsser ist Executive Communication Coach und begleitet Führungskräfte in der Schweiz dabei, ihre Sichtbarkeit strategisch zu nutzen – mit Fokus auf LinkedIn. Substanz vor Sichtbarkeit. Ohne Lärm. <a href="/">ohnelaerm.ch</a></p>
     </div>
   </div>
 
@@ -600,7 +703,7 @@
   navOverlay.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeNav));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
-  // Hamburger-Farbe: weiss auf dunklem Hero, dunkel auf weissem Artikel
+  // Hamburger-Farbe: weiss auf Hero, dunkel auf weissem Lesebereich
   function updateFamColor() {
     const heroH = document.getElementById('articleHero').offsetHeight;
     famWrap.classList.toggle('fam--light-bg', window.scrollY > heroH - 80);
