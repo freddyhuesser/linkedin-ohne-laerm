@@ -1081,12 +1081,12 @@
     }
     .cta-inner { position: relative; z-index: 1; }
     .cta-title {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-size: clamp(1.4rem, 2.6vw, 2rem);
       font-weight: 400;
       font-style: normal;
       color: #fff;
       line-height: 1.2;
-      max-width: 640px;
+      max-width: 780px;
       margin: 0 auto 1.25rem;
     }
     .cta-title em { font-style: normal; color: #fff; }
@@ -1874,6 +1874,76 @@
     .studie-source a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 860px) { .studie-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .studie-grid { grid-template-columns: 1fr; } }
+  /* ── BLOG TEASER ── */
+  .blog-teaser-section {
+    background-color: var(--c-primary);
+    background-image: radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+    padding: 4.5rem 2.5rem;
+  }
+  .blog-teaser-inner { max-width: 1140px; margin: 0 auto; }
+  .blog-teaser-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 1.5rem;
+    margin-bottom: 2.25rem; flex-wrap: wrap;
+  }
+  .blog-teaser-lbl {
+    font-size: .62rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--c-accent-bg); margin-bottom: .5rem;
+  }
+  .blog-teaser-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: .6rem;
+  }
+  .blog-teaser-desc {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(.88rem, 1.2vw, 1rem);
+    color: rgba(255,255,255,.55); line-height: 1.55; max-width: 560px;
+  }
+  .blog-teaser-all {
+    font-size: .8rem; font-weight: 600; color: var(--c-accent-bg);
+    text-decoration: none; letter-spacing: .01em; white-space: nowrap;
+    border-bottom: 1px solid rgba(197,232,236,.35); padding-bottom: .15rem;
+    transition: color .2s, border-color .2s; flex-shrink: 0; align-self: flex-start;
+    margin-top: .35rem;
+  }
+  .blog-teaser-all:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+  .blog-teaser-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  @media (max-width: 860px) { .blog-teaser-grid { grid-template-columns: 1fr; } }
+  .blog-teaser-card {
+    background: #0a2e3c; border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px; overflow: hidden;
+    text-decoration: none; display: flex; flex-direction: column;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .blog-teaser-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+  .blog-teaser-card-thumb {
+    width: 100%; aspect-ratio: 16/9; overflow: hidden; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-2) 100%);
+    position: relative;
+  }
+  .blog-teaser-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .blog-teaser-card-badge {
+    position: absolute; bottom: .65rem; left: .75rem;
+    font-size: .52rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; background: var(--c-accent-bg);
+    color: var(--c-primary); padding: .18rem .6rem; border-radius: 100px;
+  }
+  .blog-teaser-card-body {
+    padding: 1.1rem 1.2rem 1.35rem;
+    display: flex; flex-direction: column; gap: .5rem; flex: 1;
+  }
+  .blog-teaser-card-date { font-size: .7rem; color: rgba(255,255,255,.4); }
+  .blog-teaser-card-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.02rem; font-weight: 400; color: #fff; line-height: 1.38;
+  }
+  .blog-teaser-card-excerpt { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; flex: 1; }
+  .blog-teaser-card-read { font-size: .72rem; font-weight: 600; color: var(--c-accent-bg); margin-top: .15rem; }
+
   </style>
 </head>
 <body>
@@ -2546,11 +2616,69 @@
   </div>
 </section>
 
+<!-- ══════════════ BLOG TEASER ══════════════ -->
+<section class="blog-teaser-section">
+  <div class="blog-teaser-inner">
+
+    <div class="blog-teaser-header reveal">
+      <div>
+        <p class="blog-teaser-lbl">Aus der Praxis</p>
+        <h2 class="blog-teaser-title">Executive Communication – Ohne Lärm</h2>
+        <p class="blog-teaser-desc">Strategien, Methoden und Denkanstösse für Führungskräfte, die ihre Kommunikation, Positionierung und Reputation gezielt weiterentwickeln möchten.</p>
+      </div>
+      <a href="/blog/" class="blog-teaser-all">Alle 10 Artikel lesen →</a>
+    </div>
+
+    <div class="blog-teaser-grid reveal">
+
+      <a href="/blog/fuehrungskraefte-linkedin-unsichtbarkeit/" class="blog-teaser-card">
+        <div class="blog-teaser-card-thumb">
+          <img src="/images/nzzjobs-ratgeber.png" alt="NZZJobs Ratgeber">
+          <span class="blog-teaser-card-badge">NZZJobs Ratgeber</span>
+        </div>
+        <div class="blog-teaser-card-body">
+          <time class="blog-teaser-card-date" datetime="2026-07-22">22. Juli 2026</time>
+          <h3 class="blog-teaser-card-title">Warum sind so wenige Schweizer Führungskräfte digital sichtbar?</h3>
+          <p class="blog-teaser-card-excerpt">Nur jeder achte Mittelstands-CEO ist auf LinkedIn aktiv. Unsichtbarkeit ist keine neutrale Position.</p>
+          <span class="blog-teaser-card-read">Lesen →</span>
+        </div>
+      </a>
+
+      <a href="/blog/innere-zensur-linkedin-ueberwinden/" class="blog-teaser-card">
+        <div class="blog-teaser-card-thumb">
+          <img src="/images/nzzjobs-ratgeber.png" alt="NZZJobs Ratgeber">
+          <span class="blog-teaser-card-badge">NZZJobs Ratgeber</span>
+        </div>
+        <div class="blog-teaser-card-body">
+          <time class="blog-teaser-card-date" datetime="2026-07-22">22. Juli 2026</time>
+          <h3 class="blog-teaser-card-title">Wie überwinde ich die innere Zensur beim Posten auf LinkedIn?</h3>
+          <p class="blog-teaser-card-excerpt">Die innere Zensur ist der grösste Gegner der Sichtbarkeit – nicht fehlende Zeit oder Ideen.</p>
+          <span class="blog-teaser-card-read">Lesen →</span>
+        </div>
+      </a>
+
+      <a href="/blog/sichtbarkeit-gute-arbeit-reicht-nicht/" class="blog-teaser-card">
+        <div class="blog-teaser-card-thumb">
+          <img src="/images/nzzjobs-ratgeber.png" alt="NZZJobs Ratgeber">
+          <span class="blog-teaser-card-badge">NZZJobs Ratgeber</span>
+        </div>
+        <div class="blog-teaser-card-body">
+          <time class="blog-teaser-card-date" datetime="2026-07-22">22. Juli 2026</time>
+          <h3 class="blog-teaser-card-title">Warum reicht gute Arbeit heute nicht mehr, um wahrgenommen zu werden?</h3>
+          <p class="blog-teaser-card-excerpt">Kompetenz und Sichtbarkeit sind heute zwei getrennte Dimensionen.</p>
+          <span class="blog-teaser-card-read">Lesen →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════ KALENDER / CTA ══════════════ -->
 <section class="cta-section" id="kontakt">
   <div class="section-inner cta-inner">
     <div class="reveal">
-      <h2 class="cta-title">Entspricht deine Kommunikation noch nicht<br><em>deinen Erwartungen?</em></h2>
+      <h2 class="cta-title">Entspricht deine Kommunikation noch nicht <em>deinen Erwartungen?</em></h2>
       <p class="cta-desc">Lass uns gemeinsam herausfinden, wo ungenutztes Potenzial steckt und welche nächsten Schritte für dich sinnvoll sind.</p>
       <p class="cta-desc">Kostenlos, unverbindlich und direkt mit mir, Freddy Hüsser. Keine Übergabe an den Vertrieb – wir sprechen von Anfang an persönlich.</p>
     </div>
