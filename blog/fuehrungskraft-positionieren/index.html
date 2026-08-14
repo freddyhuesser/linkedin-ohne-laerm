@@ -188,13 +188,18 @@
     .article-wrap { max-width: var(--body-w); margin: 0 auto; padding: 3.5rem 2rem 5rem; }
     .summary-box { background: var(--c-gray); border-left: 3px solid var(--c-accent-bg); border-radius: 0 var(--r) var(--r) 0; padding: 1.5rem 1.75rem; margin-bottom: 2.5rem; }
     .summary-box-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: .75rem; }
-    .summary-box ul { margin: 0 0 0 1.25rem; }
+        .summary-box ul { margin: 0; list-style: none; padding: 0; }
     .summary-box li { font-size: .95rem; line-height: 1.7; margin-bottom: .3rem; color: var(--c-text); }
+    .summary-box ul li { display: flex; gap: .45rem; align-items: flex-start; }
+    .summary-box ul li::before { content: '✓'; flex-shrink: 0; color: #1A6E78; -webkit-text-stroke: .4px #1A6E78; line-height: 1.7; }
     .article-wrap p { font-size: 1.06rem; line-height: 1.85; margin-bottom: 1.5rem; color: var(--c-text); }
     .article-wrap h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 400; color: var(--c-primary); margin: 3rem 0 1rem; line-height: 1.3; }
     .article-wrap h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.15rem; font-weight: 400; color: var(--c-primary); margin: 2.25rem 0 .75rem; }
-    .article-wrap ul, .article-wrap ol { margin: 0 0 1.5rem 1.5rem; }
+        .article-wrap ul { margin: 0 0 1.5rem 0; list-style: none; padding: 0; }
+    .article-wrap ol { margin: 0 0 1.5rem 1.5rem; }
     .article-wrap li { font-size: 1.06rem; line-height: 1.8; margin-bottom: .45rem; }
+    .article-wrap ul li { display: flex; gap: .5rem; align-items: flex-start; }
+    .article-wrap ul li::before { content: '✓'; flex-shrink: 0; color: #1A6E78; -webkit-text-stroke: .4px #1A6E78; line-height: 1.8; }
     .article-wrap strong { font-weight: 600; color: var(--c-primary); }
     .article-wrap a { color: var(--c-primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .article-wrap a:hover { opacity: .75; }

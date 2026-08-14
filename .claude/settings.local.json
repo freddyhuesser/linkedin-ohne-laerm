@@ -5,7 +5,8 @@
       "Bash(curl -s \"https://ohnelaerm.ch/ueber-freddy/\")",
       "Bash(curl -s \"https://lnkdin.ohnelaerm.ch/linkedin-coaching\")",
       "Bash(curl -s \"https://ohnelaerm.ch/\")",
-      "WebFetch(domain:share.google)"
+      "WebFetch(domain:share.google)",
+      "Bash(git -C \"/Users/frederikhuesser/Library/CloudStorage/GoogleDrive-freddy@ohnelaerm.ch/Meine Ablage/Markom/Webseiten/ohnelaerm.ch\" branch -a)"
     ]
   }
 }
