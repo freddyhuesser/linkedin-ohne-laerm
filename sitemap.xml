@@ -32,31 +32,31 @@
   <!-- Blog-Artikel: NZZJobs Ratgeber -->
   <url>
     <loc>https://ohnelaerm.ch/blog/fuehrungskraefte-linkedin-unsichtbarkeit/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/innere-zensur-linkedin-ueberwinden/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/employer-branding-linkedin/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/thought-leadership-linkedin/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/employee-advocacy-linkedin/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,189 +68,309 @@
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/sichtbarkeit-gute-arbeit-reicht-nicht/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/ki-linkedin-ohne-austauschbar/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/linkedin-impressions-interest-graph/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/digitales-netzwerk-bevor-man-es-braucht/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-profil-fuehrungskraft-praesenz/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/themenraum-fuehrungskraft-besetzen/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-kennzahlen-fuehrungskraefte/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/inbound-recruiting-fachkraefte/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/was-bewerbende-unternehmen-recherchieren/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-speicherungen-bedeutung/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/wann-lohnt-sich-linkedin-newsletter/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/chatgpt-gemini-fuehrungskraft-reputation/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/skills-first-hiring-linkedin-profil/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/relevante-reichweite-statt-viele-follower/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/gute-linkedin-direktnachrichten/</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog-Artikel: Executive Communication -->
   <url>
+    <loc>https://ohnelaerm.ch/blog/stellenabbau-fuehrungskommunikation/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/freigabeprozesse-fuehrungskommunikation/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/co-creation-fuehrung-kommunikation/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/fuehrungskommunikation-prinzipien-2027/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/ki-suche-arbeitgeber-reputation/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-beitrag-aufbau/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-aktivitaeten-berufliche-sichtbarkeit/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/eigene-linkedin-beitraege-liken-kommentieren-teilen/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/nach-linkedin-beitrag-veroeffentlichen/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-erwaehnung-richtig-reagieren/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-event-wirkung-verlaengern/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-content-rubriken-entwickeln/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-beitragsformate-ziele/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-content-entscheidungsreise/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/employee-advocacy-freiwillig-struktur/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/employee-advocacy-erfolg-messen/</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/candidate-journey-vor-bewerbung/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/digitaler-arbeitgeber-check/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/linkedin-profil-fachkompetenz-ki/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/active-sourcing-linkedin/</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ohnelaerm.ch/blog/ceo-reputation-firmenwert/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/fuehrungskommunikation/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/executive-communication/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/ceo-kommunikation/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/fuehrungskraft-positionieren/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/digitale-reputation-fuehrungskraefte/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/kommunikation-fuehrungsaufgabe/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/linkedin-fuehrungskraefte-nutzen/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/sollte-ceo-linkedin-aktiv-sein/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/sichtbarkeit-praesenz-reputation-unterschied/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/themen-finden-fuehrungskraft/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/persoenliche-stimme-fuehrungskraft/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/themen-ceo-kommunikation/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/executive-communication-strategie/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/persoenliches-profil-unternehmensseite/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ohnelaerm.ch/blog/digitaler-erster-eindruck-fuehrungskraft/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/linkedin-profil-fuehrungskraft-praesenz/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/themenraum-fuehrungskraft-besetzen/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/linkedin-kennzahlen-fuehrungskraefte/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/inbound-recruiting-fachkraefte/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/was-bewerbende-unternehmen-recherchieren/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/linkedin-speicherungen-bedeutung/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/wann-lohnt-sich-linkedin-newsletter/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/chatgpt-gemini-fuehrungskraft-reputation/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/skills-first-hiring-linkedin-profil/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/relevante-reichweite-statt-viele-follower/</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ohnelaerm.ch/blog/gute-linkedin-direktnachrichten/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
