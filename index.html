@@ -234,12 +234,15 @@
       justify-content: center;
       padding: 5rem 2rem 4rem;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity .35s ease;
+      transition: opacity .35s ease, visibility 0s linear .35s;
     }
     .nav-overlay.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+      transition: opacity .35s ease;
     }
     .nav-overlay-logo {
       position: absolute;
@@ -1052,9 +1055,9 @@
     .ueber-photo-stack {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1.1fr;
       gap: .75rem;
-      height: 560px;
+      height: 780px;
     }
     .ueber-photo-wrap-1 {
       grid-column: 1;
@@ -1073,6 +1076,13 @@
     .ueber-photo-wrap-3 {
       grid-column: 2;
       grid-row: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0,34,44,.12);
+    }
+    .ueber-photo-wrap-4 {
+      grid-column: 1 / 3;
+      grid-row: 3;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 36px rgba(0,34,44,.12);
@@ -1504,7 +1514,7 @@
       #referenzen-1 .logo-slider::before, #referenzen-1 .logo-slider::after { display: none; }
       .ueber-grid { grid-template-columns: 1fr; }
       .ueber-photo-col { max-width: 480px; margin: 0 auto; }
-      .ueber-photo-stack { height: 400px; }
+      .ueber-photo-stack { height: 580px; }
       .detail-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -2696,6 +2706,9 @@
           <div class="ueber-photo-wrap-3">
             <img src="images/Freddy%20Eny.jpg" alt="Freddy und Eny" class="ueber-photo">
           </div>
+          <div class="ueber-photo-wrap-4">
+            <img src="images/Leadership%20Gipfel%20Speech%2010.jpeg" alt="Freddy Hüsser spricht am Leadership Gipfel" class="ueber-photo" style="object-position: center 40%;" loading="lazy">
+          </div>
         </div>
       </div>
 
@@ -2892,8 +2905,22 @@
   famToggle.addEventListener('click', () => {
     navOverlay.classList.contains('open') ? closeNav() : openNav();
   });
+  // Anker-Links: Overlay sofort ausblenden, dann erst zum Ziel scrollen
   navOverlay.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeNav);
+    link.addEventListener('click', (e) => {
+      const hash = link.getAttribute('href');
+      const target = hash && hash.startsWith('#') ? document.querySelector(hash) : null;
+      if (!target) { closeNav(); return; }
+      e.preventDefault();
+      navOverlay.style.transition = 'none';
+      closeNav();
+      target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      requestAnimationFrame(() => {
+        navOverlay.style.transition = '';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', hash);
+      });
+    });
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeNav();
