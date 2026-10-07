@@ -1863,6 +1863,43 @@
       .angebot-section .angebot-card,
       .angebot-section .angebot-card + .angebot-card { border-color: rgba(255,255,255,.2); }
     }
+    /* ── WORKSHOP STUFEN (Basic / Plus) ────── */
+    .angebot-step {
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.5);
+      margin: 2.25rem 0 .25rem;
+    }
+    .stufen-table { margin-top: 1.25rem; }
+    .stufen-table .vergleich-header,
+    .stufen-table .vergleich-row { grid-template-columns: minmax(0,1fr) 8.5rem 8.5rem; padding: 0; }
+    .stufen-table .vergleich-header > span,
+    .stufen-table .vergleich-row > span { padding: .75rem; overflow-wrap: anywhere; }
+    .stufen-table .vergleich-header > span:first-child,
+    .stufen-table .vergleich-row > span:first-child { padding-left: 0; }
+    .angebot-section .stufen-table .vergleich-row span { font-size: 1rem; line-height: 1.5; }
+    .angebot-section .stufen-table .vergleich-header span { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+    .stufen-table .stufe { text-align: center; }
+    .angebot-section .stufen-table .stufe-plus { background: rgba(197,232,236,.1); }
+    .angebot-section .stufen-table .vergleich-header .stufe-plus { background: var(--c-accent-bg); color: var(--c-primary); border-radius: 8px 8px 0 0; }
+    .angebot-section .stufen-table .stufe-ja { color: var(--c-accent-bg); font-weight: 700; }
+    .angebot-section .stufen-table .stufe-nein { color: rgba(255,255,255,.35); }
+    .stufen-preise { padding-top: 1.75rem; }
+    .angebot-section .stufen-preise .pros-col + .pros-col { border-left-color: rgba(255,255,255,.2); border-top-color: rgba(255,255,255,.2); }
+    .stufen-preise .pros-col { padding-bottom: 0; }
+    .angebot-section .stufen-preise .pros-col--plus .pros-plan { color: var(--c-accent-bg); }
+    .stufen-preise .pros-cadence { margin-bottom: 0; }
+    @media (max-width: 640px) {
+      .stufen-table .vergleich-header,
+      .stufen-table .vergleich-row { grid-template-columns: minmax(0,1fr) 4.25rem 4.25rem; }
+      .stufen-table .vergleich-header > span,
+      .stufen-table .vergleich-row > span { padding: .65rem .35rem; }
+      .angebot-section .stufen-table .vergleich-row span { font-size: .92rem; }
+      .angebot-section .stufen-table .vergleich-header span { font-size: .66rem; letter-spacing: .06em; }
+    }
+    @media (max-width: 580px) {
+      .stufen-preise .pros-col { padding-bottom: 1.75rem; }
+      .stufen-preise .pros-col + .pros-col { padding-bottom: 0; }
+    }
     .angebot-compare-wrap {
       border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;
     }
@@ -2263,8 +2300,8 @@
 
     <div class="angebot-block reveal">
       <h3 class="angebot-block-title">Meine Methode gemeinsam implementieren</h3>
-      <p class="angebot-label" style="margin-bottom: 1rem;">6 Monate begleitet ohne Lärm</p>
-      <p class="detail-lead">Wir arbeiten sechs Monate zusammen. Im ersten Monat legen wir das Fundament: deine Positionierung, deine Themen und eine klare Haltung. Danach bin ich dein Sparring-Partner im Hintergrund und sorge dafür, dass du so effizient wie möglich dran bleibst. Ich gebe Feedback, schätze ein und schaue auf die Zahlen. So bauen wir Monat für Monat deine Reputation und Präsenz im Markt auf.</p>
+      <p class="angebot-label" style="margin-bottom: 1rem;">4 Monate begleitet ohne Lärm</p>
+      <p class="detail-lead">Wir arbeiten vier Monate zusammen. Im ersten Monat legen wir das Fundament: deine Positionierung, deine Themen und eine klare Haltung. Danach bin ich dein Sparring-Partner im Hintergrund und sorge dafür, dass du so effizient wie möglich dran bleibst. Ich gebe Feedback, schätze ein und schaue auf die Zahlen. So bauen wir Monat für Monat deine Reputation und Präsenz im Markt auf.</p>
 
       <div class="angebot-cards">
         <div class="angebot-card">
@@ -2276,7 +2313,7 @@
             Analysen, gemeinsamer Strategie-Workshop (4–5 Stunden), Strategieentwicklung und Contentplan.
           </div>
           <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:.85rem 1rem;font-size:1rem;color:rgba(255,255,255,.8);line-height:1.65;border-left:2px solid var(--c-yellow-d);margin-top:.5rem;">
-            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:.2rem;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;">Monat 2–6</strong>
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:.2rem;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;">Monat 2–4</strong>
             Ich bin im Hintergrund: Feedback auf deine Texte, Unterstützung bei Fragen und Einschätzungen, jederzeit erreichbar. Du schreibst, ich begleite, wir optimieren gemeinsam.
           </div>
           <div class="angebot-card-price">
@@ -2285,10 +2322,10 @@
               <span class="pros-row-val">CHF 7'400</span>
             </div>
             <div class="pros-row">
-              <span class="pros-row-label">Monat 2–6</span>
-              <span class="pros-row-val">5 × CHF 2'400</span>
+              <span class="pros-row-label">Monat 2–4</span>
+              <span class="pros-row-val">3 × CHF 2'400</span>
             </div>
-            <p class="pros-total">Gesamt CHF 19'400 · exkl. MwSt.</p>
+            <p class="pros-total">Gesamt CHF 14'600 · exkl. MwSt.</p>
           </div>
         </div>
         <div class="angebot-card">
@@ -2300,7 +2337,7 @@
             Analysen, gemeinsamer Strategie-Workshop (4–5 Stunden), Strategieentwicklung und Contentplan.
           </div>
           <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:.85rem 1rem;font-size:1rem;color:rgba(255,255,255,.8);line-height:1.65;border-left:2px solid var(--c-yellow-d);margin-top:.5rem;">
-            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:.2rem;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;">Monat 2–6</strong>
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:.2rem;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;">Monat 2–4</strong>
             Ich übernehme deine gesamte Kommunikation: Text, Veröffentlichung, Monitoring und Analyse. Du siehst den Zwischenstand und gibst jeden Beitrag am Ende frei.
           </div>
           <div class="angebot-card-price">
@@ -2309,10 +2346,10 @@
               <span class="pros-row-val">CHF 7'400</span>
             </div>
             <div class="pros-row">
-              <span class="pros-row-label">Monat 2–6</span>
-              <span class="pros-row-val">5 × CHF 4'200</span>
+              <span class="pros-row-label">Monat 2–4</span>
+              <span class="pros-row-val">3 × CHF 4'200</span>
             </div>
-            <p class="pros-total">Gesamt CHF 28'400 · exkl. MwSt.</p>
+            <p class="pros-total">Gesamt CHF 20'000 · exkl. MwSt.</p>
           </div>
         </div>
       </div>
@@ -2337,7 +2374,7 @@
       </div>
 
       <div class="angebot-verknappung">
-        Ich begleite höchstens fünf Personen gleichzeitig. <strong>Im Oktober und im November wird jeweils wieder ein Platz frei.</strong>
+        Ich begleite höchstens fünf Personen gleichzeitig. <strong>Im November wird wieder ein Platz frei.</strong>
       </div>
       <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.25rem;">
         💬 Gespräch vereinbaren
@@ -2345,10 +2382,10 @@
       </a>
     </div>
 
-    <div class="angebot-block reveal">
-      <h3 class="angebot-block-title">Executive Workshop</h3>
+    <div class="angebot-block reveal" id="workshop">
+      <h3 class="angebot-block-title">Executive Workshops</h3>
       <p class="angebot-label" style="margin-bottom: 1.25rem;">Executive Workshops ohne Lärm</p>
-      <p class="detail-lead">Positionierung, digitale Executive Communication und LinkedIn-Strategie. Strukturiert in vier Modulen, in zwei Formaten erlebbar. Du wählst, wie du lernst. Für 1 bis 6 Personen. Ein Preis.</p>
+      <p class="detail-lead">Positionierung, digitale Executive Communication und LinkedIn-Strategie. Vier Module, zwei Formate, zwei Stufen. Du wählst, wie du lernst und wie viel Begleitung du danach willst. Für 1 bis 6 Personen.</p>
 
       <!-- Vier Module -->
       <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:1.25rem 0 1.75rem;">
@@ -2358,23 +2395,20 @@
         <span style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:20px;border:1px solid rgba(255,255,255,.2);">04 · Umsetzung</span>
       </div>
 
-      <!-- Zwei Format-Varianten -->
+      <!-- Schritt 1: Format -->
+      <p class="angebot-step">Schritt 1 · Format wählen</p>
       <div class="angebot-cards">
         <div class="angebot-card">
           <p class="angebot-card-name">Modul-Variante</p>
           <p class="angebot-card-desc">Vier Module à 2 Stunden, kalenderfreundlich über 8 Wochen verteilt. Ungefähr alle zwei Wochen ein Termin.</p>
           <div class="angebot-card-price">
             <div class="pros-row" style="margin-top:.25rem;">
-              <span class="pros-row-label">Module</span>
-              <span class="pros-row-val">4 × 2 Stunden</span>
+              <span class="pros-row-label">Umfang</span>
+              <span class="pros-row-val">4 × ~2 Stunden</span>
             </div>
             <div class="pros-row">
               <span class="pros-row-label">Zeitraum</span>
               <span class="pros-row-val">8 Wochen</span>
-            </div>
-            <div class="pros-row">
-              <span class="pros-row-label">Follow-up</span>
-              <span class="pros-row-val">+ 2h Online-Recap</span>
             </div>
           </div>
         </div>
@@ -2384,37 +2418,43 @@
           <div class="angebot-card-price">
             <div class="pros-row" style="margin-top:.25rem;">
               <span class="pros-row-label">Umfang</span>
-              <span class="pros-row-val">~8 Stunden</span>
+              <span class="pros-row-val">1 × ~8 Stunden</span>
             </div>
             <div class="pros-row">
               <span class="pros-row-label">Zeitraum</span>
               <span class="pros-row-val">1 Tag</span>
             </div>
-            <div class="pros-row">
-              <span class="pros-row-label">Follow-up</span>
-              <span class="pros-row-val">+ 2h Online-Recap</span>
-            </div>
           </div>
         </div>
       </div>
 
-      <!-- In beiden inklusive -->
-      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);">
-        <p style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem;">In beiden Varianten inklusive</p>
-        <ul style="list-style:none;padding:0;margin:.25rem 0 0;display:flex;flex-direction:column;gap:.55rem;">
-          <li style="display:flex;gap:.55rem;align-items:flex-start;font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.6;"><span style="flex-shrink:0;color:var(--c-yellow-d);-webkit-text-stroke:.4px var(--c-yellow-d);">✓</span><span>Individuelle Vorab-Analyse: LinkedIn-Profil, Unternehmensauftritt, Positionierung und bisherige Strategie jedes Teilnehmenden, mit konkretem schriftlichem Feedback</span></li>
-          <li style="display:flex;gap:.55rem;align-items:flex-start;font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.6;"><span style="flex-shrink:0;color:var(--c-yellow-d);-webkit-text-stroke:.4px var(--c-yellow-d);">✓</span><span>Individuelle Checkliste nach dem Workshop: Feedbacks, nächste Schritte, konkrete Handlungsempfehlungen</span></li>
-          <li style="display:flex;gap:.55rem;align-items:flex-start;font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.6;"><span style="flex-shrink:0;color:var(--c-yellow-d);-webkit-text-stroke:.4px var(--c-yellow-d);">✓</span><span>Executive Communication Handout: Methode, LinkedIn, Positionierung, Strategie</span></li>
-          <li style="display:flex;gap:.55rem;align-items:flex-start;font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.6;"><span style="flex-shrink:0;color:var(--c-yellow-d);-webkit-text-stroke:.4px var(--c-yellow-d);">✓</span><span>Workshop-Location in Zürich (direkt an der Limmat) · Kaffee, Getränke, Snacks & Mittagsverpflegung</span></li>
-          <li style="display:flex;gap:.55rem;align-items:flex-start;font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.6;"><span style="flex-shrink:0;color:var(--c-yellow-d);-webkit-text-stroke:.4px var(--c-yellow-d);">✓</span><span>Für 1 bis 6 Personen · Flatrate</span></li>
-        </ul>
+      <!-- Schritt 2: Stufe -->
+      <p class="angebot-step">Schritt 2 · Stufe wählen</p>
+      <div class="vergleich-table stufen-table">
+        <div class="vergleich-header"><span>Inhalt</span><span class="stufe">Basic</span><span class="stufe stufe-plus">Plus</span></div>
+        <div class="vergleich-row"><span>Vier Module</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Executive Communication Handout: Methode, LinkedIn, Positionierung, Strategie</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Workshop-Location in Zürich, direkt an der Limmat</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Kaffee, Getränke, Snacks und gemeinsames Mittagessen inklusive</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Für 1 bis 6 Personen, Flatrate</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Checkliste nach dem Workshop: nächste Schritte und Handlungsempfehlungen</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Individuelle Vorab-Analyse: LinkedIn-Profil, Unternehmensauftritt, Positionierung und bisherige Strategie jeder Person, mit schriftlichem Feedback</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Individuelle LinkedIn-Strategie im Nachgang</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>2 Stunden Online-Recap nach Absprache</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
       </div>
 
-      <!-- Preis -->
-      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid var(--c-yellow-d);">
-        <p class="pros-price">7'500</p>
-        <p class="pros-cadence">CHF · exkl. MwSt.</p>
-        <p class="pros-total">Einmalig oder 4 Raten · 1–6 Personen · Flatrate</p>
+      <!-- Preise -->
+      <div class="pros-cols stufen-preise">
+        <div class="pros-col">
+          <p class="pros-plan">Workshop Basic (Modul oder Intensiv)</p>
+          <p class="pros-price">3'800</p>
+          <p class="pros-cadence">CHF · exkl. MwSt.</p>
+        </div>
+        <div class="pros-col pros-col--plus">
+          <p class="pros-plan">Workshop Plus (Modul oder Intensiv)</p>
+          <p class="pros-price">7'400</p>
+          <p class="pros-cadence">CHF · exkl. MwSt.</p>
+        </div>
       </div>
 
       <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.25rem;">
@@ -2807,7 +2847,7 @@
   <div class="section-inner">
     <div class="section-header center reveal">
       <p class="section-lbl">Kontakt</p>
-      <h2 class="section-title">✉️ Lieber schreiben?</h2>
+      <h2 class="section-title">✉️ Schreib mir</h2>
       <p class="section-desc">Füll das Formular aus, ich melde mich in der Regel innerhalb von 24 Stunden.<br>Oder schreib mir direkt auf <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" target="_blank" rel="noopener" style="color:#25D366;font-weight:700;text-decoration:none;">WhatsApp</a>.</p>
       <p class="section-desc" style="margin-top: 1.5rem; font-size: .9rem; color: var(--c-muted);">Du bist im Kommunikations- oder Marketingteam und möchtest deine Geschäftsleitung präsenter machen? Schreib mir.</p>
     </div>
