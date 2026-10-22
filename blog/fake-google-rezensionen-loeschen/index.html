@@ -285,6 +285,13 @@
       .article-wrap h3 { font-size: 1rem; } .article-cta { padding: 2rem 1.75rem; }
       .article-cta .article-cta-title { font-size: 1.2rem; } .article-faq { padding: 1.5rem; } .author-box { padding: 1.25rem; }
     }
+    .article-figure { margin: 2rem auto 2.5rem; max-width: 480px; }
+    .article-figure img { display: block; width: 100%; height: auto; border-radius: var(--r); }
+    .article-figure figcaption { font-size: .85rem; color: var(--c-muted); margin-top: .6rem; text-align: center; }
+    .download-box { background: var(--c-gray); border-left: 3px solid var(--c-accent-bg); border-radius: 0 var(--r) var(--r) 0; padding: 1.5rem 1.75rem; margin: 2.5rem 0; }
+    .article-wrap .download-box-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.2rem; color: var(--c-primary); margin-bottom: .4rem; }
+    .article-wrap .download-box-desc { font-size: .95rem; line-height: 1.6; margin-bottom: 1.1rem; }
+    .article-wrap .download-box .btn-yellow { text-decoration: none; }
   </style>
 </head>
 <body>
@@ -337,8 +344,23 @@
   </div>
 
   <p>Es gab keine monatelange Arbeit. Es gab gar keine Arbeit.</p>
+  <figure class="article-figure">
+    <img src="/blog/fake-google-rezensionen-loeschen/rezensionen.jpg" alt="Drei neue Google-Rezensionen mit einem, drei und vier Sternen von unbekannten Profilen, Namen verpixelt" width="1080" height="1350" loading="lazy">
+    <figcaption>Die drei Rezensionen, Namen verpixelt.</figcaption>
+  </figure>
+
   <p>Kurz darauf landete eine Verkaufs-Mail in meinem Postfach. Darin standen der Name des Bewertenden und der genaue Wortlaut der Rezension. Die Lösung wurde gleich mitgeliefert: Entfernung auf Erfolgsbasis für CHF 399.</p>
+  <figure class="article-figure">
+    <img src="/blog/fake-google-rezensionen-loeschen/erste-mail.jpg" alt="Erste Verkaufs-Mail mit dem Wortlaut der Rezension und Preisen von CHF 399 pro entfernter Bewertung" width="1080" height="1350" loading="lazy">
+    <figcaption>Die erste Mail.</figcaption>
+  </figure>
+
   <p>Am nächsten Morgen folgten weitere auffällige Bewertungen. Dazu kam die Mail eines anderen Anbieters. Negative Rezensionen würden mich jeden Tag Umsatz kosten. Die angebotene Lösung diesmal: CHF 350 pro Bewertung.</p>
+  <figure class="article-figure">
+    <img src="/blog/fake-google-rezensionen-loeschen/zweite-mail.jpg" alt="Zweite Verkaufs-Mail eines anderen Anbieters mit einer Pauschale von CHF 350 pro Bewertung" width="1080" height="1350" loading="lazy">
+    <figcaption>Die zweite Mail, rund vier Stunden nach der dritten Rezension.</figcaption>
+  </figure>
+
   <p>Dreist und irgendwie fast kreativ. Fast.</p>
 
   <h2>Was du bei einer vermutlich gefälschten Google-Rezension sofort tun solltest</h2>
@@ -440,7 +462,14 @@
   <p>Verdächtige Google-Rezensionen sind ärgerlich. Ausgeliefert bist du ihnen nicht.</p>
   <p>Sichere sämtliche Beweise, melde erfundene Erfahrungen über den passenden Google-Weg und trenne sauber zwischen dem, was du beobachten kannst und dem, was du nur vermutest.</p>
   <p>Das schützt nicht nur dein Google-Profil. Es schützt auch deine eigene Glaubwürdigkeit.</p>
-  <p>Wenn du für die Dokumentation und Meldung KI nutzen möchtest, stelle ich dir gerne meinen Prompt für ChatGPT, Claude oder Gemini zur Verfügung. <a href="/#kontakt-formular">Schreib mir eine Nachricht</a> und ich sende ihn dir.</p>
+  <div class="download-box">
+    <p class="summary-box-label">Download</p>
+    <p class="download-box-title">Die Kurzanleitung als PDF</p>
+    <p class="download-box-desc">Alle Schritte auf 11 Slides: Beweise sichern, bei Google melden, Erpressungsformular, nachfassen.</p>
+    <a href="/blog/fake-google-rezensionen-loeschen/fake-google-rezensionen-anleitung.pdf" class="btn-yellow" download>PDF herunterladen (0,7 MB) →</a>
+  </div>
+
+  <p>Schreib mir eine E-Mail unter <a href="mailto:freddy@ohnelaerm.ch?subject=Prompt%20Fake-Rezensionen">freddy@ohnelaerm.ch</a>, falls du Interesse an meinem Prompt hast, der dich von A bis Z durch den Prozess führt und einiges für dich erledigt.</p>
 
   <h2>Weiterlesen</h2>
   <ul>
