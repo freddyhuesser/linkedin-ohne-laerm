@@ -1,0 +1,27 @@
+name: IndexNow melden
+
+# Meldet alle URLs aus der Live-Sitemap an IndexNow (Bing, Yandex, Seznam, Naver).
+# Nach jedem Deployment bei Metanet unter Actions > «IndexNow melden» > «Run workflow» starten.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sitemap holen und an IndexNow senden
+        run: |
+          KEY=fd0ff962d919c88f0b54bc4b50a07baa
+          HOST=ohnelaerm.ch
+          curl -fsS "https://$HOST/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<\/*loc>//g' > urls.txt
+          echo "Gefundene URLs: $(wc -l < urls.txt)"
+          python3 - "$KEY" "$HOST" <<'PY'
+          import json, sys
+          key, host = sys.argv[1], sys.argv[2]
+          urls = [u.strip() for u in open("urls.txt") if u.strip()]
+          json.dump({"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls}, open("body.json", "w"))
+          PY
+          curl -sS -o /dev/null -w "IndexNow Antwort: %{http_code}\n" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data @body.json https://api.indexnow.org/indexnow
