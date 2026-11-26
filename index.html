@@ -730,46 +730,28 @@
       background-size: 28px 28px;
     }
     .setup-lead { max-width: 660px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
-    .team-chart { margin-top: 3rem; }
-    .team-chef { max-width: 420px; margin: 0 auto; background: var(--c-primary); color: #fff; border-radius: var(--r); padding: 1.1rem 1.4rem; text-align: center; position: relative; }
-    .team-chef strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.35rem; }
-    .team-chef span { display: block; font-size: .92rem; color: rgba(255,255,255,.85); margin-top: .25rem; }
-    .team-chef::after { content: ""; position: absolute; left: 50%; bottom: -1.5rem; width: 1px; height: 1.5rem; background: var(--c-yellow-d); }
-    .team-row { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.25rem; margin-top: 3rem; }
-    .team-row::before { content: ""; position: absolute; top: -1.5rem; left: calc(12.5% - .47rem); right: calc(12.5% - .47rem); height: 1px; background: var(--c-yellow-d); }
-    .team-card { position: relative; background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.4rem 1.25rem 1.25rem; display: flex; flex-direction: column; }
-    .team-card::before { content: ""; position: absolute; top: -1.5rem; left: 50%; width: 1px; height: 1.5rem; background: var(--c-yellow-d); }
-    .team-head { display: flex; align-items: center; gap: .75rem; }
-    .team-avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--c-accent-bg); color: var(--c-primary); display: grid; place-items: center; font-family: Georgia, 'Times New Roman', serif; font-size: 1.25rem; }
-    .team-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.3rem; color: var(--c-primary); line-height: 1.1; }
-    .team-role { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-yellow-d); margin-top: .2rem; }
-    .team-card ul { list-style: none; margin: 1rem 0 0; padding: 0; flex: 1; }
-    .team-card li { position: relative; padding-left: 1rem; font-size: .93rem; line-height: 1.55; color: var(--c-text); margin-bottom: .5rem; }
-    .team-card li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--c-yellow-d); }
-    .team-rhythm { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--c-gray-2); font-size: .82rem; color: var(--c-yellow-d); font-weight: 600; }
-    .team-base { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
-    .team-base div { background: var(--c-accent-bg); border-radius: var(--r); padding: 1.1rem 1.3rem; }
-    .team-base strong { display: block; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-primary); margin-bottom: .3rem; }
-    .team-base span { font-size: .95rem; line-height: 1.6; color: var(--c-primary); }
-    .setup-sub { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.5rem; color: var(--c-primary); margin-top: 3.5rem; }
-    .setup-flow { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.6rem; margin-top: 1.5rem; }
-    .setup-step { background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.1rem 1rem; position: relative; }
-    .setup-step:not(:last-child)::after { content: "→"; position: absolute; right: -1.35rem; top: 50%; transform: translateY(-50%); color: var(--c-yellow-d); font-weight: 600; }
-    .setup-step--chef { background: var(--c-primary); border-color: var(--c-primary); }
-    .setup-step.setup-step--chef .setup-who { color: var(--c-yellow); }
-    .setup-step.setup-step--chef p { color: #fff; }
-    .setup-who { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-yellow-d); }
-    .setup-step p { font-size: .92rem; line-height: 1.55; color: var(--c-text); margin-top: .4rem; }
+    .sys { margin-top: 3rem; max-width: 1040px; }
+    .sys-layer { display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 1.5rem; align-items: start; background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.35rem 1.5rem; position: relative; }
+    .sys-layer + .sys-layer { margin-top: 1.9rem; }
+    .sys-layer + .sys-layer::before { content: "↓"; position: absolute; top: -1.65rem; left: 50%; transform: translateX(-50%); color: var(--c-yellow-d); font-weight: 600; font-size: 1.1rem; }
+    .sys-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
+    .sys-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; color: var(--c-primary); line-height: 1.15; margin-top: .25rem; }
+    .sys-desc { font-size: .95rem; line-height: 1.65; color: var(--c-text); }
+    .sys-layer--me { background: var(--c-primary); border-color: var(--c-primary); }
+    .sys-layer--me .sys-num { color: var(--c-yellow); }
+    .sys-layer--me .sys-title, .sys-layer--me .sys-desc { color: #fff; }
+    .sys-layer--out { background: var(--c-accent-bg); border-color: var(--c-accent-bg); }
+    .sys-cols { display: grid; grid-template-columns: repeat(var(--n,2), minmax(0,1fr)); gap: .9rem; margin-top: .9rem; }
+    .sys-box { border: 1px solid var(--c-gray-2); border-radius: 6px; padding: .85rem 1rem; background: var(--c-gray); }
+    .sys-box strong { display: block; font-size: .95rem; color: var(--c-primary); margin-bottom: .2rem; }
+    .sys-box span { font-size: .9rem; line-height: 1.55; color: var(--c-text); }
+    .sys-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .sys-chips span { font-size: .88rem; font-weight: 500; color: var(--c-primary); background: #fff; border: 1px solid var(--c-gray-2); border-radius: 20px; padding: .35rem .85rem; white-space: nowrap; }
+    .sys-layer--out .sys-chips span { border-color: rgba(0,34,44,.15); }
     .setup-transfer { max-width: 660px; margin-top: 2.5rem; font-size: 1.05rem; line-height: 1.7; color: var(--c-text); }
-    @media (max-width: 1000px) {
-      .team-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .team-row::before, .team-card::before, .team-chef::after { display: none; }
-      .team-row { margin-top: 1.25rem; }
-      .setup-flow { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
-      .setup-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.3rem; transform: translateX(-50%); }
-    }
-    @media (max-width: 600px) {
-      .team-row, .team-base { grid-template-columns: minmax(0,1fr); }
+    @media (max-width: 800px) {
+      .sys-layer { grid-template-columns: minmax(0,1fr); gap: .5rem; }
+      .sys-cols { grid-template-columns: minmax(0,1fr); }
     }
 
     /* ── REVEAL ─────────────────────────────── */
@@ -2440,53 +2422,38 @@
   <div class="section-inner">
     <div class="reveal">
       <p class="section-lbl">Aus meinem Alltag</p>
-      <h2 class="section-title">Mein Team arbeitet mit KI</h2>
-      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 habe ich mir ein Team aus KI-Rollen aufgebaut: Marketing, Organisation, Finanzen und ein Second Brain für meine Gedanken. Jede Rolle hat klare Aufgaben und eigene Regeln. Alle greifen auf dasselbe Gedächtnis zu und arbeiten einander zu. Entscheiden tue ich.</p>
+      <h2 class="section-title">Mein System: So arbeite ich selbst mit KI</h2>
+      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 baue ich meinen Betrieb auf ein System, in dem KI Gedanken sammelt, Wissen ordnet und Arbeit vorbereitet. Texte schreiben ist dabei nur ein kleiner Teil. So sieht es aus:</p>
     </div>
 
-    <div class="team-chart reveal">
-      <div class="team-chef">
-        <strong>Ich</strong>
-        <span>Setze die Ziele, entscheide und gebe frei</span>
+    <div class="sys reveal">
+      <div class="sys-layer sys-layer--me">
+        <div><span class="sys-num">01</span><div class="sys-title">Ich</div></div>
+        <div><p class="sys-desc">Ich setze die Ziele, entscheide und gebe frei. Was in meinem Namen nach aussen geht, sehe ich vorher.</p></div>
       </div>
-      <div class="team-row">
-        <div class="team-card">
-          <div class="team-head"><span class="team-avatar">T</span><div><div class="team-name">Toni</div><div class="team-role">Second Brain</div></div></div>
-          <ul><li>Hält meine Gedanken fest, getippt oder gesprochen</li><li>Ordnet Beitragsideen in den Contentplan, alles andere in einen Eingang</li><li>Merkt, welche Themen immer wiederkommen</li></ul>
-          <div class="team-rhythm">Laufend, sobald ich etwas festhalte</div>
-        </div>
-        <div class="team-card">
-          <div class="team-head"><span class="team-avatar">L</span><div><div class="team-name">Lena</div><div class="team-role">Marketing</div></div></div>
-          <ul><li>Plant meinen Content über alle Kanäle</li><li>Bereitet Themen, Ratgeber und Newsletter vor</li><li>Schaut, wer mich erwähnt und wo sich ein Kommentar lohnt</li></ul>
-          <div class="team-rhythm">Montag Wochenplan, Dienstag und Donnerstag Radar</div>
-        </div>
-        <div class="team-card">
-          <div class="team-head"><span class="team-avatar">M</span><div><div class="team-name">Mara</div><div class="team-role">Organisation</div></div></div>
-          <ul><li>Führt Postfach, Kalender und Aufgaben</li><li>Plant meinen Tag und meine Woche</li><li>Behält Projekte und Fristen im Blick und fasst nach</li></ul>
-          <div class="team-rhythm">Jeden Morgen eine Runde</div>
-        </div>
-        <div class="team-card">
-          <div class="team-head"><span class="team-avatar">S</span><div><div class="team-name">Sofia</div><div class="team-role">Finanzen</div></div></div>
-          <ul><li>Bereitet Rechnungen vor und bucht Belege</li><li>Prüft Zahlungseingänge und erinnert, wenn etwas offen ist</li><li>Hält Mehrwertsteuer und Zahlen im Überblick</li></ul>
-          <div class="team-rhythm">Regelmässige Finanzrunde</div>
-        </div>
+      <div class="sys-layer ">
+        <div><span class="sys-num">02</span><div class="sys-title">Second Brain</div></div>
+        <div><p class="sys-desc">Alles, was mir einfällt, landet an einem Ort: unterwegs ins Handy gesprochen, nach einem Gespräch notiert, beim Lesen markiert. So geht kein Gedanke verloren, und die KI kann später damit arbeiten.</p></div>
       </div>
-      <div class="team-base">
-        <div><strong>Gemeinsames Gedächtnis</strong><span>Regeln, Wissen und Stand jedes Projekts an einem Ort. Jede Rolle liest dort, bevor sie arbeitet, und hält fest, was sie erledigt hat.</span></div>
-        <div><strong>Ein Board für mich</strong><span>Auf einer Übersicht sehe ich, was erledigt ist und was auf mich wartet. Ich antworte mit Ja oder Nein, das Team setzt um.</span></div>
+      <div class="sys-layer ">
+        <div><span class="sys-num">03</span><div class="sys-title">Wissenssammlung</div></div>
+        <div><p class="sys-desc">Das Gedächtnis meines Betriebs. Hier steht, wie ich arbeite und was gilt. Jede Rolle liest hier nach, bevor sie etwas tut.</p><div class="sys-cols" style="--n:2"><div class="sys-box"><strong>Handbuch</strong><span>Regeln, Abläufe, Wissen und Entscheide, sauber dokumentiert. Ändert sich etwas, wird es hier nachgeführt.</span></div><div class="sys-box"><strong>Übersicht</strong><span>Ein Board mit Aufgaben, Plänen und dem Stand jedes Projekts. Dort sehe ich auf einen Blick, was erledigt ist und was auf mich wartet.</span></div></div></div>
+      </div>
+      <div class="sys-layer ">
+        <div><span class="sys-num">04</span><div class="sys-title">KI-Rollen</div></div>
+        <div><p class="sys-desc">Jede Rolle hat eine klare Aufgabe und arbeitet nach den Regeln aus dem Handbuch. Die Rollen geben sich gegenseitig Arbeit weiter.</p><div class="sys-cols" style="--n:3"><div class="sys-box"><strong>Marketing</strong><span>Content planen, Themen recherchieren, Ideen prüfen</span></div><div class="sys-box"><strong>Organisation</strong><span>Postfach, Kalender, Aufgaben und Fristen</span></div><div class="sys-box"><strong>Finanzen</strong><span>Rechnungen, Belege und Zahlungseingänge</span></div></div></div>
+      </div>
+      <div class="sys-layer ">
+        <div><span class="sys-num">05</span><div class="sys-title">Werkzeuge</div></div>
+        <div><p class="sys-desc">Für jede Aufgabe das passende Werkzeug. Die Rollen wissen, welches wann zum Einsatz kommt.</p><div class="sys-chips"><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Notion</span><span>Canva</span><span>Excel</span><span>Google Drive</span><span>Kalender und Mail</span></div></div>
+      </div>
+      <div class="sys-layer sys-layer--out">
+        <div><span class="sys-num">06</span><div class="sys-title">Ergebnis</div></div>
+        <div><p class="sys-desc">Am Ende entsteht daraus, was ein Betrieb jeden Tag braucht, ohne dass ich alles selbst zusammensuche.</p><div class="sys-chips"><span>Contentpläne</span><span>Recherche für Beiträge</span><span>Ideen für Content</span><span>Gedanken zur Positionierung geordnet</span><span>Wochenplanung</span><span>Saubere Fristen</span><span>Vorbereitete Rechnungen</span></div></div>
       </div>
     </div>
 
-    <h3 class="setup-sub reveal">So spielt das Team zusammen</h3>
-    <div class="setup-flow reveal">
-      <div class="setup-step setup-step--chef"><span class="setup-who">Ich</span><p>Spreche unterwegs eine Idee ins Handy.</p></div>
-      <div class="setup-step"><span class="setup-who">Toni</span><p>Hält sie fest und legt sie als Beitragsidee ab.</p></div>
-      <div class="setup-step"><span class="setup-who">Lena</span><p>Prüft, ob sie zur Positionierung passt, und plant sie im Contentplan ein.</p></div>
-      <div class="setup-step"><span class="setup-who">Mara</span><p>Legt sie mir ins Board, wenn sie fällig ist.</p></div>
-      <div class="setup-step setup-step--chef"><span class="setup-who">Ich</span><p>Schärfe den Gedanken und gebe frei.</p></div>
-    </div>
-
-    <p class="setup-transfer reveal">Dieses Prinzip übertrage ich auf eure Kommunikation: mit euren Themen, in euren Werkzeugen und in dem Tempo, das zu eurem Team passt.</p>
+    <p class="setup-transfer reveal">Genau dieses Prinzip übertrage ich auf eure Kommunikation: mit euren Themen, in euren Werkzeugen und in dem Tempo, das zu eurem Team passt.</p>
 
     <div class="reveal" style="margin-top: 1.5rem;">
       <a href="#workshop" class="btn btn-dark">
