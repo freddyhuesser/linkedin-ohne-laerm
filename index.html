@@ -729,27 +729,47 @@
       background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
       background-size: 28px 28px;
     }
-    .setup-lead { max-width: 640px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
-    .setup-flow { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.75rem; margin-top: 3rem; position: relative; }
-    .setup-step { background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.5rem 1.35rem; position: relative; }
-    .setup-step:not(:last-child)::after {
-      content: "→"; position: absolute; right: -1.45rem; top: 50%; transform: translateY(-50%);
-      color: var(--c-yellow-d); font-size: 1.2rem; font-weight: 600;
-    }
-    .setup-step-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
-    .setup-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.3rem; color: var(--c-primary); margin: .45rem 0 .6rem; line-height: 1.2; }
-    .setup-step p { font-size: .95rem; line-height: 1.6; color: var(--c-text); }
-    .setup-base { margin-top: 1.25rem; background: var(--c-primary); color: #fff; border-radius: var(--r); padding: 1.25rem 1.5rem; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
-    .setup-base strong { color: var(--c-yellow); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
-    .setup-base span { font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,.9); flex: 1 1 320px; }
-    .setup-transfer { max-width: 640px; margin-top: 2rem; font-size: 1.05rem; line-height: 1.7; color: var(--c-text); }
-    @media (max-width: 900px) {
-      .setup-flow { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .setup-step:nth-child(2)::after { display: none; }
+    .setup-lead { max-width: 660px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
+    .team-chart { margin-top: 3rem; }
+    .team-chef { max-width: 420px; margin: 0 auto; background: var(--c-primary); color: #fff; border-radius: var(--r); padding: 1.1rem 1.4rem; text-align: center; position: relative; }
+    .team-chef strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.35rem; }
+    .team-chef span { display: block; font-size: .92rem; color: rgba(255,255,255,.85); margin-top: .25rem; }
+    .team-chef::after { content: ""; position: absolute; left: 50%; bottom: -1.5rem; width: 1px; height: 1.5rem; background: var(--c-yellow-d); }
+    .team-row { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.25rem; margin-top: 3rem; }
+    .team-row::before { content: ""; position: absolute; top: -1.5rem; left: calc(12.5% - .47rem); right: calc(12.5% - .47rem); height: 1px; background: var(--c-yellow-d); }
+    .team-card { position: relative; background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.4rem 1.25rem 1.25rem; display: flex; flex-direction: column; }
+    .team-card::before { content: ""; position: absolute; top: -1.5rem; left: 50%; width: 1px; height: 1.5rem; background: var(--c-yellow-d); }
+    .team-head { display: flex; align-items: center; gap: .75rem; }
+    .team-avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--c-accent-bg); color: var(--c-primary); display: grid; place-items: center; font-family: Georgia, 'Times New Roman', serif; font-size: 1.25rem; }
+    .team-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.3rem; color: var(--c-primary); line-height: 1.1; }
+    .team-role { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-yellow-d); margin-top: .2rem; }
+    .team-card ul { list-style: none; margin: 1rem 0 0; padding: 0; flex: 1; }
+    .team-card li { position: relative; padding-left: 1rem; font-size: .93rem; line-height: 1.55; color: var(--c-text); margin-bottom: .5rem; }
+    .team-card li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--c-yellow-d); }
+    .team-rhythm { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--c-gray-2); font-size: .82rem; color: var(--c-yellow-d); font-weight: 600; }
+    .team-base { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
+    .team-base div { background: var(--c-accent-bg); border-radius: var(--r); padding: 1.1rem 1.3rem; }
+    .team-base strong { display: block; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-primary); margin-bottom: .3rem; }
+    .team-base span { font-size: .95rem; line-height: 1.6; color: var(--c-primary); }
+    .setup-sub { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.5rem; color: var(--c-primary); margin-top: 3.5rem; }
+    .setup-flow { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.6rem; margin-top: 1.5rem; }
+    .setup-step { background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.1rem 1rem; position: relative; }
+    .setup-step:not(:last-child)::after { content: "→"; position: absolute; right: -1.35rem; top: 50%; transform: translateY(-50%); color: var(--c-yellow-d); font-weight: 600; }
+    .setup-step--chef { background: var(--c-primary); border-color: var(--c-primary); }
+    .setup-step.setup-step--chef .setup-who { color: var(--c-yellow); }
+    .setup-step.setup-step--chef p { color: #fff; }
+    .setup-who { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-yellow-d); }
+    .setup-step p { font-size: .92rem; line-height: 1.55; color: var(--c-text); margin-top: .4rem; }
+    .setup-transfer { max-width: 660px; margin-top: 2.5rem; font-size: 1.05rem; line-height: 1.7; color: var(--c-text); }
+    @media (max-width: 1000px) {
+      .team-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .team-row::before, .team-card::before, .team-chef::after { display: none; }
+      .team-row { margin-top: 1.25rem; }
+      .setup-flow { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
+      .setup-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.3rem; transform: translateX(-50%); }
     }
     @media (max-width: 600px) {
-      .setup-flow { grid-template-columns: minmax(0,1fr); gap: 1.6rem; }
-      .setup-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.45rem; transform: translateX(-50%); display: block; }
+      .team-row, .team-base { grid-template-columns: minmax(0,1fr); }
     }
 
     /* ── REVEAL ─────────────────────────────── */
@@ -2420,36 +2440,50 @@
   <div class="section-inner">
     <div class="reveal">
       <p class="section-lbl">Aus meinem Alltag</p>
-      <h2 class="section-title">So arbeite ich selbst mit KI</h2>
-      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 baue ich meinen eigenen Betrieb auf ein System, in dem KI vorbereitet, ordnet und erinnert. So bleibt meine Zeit für Gespräche, Kunden und Entscheide.</p>
+      <h2 class="section-title">Mein Team arbeitet mit KI</h2>
+      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 habe ich mir ein Team aus KI-Rollen aufgebaut: Marketing, Organisation, Finanzen und ein Second Brain für meine Gedanken. Jede Rolle hat klare Aufgaben und eigene Regeln. Alle greifen auf dasselbe Gedächtnis zu und arbeiten einander zu. Entscheiden tue ich.</p>
     </div>
 
+    <div class="team-chart reveal">
+      <div class="team-chef">
+        <strong>Ich</strong>
+        <span>Setze die Ziele, entscheide und gebe frei</span>
+      </div>
+      <div class="team-row">
+        <div class="team-card">
+          <div class="team-head"><span class="team-avatar">T</span><div><div class="team-name">Toni</div><div class="team-role">Second Brain</div></div></div>
+          <ul><li>Hält meine Gedanken fest, getippt oder gesprochen</li><li>Ordnet Beitragsideen in den Contentplan, alles andere in einen Eingang</li><li>Merkt, welche Themen immer wiederkommen</li></ul>
+          <div class="team-rhythm">Laufend, sobald ich etwas festhalte</div>
+        </div>
+        <div class="team-card">
+          <div class="team-head"><span class="team-avatar">L</span><div><div class="team-name">Lena</div><div class="team-role">Marketing</div></div></div>
+          <ul><li>Plant meinen Content über alle Kanäle</li><li>Bereitet Themen, Ratgeber und Newsletter vor</li><li>Schaut, wer mich erwähnt und wo sich ein Kommentar lohnt</li></ul>
+          <div class="team-rhythm">Montag Wochenplan, Dienstag und Donnerstag Radar</div>
+        </div>
+        <div class="team-card">
+          <div class="team-head"><span class="team-avatar">M</span><div><div class="team-name">Mara</div><div class="team-role">Organisation</div></div></div>
+          <ul><li>Führt Postfach, Kalender und Aufgaben</li><li>Plant meinen Tag und meine Woche</li><li>Behält Projekte und Fristen im Blick und fasst nach</li></ul>
+          <div class="team-rhythm">Jeden Morgen eine Runde</div>
+        </div>
+        <div class="team-card">
+          <div class="team-head"><span class="team-avatar">S</span><div><div class="team-name">Sofia</div><div class="team-role">Finanzen</div></div></div>
+          <ul><li>Bereitet Rechnungen vor und bucht Belege</li><li>Prüft Zahlungseingänge und erinnert, wenn etwas offen ist</li><li>Hält Mehrwertsteuer und Zahlen im Überblick</li></ul>
+          <div class="team-rhythm">Regelmässige Finanzrunde</div>
+        </div>
+      </div>
+      <div class="team-base">
+        <div><strong>Gemeinsames Gedächtnis</strong><span>Regeln, Wissen und Stand jedes Projekts an einem Ort. Jede Rolle liest dort, bevor sie arbeitet, und hält fest, was sie erledigt hat.</span></div>
+        <div><strong>Ein Board für mich</strong><span>Auf einer Übersicht sehe ich, was erledigt ist und was auf mich wartet. Ich antworte mit Ja oder Nein, das Team setzt um.</span></div>
+      </div>
+    </div>
+
+    <h3 class="setup-sub reveal">So spielt das Team zusammen</h3>
     <div class="setup-flow reveal">
-      <div class="setup-step">
-        <span class="setup-step-num">01</span>
-        <h3>Gedanken sammeln</h3>
-        <p>Ideen, Beobachtungen und Notizen aus Gesprächen landen an einem Ort, getippt oder gesprochen. Das ist mein Second Brain.</p>
-      </div>
-      <div class="setup-step">
-        <span class="setup-step-num">02</span>
-        <h3>Muster erkennen</h3>
-        <p>KI geht diese Sammlung regelmässig durch, erkennt wiederkehrende Themen und zeigt mir, was daraus ein Beitrag, ein Artikel oder ein Angebot werden kann.</p>
-      </div>
-      <div class="setup-step">
-        <span class="setup-step-num">03</span>
-        <h3>Planen</h3>
-        <p>Aus den Themen entstehen Contentpläne, Wochenplanung und Fristen. Ich sehe jeden Morgen, was ansteht, ohne es selbst zusammenzusuchen.</p>
-      </div>
-      <div class="setup-step">
-        <span class="setup-step-num">04</span>
-        <h3>Koordinieren</h3>
-        <p>KI-Assistenzen mit klaren Rollen für Organisation, Finanzen und Marketing bereiten Aufgaben vor, prüfen Abläufe und melden, wenn etwas hängt.</p>
-      </div>
-    </div>
-
-    <div class="setup-base reveal">
-      <strong>Ich entscheide</strong>
-      <span>Was nach aussen geht, prüfe und gebe ich selbst frei. KI bereitet vor, die Verantwortung bleibt bei mir.</span>
+      <div class="setup-step setup-step--chef"><span class="setup-who">Ich</span><p>Spreche unterwegs eine Idee ins Handy.</p></div>
+      <div class="setup-step"><span class="setup-who">Toni</span><p>Hält sie fest und legt sie als Beitragsidee ab.</p></div>
+      <div class="setup-step"><span class="setup-who">Lena</span><p>Prüft, ob sie zur Positionierung passt, und plant sie im Contentplan ein.</p></div>
+      <div class="setup-step"><span class="setup-who">Mara</span><p>Legt sie mir ins Board, wenn sie fällig ist.</p></div>
+      <div class="setup-step setup-step--chef"><span class="setup-who">Ich</span><p>Schärfe den Gedanken und gebe frei.</p></div>
     </div>
 
     <p class="setup-transfer reveal">Dieses Prinzip übertrage ich auf eure Kommunikation: mit euren Themen, in euren Werkzeugen und in dem Tempo, das zu eurem Team passt.</p>
