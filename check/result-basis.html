@@ -327,7 +327,7 @@
       font-size: .95rem; color: var(--c-muted); line-height: 1.5;
     }
     .start-list li:last-child { border-bottom: none; }
-    .start-list li::before { content: '✓'; color: #2E7D32; font-weight: 800; flex-shrink: 0; }
+    .start-list li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: #2E7D32; margin-top: .7em; }
 
     .recommendation {
       background: var(--c-yellow); border-radius: var(--r);
@@ -519,7 +519,7 @@
 
       <div class="hero-ctas">
         <a href="#ergebnis" class="btn-hero btn-hero-primary">
-          📊 Dein Ergebnis
+          Dein Ergebnis
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="#termin" class="btn-hero btn-hero-ghost">
@@ -658,7 +658,7 @@
           <p class="coaching-price-note">2–3 Pers.: CHF 2'270 · 4–5 Pers.: CHF 2'970 · ab 6 Pers.: CHF 3'570</p>
           <p class="coaching-price-note">Dauer: ca. 4–5 Stunden pro Workshop</p>
           <p class="coaching-price-note">Vorbereitung, Nachbereitung &amp; digitales Handout inklusive · Zugang zur WhatsApp Community</p>
-          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Erstgespräch.</p>
+          <p class="coaching-price-note">Jedes Coaching beginnt mit einem kostenlosen Gespräch.</p>
         </div>
         <a href="#termin" class="btn btn-dark">
           Gespräch vereinbaren
@@ -672,8 +672,8 @@
 <!-- ══ KALENDER ═══════════════════════════════════════════════════════════════ -->
 <section class="cta-section" id="termin">
   <div class="section-inner cta-inner">
-    <h2 class="cta-title">☕ Lust auf einen virtuellen<br><em>Kaffee oder Tee?</em></h2>
-    <p class="cta-desc">Buch eine kostenlose Kaffeepause – 30 Minuten, unverbindlich, direkt mit Freddy.</p>
+    <h2 class="cta-title">Lass uns<br><em>darüber sprechen</em></h2>
+    <p class="cta-desc">Vereinbare ein kostenloses Gespräch: 30 Minuten, unverbindlich, direkt mit Freddy.</p>
     <!-- Start of Meetings Embed Script -->
     <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/freddy-huesser?embed=true"></div>
     <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>

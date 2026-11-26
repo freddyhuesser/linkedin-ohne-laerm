@@ -2078,6 +2078,21 @@
   .blog-teaser-card-excerpt { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.65; flex: 1; }
   .blog-teaser-card-read { font-size: .72rem; font-weight: 600; color: var(--c-accent-bg); margin-top: .15rem; }
 
+  
+    /* ── Flächig statt Rahmen (26.11.2026) ── */
+    .hero-pill { border: none; background: rgba(255,255,255,.1); }
+    .hero-review-card, .stat-card, .stat-card--light, .blog-teaser-card, .check-cta-label, .popup-tag,
+    .price-row, .coaching-price-block, .cc-ans { border: none; }
+    .reviews-arrow { border: none; background: var(--c-gray); }
+    .angebot-cards { border: none; gap: 1rem; overflow: visible; border-radius: 0; }
+    .angebot-card, .angebot-card + .angebot-card { border: none; border-radius: 10px; }
+    .angebot-section .angebot-label { border: none; }
+    .angebot-card-price { border-top: none; padding-top: .5rem; }
+    .pros-wrap { border-top: none; }
+    .pros-col + .pros-col { border-left: none; border-top: none; }
+    @media (max-width: 640px) { .pros-col + .pros-col { padding: 1.5rem 0 0; } }
+    .stufe-ja { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--c-accent-bg); font-size: 0; vertical-align: middle; }
+
   </style>
 </head>
 <body>
@@ -2326,16 +2341,16 @@
       <p class="angebot-step">Schritt 2 · Umfang wählen</p>
       <div class="vergleich-table stufen-table">
         <div class="vergleich-header"><span>Inhalt</span><span class="stufe">Workshop</span><span class="stufe stufe-plus">Mit Strategie</span></div>
-        <div class="vergleich-row"><span>Ein Tag mit deinem Team: Schulung zu Reputation, Kommunikation, KI und LinkedIn und eure eigenen Themen</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Handout: Reputation, Kommunikation, KI und LinkedIn</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Workshop-Location in Zürich, direkt an der Limmat</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Kaffee, Getränke, Snacks und gemeinsames Mittagessen inklusive</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Für 1 bis 6 Personen, Flatrate</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten">✓</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Vorab-Analyse: Reputation, Themen und bisherige Kommunikation, mit schriftlichem Feedback</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Strategie und Contentpläne, die ich für euch ausarbeite</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>Erste Content-Ideen</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>KI-Architektur: wie KI in eure Kommunikation und eure bestehenden Werkzeuge passt</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
-        <div class="vergleich-row"><span>2 Stunden Online-Recap nach Absprache</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten">✓</span></span></div>
+        <div class="vergleich-row"><span>Ein Tag mit deinem Team: Schulung zu Reputation, Kommunikation, KI und LinkedIn und eure eigenen Themen</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten"></span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Handout: Reputation, Kommunikation, KI und LinkedIn</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten"></span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Workshop-Location in Zürich, direkt an der Limmat</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten"></span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Kaffee, Getränke, Snacks und gemeinsames Mittagessen inklusive</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten"></span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Für 1 bis 6 Personen, Flatrate</span><span class="stufe"><span class="stufe-ja" aria-label="enthalten"></span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Vorab-Analyse: Reputation, Themen und bisherige Kommunikation, mit schriftlichem Feedback</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Strategie und Contentpläne, die ich für euch ausarbeite</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>Erste Content-Ideen</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>KI-Architektur: wie KI in eure Kommunikation und eure bestehenden Werkzeuge passt</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
+        <div class="vergleich-row"><span>2 Stunden Online-Recap nach Absprache</span><span class="stufe"><span class="stufe-nein" aria-label="nicht enthalten">–</span></span><span class="stufe stufe-plus"><span class="stufe-ja" aria-label="enthalten"></span></span></div>
       </div>
 
       <div class="pros-cols stufen-preise">
@@ -2471,7 +2486,7 @@
         <p class="ueber-lead">Mich faszinieren Führungspersönlichkeiten mit Erfahrung, klaren Meinungen und Geschichten, die andere weiterbringen. Viele unterschätzen, wie wertvoll ihr Wissen für Mitarbeitende, Kundinnen, Kunden und den Markt ist. Ich unterstütze sie dabei, diese Gedanken in eine Kommunikation zu übersetzen, die authentisch ist und zu ihrer Rolle passt.</p>
         <p class="ueber-lead">Seit 2025 führe ich meinen eigenen Betrieb mit KI. Ein Second Brain sammelt meine Gedanken, KI erkennt daraus Themen und Muster, plant Inhalte und koordiniert Abläufe. Was ich dir empfehle, nutze ich jeden Tag selbst.</p>
         <p class="ueber-lead">Neben meiner Arbeit unterrichte ich Digital Marketing Strategie an drei Hochschulen. Der Austausch mit Studierenden hält meinen Blick frisch, während die Zusammenarbeit mit Führungskräften meine Lehre nah an der Praxis hält.</p>
-        <p class="ueber-lead">Wenn ich nicht arbeite, bin ich meistens mit Eny unterwegs – im Wald, an der Limmat oder auf einer Joggingrunde durchs Quartier. Dort entstehen oft die besten Ideen.</p>
+        <p class="ueber-lead">Wenn ich nicht arbeite, bin ich meistens mit Eny unterwegs: im Wald, an der Limmat oder auf einer Joggingrunde durchs Quartier. Dort entstehen oft die besten Ideen.</p>
 
       </div>
 
@@ -2694,7 +2709,7 @@
       </div>
       <div class="stat-card stat-card--light">
         <span class="stat-card-num">70%</span>
-        <span class="stat-card-label">aller Beiträge stammen von den aktivsten 25 CEOs – eine kleine Gruppe dominiert das Feld.</span>
+        <span class="stat-card-label">aller Beiträge stammen von den aktivsten 25 CEOs. Eine kleine Gruppe dominiert das Feld.</span>
         <span class="stat-card-source">IRF Reputation</span>
       </div>
     </div>
@@ -2816,9 +2831,9 @@
         <p class="cc-num">Frage 1 von 10</p>
         <p class="cc-q">Eure Führungskräfte posten regelmässig über ihr eigenes Profil — nicht nur die Firmenseite.</p>
         <div class="cc-answers">
-          <div class="cc-ans cc-ja">✓ Ja</div>
-          <div class="cc-ans">~ Teilweise</div>
-          <div class="cc-ans">✗ Nein</div>
+          <div class="cc-ans cc-ja">Ja</div>
+          <div class="cc-ans">Teilweise</div>
+          <div class="cc-ans">Nein</div>
         </div>
       </a>
 
@@ -2826,9 +2841,9 @@
         <p class="cc-num">Frage 4 von 10</p>
         <p class="cc-q">Es gibt einen einfachen Content-Plan, sodass niemand jede Woche bei null anfängt.</p>
         <div class="cc-answers">
-          <div class="cc-ans">✓ Ja</div>
-          <div class="cc-ans cc-tw">~ Teilweise</div>
-          <div class="cc-ans">✗ Nein</div>
+          <div class="cc-ans">Ja</div>
+          <div class="cc-ans cc-tw">Teilweise</div>
+          <div class="cc-ans">Nein</div>
         </div>
       </a>
 
@@ -2836,9 +2851,9 @@
         <p class="cc-num">Frage 7 von 10</p>
         <p class="cc-q">Ihr nutzt KI, um Content effizient zu erstellen — ohne dass er nach Maschine klingt.</p>
         <div class="cc-answers">
-          <div class="cc-ans">✓ Ja</div>
-          <div class="cc-ans">~ Teilweise</div>
-          <div class="cc-ans cc-no">✗ Nein</div>
+          <div class="cc-ans">Ja</div>
+          <div class="cc-ans">Teilweise</div>
+          <div class="cc-ans cc-no">Nein</div>
         </div>
       </a>
 
@@ -2853,7 +2868,7 @@
     <div class="reveal">
       <h2 class="cta-title">Deine Kommunikation liefert noch nicht <em>die gewünschte Wirkung?</em></h2>
       <p class="cta-desc">Lass uns gemeinsam herausfinden, wo ungenutztes Potenzial steckt und welche nächsten Schritte für dich sinnvoll sind.</p>
-      <p class="cta-desc">Kostenlos, unverbindlich und direkt mit mir, Freddy Hüsser. Keine Übergabe an den Vertrieb – wir sprechen von Anfang an persönlich.</p>
+      <p class="cta-desc">Kostenlos, unverbindlich und direkt mit mir, Freddy Hüsser. Keine Übergabe an den Vertrieb. Wir sprechen von Anfang an persönlich.</p>
     </div>
     <div class="reveal">
       <!-- Start of Meetings Embed Script -->
@@ -2869,7 +2884,7 @@
   <div class="section-inner">
     <div class="section-header center reveal">
       <p class="section-lbl">Kontakt</p>
-      <h2 class="section-title">✉️ Schreib mir</h2>
+      <h2 class="section-title">Schreib mir</h2>
       <p class="section-desc">Füll das Formular aus, ich melde mich in der Regel innerhalb von 24 Stunden.<br>Oder schreib mir direkt auf <a href="https://wa.me/41774987835?text=Hallo%20Freddy%2C%20ich%20habe%20eine%20Frage%3A" target="_blank" rel="noopener" style="color:#25D366;font-weight:700;text-decoration:none;">WhatsApp</a>.</p>
       <p class="section-desc" style="margin-top: 1.5rem; font-size: .9rem; color: var(--c-muted);">Du bist im Kommunikations- oder Marketingteam und möchtest deine Geschäftsleitung präsenter machen? Schreib mir.</p>
     </div>
@@ -2908,7 +2923,7 @@
     <div>
       <p class="footer-col-title">Leistungen</p>
       <ul class="footer-nav">
-        <li><a href="#methode">Meine Methode</a></li>
+        <li><a href="#methode">Ansatz</a></li>
         <li><a href="#angebot">Angebot</a></li>
         <li><a href="#kontakt">Gespräch vereinbaren</a></li>
       </ul>
@@ -3079,9 +3094,9 @@
 <div class="popup-overlay" id="schnelltestPopup" role="dialog" aria-modal="true" aria-label="LinkedIn-Schnelltest" style="display:none">
   <div class="popup-box">
     <button class="popup-close" id="popupClose" aria-label="Schliessen">✕</button>
-    <span class="popup-tag">🔍 Kostenloser Schnelltest</span>
+    <span class="popup-tag">Kostenloser Schnelltest</span>
     <h2 class="popup-title">Wie präsent bist du als Führungsperson auf LinkedIn?</h2>
-    <p class="popup-desc">10 Fragen, 3 Minuten – und du weisst sofort, wo du stehst und was den grössten Unterschied machen würde.</p>
+    <p class="popup-desc">10 Fragen, 3 Minuten, und du weisst sofort, wo du stehst und was den grössten Unterschied machen würde.</p>
     <a href="/check/" class="popup-cta">
       Jetzt testen
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
