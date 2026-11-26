@@ -722,6 +722,36 @@
     .on-dark .section-title { color: #fff; }
     .on-dark .section-desc { color: rgba(255,255,255,.85); }
 
+
+    /* ── SO ARBEITE ICH SELBST MIT KI ─────────── */
+    .setup-section {
+      background-color: var(--c-white);
+      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .setup-lead { max-width: 640px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
+    .setup-flow { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1.75rem; margin-top: 3rem; position: relative; }
+    .setup-step { background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.5rem 1.35rem; position: relative; }
+    .setup-step:not(:last-child)::after {
+      content: "→"; position: absolute; right: -1.45rem; top: 50%; transform: translateY(-50%);
+      color: var(--c-yellow-d); font-size: 1.2rem; font-weight: 600;
+    }
+    .setup-step-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
+    .setup-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.3rem; color: var(--c-primary); margin: .45rem 0 .6rem; line-height: 1.2; }
+    .setup-step p { font-size: .95rem; line-height: 1.6; color: var(--c-text); }
+    .setup-base { margin-top: 1.25rem; background: var(--c-primary); color: #fff; border-radius: var(--r); padding: 1.25rem 1.5rem; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+    .setup-base strong { color: var(--c-yellow); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+    .setup-base span { font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,.9); flex: 1 1 320px; }
+    .setup-transfer { max-width: 640px; margin-top: 2rem; font-size: 1.05rem; line-height: 1.7; color: var(--c-text); }
+    @media (max-width: 900px) {
+      .setup-flow { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .setup-step:nth-child(2)::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .setup-flow { grid-template-columns: minmax(0,1fr); gap: 1.6rem; }
+      .setup-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.45rem; transform: translateX(-50%); display: block; }
+    }
+
     /* ── REVEAL ─────────────────────────────── */
     .reveal {
       opacity: 0;
@@ -2382,6 +2412,54 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<!-- ══════════════ SO ARBEITE ICH SELBST MIT KI ══════════════ -->
+<section class="setup-section" id="ki-setup">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-lbl">Aus meinem Alltag</p>
+      <h2 class="section-title">So arbeite ich selbst mit KI</h2>
+      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 baue ich meinen eigenen Betrieb auf ein System, in dem KI vorbereitet, ordnet und erinnert. So bleibt meine Zeit für Gespräche, Kunden und Entscheide.</p>
+    </div>
+
+    <div class="setup-flow reveal">
+      <div class="setup-step">
+        <span class="setup-step-num">01</span>
+        <h3>Gedanken sammeln</h3>
+        <p>Ideen, Beobachtungen und Notizen aus Gesprächen landen an einem Ort, getippt oder gesprochen. Das ist mein Second Brain.</p>
+      </div>
+      <div class="setup-step">
+        <span class="setup-step-num">02</span>
+        <h3>Muster erkennen</h3>
+        <p>KI geht diese Sammlung regelmässig durch, erkennt wiederkehrende Themen und zeigt mir, was daraus ein Beitrag, ein Artikel oder ein Angebot werden kann.</p>
+      </div>
+      <div class="setup-step">
+        <span class="setup-step-num">03</span>
+        <h3>Planen</h3>
+        <p>Aus den Themen entstehen Contentpläne, Wochenplanung und Fristen. Ich sehe jeden Morgen, was ansteht, ohne es selbst zusammenzusuchen.</p>
+      </div>
+      <div class="setup-step">
+        <span class="setup-step-num">04</span>
+        <h3>Koordinieren</h3>
+        <p>KI-Assistenzen mit klaren Rollen für Organisation, Finanzen und Marketing bereiten Aufgaben vor, prüfen Abläufe und melden, wenn etwas hängt.</p>
+      </div>
+    </div>
+
+    <div class="setup-base reveal">
+      <strong>Ich entscheide</strong>
+      <span>Was nach aussen geht, prüfe und gebe ich selbst frei. KI bereitet vor, die Verantwortung bleibt bei mir.</span>
+    </div>
+
+    <p class="setup-transfer reveal">Dieses Prinzip übertrage ich auf eure Kommunikation: mit euren Themen, in euren Werkzeugen und in dem Tempo, das zu eurem Team passt.</p>
+
+    <div class="reveal" style="margin-top: 1.5rem;">
+      <a href="#workshop" class="btn btn-dark">
+        Workshop anfragen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
