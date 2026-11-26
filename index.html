@@ -726,13 +726,13 @@
     /* ── SO ARBEITE ICH SELBST MIT KI ─────────── */
     .setup-section { background: var(--c-white); }
     .setup-lead { max-width: 660px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
-    .kis { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.5rem; margin-top: 2.75rem; }
-    .kis-step { background: var(--c-gray); border-radius: var(--r); padding: 1.3rem 1.2rem; position: relative; }
-    .kis-step:not(:last-child)::after { content: "→"; position: absolute; right: -1.2rem; top: 50%; transform: translateY(-50%); color: var(--c-yellow-d); font-weight: 600; }
+    .kis { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 1.4rem; margin-top: 2.75rem; }
+    .kis-step { background: var(--c-gray); border-radius: var(--r); padding: 1.2rem 1.05rem; position: relative; }
+    .kis-step:not(:last-child)::after { content: "→"; position: absolute; right: -1.15rem; top: 50%; transform: translateY(-50%); color: var(--c-yellow-d); font-weight: 600; }
     .kis-step--me { background: var(--c-primary); }
     .kis-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
     .kis-step--me .kis-num { color: var(--c-yellow); }
-    .kis-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.25rem; color: var(--c-primary); margin: .35rem 0 .5rem; line-height: 1.15; }
+    .kis-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.15rem; hyphens: auto; color: var(--c-primary); margin: .35rem 0 .5rem; line-height: 1.15; }
     .kis-step--me h3 { color: #fff; }
     .kis-step p { font-size: .92rem; line-height: 1.55; color: var(--c-text); }
     .kis-step--me p { color: rgba(255,255,255,.88); }
@@ -745,7 +745,7 @@
     .setup-actions .btn-outline:hover { background: var(--c-accent-bg-h); border-color: var(--c-accent-bg-h); }
     .setup-more { font-size: .95rem; color: var(--c-text); margin-top: 1rem; }
     .setup-more a { color: var(--c-yellow-d); text-decoration: underline; text-underline-offset: 3px; }
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
       .kis { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
       .kis-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.3rem; transform: translateX(-50%); }
     }
@@ -2417,8 +2417,9 @@
       <div class="kis-step kis-step--me"><span class="kis-num">01</span><h3>Ihr</h3><p>Du und dein Team setzt die Ziele, entscheidet und gebt frei.</p></div>
       <div class="kis-step "><span class="kis-num">02</span><h3>Second Brain</h3><p>Alle Gedanken landen an einem Ort, getippt oder ins Handy gesprochen. Nichts geht verloren.</p></div>
       <div class="kis-step "><span class="kis-num">03</span><h3>Wissenssammlung</h3><p>Positionierung, Themen, Tonalität und Abläufe. Die KI liest hier nach, bevor sie arbeitet.</p></div>
-      <div class="kis-step "><span class="kis-num">04</span><h3>KI-Unterstützung</h3><p>Recherchieren, planen, koordinieren, erinnern, beim Schreiben helfen und Bilder erstellen.</p></div>
-      <div class="kis-step "><span class="kis-num">05</span><h3>Werkzeuge</h3><p>Was bei euch schon läuft: Microsoft 365 oder Google Workspace, Teams oder Slack, dazu ChatGPT, Claude oder Gemini.</p></div>
+      <div class="kis-step "><span class="kis-num">04</span><h3>KI-Unterstützung</h3><p>ChatGPT, Claude oder Gemini recherchieren, planen, koordinieren, erinnern, helfen beim Schreiben und erstellen Bilder.</p></div>
+      <div class="kis-step "><span class="kis-num">05</span><h3>Werkzeuge</h3><p>Was bei euch schon läuft: Microsoft 365 oder Google Workspace, Teams oder Slack, Notion und Canva.</p></div>
+      <div class="kis-step "><span class="kis-num">06</span><h3>LinkedIn</h3><p>Hier wird sichtbar, wofür ihr steht: in Beiträgen, Artikeln, Newslettern und Kommentaren.</p></div>
     </div>
 
     <div class="kis-out reveal">
