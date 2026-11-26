@@ -724,34 +724,29 @@
 
 
     /* ── SO ARBEITE ICH SELBST MIT KI ─────────── */
-    .setup-section {
-      background-color: var(--c-white);
-      background-image: radial-gradient(circle, rgba(0,34,44,.10) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
+    .setup-section { background: var(--c-white); }
     .setup-lead { max-width: 660px; font-size: 1.1rem; line-height: 1.7; color: var(--c-text); margin-top: 1rem; }
-    .sys { margin-top: 3rem; max-width: 1040px; }
-    .sys-layer { display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 1.5rem; align-items: start; background: #fff; border: 1px solid var(--c-gray-2); border-radius: var(--r); padding: 1.35rem 1.5rem; position: relative; }
-    .sys-layer + .sys-layer { margin-top: 1.9rem; }
-    .sys-layer + .sys-layer::before { content: "↓"; position: absolute; top: -1.65rem; left: 50%; transform: translateX(-50%); color: var(--c-yellow-d); font-weight: 600; font-size: 1.1rem; }
-    .sys-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
-    .sys-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; color: var(--c-primary); line-height: 1.15; margin-top: .25rem; }
-    .sys-desc { font-size: .95rem; line-height: 1.65; color: var(--c-text); }
-    .sys-layer--me { background: var(--c-primary); border-color: var(--c-primary); }
-    .sys-layer--me .sys-num { color: var(--c-yellow); }
-    .sys-layer--me .sys-title, .sys-layer--me .sys-desc { color: #fff; }
-    .sys-layer--out { background: var(--c-accent-bg); border-color: var(--c-accent-bg); }
-    .sys-cols { display: grid; grid-template-columns: repeat(var(--n,2), minmax(0,1fr)); gap: .9rem; margin-top: .9rem; }
-    .sys-box { border: 1px solid var(--c-gray-2); border-radius: 6px; padding: .85rem 1rem; background: var(--c-gray); }
-    .sys-box strong { display: block; font-size: .95rem; color: var(--c-primary); margin-bottom: .2rem; }
-    .sys-box span { font-size: .9rem; line-height: 1.55; color: var(--c-text); }
-    .sys-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
-    .sys-chips span { font-size: .88rem; font-weight: 500; color: var(--c-primary); background: #fff; border: 1px solid var(--c-gray-2); border-radius: 20px; padding: .35rem .85rem; white-space: nowrap; }
-    .sys-layer--out .sys-chips span { border-color: rgba(0,34,44,.15); }
-    .setup-transfer { max-width: 660px; margin-top: 2.5rem; font-size: 1.05rem; line-height: 1.7; color: var(--c-text); }
-    @media (max-width: 800px) {
-      .sys-layer { grid-template-columns: minmax(0,1fr); gap: .5rem; }
-      .sys-cols { grid-template-columns: minmax(0,1fr); }
+    .kis { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.5rem; margin-top: 2.75rem; }
+    .kis-step { background: var(--c-gray); border-radius: var(--r); padding: 1.3rem 1.2rem; position: relative; }
+    .kis-step:not(:last-child)::after { content: "→"; position: absolute; right: -1.2rem; top: 50%; transform: translateY(-50%); color: var(--c-yellow-d); font-weight: 600; }
+    .kis-step--me { background: var(--c-primary); }
+    .kis-num { font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--c-yellow-d); }
+    .kis-step--me .kis-num { color: var(--c-yellow); }
+    .kis-step h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.25rem; color: var(--c-primary); margin: .35rem 0 .5rem; line-height: 1.15; }
+    .kis-step--me h3 { color: #fff; }
+    .kis-step p { font-size: .92rem; line-height: 1.55; color: var(--c-text); }
+    .kis-step--me p { color: rgba(255,255,255,.88); }
+    .kis-out { margin-top: 1.5rem; background: var(--c-accent-bg); border-radius: var(--r); padding: 1.2rem 1.4rem; display: flex; gap: 1rem 1.5rem; align-items: center; flex-wrap: wrap; }
+    .kis-out strong { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-primary); }
+    .kis-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .kis-chips span { font-size: .88rem; font-weight: 500; color: var(--c-primary); background: #fff; border-radius: 20px; padding: .4rem .9rem; white-space: nowrap; }
+    .setup-actions { display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; margin-top: 2rem; }
+    .setup-actions .btn-outline { background: var(--c-accent-bg); border-color: var(--c-accent-bg); color: var(--c-primary); }
+    .setup-actions .btn-outline:hover { background: var(--c-accent-bg-h); border-color: var(--c-accent-bg-h); }
+    .setup-more { font-size: .95rem; color: var(--c-yellow-d); text-decoration: underline; text-underline-offset: 3px; margin-top: 1rem; display: inline-block; }
+    @media (max-width: 1000px) {
+      .kis { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
+      .kis-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.3rem; transform: translateX(-50%); }
     }
 
     /* ── REVEAL ─────────────────────────────── */
@@ -2421,46 +2416,32 @@
 <section class="setup-section" id="ki-setup">
   <div class="section-inner">
     <div class="reveal">
-      <p class="section-lbl">Aus meinem Alltag</p>
-      <h2 class="section-title">Mein System: So arbeite ich selbst mit KI</h2>
-      <p class="setup-lead">Was ich Führungsteams empfehle, nutze ich jeden Tag selbst. Seit 2025 baue ich meinen Betrieb auf ein System, in dem KI Gedanken sammelt, Wissen ordnet und Arbeit vorbereitet. Texte schreiben ist dabei nur ein kleiner Teil. So sieht es aus:</p>
+      <p class="section-lbl">Mein System</p>
+      <h2 class="section-title">Ein KI-System für eure Kommunikation</h2>
+      <p class="setup-lead">Was ich für meinen eigenen Betrieb gebaut habe, baue ich mit Führungsteams für ihre Kommunikation auf. KI schreibt dabei nicht einfach Texte. Sie sammelt Gedanken, ordnet Wissen und bereitet Arbeit vor, damit eure Kommunikation läuft, ohne dass die Geschäftsleitung jede Woche daran denken muss.</p>
     </div>
 
-    <div class="sys reveal">
-      <div class="sys-layer sys-layer--me">
-        <div><span class="sys-num">01</span><div class="sys-title">Ich</div></div>
-        <div><p class="sys-desc">Ich setze die Ziele, entscheide und gebe frei. Was in meinem Namen nach aussen geht, sehe ich vorher.</p></div>
-      </div>
-      <div class="sys-layer ">
-        <div><span class="sys-num">02</span><div class="sys-title">Second Brain</div></div>
-        <div><p class="sys-desc">Alles, was mir einfällt, landet an einem Ort: unterwegs ins Handy gesprochen, nach einem Gespräch notiert, beim Lesen markiert. So geht kein Gedanke verloren, und die KI kann später damit arbeiten.</p></div>
-      </div>
-      <div class="sys-layer ">
-        <div><span class="sys-num">03</span><div class="sys-title">Wissenssammlung</div></div>
-        <div><p class="sys-desc">Das Gedächtnis meines Betriebs. Hier steht, wie ich arbeite und was gilt. Jede Rolle liest hier nach, bevor sie etwas tut.</p><div class="sys-cols" style="--n:2"><div class="sys-box"><strong>Handbuch</strong><span>Regeln, Abläufe, Wissen und Entscheide, sauber dokumentiert. Ändert sich etwas, wird es hier nachgeführt.</span></div><div class="sys-box"><strong>Übersicht</strong><span>Ein Board mit Aufgaben, Plänen und dem Stand jedes Projekts. Dort sehe ich auf einen Blick, was erledigt ist und was auf mich wartet.</span></div></div></div>
-      </div>
-      <div class="sys-layer ">
-        <div><span class="sys-num">04</span><div class="sys-title">KI-Rollen</div></div>
-        <div><p class="sys-desc">Jede Rolle hat eine klare Aufgabe und arbeitet nach den Regeln aus dem Handbuch. Die Rollen geben sich gegenseitig Arbeit weiter.</p><div class="sys-cols" style="--n:3"><div class="sys-box"><strong>Marketing</strong><span>Content planen, Themen recherchieren, Ideen prüfen</span></div><div class="sys-box"><strong>Organisation</strong><span>Postfach, Kalender, Aufgaben und Fristen</span></div><div class="sys-box"><strong>Finanzen</strong><span>Rechnungen, Belege und Zahlungseingänge</span></div></div></div>
-      </div>
-      <div class="sys-layer ">
-        <div><span class="sys-num">05</span><div class="sys-title">Werkzeuge</div></div>
-        <div><p class="sys-desc">Für jede Aufgabe das passende Werkzeug. Die Rollen wissen, welches wann zum Einsatz kommt.</p><div class="sys-chips"><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Notion</span><span>Canva</span><span>Excel</span><span>Google Drive</span><span>Kalender und Mail</span></div></div>
-      </div>
-      <div class="sys-layer sys-layer--out">
-        <div><span class="sys-num">06</span><div class="sys-title">Ergebnis</div></div>
-        <div><p class="sys-desc">Am Ende entsteht daraus, was ein Betrieb jeden Tag braucht, ohne dass ich alles selbst zusammensuche.</p><div class="sys-chips"><span>Contentpläne</span><span>Recherche für Beiträge</span><span>Ideen für Content</span><span>Gedanken zur Positionierung geordnet</span><span>Wochenplanung</span><span>Saubere Fristen</span><span>Vorbereitete Rechnungen</span></div></div>
-      </div>
+    <div class="kis reveal">
+      <div class="kis-step kis-step--me"><span class="kis-num">01</span><h3>Ihr</h3><p>Du und dein Team setzt die Ziele, entscheidet und gebt frei.</p></div>
+      <div class="kis-step "><span class="kis-num">02</span><h3>Second Brain</h3><p>Alle Gedanken landen an einem Ort, getippt oder ins Handy gesprochen. Nichts geht verloren.</p></div>
+      <div class="kis-step "><span class="kis-num">03</span><h3>Wissenssammlung</h3><p>Positionierung, Themen, Tonalität und Abläufe. Die KI liest hier nach, bevor sie arbeitet.</p></div>
+      <div class="kis-step "><span class="kis-num">04</span><h3>KI-Unterstützung</h3><p>Recherchieren, planen, koordinieren, erinnern, beim Schreiben helfen und Bilder erstellen.</p></div>
+      <div class="kis-step "><span class="kis-num">05</span><h3>Werkzeuge</h3><p>Was bei euch schon läuft: Microsoft 365 oder Google Workspace, Teams oder Slack, dazu ChatGPT, Claude oder Gemini.</p></div>
     </div>
 
-    <p class="setup-transfer reveal">Genau dieses Prinzip übertrage ich auf eure Kommunikation: mit euren Themen, in euren Werkzeugen und in dem Tempo, das zu eurem Team passt.</p>
+    <div class="kis-out reveal">
+      <strong>Ergebnis</strong>
+      <div class="kis-chips"><span>Contentpläne</span><span>Recherchen</span><span>Ideen</span><span>Gedanken zur Positionierung</span><span>LinkedIn-Funnel</span><span>Wochenplanung</span><span>Fristen</span></div>
+    </div>
 
-    <div class="reveal" style="margin-top: 1.5rem;">
-      <a href="#workshop" class="btn btn-dark">
-        Workshop anfragen
+    <div class="setup-actions reveal">
+      <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="btn btn-dark">
+        So funktioniert das System
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
+      <a href="#workshop" class="btn btn-outline">Workshop anfragen</a>
     </div>
+    <a href="/blog/betrieb-mit-ki-assistenten-organisieren/" class="setup-more reveal">Wie ich meinen eigenen Betrieb mit KI-Assistenten organisiere</a>
   </div>
 </section>
 

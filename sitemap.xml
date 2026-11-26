@@ -160,6 +160,18 @@
 
   <!-- Blog-Artikel: Executive Communication -->
   <url>
+    <loc>https://ohnelaerm.ch/blog/ki-system-kommunikation-fuehrungsteams/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ohnelaerm.ch/blog/betrieb-mit-ki-assistenten-organisieren/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ohnelaerm.ch/blog/reputation-ki-linkedin/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
