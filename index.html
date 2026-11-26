@@ -743,7 +743,8 @@
     .setup-actions { display: flex; flex-wrap: wrap; gap: .75rem 1rem; align-items: center; margin-top: 2rem; }
     .setup-actions .btn-outline { background: var(--c-accent-bg); border-color: var(--c-accent-bg); color: var(--c-primary); }
     .setup-actions .btn-outline:hover { background: var(--c-accent-bg-h); border-color: var(--c-accent-bg-h); }
-    .setup-more { font-size: .95rem; color: var(--c-yellow-d); text-decoration: underline; text-underline-offset: 3px; margin-top: 1rem; display: inline-block; }
+    .setup-more { font-size: .95rem; color: var(--c-text); margin-top: 1rem; }
+    .setup-more a { color: var(--c-yellow-d); text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 1000px) {
       .kis { grid-template-columns: minmax(0,1fr); gap: 1.4rem; }
       .kis-step:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -1.3rem; transform: translateX(-50%); }
@@ -2103,7 +2104,7 @@
   <a href="#angebot" class="nav-link">Angebot</a>
   <a href="#warum" class="nav-link">Warum jetzt</a>
   <a href="#ueber-mich" class="nav-link">Freddy Hüsser</a>
-  <a href="#kontakt" class="nav-link nav-cta">Kaffeepause</a>
+  <a href="#kontakt" class="nav-link nav-cta">Gespräch vereinbaren</a>
   <a href="#kontakt-formular" class="nav-link">Schreib mir</a>
   <!-- CHECK HIDDEN: <a href="/check/" class="nav-link nav-cta">🔍 LinkedIn-Check</a> -->
   <div class="nav-socials">
@@ -2141,11 +2142,7 @@
       </div>
 
       <div class="hero-ctas">
-        <a href="#workshop" class="btn-hero btn-hero-primary">
-          Workshop anfragen
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="#kontakt" class="btn-hero btn-hero-ghost">
+        <a href="#kontakt" class="btn-hero btn-hero-primary">
           Gespräch vereinbaren
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -2233,8 +2230,8 @@
       <p class="einleitung-text reveal">Genau dabei helfe ich. Mit dir und deinem Team kläre ich, wofür ihr stehen wollt, welche Themen ihr besetzt und wie eure Kommunikation heute aufgebaut ist. Daraus entsteht eine Kommunikation, die eure Reputation stärkt und mit KI so effizient läuft wie möglich.</p>
 
       <div class="reveal" style="margin-top: 2rem;">
-        <a href="#workshop" class="btn btn-dark">
-          Workshop anfragen
+        <a href="#kontakt" class="btn btn-dark">
+        Gespräch vereinbaren
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
@@ -2359,8 +2356,8 @@
         </div>
       </div>
 
-      <a href="#kontakt-formular" class="btn btn-dark" style="margin-top: 1.25rem;">
-        Workshop anfragen
+      <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.25rem;">
+        Gespräch vereinbaren
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -2404,7 +2401,7 @@
       <p class="detail-lead" style="margin-top:1.25rem;font-size:.95rem;">Workshop und Begleitung liefern Strategie, Plan und Architektur. Die Einrichtung von Werkzeugen und die laufende Produktion von Inhalten sind nicht enthalten.</p>
 
       <a href="#kontakt" class="btn btn-dark" style="margin-top: 1.25rem;">
-        💬 Gespräch vereinbaren
+        Gespräch vereinbaren
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
@@ -2435,13 +2432,12 @@
     </div>
 
     <div class="setup-actions reveal">
-      <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="btn btn-dark">
-        So funktioniert das System
+      <a href="#kontakt" class="btn btn-dark">
+        Gespräch vereinbaren
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="#workshop" class="btn btn-outline">Workshop anfragen</a>
     </div>
-    <a href="/blog/betrieb-mit-ki-assistenten-organisieren/" class="setup-more reveal">Wie ich meinen eigenen Betrieb mit KI-Assistenten organisiere</a>
+    <p class="setup-more reveal"><a href="/blog/ki-system-kommunikation-fuehrungsteams/">So funktioniert das System im Detail</a> · <a href="/blog/betrieb-mit-ki-assistenten-organisieren/">Wie ich meinen eigenen Betrieb mit KI-Assistenten organisiere</a></p>
   </div>
 </section>
 
@@ -2911,7 +2907,7 @@
       <ul class="footer-nav">
         <li><a href="#methode">Meine Methode</a></li>
         <li><a href="#angebot">Angebot</a></li>
-        <li><a href="#kontakt">Kaffeepause buchen</a></li>
+        <li><a href="#kontakt">Gespräch vereinbaren</a></li>
       </ul>
     </div>
     <div>
