@@ -563,6 +563,7 @@
 <nav class="blog-filter" aria-label="Kategorien">
   <button class="blog-filter-btn active" data-filter="all">Alle</button>
   <button class="blog-filter-btn" data-filter="executive-communication">Executive Communication</button>
+  <button class="blog-filter-btn" data-filter="ki-kommunikation">KI in der Kommunikation</button>
   <button class="blog-filter-btn" data-filter="methode">Methode</button>
   <button class="blog-filter-btn" data-filter="nzzjobs-ratgeber">NZZJobs Ratgeber</button>
 </nav>
@@ -571,7 +572,7 @@
 <main class="blog-main" id="artikel">
   <section class="blog-grid">
 
-    <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="blog-card blog-card--featured" data-cat="executive-communication">
+    <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="blog-card blog-card--featured" data-cat="executive-communication" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/executive-communication.png" alt="Executive Communication"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -584,7 +585,7 @@
       </div>
     </a>
 
-    <a href="/blog/betrieb-mit-ki-assistenten-organisieren/" class="blog-card" data-cat="methode">
+    <a href="/blog/betrieb-mit-ki-assistenten-organisieren/" class="blog-card" data-cat="methode" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/executive-communication.png" alt="Methode"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -597,7 +598,7 @@
       </div>
     </a>
 
-    <a href="/blog/reputation-ki-linkedin/" class="blog-card" data-cat="executive-communication">
+    <a href="/blog/reputation-ki-linkedin/" class="blog-card" data-cat="executive-communication" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/executive-communication.png" alt="Executive Communication"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -896,7 +897,7 @@
       </div>
     </a>
 
-    <a href="/blog/ki-suche-arbeitgeber-reputation/" class="blog-card" data-cat="executive-communication">
+    <a href="/blog/ki-suche-arbeitgeber-reputation/" class="blog-card" data-cat="executive-communication" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/executive-communication.png" alt="Executive Communication"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -961,7 +962,7 @@
       </div>
     </a>
 
-    <a href="/blog/ki-linkedin-ohne-austauschbar/" class="blog-card" data-cat="nzzjobs-ratgeber">
+    <a href="/blog/ki-linkedin-ohne-austauschbar/" class="blog-card" data-cat="nzzjobs-ratgeber" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/nzzjobs-ratgeber.png" alt="NZZJobs Ratgeber"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -1221,7 +1222,7 @@
       </div>
     </a>
 
-    <a href="/blog/chatgpt-gemini-fuehrungskraft-reputation/" class="blog-card" data-cat="nzzjobs-ratgeber">
+    <a href="/blog/chatgpt-gemini-fuehrungskraft-reputation/" class="blog-card" data-cat="nzzjobs-ratgeber" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/nzzjobs-ratgeber.png" alt="NZZJobs Ratgeber"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -1260,7 +1261,7 @@
       </div>
     </a>
 
-    <a href="/blog/linkedin-profil-fachkompetenz-ki/" class="blog-card" data-cat="executive-communication">
+    <a href="/blog/linkedin-profil-fachkompetenz-ki/" class="blog-card" data-cat="executive-communication" data-tags="ki-kommunikation">
       <div class="blog-card-thumb"><img src="/images/executive-communication.png" alt="Executive Communication"></div>
       <div class="blog-card-body">
         <div class="blog-card-meta">
@@ -1575,7 +1576,8 @@
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.blog-card').forEach(card => {
-        if (filter === 'all' || card.dataset.cat === filter) {
+        const tags = (card.dataset.tags || '').split(' ');
+        if (filter === 'all' || card.dataset.cat === filter || tags.includes(filter)) {
           card.classList.remove('hidden');
         } else {
           card.classList.add('hidden');
