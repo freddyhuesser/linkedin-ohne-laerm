@@ -169,14 +169,14 @@
     .summary-box-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: .75rem; }
     .summary-box ul { margin: 0; list-style: none; padding: 0; }
     .summary-box li { font-size: .95rem; line-height: 1.7; margin-bottom: .3rem; color: var(--c-text); }
-    .summary-box ul li { display: flex; gap: .45rem; align-items: flex-start; }
-    .summary-box ul li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; margin-top: .72em; }
+    .summary-box ul li { display: block; position: relative; padding-left: 1.15rem; }
+    .summary-box ul li::before { content: ''; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; }
     .article-wrap p { font-size: 1.06rem; line-height: 1.85; margin-bottom: 1.5rem; color: var(--c-text); }
     .article-wrap h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 400; color: var(--c-primary); margin: 3rem 0 1rem; line-height: 1.3; }
     .article-wrap ul { margin: 0 0 1.5rem 0; list-style: none; padding: 0; }
     .article-wrap li { font-size: 1.06rem; line-height: 1.8; margin-bottom: .45rem; }
-    .article-wrap ul li { display: flex; gap: .5rem; align-items: flex-start; }
-    .article-wrap ul li::before { content: '\2713'; flex-shrink: 0; color: #1A6E78; -webkit-text-stroke: .4px #1A6E78; line-height: 1.8; }
+    .article-wrap ul li { display: block; position: relative; padding-left: 1.15rem; }
+    .article-wrap ul li::before { content: ''; position: absolute; left: 0; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; }
     .article-wrap strong { font-weight: 600; color: var(--c-primary); }
     .article-wrap a { color: var(--c-primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .article-faq { background: var(--c-gray); border-radius: 12px; padding: 2rem 2.5rem; margin: 3rem 0; }
@@ -217,6 +217,22 @@
     .nav-whatsapp { background: #25D366; color: #fff; display: inline-flex; align-items: center; text-decoration: none; width: auto; height: auto; gap: .5rem; padding: .65rem 1.1rem; border-radius: 999px; font-family: Inter, system-ui, sans-serif; font-size: .95rem; font-weight: 600; }
     .fam-toggle.open .bar, .nav-overlay-open .fam-toggle .bar { background: #f9f5f0; }
     .nav-overlay-open .fam-linkedin { color: #f9f5f0; }
+      /* ── Weitere Artikel (Kacheln) ── */
+    .article-related { margin: 3.5rem 0 1rem; }
+    .article-related-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; color: #00222C; margin-bottom: 1.25rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+    .related-card { display: flex; flex-direction: column; background: #f6f6f4; border-radius: 10px; overflow: hidden; text-decoration: none; transition: transform .2s, background .2s; }
+    .related-card:hover { transform: translateY(-3px); background: #eef3f2; }
+    .related-thumb { position: relative; aspect-ratio: 16 / 9; background: #00222C; overflow: hidden; }
+    .related-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .related-badge { position: absolute; left: .75rem; bottom: .75rem; background: #C5E8EC; color: #00222C; font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 20px; }
+    .related-body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+    .article-wrap .related-card p { margin: 0; }
+    .article-wrap .related-card .related-date { font-size: .78rem; color: #6b6b6b; }
+    .article-wrap .related-card .related-card-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; line-height: 1.3; color: #00222C; }
+    .article-wrap .related-card .related-ex { font-size: .88rem; line-height: 1.5; color: #4a4a4a; }
+    .related-read { margin-top: auto; padding-top: .4rem; font-size: .85rem; font-weight: 600; color: #1A6E78; }
+    @media (max-width: 860px) { .related-grid { grid-template-columns: minmax(0,1fr); } .related-thumb { aspect-ratio: 16 / 7; } }
   </style>
 </head>
 <body>
@@ -348,9 +364,42 @@
     <div>
       <p class="author-box-name">Freddy H&#252;sser</p>
       <p class="author-box-role">Berater f&#252;r Reputation, KI und LinkedIn &#183; Z&#252;rich, Schweiz</p>
-      <p class="author-box-bio">Freddy Hüsser hilft Führungskräften und ihren Teams, ihre Reputation über Kommunikation aufzubauen und ihre Kommunikation mit KI effizient einzurichten. Seit 2011 im Marketing, seit 2016 selbständig, Dozent für Digital Marketing Strategie an drei Schweizer Hochschulen und Autor des wöchentlichen LinkedIn-Ratgebers für NZZ Jobs. <a href="/">ohnelaerm.ch</a></p>
+      <p class="author-box-bio">Freddy Hüsser hilft Führungskräften und ihren Teams, ihre Reputation über Kommunikation aufzubauen und ihre Kommunikation mit KI effizient einzurichten. Seit 2011 im Marketing, seit 2016 selbständig, Dozent für Digital Marketing Strategie an drei Schweizer Hochschulen und Autor des wöchentlichen LinkedIn-Ratgebers für NZZJobs. <a href="/">ohnelaerm.ch</a></p>
     </div>
   </div>
+  <div class="article-related">
+    <p class="article-related-title">Weitere Artikel</p>
+    <div class="related-grid">
+      <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="related-card">
+        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Executive Communication</span></div>
+        <div class="related-body">
+          <p class="related-date">26. November 2026</p>
+          <p class="related-card-title">So baue ich für meine Kunden ein effizientes KI-System für ihre Kommunikation</p>
+          <p class="related-ex">Ein KI-System für die Kommunikation verbindet Second Brain, Wissenssammlung, KI-Unterstützung und bestehende Werkzeuge. Die Führungskraft entscheidet, die KI bereitet vor.</p>
+          <span class="related-read">Lesen →</span>
+        </div>
+      </a>
+      <a href="/blog/betrieb-mit-ki-assistenten-organisieren/" class="related-card">
+        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Methode</span></div>
+        <div class="related-body">
+          <p class="related-date">26. November 2026</p>
+          <p class="related-card-title">Wie ich meinen Betrieb mit KI-Assistenten organisiere</p>
+          <p class="related-ex">Second Brain, Handbuch und klare KI-Rollen für Marketing, Organisation und Finanzen. Was KMU davon übernehmen können.</p>
+          <span class="related-read">Lesen →</span>
+        </div>
+      </a>
+      <a href="/blog/woran-linkedin-bei-fuehrungskraeften-scheitert/" class="related-card">
+        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Executive Communication</span></div>
+        <div class="related-body">
+          <p class="related-date">23. Oktober 2026</p>
+          <p class="related-card-title">Woran LinkedIn bei Führungskräften oft scheitert</p>
+          <p class="related-ex">LinkedIn scheitert bei Führungskräften selten an fehlenden Ideen oder an der Technik.</p>
+          <span class="related-read">Lesen →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
 </article>
 
 <footer class="site-footer">

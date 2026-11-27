@@ -309,8 +309,8 @@
     .summary-box li {
       font-size: .95rem; line-height: 1.7; margin-bottom: .3rem; color: var(--c-text);
     }
-    .summary-box ul li { display: flex; gap: .45rem; align-items: flex-start; }
-    .summary-box ul li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; margin-top: .72em; }
+    .summary-box ul li { display: block; position: relative; padding-left: 1.15rem; }
+    .summary-box ul li::before { content: ''; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; }
 
     .article-wrap p {
       font-size: 1.06rem; line-height: 1.85; margin-bottom: 1.5rem; color: var(--c-text);
@@ -329,8 +329,8 @@
         .article-wrap ul { margin: 0 0 1.5rem 0; list-style: none; padding: 0; }
     .article-wrap ol { margin: 0 0 1.5rem 1.5rem; }
     .article-wrap li { font-size: 1.06rem; line-height: 1.8; margin-bottom: .45rem; }
-    .article-wrap ul li { display: flex; gap: .5rem; align-items: flex-start; }
-    .article-wrap ul li::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; margin-top: .8em; }
+    .article-wrap ul li { display: block; position: relative; padding-left: 1.15rem; }
+    .article-wrap ul li::before { content: ''; position: absolute; left: 0; top: .78em; width: 6px; height: 6px; border-radius: 50%; background: #1A6E78; }
     .article-wrap strong { font-weight: 600; color: var(--c-primary); }
     .article-wrap a { color: var(--c-primary); text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .article-wrap a:hover { opacity: .75; }
@@ -547,6 +547,14 @@
       .sys-layer { grid-template-columns: minmax(0,1fr); gap: .5rem; }
       .sys-cols { grid-template-columns: minmax(0,1fr); }
     }
+  
+    /* ── Quellen ruhig (27.11.2026) ── */
+    .article-sources { margin: 3rem 0 0; padding-top: 1.25rem; }
+    .article-sources-title { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #1A6E78; margin-bottom: .75rem; }
+    .article-wrap .article-sources ul { margin: 0; padding: 0; list-style: none; }
+    .article-wrap .article-sources ul li { display: block; padding-left: 0; font-size: .85rem; line-height: 1.6; color: #6b6b6b; margin-bottom: .45rem; }
+    .article-wrap .article-sources ul li::before { content: none; display: none; }
+    .article-wrap .article-sources a { color: #1A6E78; text-decoration: underline; text-underline-offset: 2px; word-break: normal; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
@@ -744,22 +752,13 @@
     <div>
       <p class="author-box-name">Freddy Hüsser</p>
       <p class="author-box-role">Berater für Reputation, KI und LinkedIn · Zürich, Schweiz</p>
-      <p class="author-box-bio">Freddy Hüsser hilft Führungskräften und ihren Teams, ihre Reputation über Kommunikation aufzubauen und ihre Kommunikation mit KI effizient einzurichten. Seit 2011 im Marketing, seit 2016 selbständig, Dozent für Digital Marketing Strategie an drei Schweizer Hochschulen und Autor des wöchentlichen LinkedIn-Ratgebers für NZZ Jobs. <a href="/">ohnelaerm.ch</a></p>
+      <p class="author-box-bio">Freddy Hüsser hilft Führungskräften und ihren Teams, ihre Reputation über Kommunikation aufzubauen und ihre Kommunikation mit KI effizient einzurichten. Seit 2011 im Marketing, seit 2016 selbständig, Dozent für Digital Marketing Strategie an drei Schweizer Hochschulen und Autor des wöchentlichen LinkedIn-Ratgebers für NZZJobs. <a href="/">ohnelaerm.ch</a></p>
     </div>
   </div>
 
   <div class="article-related">
     <p class="article-related-title">Weitere Artikel</p>
     <div class="related-grid">
-      <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="related-card">
-        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">KI in der Kommunikation</span></div>
-        <div class="related-body">
-          <p class="related-date">26. November 2026</p>
-          <p class="related-card-title">So baue ich für meine Kunden ein effizientes KI-System für ihre Kommunikation</p>
-          <p class="related-ex">Second Brain, Wissenssammlung und KI-Unterstützung: Kommunikation mit System, ohne die eigene Stimme zu verlieren.</p>
-          <span class="related-read">Lesen →</span>
-        </div>
-      </a>
       <a href="/blog/reputation-ki-linkedin/" class="related-card">
         <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Executive Communication</span></div>
         <div class="related-body">
@@ -769,12 +768,21 @@
           <span class="related-read">Lesen →</span>
         </div>
       </a>
-      <a href="/blog/ki-linkedin-ohne-austauschbar/" class="related-card">
-        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">NZZJobs Ratgeber</span></div>
+      <a href="/blog/ki-system-kommunikation-fuehrungsteams/" class="related-card">
+        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Executive Communication</span></div>
         <div class="related-body">
-          <p class="related-date">8. Juli 2026</p>
-          <p class="related-card-title">Wie nutze ich KI für LinkedIn, ohne austauschbar zu werden?</p>
-          <p class="related-ex">KI nützt im LinkedIn-Schreiben, wenn sie das eigene Denken unterstützt, und schadet, wenn sie die Ausgangsidee liefert.</p>
+          <p class="related-date">26. November 2026</p>
+          <p class="related-card-title">So baue ich für meine Kunden ein effizientes KI-System für ihre Kommunikation</p>
+          <p class="related-ex">Ein KI-System für die Kommunikation verbindet Second Brain, Wissenssammlung, KI-Unterstützung und bestehende Werkzeuge. Die Führungskraft entscheidet, die KI bereitet vor.</p>
+          <span class="related-read">Lesen →</span>
+        </div>
+      </a>
+      <a href="/blog/ki-suche-arbeitgeber-reputation/" class="related-card">
+        <div class="related-thumb"><img src="/images/executive-communication.png" alt=""><span class="related-badge">Executive Communication</span></div>
+        <div class="related-body">
+          <p class="related-date">25. Juli 2026</p>
+          <p class="related-card-title">Was sagen KI-Suchen über einen Arbeitgeber und wie lässt sich das verbessern?</p>
+          <p class="related-ex">KI-Suchen verdichten Informationen aus öffentlich zugänglichen Quellen.</p>
           <span class="related-read">Lesen →</span>
         </div>
       </a>
